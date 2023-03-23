@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: 名字
-  text: 文本描述.
+  name: ApeCode
+  text: 猿木函.
   tagline: 标语...
   image:
     src: /images/logo.png
