@@ -6,8 +6,8 @@ hero:
   text: 文本描述.
   tagline: 标语...
   image:
-    src: https://cn.vitejs.dev/logo-with-shadow.png
-    alt: 网页的logo图标
+    src: /images/logo.png
+    alt: logo图标
   actions:
     - theme: brand
       text: Get Started
