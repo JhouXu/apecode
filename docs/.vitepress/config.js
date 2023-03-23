@@ -2,7 +2,7 @@ module.exports = {
   lang: "zh-Hans",
   title: "标题",
   description: "描述",
-  base: "website",
+  base: "/website/",
 
   themeConfig: {
     siteTitle: "标题",
