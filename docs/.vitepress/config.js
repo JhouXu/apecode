@@ -16,31 +16,23 @@ module.exports = {
       //   },
       //   link: "https://juejin.cn/user/1469381099657902",
       // },
-      { icon: "github", link: "https://github.com/gumingWu/vitepress-fun" },
+      { icon: "github", link: "https://github.com/JhouXu/apecode" },
     ],
 
     nav: [
-      // { text: "Guide", link: "/guide" },
-      // {
-      //   text: "Config",
-      //   items: [
-      //     { text: "Item A", link: "/item-1" },
-      //     { text: "Item B", link: "/item-2" },
-      //     { text: "Item C", link: "/item-3" },
-      //   ],
-      // },
-      // { text: "Changelog", link: "https://github.com/jhouxu" },
       { text: "首页", link: "/" },
-      { text: "工具", link: "" },
-      { text: "关于", link: "" },
+      {
+        text: "工具",
+        items: [{ text: "资源导航", link: "/tool/favorites" }],
+      },
     ],
 
     sidebar: {
-      "/guide/": [
+      "/tool/": [
         {
-          text: "note",
+          text: "工具",
           collapsible: false,
-          items: [{ text: "Getting-Started", link: "/guide/getting-started" }],
+          items: [{ text: "资源导航", link: "/tool/favorites" }],
         },
       ],
     },
