@@ -1,7 +1,7 @@
 module.exports = {
   title: "Hello VitePress",
   description: "Just playing around.",
-  base: "xiaozan",
+  base: "website",
 
   markdown: {
     lineNumbers: true,
