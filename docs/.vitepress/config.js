@@ -1,13 +1,13 @@
 import { title, description, base, lang, github } from "./config/meta";
-import { social } from "./config/social";
+import { socialLinks } from "./config/social";
 import { nav } from "./config/nav";
 import { sidebar } from "./config/sidebar";
 import algolia from "./config/algolia";
 
 module.exports = {
-  title: title,
-  description: description,
-  base: base,
+  title,
+  description,
+  base,
   locales: {
     root: { label: "简体中文", lang: "zh-CN" },
   },
@@ -33,9 +33,9 @@ module.exports = {
     lastUpdatedText: "最后一次更新于",
 
     // global config
-    socialLinks: social,
-    nav: nav,
-    sidebar: sidebar,
+    socialLinks,
+    nav,
+    sidebar,
     algolia,
     footer: {
       message: "Released under the MIT License.",
