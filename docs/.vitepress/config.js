@@ -7,7 +7,9 @@ module.exports = {
   title: title,
   description: description,
   base: base,
-  lang: lang,
+  locales: {
+    root: { label: "简体中文", lang: "zh-CN" },
+  },
 
   themeConfig: {
     siteTitle: "猿木函",
