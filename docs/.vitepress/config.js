@@ -2,6 +2,7 @@ import { title, description, base, lang, github } from "./config/meta";
 import { social } from "./config/social";
 import { nav } from "./config/nav";
 import { sidebar } from "./config/sidebar";
+import algolia from "./config/algolia";
 
 module.exports = {
   title: title,
@@ -35,6 +36,7 @@ module.exports = {
     socialLinks: social,
     nav: nav,
     sidebar: sidebar,
+    algolia,
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2019-present Xiao Zan",
