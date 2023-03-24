@@ -2,7 +2,7 @@ module.exports = {
   lang: "zh-Hans",
   title: "猿木函",
   description: "描述",
-  base: "/website/",
+  base: "/apecode/",
 
   themeConfig: {
     siteTitle: "猿木函",
