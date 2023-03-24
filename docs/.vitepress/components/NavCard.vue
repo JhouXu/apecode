@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid auto-rows-auto grid-cols-2 gap-[12px]">
+  <div class="grid auto-rows-auto sm:grid-cols-2 grid-cols-1 gap-[12px]">
     <section v-for="navItem of navData" :key="navItem.id">
       <a :href="navItem.link" rel="noreferrer" target="_blank" class="group">
         <section
