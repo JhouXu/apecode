@@ -6,9 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 tests/**/coverage/
 
-# vitepress
-docs/.vitepress/cache/
-
 # Editor directories and files
 .idea
 .vscode
