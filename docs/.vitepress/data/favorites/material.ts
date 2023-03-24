@@ -1,4 +1,4 @@
-import { navItem } from "./type";
+import { navItem } from "./types";
 
 const material: navItem[] = [
   {
