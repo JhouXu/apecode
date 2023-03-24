@@ -6,7 +6,21 @@ module.exports = {
 
   themeConfig: {
     siteTitle: "猿木函",
-    logo: "/images/logo.png",
+    logo: "https://github.com/JhouXu/apecode/blob/master/public/images/logo-h.svg",
+    outline: "deep",
+    outlineTitle: "文章目录",
+    sidebarMenuLabel: "导航",
+    docFooter: {
+      prev: "上一篇",
+      next: "下一篇",
+    },
+    returnToTopLabel: "返回顶部",
+    darkModeSwitchLabel: "外观",
+    editLink: {
+      pattern: "https://github.com/JhouXu/apecode/blob/master/docs/:path",
+      text: "在 GitHub 上编辑此页",
+    },
+    lastUpdatedText: "最后一次更新于",
 
     // 导航栏右侧图标超链配置
     socialLinks: [
