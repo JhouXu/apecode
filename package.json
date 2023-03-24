@@ -1,6 +1,6 @@
 {
-  "name": "vitepress-starter",
-  "version": "1.0.0",
+  "name": "apecode",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
