@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
     "sass": "^1.59.3",
+    "tailwindcss": "^3.2.7",
     "vitepress": "^1.0.0-alpha.61"
   },
   "scripts": {
@@ -14,5 +18,11 @@
   },
   "dependencies": {
     "markdown-it-anchor": "^8.6.7"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   }
 }
