@@ -6,7 +6,7 @@ hero:
   text: 猿木函.
   tagline: 标语...
   image:
-    src: /images/logo.png
+    src: ./vp-image.svg
     alt: logo图标
   actions:
     - theme: brand

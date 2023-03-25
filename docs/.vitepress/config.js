@@ -1,4 +1,4 @@
-import { title, description, base, github } from "./config/meta";
+import { title, description, base, logo, github } from "./config/meta";
 import { socialLinks } from "./config/social";
 import { nav } from "./config/nav";
 import { sidebar } from "./config/sidebar";
@@ -13,11 +13,10 @@ module.exports = {
   },
 
   themeConfig: {
-    siteTitle: "猿木函",
-    logo: "https://github.com/JhouXu/apecode/blob/master/public/images/logo-h.svg",
-    outline: "deep",
-
+    siteTitle: false,
+    logo,
     // default config
+    outline: "deep",
     outlineTitle: "文章目录",
     sidebarMenuLabel: "导航",
     docFooter: {
