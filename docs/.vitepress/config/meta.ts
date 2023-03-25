@@ -10,5 +10,5 @@ export const base: string = "/apecode/";
 export const logo: string = "./logo-h.png";
 
 // social link
-export const juejin: string = "https://juejin.cn/user/1126374170967367";
+export const juejin: string = "https://juejin.cn/user/1126374170967367/posts";
 export const github: string = "https://github.com/JhouXu/apecode";
