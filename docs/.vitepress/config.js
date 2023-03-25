@@ -17,7 +17,7 @@ module.exports = {
     logo,
     // default config
     outline: "deep",
-    outlineTitle: "文章目录",
+    outlineTitle: "本文目录",
     sidebarMenuLabel: "导航",
     docFooter: {
       prev: "上一篇",
