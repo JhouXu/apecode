@@ -42,4 +42,6 @@ module.exports = {
       copyright: "Copyright © 2019-present Xiao Zan",
     },
   },
+
+  head: [["link", { rel: "icon", href: "./logo.png" }]],
 };
