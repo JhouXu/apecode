@@ -1,5 +1,6 @@
 export const nav: Array<Object> = [
   { text: "首页", link: "/" },
+  { text: "随笔记", link: "/blog/program-position" },
   {
     text: "日常工具",
     items: [
@@ -7,4 +8,5 @@ export const nav: Array<Object> = [
       { text: "😍表情符号", link: "/tool/emoji" },
     ],
   },
+  { text: "更新日志", link: "/log" },
 ];
