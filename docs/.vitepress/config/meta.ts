@@ -11,4 +11,5 @@ export const logo: string = "./images/logo-h.png";
 
 // social link
 export const juejin: string = "https://juejin.cn/user/1126374170967367/posts";
+export const csdn: string = "https://blog.csdn.net/weixin_44808483";
 export const github: string = "https://github.com/JhouXu/apecode";
