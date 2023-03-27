@@ -19,9 +19,15 @@ defineProps<{
             {{ navItem.text }}
           </span>
           <span
-            class="mt-[5px] mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50 min-h-[20px]"
+            v-show="navItem.type"
+            class="mt-[2px] text-xs rounded-full text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50"
           >
-            {{ navItem.desc || "<未知>" }}
+            {{ navItem.type }}
+          </span>
+          <span
+            class="mt-[2px] text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50 min-h-[20px]"
+          >
+            {{ navItem.desc || navItem.link }}
           </span>
         </section>
       </a>

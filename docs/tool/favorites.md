@@ -3,11 +3,39 @@ layout: doc
 ---
 
 <script setup>
+  import color from '../.vitepress/data/favorites/color.ts'
+  import logo from '../.vitepress/data/favorites/logo.ts'
+  import font from '../.vitepress/data/favorites/font.ts'
   import illustration from '../.vitepress/data/favorites/illustration.ts'
   import media from '../.vitepress/data/favorites/media.ts'
+  import image from '../.vitepress/data/favorites/image.ts'
 </script>
 
 # 资源导航
+
+## 图像处理
+
+::: tip
+在线图像处理工具，抠图、画质增强、画质无损压缩
+:::
+
+<NavCard :navData=image />
+
+## 设计配色
+
+<NavCard :navData=color />
+
+## Logo
+
+<NavCard :navData=logo />
+
+## 字体
+
+::: tip
+免费可商用的「字体」库
+:::
+
+<NavCard :navData=font />
 
 ## 插画
 

@@ -4,4 +4,5 @@ export interface navItem {
   desc?: string;
   link: string;
   icon?: string;
+  type?: string;
 }
