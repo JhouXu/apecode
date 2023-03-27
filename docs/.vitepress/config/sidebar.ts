@@ -9,4 +9,17 @@ export const sidebar: object = {
       ],
     },
   ],
+
+  "/blog/": [
+    {
+      text: "随笔",
+      collapsible: false,
+      items: [
+        { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/js-swiper" },
+        { text: "PannellumJS 快速搭建属于你的全景查看器", link: "/blog/js-pannellum" },
+        { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/js-nuxt" },
+        { text: "微信小程序中实现定位以及逆地址解析", link: "/blog/program-position" },
+      ],
+    },
+  ],
 };
