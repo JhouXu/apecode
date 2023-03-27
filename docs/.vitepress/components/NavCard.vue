@@ -21,7 +21,7 @@ defineProps<{
           <span
             class="mt-[5px] mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50 min-h-[20px]"
           >
-            {{ navItem.desc ?? navItem.text }}
+            {{ navItem.desc || "<未知>" }}
           </span>
         </section>
       </a>
