@@ -4,6 +4,12 @@ let id = 1;
 const font: navItem[] = [
   {
     id: id++,
+    text: "Fontspace",
+    link: "https://www.fontspace.com/",
+    desc: "100,000+ Free Fonts. Free downloads of legally licensed fonts that are perfect for your design projects.",
+  },
+  {
+    id: id++,
     text: "字由",
     link: "https://www.hellofont.cn/",
     desc: "",

@@ -8,6 +8,12 @@ const icon: navItem[] = [
     link: "https://www.iconfont.cn/",
     desc: "",
   },
+  {
+    id: id++,
+    text: "Font Awesome",
+    link: "https://fontawesome.dashgame.com/",
+    desc: "一套绝佳的图标字体库和CSS框架",
+  },
 ];
 
 export default icon;

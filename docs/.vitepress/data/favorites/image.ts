@@ -30,6 +30,13 @@ const image: navItem[] = [
 
   {
     id: id++,
+    text: "Recompressor",
+    link: "https://zh.recompressor.com/",
+    type: "无损压缩",
+  },
+
+  {
+    id: id++,
     text: "tingpng",
     link: "https://tinypng.com/",
     type: "无损压缩",
