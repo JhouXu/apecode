@@ -43,5 +43,5 @@ module.exports = {
     },
   },
 
-  head: [["link", { rel: "icon", href: "./logo.png" }]],
+  head: [["link", { rel: "icon", href: "./images/logo.png" }]],
 };
