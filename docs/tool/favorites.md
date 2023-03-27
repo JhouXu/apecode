@@ -5,6 +5,7 @@ layout: doc
 <script setup>
   import color from '../.vitepress/data/favorites/color.ts'
   import logo from '../.vitepress/data/favorites/logo.ts'
+  import icon from '../.vitepress/data/favorites/icon.ts'
   import font from '../.vitepress/data/favorites/font.ts'
   import illustration from '../.vitepress/data/favorites/illustration.ts'
   import media from '../.vitepress/data/favorites/media.ts'
@@ -25,9 +26,13 @@ layout: doc
 
 <NavCard :navData=color />
 
-## Logo
+## logo
 
 <NavCard :navData=logo />
+
+## 图标
+
+<NavCard :navData=icon />
 
 ## 字体
 
