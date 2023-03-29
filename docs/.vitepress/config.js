@@ -11,6 +11,7 @@ module.exports = {
   locales: {
     root: { label: "简体中文", lang: "zh-CN" },
   },
+  lastUpdated: true,
 
   themeConfig: {
     siteTitle: false,
@@ -29,8 +30,7 @@ module.exports = {
       pattern: `${github}/blob/master/docs/:path`,
       text: "在 GitHub 上编辑此页",
     },
-    lastUpdated: true,
-    lastUpdatedText: "最后一次更新于",
+    lastUpdatedText: "最后更新",
 
     // global config
     socialLinks,
