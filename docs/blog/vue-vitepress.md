@@ -6,7 +6,21 @@ layout: doc
 
 ## tailwindcss UI
 
-## 最后编辑时间
+## Last updated
+
+直译：最后一次更新。
+
+如需开启，配置如下：
+
+```js
+// 根目录/.vitepress/config.js
+module.exports = {
+  lastUpdated: true, // 开启显示
+  themeConfig: {
+    lastUpdatedText: "最后更新", // 替换文本，默认显示 'Last updated'
+  },
+};
+```
 
 ## 评论功能
 
