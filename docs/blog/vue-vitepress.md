@@ -4,6 +4,61 @@ layout: doc
 
 # Vitepress 实战应用
 
+## 主题颜色
+
+vitepress 是基于原生 css+css 变量开发的，为此想要修改主题颜色，可以通过修改全局变量的方式。默认主题颜色是：`#10b981 （vue 绿）`
+
+![vitepress官网首页效果图](/images/blog/vue-vitepress_2023-03-29_11-42-09.jpg)
+
+### 定制
+
+- 首先找到需要定制的变量名，并在 custom.scss :root 中设置需要的颜色值；
+- 然后在 index.js 中覆盖。
+
+具体操作如下：
+
+```scss
+// 根目录/.vitepress/theme/styles/custom.scss
+:root {
+  /* 标题 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #62bbee 10%, #579deb 100%);
+
+  /* 图标背景 */
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #62bbee 10%, #579deb 100%);
+  --vp-home-hero-image-filter: blur(150px);
+
+  /* brand按钮 */
+  --vp-button-brand-border: #62bbee;
+  --vp-button-brand-text: #fff;
+  --vp-button-brand-bg: #62bbee;
+
+  --vp-button-brand-hover-border: #62bbee;
+  --vp-button-brand-hover-text: #fff;
+  --vp-button-brand-hover-bg: #579deb;
+
+  --vp-button-brand-active-border: #62bbee;
+
+  /* 主题基色 */
+  --vp-c-brand: #579deb;
+  --vp-c-brand-light: #579deb;
+  --vp-c-brand-dark: #579deb;
+}
+```
+
+```js{2}
+// 根目录/.vitepress/theme/index.js
+import theme from "vitepress/theme";
+import "./styles/custom.scss";
+
+export default {
+  ...theme,
+};
+```
+
+样式定制后效果：
+![样式定制后效果](/images/blog/vue-vitepress_2023-03-29_11-55-04.jpg)
+
 ## tailwindcss UI
 
 ## Last updated
