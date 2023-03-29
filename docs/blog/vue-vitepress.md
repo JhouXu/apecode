@@ -4,6 +4,10 @@ layout: doc
 
 # Vitepress 实战应用
 
+## tailwindcss UI
+
+## 最后编辑时间
+
 ## 评论功能
 
 由于项目是部署在 github 上的，因此使用 [giscus](https://giscus.app/zh-CN) 来实现评论功能。
@@ -93,3 +97,7 @@ export default {
   },
 };
 ```
+
+## 搜索功能
+
+algolia
