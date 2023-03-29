@@ -43,5 +43,9 @@ module.exports = {
     },
   },
 
-  head: [["link", { rel: "icon", href: "./images/logo.png" }]],
+  head: [
+    ["link", { rel: "icon", href: "./images/logo.png" }],
+    ["link", { rel: "keywords", content: "关键词" }],
+    ["link", { rel: "description", content: "描述" }],
+  ],
 };
