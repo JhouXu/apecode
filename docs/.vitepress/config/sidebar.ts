@@ -12,7 +12,7 @@ export const sidebar: object = {
 
   "/blog/": [
     {
-      text: "随笔",
+      text: "随笔记",
       collapsible: false,
       items: [
         { text: "Vitepress 实战应用", link: "/blog/vue-vitepress" },
