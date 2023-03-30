@@ -8,12 +8,14 @@ import "./styles/aside.scss";
 import { useData, useRoute } from "vitepress";
 import giscusTalk from "vitepress-plugin-comment-with-giscus";
 import NavCard from "../components/NavCard.vue";
+import EmojiCard from "../components/EmojiCard.vue";
 
 export default {
   ...theme,
   enhanceApp(ctx) {
     theme.enhanceApp(ctx);
     ctx.app.component("NavCard", NavCard);
+    ctx.app.component("EmojiCard", EmojiCard);
   },
   setup() {
     // 获取前言和路由
