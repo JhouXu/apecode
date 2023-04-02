@@ -15,7 +15,7 @@ defineProps<{
     <div
       v-for="item in emojis"
       :key="item.key"
-      class="item p-[10px] min-w-[50px] min-h-[50px] flex justify-center items-center border-white-200 rounded-[10px] border-[1px] box-border cursor-pointer hover:bg-[#161618] transition duration-100"
+      class="item p-[10px] min-w-[50px] min-h-[50px] flex justify-center items-center border-white-200 rounded-[10px] border-[1px] box-border cursor-pointer hover:bg-[#f6f6f7] dark:hover:bg-[#f6f6f7] transition duration-100"
     >
       <div class="item-symbol transform-gpu scale-110 transition duration-100">
         {{ item.symbol }}
