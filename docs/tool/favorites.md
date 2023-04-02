@@ -11,6 +11,7 @@ layout: doc
   import illustration from '../.vitepress/data/favorites/illustration.ts'
   import media from '../.vitepress/data/favorites/media.ts'
   import image from '../.vitepress/data/favorites/image.ts'
+  import other from '../.vitepress/data/favorites/other.ts'
 </script>
 
 # 资源导航
@@ -58,3 +59,7 @@ layout: doc
 :::
 
 <NavCard :navData=media />
+
+## 其它
+
+<NavCard :navData=other />
