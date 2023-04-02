@@ -30,7 +30,7 @@ export default {
         categoryId: "DIC_kwDOJMzoMs4CVW-J",
         mapping: "pathname",
         inputPosition: "top",
-        loading: "lazy",
+        // loading: "lazy",
       },
       {
         frontmatter,
