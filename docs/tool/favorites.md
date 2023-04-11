@@ -3,6 +3,7 @@ layout: doc
 ---
 
 <script setup>
+  import file from '../.vitepress/data/favorites/file.ts'
   import color from '../.vitepress/data/favorites/color.ts'
   import logo from '../.vitepress/data/favorites/logo.ts'
   import design from '../.vitepress/data/favorites/design.ts'
@@ -11,9 +12,14 @@ layout: doc
   import illustration from '../.vitepress/data/favorites/illustration.ts'
   import media from '../.vitepress/data/favorites/media.ts'
   import image from '../.vitepress/data/favorites/image.ts'
+  import other from '../.vitepress/data/favorites/other.ts'
 </script>
 
 # 资源导航
+
+## 文件处理
+
+<NavCard :navData=file />
 
 ## 图像处理
 
@@ -58,3 +64,7 @@ layout: doc
 :::
 
 <NavCard :navData=media />
+
+## 其它
+
+<NavCard :navData=other />
