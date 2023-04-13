@@ -15,6 +15,7 @@ export const sidebar: object = {
       text: "随笔记",
       collapsible: false,
       items: [
+        { text: "Canvas 学习笔记", link: "/blog/js-canvas" },
         { text: "Vitepress 实战应用", link: "/blog/vue-vitepress" },
         { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/js-swiper" },
         { text: "PannellumJS 快速搭建属于你的全景查看器", link: "/blog/js-pannellum" },
