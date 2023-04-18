@@ -78,7 +78,7 @@ Page({
 
 使用方式：[源码引入](https://jin-yufeng.gitee.io/mp-html/#/overview/quickstart?id=miniprogram)
 
-![插入图片](../images/blog/program-markdown_2023-04-18_23-47-34.jpg)
+![插入图片](/images/blog/program-markdown_2023-04-18_23-47-34.jpg)
 
 完成使用方式的步骤之后，富文本内容能够正常渲染，但是 markdown 和 highlight 依旧不能解析和高亮，为此我们需要前往`tools/config.js`，打开相关注释。
 
