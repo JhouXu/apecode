@@ -15,6 +15,7 @@ export const sidebar: object = {
       text: "随笔记",
       collapsible: false,
       items: [
+        { text: "微信小程序解析 markdown", link: "/blog/program-markdown" },
         { text: "CSS3 转换过渡动画", link: "/blog/css-animation" },
         { text: "Canvas 学习笔记", link: "/blog/js-canvas" },
         { text: "Vitepress 实战应用", link: "/blog/vue-vitepress" },
