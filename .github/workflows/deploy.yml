@@ -1,4 +1,4 @@
-name: ApeCode
+name: Deploy
 on:
   workflow_dispatch: {}
   push:
