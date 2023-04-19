@@ -4,16 +4,16 @@ layout: doc
 
 # 微信小程序解析 markdown
 
-## 前言
+## 背景
 
-最近遇到一个这样的需求：需要对后端返回的 `markdown 解析`，并且需要对`代码块高亮`显示，最后显示在`微信小程序`中。
+近期需求：需要对后端返回的 `markdown 解析`，并且需要对`代码块高亮`显示，最后显示在`微信小程序`中。
 
-实现方式有以下两种：
+方式：
 
 - markedJS + highlightJs
 - mp-html [ prismJS + highlightJS ]
 
-以下案例，均采用插件源文件导入的方式。
+以下案例，均采用源码引入的方式。
 
 ## 方式一
 
@@ -80,6 +80,44 @@ Page({
 
 ![插入图片](/images/blog/program-markdown_2023-04-18_23-47-34.jpg)
 
+### 引入
+
+1. 将 [源码](https://jin-yufeng.gitee.io/mp-html/#/overview/quickstart?id=source) 中对应平台的代码包（dist/platform）拷贝到 components 目录下，更名为 mp-html
+2. 在需要使用页面的 json 文件中添加
+
+```json
+{
+  "usingComponents": {
+    "mp-html": "mp-html"
+  }
+}
+```
+
+### 使用
+
+1. 在需要使用页面的 wxml 文件中添加
+
+```html
+<mp-html content="{{html}}" selectable="{{true}}" />
+<!-- selectable 开启文本长按复制功能 -->
+```
+
+2. 在需要使用页面的 js 文件中添加
+
+```javascript
+Page({
+  onLoad() {
+    this.setData({
+      html: "<div>Hello World!</div>",
+    });
+  },
+});
+```
+
+支持的 [属性](https://jin-yufeng.gitee.io/mp-html/#/basic/prop) 和 [事件](https://jin-yufeng.gitee.io/mp-html/#/basic/event) 见对应文档
+
+### 配置
+
 完成使用方式的步骤之后，富文本内容能够正常渲染，但是 markdown 和 highlight 依旧不能解析和高亮，为此我们需要前往`tools/config.js`，打开相关注释。
 
 ```js{13,14}
@@ -118,4 +156,8 @@ module.exports = {
 };
 ```
 
-mp-html 还有其它的一些功能，感兴趣的可以测试使用一下。
+mp-html 还有其它的一些插件扩展，感兴趣的可以测试使用一下。
+
+## 总结
+
+以上，就是关于如何在微信小程序内，解析 markdown 的步骤，其中 mp-html 提供长按复制等业务场景常见的功能，支持个性化 plugins.
