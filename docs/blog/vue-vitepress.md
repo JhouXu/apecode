@@ -170,3 +170,44 @@ export default {
 ## 搜索功能
 
 algolia
+
+## 部署
+
+采用 github Actions + github Pages 的方式，当 github 远程仓库 push 时，自动 action 打包最新文件，并且部署在 gh-pages 分支上，然后让 pages 设置在 gh-pages 这个分支上就可以实现自动部署。
+
+### workflows
+
+首先创建一个文件，`.github/workflows/deploy.yml`
+
+```yml
+# .github/workflows/deploy.yml
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master # 需要打包的分支名
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm i pnpm -g
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+```
+
+### pages 配置
+
