@@ -173,11 +173,11 @@ algolia
 
 ## 部署
 
-采用 github Actions + github Pages 的方式，当 github 远程仓库 push 时，自动 action 打包最新文件，并且部署在 gh-pages 分支上，然后让 pages 设置在 gh-pages 这个分支上就可以实现自动部署。
+采用 `github Actions` + `github Pages` 的方式，当仓库发生 push 时，会执行 action 将打包最新文件，并部署在 gh-pages 分支上，然后设置 pages 在 gh-pages 分支上就可以实现自动部署。
 
-### workflows
+### 创建工作流
 
-首先创建一个文件，`.github/workflows/deploy.yml`
+创建一个这样的文件，`.github/workflows/deploy.yml`
 
 ```yml
 # .github/workflows/deploy.yml
@@ -209,5 +209,28 @@ jobs:
           publish_dir: docs/.vitepress/dist
 ```
 
-### pages 配置
+然后 push 到远程仓库中，在 Actions 面板可以看到刚创建的任务 `Deploy`，执行它。
 
+### 发布站点
+
+完成工作流之后，需初始化 github pages.
+
+前往 `Settings 面板` -> `Actions 选项` -> `Pages 选项`
+
+在 `Build and deployment` `Branch` 选择 `gh-pages` 分支即可
+
+![pages设置](/images/blog/vue-vitepress_2023-04-20_09-39-14.jpg)
+
+### 工作流运行 error
+
+首次运行工作流的时候，可能会出现以下错误：`Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"`
+
+![工作流运行错误](/images/blog/vue-vitepress_2023-04-20_09-46-46.jpg)
+
+解决方法：前往 `Settings 面板` -> `Actions 选项` -> `General 选项`
+
+![配置操作](/images/blog/vue-vitepress_2023-04-20_09-26-53.jpg)
+
+滚动到底部，`Workflow permissions` 选择 `Read and write permissions` 选项保存，重新运行工作流
+
+![配置操作](/images/blog/vue-vitepress_2023-04-20_09-27-29.jpg)
