@@ -1,4 +1,4 @@
-// node_modules/.pnpm/@giscus+vue@2.2.8_vue@3.2.47/node_modules/@giscus/vue/dist/giscus-a53917f0.mjs
+// node_modules/@giscus/vue/dist/giscus-a53917f0.mjs
 var x = window;
 var q = x.ShadowRoot && (x.ShadyCSS === void 0 || x.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype;
 var J = Symbol();
@@ -972,4 +972,4 @@ export {
    * SPDX-License-Identifier: BSD-3-Clause
    *)
 */
-//# sourceMappingURL=giscus-a53917f0-XSOH7FVX.js.map
+//# sourceMappingURL=giscus-a53917f0-JJCRCOKM.js.map

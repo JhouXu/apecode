@@ -1,23 +1,23 @@
 {
-  "hash": "098b998b",
-  "browserHash": "502fbc70",
+  "hash": "5ada20bb",
+  "browserHash": "8807e913",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "5fa31160",
+      "fileHash": "a1d016aa",
       "needsInterop": false
     },
     "@vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "@vue_devtools-api.js",
-      "fileHash": "e75cd8e2",
+      "fileHash": "4e14d434",
       "needsInterop": false
     },
     "vitepress-plugin-comment-with-giscus": {
-      "src": "../../../../node_modules/.pnpm/vitepress-plugin-comment-with-giscus@1.1.1/node_modules/vitepress-plugin-comment-with-giscus/dist/giscus.js",
+      "src": "../../../../node_modules/vitepress-plugin-comment-with-giscus/dist/giscus.js",
       "file": "vitepress-plugin-comment-with-giscus.js",
-      "fileHash": "1a2ae041",
+      "fileHash": "1d11c466",
       "needsInterop": false
     }
   },
@@ -25,8 +25,8 @@
     "chunk-R647EDCJ": {
       "file": "chunk-R647EDCJ.js"
     },
-    "giscus-a53917f0-XSOH7FVX": {
-      "file": "giscus-a53917f0-XSOH7FVX.js"
+    "giscus-a53917f0-JJCRCOKM": {
+      "file": "giscus-a53917f0-JJCRCOKM.js"
     }
   }
 }
