@@ -23,10 +23,10 @@ features:
     linkText: 了解更多
   - icon: 🛠️
     title: 日常工具
-    details: Lorem ipsum...
+    details: 轻便快捷，即查即用
     link: /tool/favorites
     linkText: 了解更多
   - icon: 🌞
     title: 未想好
-    details: 开发中，敬请期待…
+    details: 开发中，敬请期待...
 ---
