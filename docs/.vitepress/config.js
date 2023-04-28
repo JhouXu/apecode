@@ -1,11 +1,11 @@
-import { title, description, base, logo, github } from "./config/meta";
+import { title, titleEn, description, base, logo, github } from "./config/meta";
 import { socialLinks } from "./config/social";
 import { nav } from "./config/nav";
 import { sidebar } from "./config/sidebar";
 import algolia from "./config/algolia";
 
 module.exports = {
-  title,
+  title: titleEn,
   description,
   base,
   locales: {
@@ -14,8 +14,8 @@ module.exports = {
   lastUpdated: true,
 
   themeConfig: {
-    siteTitle: false,
-    logo,
+    siteTitle: titleEn,
+
     // default config
     outline: "deep",
     outlineTitle: "本文目录",

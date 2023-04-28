@@ -5,6 +5,7 @@ export const docsVersion: string = version;
 
 // base info
 export const title: string = "猿木函";
+export const titleEn: string = "ApeCode";
 export const description: string = "描述";
 export const base: string = "/apecode/";
 export const logo: string = "./images/logo-h.png";
