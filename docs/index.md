@@ -4,7 +4,7 @@ layout: home
 hero:
   name: ApeCode
   text: 猿木函.
-  tagline: 标语...
+  tagline: 个人的博客、工具集站点
   image:
     src: ./images/vp-image.svg
     alt: logo图标
