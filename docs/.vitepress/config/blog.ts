@@ -1,4 +1,15 @@
 export const blog = [
+  { text: "浏览器对象模型 BOM", link: "/blog/js-bom", type: "javascript", time: "2021-01-29" },
+  { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload", type: "plugin", time: "2021-02-23" },
+  { text: "标准盒模型与怪异盒模型的区别", link: "/blog/css-box-sizing", type: "css", time: "2020-12-24" },
+  { text: "浮动清除的四大主要方式", link: "/blog/css-clear-float", type: "css", time: "2020-12-23" },
+  {
+    text: "CSS 中实现隐藏",
+    link: "/blog/css-hidden",
+    type: "css",
+    time: "2020-08-28",
+  },
+  { text: "元素水平垂直居中的六种方式", link: "/blog/css-center", type: "css", time: "2020-08-28" },
   { text: "微信小程序之分享转发", link: "/blog/program-share", type: "小程序", time: "2023-05-01" },
   { text: "微信小程序解析 markdown", link: "/blog/program-markdown", type: "小程序", time: "2023-05-01" },
   { text: "CSS3 转换过渡动画", link: "/blog/css-animation", type: "css", time: "2023-05-01" },
