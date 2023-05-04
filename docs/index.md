@@ -27,6 +27,6 @@ features:
     link: /tool/favorites
     linkText: 了解更多
   - icon: 🌞
-    title: 未想好
-    details: 开发中，敬请期待...
+    title: 开发中
+    details: 敬请期待...
 ---
