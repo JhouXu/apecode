@@ -1,10 +1,8 @@
-import { sidebar } from "./sidebar";
-
-const blogLink = sidebar["/blog/"][0].items[0].link; // 首篇随笔记地址
+import { blog } from "./blog";
 
 export const nav: Array<Object> = [
   { text: "首页", link: "/" },
-  { text: "随笔记", link: blogLink },
+  { text: "随笔记", link: blog[0].link },
   {
     text: "日常工具",
     items: [

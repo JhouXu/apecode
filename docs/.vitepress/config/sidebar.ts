@@ -1,3 +1,15 @@
+import { blog } from "./blog";
+
+// 数据处理
+const sidebarBlog: any = []; // 对外暴露 /blog/
+const sidebarBlogObj: any = []; // 控制分类的唯一性
+blog.forEach((item) => {
+  if (!sidebarBlogObj[item.type]) sidebarBlogObj[item.type] = { text: `${item.type}`, collapsible: false, items: [] };
+  sidebarBlogObj[item.type].items.push(item);
+});
+// sidebarBlogObj.all = { text: "全部", collapsible: false, items: blog };
+sidebarBlog.push(...Object.values(sidebarBlogObj));
+
 export const sidebar: object = {
   "/tool/": [
     {
@@ -10,21 +22,5 @@ export const sidebar: object = {
     },
   ],
 
-  "/blog/": [
-    {
-      text: "随笔记",
-      collapsible: false,
-      items: [
-        { text: "微信小程序之分享转发", link: "/blog/program-share", type: "program" },
-        { text: "微信小程序解析 markdown", link: "/blog/program-markdown", type: "program" },
-        { text: "CSS3 转换过渡动画", link: "/blog/css-animation", type: "css" },
-        { text: "Canvas 学习笔记", link: "/blog/js-canvas", type: "javascript" },
-        { text: "Vitepress 实战应用", link: "/blog/vue-vitepress", type: "javascript" },
-        { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/js-swiper", type: "javascript" },
-        { text: "PannellumJS 快速搭建属于你的全景查看器", link: "/blog/js-pannellum", type: "javascript" },
-        { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/js-nuxt", type: "javascript" },
-        { text: "微信小程序中实现定位以及逆地址解析", link: "/blog/program-position", type: "program" },
-      ],
-    },
-  ],
+  "/blog/": [...sidebarBlog],
 };
