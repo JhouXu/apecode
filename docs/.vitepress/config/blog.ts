@@ -1,8 +1,9 @@
-const javascript = "javascript";
+const js = "javascript";
 const css = "css";
 const program = "小程序";
 const example = "案例";
 const plugin = "扩展";
+const other = "其它";
 
 export const blog = [
   { text: "微信小程序之分享转发", link: "/blog/program-share", type: `${program}`, time: "2023-04-30" },
@@ -16,6 +17,18 @@ export const blog = [
     type: `${plugin}`,
     time: "2022-08-07",
   },
+  {
+    text: "vue-export2excel 导出表格",
+    link: "/blog/js-vue-export2excel",
+    type: `${plugin}`,
+    time: "2022-04-21",
+  },
+  {
+    text: "关于 IOS 移动设备常见的触控问题以及解决方案",
+    link: "/blog/example-ios-touch",
+    type: `${example}`,
+    time: "2022-03-25",
+  },
   { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/js-nuxt", type: `${plugin}`, time: "2022-02-13" },
 
   {
@@ -24,8 +37,21 @@ export const blog = [
     type: `${program}`,
     time: "2021-12-30",
   },
+  { text: "常用的 git 命令总结", link: "/blog/git", type: `${other}`, time: "2021-11-23" },
   { text: "CSS3 转换过渡动画", link: "/blog/css-animation", type: `${css}`, time: "2021-08-03" },
-  { text: "Canvas 学习笔记", link: "/blog/js-canvas", type: `${javascript}`, time: "2021-03-26" },
+  { text: "CSS Grid 网格布局", link: "/blog/css-grid", type: `${css}`, time: "2021-07-13" },
+  { text: "CSS Flex 弹性布局", link: "/blog/css-flex", type: `${css}`, time: "2021-07-13" },
+  { text: "CSS Position 定位布局", link: "/blog/css-position", type: `${css}`, time: "2021-07-13" },
+  { text: "CSS Float 浮动布局", link: "/blog/css-float", type: `${css}`, time: "2021-07-13" },
+  {
+    text: "自定义小程序 navigationBar 的高度，以及避免设备系统不同产生不兼容",
+    link: "/blog/program-navigation-bar-height",
+    type: `${program}`,
+    time: "2021-04-14",
+  },
+  { text: "程序命名公式及规范", link: "/blog/js-standard", type: `${js}`, time: "2021-03-29" },
+  { text: "Canvas 学习笔记", link: "/blog/js-canvas", type: `${js}`, time: "2021-03-26" },
+  { text: "Swiper 实现指定的 slide 显示位置", link: "/blog/js-swiper-to", type: `${plugin}`, time: "2021-03-22" },
   { text: "页面锚点快速定位跳转", link: "/blog/example-anchor", type: `${example}`, time: "2021-02-25" },
   { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload", type: `${plugin}`, time: "2021-02-23" },
   { text: "Sass 动态转换单位", link: "/blog/css-scss-unit", type: `${css}`, time: "2021-02-23" },
@@ -34,10 +60,10 @@ export const blog = [
   {
     text: "html2canvas 实现截图附上模糊处理方案",
     link: "/blog/js-html2canvas",
-    type: `${javascript}`,
+    type: `${js}`,
     time: "2021-02-07",
   },
-  { text: "浏览器对象模型 BOM", link: "/blog/js-bom", type: `${javascript}`, time: "2021-01-29" },
+  { text: "浏览器对象模型 BOM", link: "/blog/js-bom", type: `${js}`, time: "2021-01-29" },
 
   { text: "标准盒模型与怪异盒模型的区别", link: "/blog/css-box-sizing", type: `${css}`, time: "2020-12-24" },
   { text: "浮动清除的四大主要方式", link: "/blog/css-clear-float", type: `${css}`, time: "2020-12-23" },
