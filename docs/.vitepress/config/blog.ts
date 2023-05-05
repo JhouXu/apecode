@@ -5,8 +5,8 @@ const example = "案例";
 const plugin = "扩展";
 
 export const blog = [
-  { text: "页面锚点快速定位跳转", link: "/blog/example-anchor", type: `${example}`, time: "2021-02-21" },
-  { text: "Sass 动态转换单位", link: "/blog/css-scss-unit", type: `${css}`, time: "2021-02-21" },
+  { text: "页面锚点快速定位跳转", link: "/blog/example-anchor", type: `${example}`, time: "2021-02-25" },
+  { text: "Sass 动态转换单位", link: "/blog/css-scss-unit", type: `${css}`, time: "2021-02-23" },
   { text: "Sass 的四种编译方式", link: "/blog/css-scss-compile", type: `${css}`, time: "2021-02-21" },
   { text: "audio 自动播放产生的困扰解决方案", link: "/blog/example-audio", type: `${example}`, time: "2021-02-20" },
   {
