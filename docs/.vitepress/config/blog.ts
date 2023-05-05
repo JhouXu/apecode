@@ -1,4 +1,14 @@
 export const blog = [
+  { text: "页面锚点快速定位跳转", link: "/blog/demo-anchor", type: "demo", time: "2021-02-21" },
+  { text: "Sass 动态转换单位", link: "/blog/css-scss-unit", type: "css", time: "2021-02-21" },
+  { text: "Sass 的四种编译方式", link: "/blog/css-scss-compile", type: "css", time: "2021-02-21" },
+  { text: "audio 自动播放产生的困扰解决方案", link: "/blog/demo-audio", type: "demo", time: "2021-02-20" },
+  {
+    text: "html2canvas 实现截图附上模糊处理方案",
+    link: "/blog/js-html2canvas",
+    type: "javascript",
+    time: "2021-02-07",
+  },
   { text: "浏览器对象模型 BOM", link: "/blog/js-bom", type: "javascript", time: "2021-01-29" },
   { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload", type: "plugin", time: "2021-02-23" },
   { text: "标准盒模型与怪异盒模型的区别", link: "/blog/css-box-sizing", type: "css", time: "2020-12-24" },
