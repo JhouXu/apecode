@@ -10,7 +10,7 @@ layout: doc
 
 比如这样：
 
-![在这里插入图片描述](/images/blog/demo/20210220154829553.png)
+![在这里插入图片描述](/images/blog/example/20210220154829553.png)
 
 ## 问题描述
 
