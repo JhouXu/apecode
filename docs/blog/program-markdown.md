@@ -78,7 +78,7 @@ Page({
 
 使用方式：[源码引入](https://jin-yufeng.gitee.io/mp-html/#/overview/quickstart?id=miniprogram)
 
-![插入图片](/images/blog/program-markdown_2023-04-18_23-47-34.jpg)
+![插入图片](/images/blog/program/program-markdown_2023-04-18_23-47-34.jpg)
 
 ### 引入
 
