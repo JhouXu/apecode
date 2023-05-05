@@ -5,8 +5,8 @@ const example = "案例";
 const plugin = "扩展";
 
 export const blog = [
-  { text: "微信小程序之分享转发", link: "/blog/program-share", type: "小程序", time: "2023-04-30" },
-  { text: "微信小程序解析 markdown", link: "/blog/program-markdown", type: "小程序", time: "2023-04-30" },
+  { text: "微信小程序之分享转发", link: "/blog/program-share", type: `${program}`, time: "2023-04-30" },
+  { text: "微信小程序解析 markdown", link: "/blog/program-markdown", type: `${program}`, time: "2023-04-30" },
   { text: "Vitepress 实战应用", link: "/blog/vue-vitepress", type: `${plugin}`, time: "2023-01-01" },
 
   { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/js-swiper", type: `${plugin}`, time: "2022-12-18" },
@@ -18,7 +18,12 @@ export const blog = [
   },
   { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/js-nuxt", type: `${plugin}`, time: "2022-02-13" },
 
-  { text: "微信小程序中实现定位以及逆地址解析", link: "/blog/program-position", type: "小程序", time: "2021-12-30" },
+  {
+    text: "微信小程序中实现定位以及逆地址解析",
+    link: "/blog/program-position",
+    type: `${program}`,
+    time: "2021-12-30",
+  },
   { text: "CSS3 转换过渡动画", link: "/blog/css-animation", type: `${css}`, time: "2021-08-03" },
   { text: "Canvas 学习笔记", link: "/blog/js-canvas", type: `${javascript}`, time: "2021-03-26" },
   { text: "页面锚点快速定位跳转", link: "/blog/example-anchor", type: `${example}`, time: "2021-02-25" },
