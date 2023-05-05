@@ -6,7 +6,7 @@ hero:
   text: 猿木函.
   tagline: 个人的博客、工具集站点
   image:
-    src: ./images/vp-image.svg
+    src: ./images/undraw_designer.svg
     alt: logo图标
   actions:
     - theme: brand
