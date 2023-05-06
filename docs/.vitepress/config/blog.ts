@@ -39,6 +39,8 @@ export const blog = [
   },
   { text: "常用的 git 命令总结", link: "/blog/git", type: `${other}`, time: "2021-11-23" },
   { text: "CSS3 转换过渡动画", link: "/blog/css-animation", type: `${css}`, time: "2021-08-03" },
+  { text: "Prettier 一个固执的代码格式化程序", link: "/blog/prettier", type: `${other}`, time: "2021-07-17" },
+  { text: "ESLint 语法检验工具的使用", link: "/blog/eslint", type: `${other}`, time: "2021-07-17" },
   { text: "CSS Grid 网格布局", link: "/blog/css-grid", type: `${css}`, time: "2021-07-13" },
   { text: "CSS Flex 弹性布局", link: "/blog/css-flex", type: `${css}`, time: "2021-07-13" },
   { text: "CSS Position 定位布局", link: "/blog/css-position", type: `${css}`, time: "2021-07-13" },
