@@ -3,6 +3,7 @@ const css = "css";
 const program = "小程序";
 const example = "案例";
 const plugin = "扩展";
+const algorithm = "算法";
 const other = "其它";
 
 export const blog = [
@@ -55,6 +56,7 @@ export const blog = [
   { text: "Prettier 一个固执的代码格式化程序", link: "/blog/prettier", type: `${other}`, time: "2021-07-17" },
   { text: "ESLint 语法检验工具的使用", link: "/blog/eslint", type: `${other}`, time: "2021-07-17" },
   { text: "CSS Grid 网格布局【待】", link: "/blog/css-grid", type: `${css}`, time: "2021-07-13" },
+  { text: "touch 触摸事件以及常用触摸功能", link: "/blog/js-touch", type: `${js}`, time: "2021-07-18" },
   { text: "CSS Flex 弹性布局", link: "/blog/css-flex", type: `${css}`, time: "2021-07-13" },
   { text: "CSS Position 定位布局", link: "/blog/css-position", type: `${css}`, time: "2021-07-13" },
   { text: "CSS Float 浮动布局", link: "/blog/css-float", type: `${css}`, time: "2021-07-13" },
@@ -63,6 +65,12 @@ export const blog = [
     link: "/blog/example-device-type",
     type: `${example}`,
     time: "2021-05-29",
+  },
+  {
+    text: "加密算法的认识及常用加密算法",
+    link: "/blog/algorithm-encryption",
+    type: `${algorithm}`,
+    time: "2021-05-20",
   },
   { text: "将指定内容复制到剪切板", link: "/blog/example-shear", type: `${example}`, time: "2021-05-12" },
   { text: "获取当前标签页地址栏指定参数", link: "/blog/example-url-param", type: `${example}`, time: "2021-05-12" },
@@ -74,6 +82,7 @@ export const blog = [
   },
   { text: "程序命名公式及规范", link: "/blog/js-standard", type: `${js}`, time: "2021-03-29" },
   { text: "Canvas 学习笔记", link: "/blog/js-canvas", type: `${js}`, time: "2021-03-26" },
+  { text: "腾讯云服务器购买以及部署", link: "/blog/tencent-cloud-server", type: `${other}`, time: "2021-03-14" },
   { text: "Swiper 实现指定的 slide 显示位置", link: "/blog/js-swiper-to", type: `${plugin}`, time: "2021-03-22" },
   { text: "页面锚点快速定位跳转", link: "/blog/example-anchor", type: `${example}`, time: "2021-02-25" },
   { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload", type: `${plugin}`, time: "2021-02-23" },
