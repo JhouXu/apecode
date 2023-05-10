@@ -6,9 +6,9 @@ layout: doc
 
 ## 前言
 
-在小程序开发的过程中，由于需要涉及分享转发功能的开发，为此进行了学习。
+在小程序开发的过程中，需要涉及分享转发功能的开发，因此进行记录。
 
-其中，开发的步骤主要分为`配置`和`触发`。
+其中，开发步骤主要分为`配置`和`触发`。
 
 ## 配置
 
@@ -18,7 +18,7 @@ layout: doc
 
 配置有以下三种方式，可任选一种：
 
-- `app.json` <span style="color: red; font-size: 12px;">已弃用</span>
+- `app.json` <span style="color: red; font-size: 12px;">已无法使用</span>
 - `wx.showShareMenu`
 - `生命周期函数`
 
@@ -103,6 +103,28 @@ Page({
 ## 触发
 
 完成前面的任意一配置之后，就可通过 `右上角胶囊菜单分享按钮` 或 `button open-type="share"` 的方式，进行转发或分享操作了。
+
+## 判断
+
+有时候我们需要对不同的触发条件进行区分处理。
+
+**场景模拟**：在一个聊天的场景中，需要点击胶囊菜单分享小程序，需要点击 button 分享聊天信息。
+
+```javascript
+Page({
+  onShareAppMessage(event) {
+    const { from } = event; // 转发事件来源
+    // 转发事件来源。
+    // button：页面内转发按钮；
+    // menu：右上角转发菜单
+    if (from === "button") {
+      // button
+    } else if (from === "menu") {
+      // 胶囊菜单
+    }
+  },
+});
+```
 
 ## 参数处理
 
