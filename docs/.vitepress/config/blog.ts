@@ -7,6 +7,7 @@ const algorithm = "算法";
 const other = "其它";
 
 export const blog = [
+  { text: "自封装常用的工具函数", link: "/blog/javascript-fun", type: `${js}`, time: "2023-05-11" },
   { text: "微信小程序之分享转发", link: "/blog/program-share", type: `${program}`, time: "2023-04-30" },
   { text: "微信小程序解析 markdown", link: "/blog/program-markdown", type: `${program}`, time: "2023-04-30" },
   { text: "Vitepress 实战应用", link: "/blog/vue-vitepress", type: `${plugin}`, time: "2023-01-01" },
