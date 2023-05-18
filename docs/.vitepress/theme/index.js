@@ -1,6 +1,7 @@
 import theme from "vitepress/theme";
 import "./tailwind.postcss";
 import "./styles/custom.scss";
+import "./styles/home.scss";
 import "./styles/nav.scss";
 import "./styles/search.scss";
 import "./styles/aside.scss";
