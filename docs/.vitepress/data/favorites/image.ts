@@ -37,9 +37,15 @@ const image: navItem[] = [
 
   {
     id: id++,
-    text: "tingpng",
+    text: "Tinypng🔥",
     link: "https://tinypng.com/",
-    type: "无损压缩",
+    desc: "【图像压缩】Smart WebP, PNG and JPEG compression",
+  },
+  {
+    id: id++,
+    text: "DocSmall",
+    link: "https://docsmall.com/image-compress",
+    desc: "【图像压缩】无需改变图片尺寸，极大压缩图片体积，视觉效果几乎一致",
   },
 ];
 
