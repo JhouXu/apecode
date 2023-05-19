@@ -6,8 +6,8 @@ export const nav: Array<Object> = [
   {
     text: "日常工具",
     items: [
-      { text: "🔗资源导航", link: "/tool/favorites" },
-      { text: "🛠️开发工具", link: "/tool/dev" },
+      { text: "🎨资源导航", link: "/tool/favorites" },
+      { text: "🖥开发导航", link: "/tool/dev" },
       { text: "😍表情符号", link: "/tool/emoji" },
     ],
   },
