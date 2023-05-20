@@ -58,9 +58,45 @@ export const document: navItem[] = [
 export const tool: navItem[] = [
   {
     id: id++,
-    text: "Gtmertrix ",
+    text: "Gtmertrix",
     link: "https://gtmetrix.com/",
     desc: "网站性能分析，在线可视化分析工具",
+  },
+  {
+    id: id++,
+    text: "Easings",
+    link: "https://easings.net/",
+    desc: "Easing functions specify the rate of change of a parameter over time.",
+  },
+  {
+    id: id++,
+    text: "CubicBezier",
+    link: "https://cubic-bezier.com/",
+    desc: "贝塞尔曲线在线调试",
+  },
+  {
+    id: id++,
+    text: "Neumorphism",
+    link: "https://neumorphism.io/",
+    desc: "调试和生成 新型態的擬物化風格 的css样式代码",
+  },
+  {
+    id: id++,
+    text: "DBdiagram",
+    link: "https://dbdiagram.io/home",
+    desc: "Draw Entity-Relationship Diagrams, Painlessly 😎",
+  },
+  {
+    id: id++,
+    text: "WebGradients",
+    link: "https://webgradients.com/",
+    desc: "180个线性渐变颜色的免费集合",
+  },
+  {
+    id: id++,
+    text: "DBdiagram",
+    link: "https://dbdiagram.io/home",
+    desc: "Draw Entity-Relationship Diagrams, Painlessly 😎",
   },
 ];
 
