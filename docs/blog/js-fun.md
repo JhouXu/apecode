@@ -61,6 +61,8 @@ function calc(num1, num2, type) {
   }
   return result;
 }
+```
+
 ## 时间处理
 
 ### 当前时间戳
@@ -79,7 +81,7 @@ export const getTimestamp = () => {
 };
 ```
 
-### 格式时间
+### 时间格式化
 
 :::tip
 根据规则，对时间进行格式处理
@@ -144,5 +146,41 @@ export const fillingZero = (field, value) => {
     default:
       return value;
   }
+};
+```
+
+### 时间戳格式化
+
+:::tip
+将时间戳转换为用户自定义的时间格式
+:::
+
+```javascript
+/**
+ * 将时间戳转换为用户自定义的时间格式
+ * @param {Number} timestamp 时间戳
+ * @param {String} rule 时间格式
+ * @returns {String}
+ */
+export const timestampToFormatTime = (timestamp, rule = "yyyy-MM-dd HH:mm:ss") => {
+  const D = new Date(timestamp);
+  const timeObj = {};
+  const rules = rule.match(/\w+/g);
+  let ft = rule;
+
+  timeObj["yyyy"] = D.getFullYear();
+  timeObj["MM"] = D.getMonth() + 1;
+  timeObj["dd"] = D.getDate();
+  timeObj["HH"] = D.getHours();
+  timeObj["mm"] = D.getMinutes();
+  timeObj["ss"] = D.getSeconds();
+  timeObj["ms"] = D.getMilliseconds();
+
+  rules.map((f) => {
+    let ff = f.length === 1 ? `${f}${f}` : f;
+    ft = ft.replace(new RegExp(f, "g"), fillingZero(f, timeObj[ff]));
+  });
+
+  return ft;
 };
 ```
