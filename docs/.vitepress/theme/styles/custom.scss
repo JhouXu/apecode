@@ -26,3 +26,11 @@
   --vp-custom-block-tip-border: #62bbee;
   --vp-custom-block-tip-text: #579deb;
 }
+
+/* 图片点击放大优先级调整 */
+.medium-zoom {
+  &-overlay,
+  &-image {
+    z-index: 999 !important;
+  }
+}
