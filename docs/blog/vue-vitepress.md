@@ -234,3 +234,63 @@ jobs:
 滚动到底部，`Workflow permissions` 选择 `Read and write permissions` 选项保存，重新运行工作流
 
 ![配置操作](/images/blog/vitepress/vue-vitepress_2023-04-20_09-27-29.jpg)
+
+## 图像查看
+
+默认 vitepress 设置了文章图像之后，是无法点击放大查看的，这样就会出现尺寸大的图像看不请求的问题。为此，可以使用 `medium-zoom` 来实现。
+
+![查看演示](/images/blog/vitepress/vue-vitepress_2023-07-11_18-35-01.gif)
+
+### 安装
+
+```shall
+npm install medium-zoom
+```
+
+### 配置
+
+```javascript
+// docs\.vitepress\theme\index.js
+import { onMounted, watch, nextTick } from "vue";
+import { useData, useRoute } from "vitepress";
+
+import mediumZoom from "medium-zoom";
+
+import theme from "vitepress/theme";
+import "./styles/custom.scss";
+
+export default {
+  ...theme,
+  setup() {
+    const route = useRoute();
+
+    // medium-zoom
+    const initZoom = () => {
+      mediumZoom(".main img", { background: "#1e1e2099" });
+    };
+    onMounted(() => {
+      initZoom();
+    });
+    watch(
+      () => route.path,
+      () => nextTick(() => initZoom())
+    );
+  },
+};
+```
+
+### 样式层级
+
+为避免图像放大查看时，被导航栏、侧边栏遮挡，最好添加以下样式。
+
+```css
+/* docs/.vitepress/theme/global.css 默认文件 */
+/* 图片点击放大优先级调整 */
+.medium-zoom-overlay {
+  z-index: 999 !important;
+}
+
+.medium-zoom-image {
+  z-index: 999 !important;
+}
+```
