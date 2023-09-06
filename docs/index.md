@@ -4,7 +4,7 @@ layout: home
 hero:
   name: ApeCode
   text: 猿木函.
-  tagline: 个人的博客、工具集站点
+  tagline: 知识工具库
   image:
     src: ./images/undraw_designer.svg
     alt: logo图标
