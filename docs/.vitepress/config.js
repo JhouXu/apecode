@@ -44,6 +44,8 @@ module.exports = {
   },
 
   head: [
+    ["meta", { name: "referrer", content: "never" }],
+
     ["link", { rel: "icon", href: "./images/logo.png" }],
     ["link", { rel: "keywords", content: "关键词" }],
     ["link", { rel: "description", content: "描述" }],
