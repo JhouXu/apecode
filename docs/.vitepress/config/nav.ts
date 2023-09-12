@@ -1,4 +1,4 @@
-import { blog } from "../data/blog";
+import { blog } from "../data/blog/blog";
 
 export const nav: Array<Object> = [
   { text: "首页", link: "/" },
