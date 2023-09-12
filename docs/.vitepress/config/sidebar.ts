@@ -1,4 +1,4 @@
-import { blog } from "./blog";
+import { blog } from "../data/blog";
 
 // 数据处理
 const sidebarBlog: any = []; // 对外暴露 /blog/
