@@ -9,12 +9,13 @@ blog.forEach((item) => {
 });
 // sidebarBlogObj.all = { text: "全部", collapsible: false, items: blog };
 sidebarBlog.push(...Object.values(sidebarBlogObj));
+sidebarBlog.map((item: object) => (item["collapsed"] = false));
 
 export const sidebar: object = {
   "/pages/tool/": [
     {
       text: "日常工具",
-      collapsible: false,
+      collapsed: false,
       items: [
         { text: "🎨资源导航", link: "/pages/tool/favorites" },
         { text: "🖥开发导航", link: "/pages/tool/dev" },
