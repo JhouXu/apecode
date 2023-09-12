@@ -3,15 +3,15 @@ layout: doc
 ---
 
 <script setup>
-  import file from '../.vitepress/data/favorites/file.ts'
-  import color from '../.vitepress/data/favorites/color.ts'
-  import logo from '../.vitepress/data/favorites/logo.ts'
-  import design from '../.vitepress/data/favorites/design.ts'
-  import icon from '../.vitepress/data/favorites/icon.ts'
-  import font from '../.vitepress/data/favorites/font.ts'
-  import illustration from '../.vitepress/data/favorites/illustration.ts'
-  import media from '../.vitepress/data/favorites/media.ts'
-  import image from '../.vitepress/data/favorites/image.ts'
+  import file from '../../.vitepress/data/favorites/file.ts'
+  import color from '../../.vitepress/data/favorites/color.ts'
+  import logo from '../../.vitepress/data/favorites/logo.ts'
+  import design from '../../.vitepress/data/favorites/design.ts'
+  import icon from '../../.vitepress/data/favorites/icon.ts'
+  import font from '../../.vitepress/data/favorites/font.ts'
+  import illustration from '../../.vitepress/data/favorites/illustration.ts'
+  import media from '../../.vitepress/data/favorites/media.ts'
+  import image from '../../.vitepress/data/favorites/image.ts'
 </script>
 
 # 资源导航
@@ -63,4 +63,3 @@ layout: doc
 :::
 
 <NavCard :navData=media />
-

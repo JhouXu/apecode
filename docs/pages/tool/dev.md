@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import {software, document, tool,other} from '../.vitepress/data/dev/dev.ts'
+  import {software, document, tool,other} from '../../.vitepress/data/dev/dev.ts'
 </script>
 
 # 开发导航

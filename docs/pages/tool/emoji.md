@@ -4,7 +4,7 @@ layout: doc
 
 <script setup>
   import { reactive, onMounted } from 'vue'
-  import { emoji } from '../.vitepress/data/emoji/all.ts'
+  import { emoji } from '../../.vitepress/data/emoji/all.ts'
   const emojis = reactive([])
   onMounted(() => {
     Object.entries(emoji).forEach(([name, symbol], key) => {

@@ -11,17 +11,17 @@ blog.forEach((item) => {
 sidebarBlog.push(...Object.values(sidebarBlogObj));
 
 export const sidebar: object = {
-  "/tool/": [
+  "/pages/tool/": [
     {
       text: "日常工具",
       collapsible: false,
       items: [
-        { text: "🎨资源导航", link: "/tool/favorites" },
-        { text: "🖥开发导航", link: "/tool/dev" },
-        { text: "😍表情符号", link: "/tool/emoji" },
+        { text: "🎨资源导航", link: "/pages/tool/favorites" },
+        { text: "🖥开发导航", link: "/pages/tool/dev" },
+        { text: "😍表情符号", link: "/pages/tool/emoji" },
       ],
     },
   ],
 
-  "/blog/": [...sidebarBlog],
+  "/pages/blog/": [...sidebarBlog],
 };
