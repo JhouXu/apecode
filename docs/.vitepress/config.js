@@ -1,4 +1,4 @@
-import { title, titleEn, description, base, logo, github } from "./config/meta";
+import { title, titleEn, description, base, logo, github } from "./data/meta";
 import { socialLinks } from "./config/social";
 import { nav } from "./config/nav";
 import { sidebar } from "./config/sidebar";
