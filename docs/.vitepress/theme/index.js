@@ -1,4 +1,4 @@
-import { onMounted, watch, nextTick } from "vue";
+import { onMounted, watch, nextTick, h } from "vue";
 import { useData, useRoute } from "vitepress";
 
 import giscusTalk from "vitepress-plugin-comment-with-giscus";
@@ -8,20 +8,32 @@ import NavCard from "../components/NavCard.vue";
 import EmojiCard from "../components/EmojiCard.vue";
 
 import theme from "vitepress/theme";
+import Documate from "@documate/vue";
+
 import "./tailwind.postcss";
 import "./styles/custom.scss";
 import "./styles/home.scss";
 import "./styles/nav.scss";
 import "./styles/search.scss";
 import "./styles/aside.scss";
+import "@documate/vue/dist/style.css";
 
 export default {
   ...theme,
+
+  Layout: h(theme.Layout, null, {
+    "nav-bar-content-before": () =>
+      h(Documate, {
+        endpoint: "https://g7zfhaz3dn.us.aircode.run/ask",
+      }),
+  }),
+
   enhanceApp(ctx) {
     theme.enhanceApp(ctx);
     ctx.app.component("NavCard", NavCard);
     ctx.app.component("EmojiCard", EmojiCard);
   },
+
   setup() {
     // 获取前言和路由
     const { frontmatter } = useData();
