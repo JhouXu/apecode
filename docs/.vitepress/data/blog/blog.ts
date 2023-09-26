@@ -2,6 +2,12 @@ import { classify } from "./classify";
 
 export const blog = [
   {
+    text: "关于将前端项目部署到 Linux",
+    link: "/pages/blog/nginx.md",
+    type: `${classify.other.value}`,
+    time: "2023-09-26",
+  },
+  {
     text: "微信小程序之数据通讯",
     link: "/pages/blog/program-datacom",
     type: `${classify.program.value}`,
