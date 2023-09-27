@@ -298,6 +298,8 @@ export const getBrowserEnvironment = () => {
 };
 ```
 
+:::
+
 ### 地址栏参数
 
 :::tip GetParams
