@@ -222,7 +222,7 @@ export const formatTime = (time, rule = "yyyy-MM-dd HH:mm:ss") => {
 
 :::tip FillingZero
 
-根据时间字段名，自动判断是否需要填充零
+`根据时间字段名，自动判断是否需要填充零`
 
 ```javascript
 /**
