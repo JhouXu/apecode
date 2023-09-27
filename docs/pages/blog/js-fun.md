@@ -252,3 +252,100 @@ export const fillingZero = (field, value) => {
 ```
 
 :::
+
+## 项目开发
+
+### GUID
+
+:::tip GUID
+
+`全局唯一标识符`
+
+```javascript
+/**
+ * 全局唯一标识符 GUID
+ * @returns {String} xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
+ */
+export const generateGuid = () => {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 16) | 0;
+    const v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+```
+
+:::
+
+### 浏览器环境
+
+:::tip GetBrowserEnvironment
+
+`获取浏览器环境`
+
+```javascript
+/**
+ * 获取浏览器环境
+ * @returns {Object} 浏览器环境对象 {isMobile: boolean, isPc: boolean, isWeixin: boolean}
+ */
+export const getBrowserEnvironment = () => {
+  const { userAgent } = navigator;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator);
+  const isPc = !isMobile;
+  const isWeixin = /MicroMessenger/i.test(navigator);
+
+  return { isMobile, isPc, isWeixin };
+};
+```
+
+### 地址栏参数
+
+:::tip GetParams
+
+`根据传入的网址，自动解析提取所有参数，并返回`
+
+```javascript
+/**
+ * 提取地址栏中所有参数
+ * @param {String} url 网址
+ * @returns {Object} 解析后的参数对象
+ */
+export const getParams = (url = "") => {
+  // str为？之后的参数部分字符串
+  const str = url.substr(url.indexOf("?") + 1);
+  // arr每个元素都是完整的参数键值
+  const arr = str.split("&");
+  // result为存储参数键值的集合
+  const result = {};
+  for (let i = 0; i < arr.length; i++) {
+    // item的两个元素分别为参数名和参数值
+    const item = arr[i].split("=");
+    result[item[0]] = item[1];
+  }
+  return result;
+};
+```
+
+:::
+
+### 地址栏参数(指定)
+
+:::tip GetUrlParam
+
+`自动获取当前页面地址，根据指定参数名进行查找，返回查找到的参数值，如果没有返沪 null`
+
+```javascript
+/**
+ * 自动获取当前页面地址，根据指定参数名进行查找，返回查找到的参数值，如果没有返沪 null
+ * @param {String} name 需要查找的参数名
+ * @returns {String||Null} 查找值结果
+ */
+export const getUrlParam = (name) => {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
+  var r = window.location.search.substr(1).match(reg); // 匹配目标参数
+  if (r != null) return unescape(r[2]);
+  return null; // 返回参数值
+};
+```
+
+:::
