@@ -20,6 +20,12 @@ const file: navItem[] = [
     link: "https://smallpdf.com/cn",
     desc: "PDF 文件的所有在线操作。目前收费。",
   },
+  {
+    id: id++,
+    text: "PDF合并打印",
+    link: "https://lvfapiao.com/",
+    desc: "电子发票PDF合并打印",
+  },
 ];
 
 export default file;
