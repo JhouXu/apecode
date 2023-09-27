@@ -63,6 +63,62 @@ function calc(num1, num2, type) {
 }
 ```
 
+### 随机数
+
+::: tip
+
+GetRandomInt
+
+`获取指定间距 [min, max] 内的随机整数`
+
+```javascript
+/**
+ * 获取指定间距 [min, max] 内的随机整数
+ * @param {Number} min 最小值
+ * @param {Number} max 最大值
+ * @returns 随机整数
+ */
+export const getRandomInt = (min, max) => {
+  // 使用 Math.floor() 向下取整，确保结果是整数
+  // 使用 Math.random() 生成一个介于 0 到 1 之间的随机小数
+  // 然后将其乘以 (max - min + 1) 来获取一个介于 0 到 (max - min) 之间的随机小数
+  // 最后再加上 min，将结果移动到指定的间距内
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+```
+
+:::
+
+### 随机数(相邻去重)
+
+::: tip
+
+GetRandomIntWithExclusion
+
+`随机一个指定区间的整型数值，且允许限制重值，避免连续随机数重复`
+
+```javascript
+/**
+ * 随机一个指定区间的整型数值，且允许限制重值，避免连续随机数重复
+ * @param {Number} min 最小值
+ * @param {Number} max 最大值
+ * @param {Number|undefined} excludeValue 限制重值
+ * @returns {Number}
+ */
+export const getRandomIntWithExclusion = (min, max, excludeValue) => {
+  let randomValue;
+  do {
+    randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    // 结合 getRandomInt 的使用
+    // randomValue =  getRandomInt(min, max)
+  } while (excludeValue !== undefined && randomValue === excludeValue);
+  return randomValue;
+};
+```
+
+:::
+
 ## 时间处理
 
 ### 当前时间戳
