@@ -6,9 +6,11 @@ layout: doc
 
 ## 字符串处理
 
-### replaceString
+### 替换字符串
 
-> 替换指定字符串
+:::tip ReplaceString
+
+`替换指定字符串`
 
 ```javascript
 /**
@@ -26,11 +28,15 @@ function replaceString(sourceStr, checkStr, replaceStr = "") {
 },
 ```
 
+:::
+
 ## 数学运算
 
-### calc
+### 四则运算
 
-> 基本数学运算，能够有效避免 javascript 精度问题。
+:::tip Calc
+
+`基本数学运算，能够有效避免 javascript 精度问题。`
 
 ```javascript
 /**
@@ -63,11 +69,11 @@ function calc(num1, num2, type) {
 }
 ```
 
+:::
+
 ### 随机数
 
-::: tip
-
-GetRandomInt
+:::tip GetRandomInt
 
 `获取指定间距 [min, max] 内的随机整数`
 
@@ -91,9 +97,7 @@ export const getRandomInt = (min, max) => {
 
 ### 随机数(相邻去重)
 
-::: tip
-
-GetRandomIntWithExclusion
+:::tip GetRandomIntWithExclusion
 
 `随机一个指定区间的整型数值，且允许限制重值，避免连续随机数重复`
 
@@ -121,11 +125,11 @@ export const getRandomIntWithExclusion = (min, max, excludeValue) => {
 
 ## 时间处理
 
-### 当前时间戳
+### 时间戳
 
-:::tip
-获取当前时刻的时间戳
-:::
+:::tip GetTimestamp
+
+`获取现在的时间戳`
 
 ```javascript
 /**
@@ -137,79 +141,13 @@ export const getTimestamp = () => {
 };
 ```
 
-### 时间格式化
-
-:::tip
-根据规则，对时间进行格式处理
 :::
 
-```javascript
-/**
- * 根据规则，对时间进行格式处理
- * @param {String} time 需格式的时间 2023-05-23T12:25:42.9703802 || 2023-05-23 12:25:42.9703802
- * @param {String} rule 格式规则 yyyy-MM-dd HH:mm:ss || yyyy-M-d H:m:s 对填充零进行了判断
- * @returns {String}
- */
-export const formatTime = (time, rule = "yyyy-MM-dd HH:mm:ss") => {
-  const times = time.match(/\d+/g);
-  const timeObj = {};
-  const rules = rule.match(/\w+/g);
-  let mapping = ["yyyy", "MM", "dd", "HH", "mm", "ss", "ms"];
-  let ft = rule;
+### 时间戳格式
 
-  // 数组转对象
-  times.map((t, k) => {
-    timeObj[mapping[k]] = times[k];
-  });
+:::tip TimestampToFormatTime
 
-  rules.map((f) => {
-    let ff = f.length === 1 ? `${f}${f}` : f;
-    ft = ft.replace(new RegExp(f, "g"), timeObj[ff]);
-    // ft = ft.replace(new RegExp(f, "g"), fillingZero(f, timeObj[ff])); // 可搭配 fillingZero 使用
-  });
-
-  return ft;
-};
-```
-
-### 前补零
-
-:::tip
-根据时间字段名，自动判断是否需要填充零
-:::
-
-```javascript
-/**
- * 根据时间字段名，自动判断是否需要填充零
- * @param {String} field 时间字段名
- * @param {String} value 预处理值
- * @returns {String|Number}
- */
-export const fillingZero = (field, value) => {
-  switch (field) {
-    case "MM":
-    case "dd":
-    case "HH":
-    case "mm":
-    case "ss":
-      return value < 10 ? `0${+value}` : value;
-    case "M":
-    case "d":
-    case "H":
-    case "m":
-    case "s":
-      return +value;
-    default:
-      return value;
-  }
-};
-```
-
-### 时间戳格式化
-
-:::tip
 将时间戳转换为用户自定义的时间格式
-:::
 
 ```javascript
 /**
@@ -240,3 +178,77 @@ export const timestampToFormatTime = (timestamp, rule = "yyyy-MM-dd HH:mm:ss") =
   return ft;
 };
 ```
+
+:::
+
+### 时间格式
+
+:::tip FormatTime
+
+`根据规则，对时间进行格式处理`
+
+```javascript
+/**
+ * 根据规则，对时间进行格式处理
+ * @param {String} time 需格式的时间 2023-05-23T12:25:42.9703802 || 2023-05-23 12:25:42.9703802
+ * @param {String} rule 格式规则 yyyy-MM-dd HH:mm:ss || yyyy-M-d H:m:s 对填充零进行了判断
+ * @returns {String}
+ */
+export const formatTime = (time, rule = "yyyy-MM-dd HH:mm:ss") => {
+  const times = time.match(/\d+/g);
+  const timeObj = {};
+  const rules = rule.match(/\w+/g);
+  let mapping = ["yyyy", "MM", "dd", "HH", "mm", "ss", "ms"];
+  let ft = rule;
+
+  // 数组转对象
+  times.map((t, k) => {
+    timeObj[mapping[k]] = times[k];
+  });
+
+  rules.map((f) => {
+    let ff = f.length === 1 ? `${f}${f}` : f;
+    ft = ft.replace(new RegExp(f, "g"), timeObj[ff]);
+    // ft = ft.replace(new RegExp(f, "g"), fillingZero(f, timeObj[ff])); // 可搭配 fillingZero 使用
+  });
+
+  return ft;
+};
+```
+
+:::
+
+### 前补零
+
+:::tip FillingZero
+
+根据时间字段名，自动判断是否需要填充零
+
+```javascript
+/**
+ * 根据时间字段名，自动判断是否需要填充零
+ * @param {String} field 时间字段名
+ * @param {String} value 预处理值
+ * @returns {String|Number}
+ */
+export const fillingZero = (field, value) => {
+  switch (field) {
+    case "MM":
+    case "dd":
+    case "HH":
+    case "mm":
+    case "ss":
+      return value < 10 ? `0${+value}` : value;
+    case "M":
+    case "d":
+    case "H":
+    case "m":
+    case "s":
+      return +value;
+    default:
+      return value;
+  }
+};
+```
+
+:::
