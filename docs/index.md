@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /pages/blog/program-position
+      link: /pages/blog
     - theme: alt
       text: View on GitHub
       link: https://github.com/JhouXu/apecode
@@ -19,7 +19,7 @@ features:
   - icon: 🗃️
     title: 随笔记
     details: 简单而简约，始终如一
-    link: /pages/blog/program-position
+    link: /pages/blog
     linkText: 了解更多
   - icon: 🛠️
     title: 日常工具

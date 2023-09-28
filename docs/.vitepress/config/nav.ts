@@ -2,7 +2,7 @@ import { blog } from "../data/blog/blog";
 
 export const nav: Array<Object> = [
   { text: "首页", link: "/" },
-  { text: "随笔记", link: blog[0].link },
+  { text: "随笔记", link: "/pages/blog" },
   {
     text: "日常工具",
     items: [
