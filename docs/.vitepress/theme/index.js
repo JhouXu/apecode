@@ -7,6 +7,8 @@ import mediumZoom from "medium-zoom";
 import NavCard from "../components/NavCard.vue";
 import EmojiCard from "../components/EmojiCard.vue";
 
+import { CalendarHeatmap } from "vue3-calendar-heatmap";
+
 import theme from "vitepress/theme";
 import Documate from "@documate/vue";
 
@@ -32,6 +34,7 @@ export default {
     theme.enhanceApp(ctx);
     ctx.app.component("NavCard", NavCard);
     ctx.app.component("EmojiCard", EmojiCard);
+    ctx.app.component("CalendarHeatmap", CalendarHeatmap);
   },
 
   setup() {

@@ -4,7 +4,6 @@ layout: doc
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  import { CalendarHeatmap } from 'vue3-calendar-heatmap'
   import { getTimestamp, timestampToFormatTime } from '../utils/date.tool.js';
 
   import { blog } from '../.vitepress/data/blog/blog.ts'
