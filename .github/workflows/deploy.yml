@@ -15,7 +15,6 @@ jobs:
           node-version: 16
       - run: npm i pnpm -g
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm install vue3-calendar-heatmap
 
       - name: Build
         run: pnpm docs:build
