@@ -4,7 +4,14 @@ layout: doc
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  import { CalendarHeatmap } from 'vue3-calendar-heatmap'
+
+  // SyntaxError: Named export 'CalendarHeatmap' not found. 
+  // The requested module 'vue3-calendar-heatmap' is a CommonJS module, 
+  // which may not support all module.exports as named exports.
+  // import { CalendarHeatmap } from 'vue3-calendar-heatmap'
+  import * as pkg from 'vue3-calendar-heatmap';
+  const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
+
   import { getTimestamp, timestampToFormatTime } from '../utils/date.tool.js';
 
   import { blog } from '../.vitepress/data/blog/blog.ts'
