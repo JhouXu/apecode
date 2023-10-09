@@ -13,38 +13,77 @@ layout: doc
   const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
 
   import { getTimestamp, timestampToFormatTime } from '../utils/date.tool.js';
-
   import { blog } from '../.vitepress/data/blog/blog.ts'
 
   const publishDates = ref([])
   const nowDate = ref('1970-01-01')
 
   onMounted(() => {
-    publishDates.value = calcDates(blog)
     nowDate.value = getNowDate()
-  })
 
-  // 统计笔记发布量
-  const calcDates = (D) => {
-    const timeCount = {};
-    D.forEach((entry) => {
-      const date = entry.time;
-      timeCount[date] = (timeCount[date] || 0) + 1;
+    fetchCommitData("JhouXu", "apecode").then((commitData) => {
+      const timestampToDate = (timestamp) => {
+        return new Date(timestamp * 1000);
+      };
+
+      const processedData = commitData.map((entry) => {
+        const weekDate = timestampToDate(entry.week);
+        const dailyCommits = entry.days;
+
+        const weeklyData = weekDate.getDay();
+        const dailyData = dailyCommits.map((commits, index) => {
+          const date = new Date(weekDate);
+          date.setDate(weekDate.getDate() + index);
+          return { date: getYearMonthDate(date), count: commits };
+        });
+
+        return dailyData;
+      });
+
+      // 剔除空值
+      const processedDataFilter = processedData.flat(Infinity).filter((item) => item.count);
+
+      publishDates.value = processedDataFilter
     });
-
-    // 转换成所需的数据结构
-    const result = Object.entries(timeCount).map(([date, count]) => ({
-      date,
-      count,
-    }));
-
-    return result
-  };
+  })
 
   // 获取当前时间
   const getNowDate = () => {
     return timestampToFormatTime(getTimestamp(), 'yyyy-MM-dd') 
   }
+
+  const getYearMonthDate = (dateString) => {
+    let D = new Date(dateString);
+    let year = D.getFullYear();
+    let month = D.getMonth() + 1;
+    let day = D.getDate();
+
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+
+    return `${year}-${month}-${day}`;
+  };
+
+  const fetchCommitData = async (owner, repo) => {
+    try {
+      const accessToken =
+        "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";
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      if (response.ok) {
+        return await response.json();
+      } else {
+        console.error(`Failed to fetch commit data: ${response.status}`);
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching commit data:", error);
+      return null;
+    }
+  };
 </script>
 
 <style>
@@ -60,8 +99,8 @@ layout: doc
 
 ## 贡献值
 
-`统计发布时间`
+`统计commit`
 
-<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" />
+<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" />
 
 ## 近期笔记
