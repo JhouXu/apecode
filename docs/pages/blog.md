@@ -24,7 +24,7 @@ layout: doc
   onMounted(() => {
     nowDate.value = getNowDate()
 
-    fetchCommitData("JhouXu", "apecode").then((commitData) => {
+    fetchCommitData("jhouxu", "apecode").then((commitData) => {
       const timestampToDate = (timestamp) => {
         return new Date(timestamp * 1000);
       };
@@ -71,12 +71,7 @@ layout: doc
 
   const fetchCommitData = async (owner, repo) => {
     try {
-      const accessToken = "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";
-      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
       if (response.ok) {
         return await response.json();
       } else {
