@@ -17,6 +17,9 @@ layout: doc
 
   const publishDates = ref([])
   const nowDate = ref('1970-01-01')
+  const isDarkMode = ref(false)
+  const lightRangeColor = ['#ebedf0', '#dae2ee', '#c1def8', '#74b5f1', '#3889de', '#12489b']
+  const darkRangeColor = ['#282c34', '#1e3449', '#1e476b', '#1e5887', '#1e6baa', '#2497cf']
 
   onMounted(() => {
     nowDate.value = getNowDate()
@@ -45,6 +48,8 @@ layout: doc
 
       publishDates.value = processedDataFilter
     });
+
+    darkModeMediaQuery()
   })
 
   // 获取当前时间
@@ -84,6 +89,21 @@ layout: doc
       return null;
     }
   };
+
+  const darkModeMediaQuery = () => {
+    const htmlElement = document.documentElement;
+    const classList = htmlElement.classList;
+    // init
+    isDarkMode.value = classList.value === '' ? false : true
+
+    // observer
+    const observer = new MutationObserver((mutationsList) => {
+      isDarkMode.value = classList.value === '' ? false : true
+    });
+
+    // 配置需要观察的属性和类型
+    observer.observe(htmlElement, { attributes: true });
+  }
 </script>
 
 <style>
@@ -101,6 +121,6 @@ layout: doc
 
 `统计commit`
 
-<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" />
+<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" />
 
 ## 近期笔记
