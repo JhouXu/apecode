@@ -113,7 +113,7 @@ layout: doc
 
 ## 贡献值
 
-`git commit`
+`commit 热力图`
 
 <CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" />
 
