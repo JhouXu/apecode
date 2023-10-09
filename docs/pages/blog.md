@@ -71,8 +71,7 @@ layout: doc
 
   const fetchCommitData = async (owner, repo) => {
     try {
-      const accessToken =
-        "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";
+      const accessToken = "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";
       const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
