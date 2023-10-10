@@ -26,7 +26,7 @@ layout: doc
 
     fetchCommitData("jhouxu", "apecode").then((commitData) => {
       // 接口请求放回空对象或空数组，直接中断后续处理
-      if (JSON.stringify(data) === '{}' || commitData.length === 0) {
+      if (JSON.stringify(commitData) === '{}' || commitData.length === 0) {
         return false
       }
 
