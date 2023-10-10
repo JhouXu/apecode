@@ -94,9 +94,9 @@ export const tool: navItem[] = [
   },
   {
     id: id++,
-    text: "DBdiagram",
-    link: "https://dbdiagram.io/home",
-    desc: "Draw Entity-Relationship Diagrams, Painlessly 😎",
+    text: "30secondsofcode",
+    link: "https://www.30secondsofcode.org/",
+    desc: "发现满足您所有开发需求的简短代码片段。",
   },
 ];
 
