@@ -12,5 +12,4 @@ export const nav: Array<Object> = [
       { text: "😍表情符号", link: "/pages/tool/emoji" },
     ],
   },
-  { text: "更新日志", link: "/pages/log" },
 ];
