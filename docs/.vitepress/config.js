@@ -36,7 +36,7 @@ module.exports = {
     socialLinks,
     nav,
     sidebar,
-    algolia,
+    // algolia,
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2023 - 2023 💓 Xiao Zan",
