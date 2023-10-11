@@ -48,27 +48,36 @@
   --vp-c-brand-darker: var(--vp-c-purple-darker);
 }
 
-/* 自定义滚动条样式 */
-/* 修改滚动条颜色 */
-::-webkit-scrollbar {
-  width: 6px;
-}
-/* 滚动槽 */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-/* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 6px;
-}
-/* 鼠标悬停时的滚动条滑块样式 */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+:root {
+  /* 自定义滚动条样式 */
+  /* 修改滚动条颜色 */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  /* 滚动槽 */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+  }
+  /* 鼠标悬停时的滚动条滑块样式 */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  // 代码块横向滚动条
+  .custom-block {
+    ::-webkit-scrollbar {
+      height: 6px;
+    }
+  }
 }
 
-/* 在深色模式下自定义滚动条样式 */
-html.dark {
+:root.dark {
+  /* 在深色模式下自定义滚动条样式 */
   ::-webkit-scrollbar-track {
     background: #2c2c2c;
   }
