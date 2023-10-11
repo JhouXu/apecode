@@ -18,7 +18,7 @@ module.exports = {
 
     // default config
     outline: "deep",
-    outlineTitle: "本文目录",
+    outlineTitle: "目录",
     sidebarMenuLabel: "导航",
     docFooter: {
       prev: "上一篇",
