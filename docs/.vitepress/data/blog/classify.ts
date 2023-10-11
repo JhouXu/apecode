@@ -21,21 +21,21 @@ export const classify = {
   },
 
   algorithm: {
-    value: "算法",
+    value: "前端算法",
     desc: "算法是有效方法，包含一系列定义清晰的指令，并可在有限的时间及控件内清除地表述出来。在弱语言的 Javascript 中，应当如何合理使用呢？",
     icon: "https://img.zcool.cn/community/016b925d1b1214a801207640754e25.jpg@1280w_1l_2o_100sh.jpg",
     sort: 4,
   },
 
   example: {
-    value: "实战",
+    value: "实际开发",
     desc: "在实际开发中所遇到d坑，以及具体的解决思路和方法。",
     icon: "https://img-blog.csdnimg.cn/20210607222821441.jpg",
     sort: 5,
   },
 
   plugin: {
-    value: "插件",
+    value: "插件笔记",
     desc: "基于 javascript 所实现的功能插件，更高效、高质量地完成，广为人知的插件有：VueJS、SwiperJS等。",
     icon: "https://media.licdn.com/dms/image/C5603AQFvBhHibkKmiA/profile-displayphoto-shrink_800_800/0/1649448888640?e=2147483647&v=beta&t=o3SpmYxkGpDYGRf0skTv7gtnuuQxXnuzkuALoSoh78E",
     sort: 6,
