@@ -18,6 +18,9 @@ import "./styles/search.scss";
 import "./styles/aside.scss";
 import "@documate/vue/dist/style.css";
 
+import vitepressNprogress from "vitepress-plugin-nprogress";
+import "vitepress-plugin-nprogress/lib/css/index.css";
+
 export default {
   ...theme,
 
@@ -32,6 +35,8 @@ export default {
     theme.enhanceApp(ctx);
     ctx.app.component("NavCard", NavCard);
     ctx.app.component("EmojiCard", EmojiCard);
+
+    vitepressNprogress(ctx);
   },
 
   setup() {
