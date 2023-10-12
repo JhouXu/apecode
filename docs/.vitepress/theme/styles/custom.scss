@@ -69,7 +69,7 @@
   }
 
   // 代码块横向滚动条
-  .custom-block {
+  div[class|="language"] {
     ::-webkit-scrollbar {
       height: 6px;
     }
