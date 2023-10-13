@@ -14,6 +14,7 @@
     "tippy.js": "^6.3.7",
     "vitepress": "^1.0.0-alpha.61",
     "vitepress-plugin-comment-with-giscus": "^1.1.1",
+    "vitepress-plugin-google-analytics": "^1.0.2",
     "vitepress-plugin-nprogress": "^0.0.4"
   },
   "scripts": {

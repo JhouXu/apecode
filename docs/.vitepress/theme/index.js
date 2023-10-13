@@ -21,6 +21,8 @@ import "@documate/vue/dist/style.css";
 import vitepressNprogress from "vitepress-plugin-nprogress";
 import "vitepress-plugin-nprogress/lib/css/index.css";
 
+import googleAnalytics from "vitepress-plugin-google-analytics";
+
 export default {
   ...theme,
 
@@ -37,6 +39,9 @@ export default {
     ctx.app.component("EmojiCard", EmojiCard);
 
     vitepressNprogress(ctx);
+    googleAnalytics({
+      id: "G-2H3H0SDMVL", // Replace with your GoogleAnalytics ID
+    });
   },
 
   setup() {
