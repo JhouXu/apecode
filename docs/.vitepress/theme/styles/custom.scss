@@ -1,4 +1,32 @@
 :root {
+  @font-face {
+    font-family: "AlimamaShuHeiTi";
+    src: url("../fonts/AlimamaShuHeiTi-Bold.woff2") format("woff2"),
+      url("../fonts/AlimamaShuHeiTi-Bold.woff") format("woff"), url("../fonts/AlimamaShuHeiTi-Bold.otf") format("otf"),
+      url("../fonts/AlimamaShuHeiTi-Bold.ttf") format("ttf");
+  }
+
+  @keyframes rotateBgImg {
+    0%,
+    50%,
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      transform-origin: center;
+    }
+
+    25% {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transform-origin: center;
+    }
+
+    75% {
+      transform: translate(-50%, -50%) rotate(45deg);
+      transform-origin: center;
+    }
+  }
+}
+
+:root {
   --vp-c-purple: #2196f3;
   --vp-c-purple-light: #42a5f5;
   --vp-c-purple-lighter: #64b5f6;
@@ -78,6 +106,16 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #888;
+  }
+}
+
+:root {
+  .VPHero.has-image .name {
+    font-family: "AlimamaShuHeiTi";
+  }
+
+  .VPHero.has-image .image-bg {
+    animation: rotateBgImg 4s infinite linear;
   }
 }
 
