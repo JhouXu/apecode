@@ -49,7 +49,7 @@ function replaceString(sourceStr, checkStr, replaceStr = "") {
 function calc(num1, num2, type) {
   const n1 = num1.toString().split(".")[1] ?? "0";
   const n2 = num2.toString().split(".")[1] ?? "0";
-  const point = 10 ** (n1 > n2 ? n1.length : n2.length); // 精度
+  const point = 10 ** (+n1 > +n2 ? n1.length : n2.length); // 精度
   let result = 0;
   switch (type) {
     case "+":
