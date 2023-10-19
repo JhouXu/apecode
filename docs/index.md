@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 猿代码
   text: Stay hungry, Stay foolish！
-  tagline: 知识补给、工具小站
+  tagline: 程序猿的秘密花园
   image:
     src: ./images/undraw_designer.svg
     alt: logo图标
