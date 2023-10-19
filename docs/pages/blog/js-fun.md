@@ -351,3 +351,34 @@ export const getUrlParam = (name) => {
 ```
 
 :::
+
+## 性能优化
+
+### 节流
+
+:::tip throttle
+
+`节流函数: 指定时间间隔内只会执行一次任务。`
+
+```javascript
+/**
+ * 前端性能优化：节流函数
+ * @param {Function} fn 节流处理回调
+ * @param {Number} delay 时间间隔阈值
+ * @returns {Function} 封装好的节流函数
+ */
+export const throttle = (fn, delay = 200) => {
+  let timer;
+  return function () {
+    if (!timer) {
+      fn.apply(this, arguments);
+      timer = setTimeout(() => {
+        clearTimeout(timer);
+        timer = null;
+      }, delay);
+    }
+  };
+},
+```
+
+:::
