@@ -6,6 +6,7 @@ import mediumZoom from "medium-zoom";
 
 import NavCard from "../components/NavCard.vue";
 import EmojiCard from "../components/EmojiCard.vue";
+import NavigationCard from "../components/NavigationCard.vue";
 
 import theme from "vitepress/theme";
 import Documate from "@documate/vue";
@@ -37,6 +38,7 @@ export default {
     theme.enhanceApp(ctx);
     ctx.app.component("NavCard", NavCard);
     ctx.app.component("EmojiCard", EmojiCard);
+    ctx.app.component("NavigationCard", NavigationCard);
 
     vitepressNprogress(ctx);
     googleAnalytics({
