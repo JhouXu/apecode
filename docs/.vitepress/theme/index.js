@@ -52,7 +52,7 @@ export default {
     // medium-zoom
     const initZoom = () => {
       // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
-      mediumZoom(".main img", { background: "#1e1e2099" });
+      mediumZoom(".main p img", { background: "#1e1e2099" });
     };
     onMounted(() => {
       initZoom();
