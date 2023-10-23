@@ -33,7 +33,7 @@ const ImgVideoSource = "图像视频素材";
 const AudioSource = "音频素材";
 const TemplatePlugin = "模板插件";
 
-export const fileHandling: navigationItem[] = [
+export const FileHandling: navigationItem[] = [
   {
     text: "Convertio",
     desc: "将您的文件转换成任意格式",
