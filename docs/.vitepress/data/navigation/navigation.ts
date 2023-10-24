@@ -171,10 +171,39 @@ export const DesignRelated: navigationItem[] = [
 
 export const MaterialResources: navigationItem[] = [
   {
-    text: "Convertio",
-    desc: "将您的文件转换成任意格式",
-    link: "https://convertio.co/",
-    icon: "https://static.convertio.co/img/apple-touch-icon-180x180-precomposed.png",
-    type: FileConversion,
+    text: "iconfont",
+    desc: "阿里巴巴图标库",
+    link: "https://www.iconfont.cn/",
+    icon: "https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg",
+    type: IconSource,
+  },
+  {
+    text: "iconfont",
+    desc: "阿里巴巴图标库",
+    link: "https://fontawesome.dashgame.com/",
+    icon: "https://fa5.dashgame.com/favicon.ico",
+    type: IconSource,
+  },
+
+  {
+    text: "Undraw",
+    desc: "一个扁平风格插画图库",
+    link: "https://undraw.co/illustrations",
+    icon: "https://undraw.co/apple-touch-icon.png",
+    type: IllustrationSource,
+  },
+  {
+    text: "iradesign",
+    desc: "一款渐变风格的矢量插画素材网站",
+    link: "https://iradesign.io/",
+    icon: "https://iradesign.io/assets/img/favicon.svg",
+    type: IllustrationSource,
+  },
+  {
+    text: "manypixels",
+    desc: "2500 多张免版税插图，为您的设计增光添彩",
+    link: "https://www.manypixels.co/gallery/",
+    icon: "https://assets-global.website-files.com/63a9cb71c629474d4ae334b9/63ac68e5916d9b5c5a24a999_Favicon%201.png",
+    type: IllustrationSource,
   },
 ];
