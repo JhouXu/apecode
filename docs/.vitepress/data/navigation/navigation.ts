@@ -206,4 +206,47 @@ export const MaterialResources: navigationItem[] = [
     icon: "https://assets-global.website-files.com/63a9cb71c629474d4ae334b9/63ac68e5916d9b5c5a24a999_Favicon%201.png",
     type: IllustrationSource,
   },
+
+  {
+    text: "以方·iFonts",
+    desc: "用有趣的字做设计",
+    link: "https://ifonts.com/",
+    icon: "https://pic.51ifonts.com/images/common/logo4.3.png",
+    type: FontSource,
+  },
+  {
+    text: "字由",
+    desc: "千款免费字体，轻松一键换字，尽在字由客户端，超百万设计师正在使用",
+    link: "https://www.hellofont.cn/",
+    icon: "https://www.hellofont.cn/favicon.ico",
+    type: FontSource,
+  },
+  {
+    text: "Fontspace",
+    desc: "100,000+ 免费字体。免费下载法律许可的字体，非常适合您的设计项目。",
+    link: "https://www.fontspace.com/",
+    icon: "https://www.fontspace.com/images/fontspace-icon-circle-512.png",
+    type: FontSource,
+  },
+  {
+    text: "100font",
+    desc: '一个专门收集整理"免费商用字体"的网站',
+    link: "https://www.100font.com/",
+    icon: "https://www.100font.com/view/img/favicon.ico",
+    type: FontSource,
+  },
+  {
+    text: "字体天下",
+    desc: "海量字体免费高速下载",
+    link: "http://www.fonts.net.cn",
+    icon: "",
+    type: FontSource,
+  },
+  {
+    text: "自由字体",
+    desc: "最新免费商用字体大全",
+    link: "https://ziyouziti.com/index-index-all.html",
+    icon: "https://ziyouziti.com/favicon.png",
+    type: FontSource,
+  },
 ];
