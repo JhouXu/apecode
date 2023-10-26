@@ -4,8 +4,6 @@ import { useData, useRoute } from "vitepress";
 import giscusTalk from "vitepress-plugin-comment-with-giscus";
 import mediumZoom from "medium-zoom";
 
-import NavCard from "../components/NavCard.vue";
-import EmojiCard from "../components/EmojiCard.vue";
 import NavigationCard from "../components/NavigationCard.vue";
 
 import theme from "vitepress/theme";
@@ -36,8 +34,6 @@ export default {
 
   enhanceApp(ctx) {
     theme.enhanceApp(ctx);
-    ctx.app.component("NavCard", NavCard);
-    ctx.app.component("EmojiCard", EmojiCard);
     ctx.app.component("NavigationCard", NavigationCard);
 
     vitepressNprogress(ctx);
