@@ -3,10 +3,26 @@ layout: none
 ---
 
 <script setup>
-  import { FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation/navigation.ts'
+  import { DevTools, OnlineDocument, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation/navigation.ts'
 </script>
 
 # 导航
+
+## 开发工具
+
+<NavigationCard :navigationData=DevTools />
+
+## 在线文档
+
+<NavigationCard :navigationData=OnlineDocument />
+
+## 在线工具
+
+<NavigationCard :navigationData=OnlineTools />
+
+## 软件客户端
+
+<NavigationCard :navigationData=SoftwareClient />
 
 ## 文件处理
 

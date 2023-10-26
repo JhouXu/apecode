@@ -1,5 +1,14 @@
 import { navigationItem } from "./types";
 
+// 开发工具
+// 在线文档
+// 在线工具
+// 软件客户端
+// const DevTools = "开发工具";
+// const OnlineDocument = "在线文档";
+// const OnlineTools = "在线工具";
+// const SoftwareClient = "软件客户端";
+
 // 文件处理
 // - 文件转换
 // - 图像编辑
@@ -31,6 +40,172 @@ const VideoSource = "视频素材";
 const ImgVideoSource = "图像视频素材";
 const AudioSource = "音频素材";
 const TemplatePlugin = "模板插件";
+
+export const DevTools: navigationItem[] = [
+  {
+    text: "VSCode",
+    desc: "代码编辑器，微软提供",
+    link: "https://code.visualstudio.com/",
+    icon: "https://code.visualstudio.com/apple-touch-icon.png",
+    type: "开发工具",
+  },
+  {
+    text: "HBuilderX",
+    desc: "国产代码编辑器，uni-app的好帮手。",
+    link: "https://www.dcloud.io/hbuilderx.html",
+    icon: "https://qiniu-ecdn.dcloud.net.cn/uploads/images/hbuilderx/icon/hbuilderx_icon@2x.png",
+    type: "开发工具",
+  },
+  {
+    text: "IntelliJ IDEA",
+    desc: "领先的 Java 和 Kotlin IDE",
+    link: "https://www.jetbrains.com/idea/",
+    icon: "https://www.jetbrains.com/icon-512.png?r=1234",
+    type: "开发工具",
+  },
+];
+
+export const OnlineDocument: navigationItem[] = [
+  {
+    text: "MDN Web Docs",
+    desc: "自 2005 年以来记录 Web 技术，包括 CSS、HTML 和 JavaScript。",
+    link: "https://developer.mozilla.org/",
+    icon: "https://developer.mozilla.org/apple-touch-icon.6803c6f0.png",
+    type: "在线文档",
+  },
+  {
+    text: "现代 JavaScript 教程",
+    desc: "以最新的 JavaScript 标准为基准。通过简单但足够详细的内容，为你讲解从基础到高阶的 JavaScript 相关知识。",
+    link: "https://javascript.info/",
+    icon: "https://javascript.info/img/favicon/apple-touch-icon-precomposed.png",
+    type: "在线文档",
+  },
+  {
+    text: "Can i use",
+    desc: "提供了最新的浏览器支持表，以支持桌面和移动 Web 浏览器上的前端 Web 技术。",
+    link: "https://caniuse.com/",
+    icon: "https://caniuse.com/img/favicon-128.png",
+    type: "在线文档",
+  },
+  {
+    text: "Code Points",
+    desc: "Unicode 标准中定义的所有字符。字符码点(code point)信息。",
+    link: "https://codepoints.net/",
+    icon: "https://codepoints.net/apple-touch-icon.png",
+    type: "在线文档",
+  },
+];
+
+export const OnlineTools: navigationItem[] = [
+  {
+    text: "Gtmertrix",
+    desc: "网站性能分析，在线可视化分析工具",
+    link: "https://gtmetrix.com/",
+    icon: "https://gtmetrix.com/static/images/documentation/meta_social/gtmetrix.png",
+    type: "在线工具",
+  },
+  {
+    text: "Easings",
+    desc: "Easing functions specify the rate of change of a parameter over time.",
+    link: "https://easings.net/",
+    icon: "https://easings.net/96.8aa68ac4.png",
+    type: "在线工具",
+  },
+  {
+    text: "CubicBezier",
+    desc: "贝塞尔曲线在线调试",
+    link: "https://cubic-bezier.com/",
+    icon: "",
+    type: "在线工具",
+  },
+  {
+    text: "Neumorphism",
+    desc: "调试和生成 新型態的擬物化風格 的css样式代码",
+    link: "https://neumorphism.io/",
+    icon: "https://neumorphism.io/apple-touch-icon.png",
+    type: "在线工具",
+  },
+  {
+    text: "DBdiagram",
+    desc: "Draw Entity-Relationship Diagrams, Painlessly 😎",
+    link: "https://dbdiagram.io/home",
+    icon: "https://cdn.holistics.io/logo-dbdiagram-notext.ico",
+    type: "在线工具",
+  },
+  {
+    text: "WebGradients",
+    desc: "180个线性渐变颜色的免费集合",
+    link: "https://webgradients.com/",
+    icon: "https://webgradients.com/favicons/favicon-196x196.png",
+    type: "在线工具",
+  },
+  {
+    text: "30secondsofcode",
+    desc: "发现满足您所有开发需求的简短代码片段。",
+    link: "https://www.30secondsofcode.org/",
+    icon: "https://www.30secondsofcode.org/assets/icons/icon-192x192.png",
+    type: "在线工具",
+  },
+];
+
+export const SoftwareClient: navigationItem[] = [
+  {
+    text: "Snipaste",
+    desc: "截图 + 贴图",
+    link: "https://zh.snipaste.com/",
+    icon: "https://zh.snipaste.com/img/logo.svg",
+    type: "软件客户端",
+  },
+  {
+    text: "ScreenToGif",
+    desc: "Screen, webcam and sketchboard recorder with an integrated editor",
+    link: "https://www.screentogif.com/",
+    icon: "https://www.screentogif.com/img/logo.d2151712.png",
+    type: "软件客户端",
+  },
+  {
+    text: "PotPlayer",
+    desc: "万能格式影音视频播放器",
+    link: "https://images.sftcdn.net/images/t_app-icon-s/p/d3c12354-96d3-11e6-bfbf-00163ed833e7/1418749125/potplayer-PotPlayer_logo_(2017).png",
+    icon: "",
+    type: "软件客户端",
+  },
+  {
+    text: "Xmind",
+    desc: "一款 全功能 的思维导图和头脑风暴软件。",
+    link: "https://xmind.cn/",
+    icon: "https://xmind.cn/webapp-icon/icon_128.png",
+    type: "软件客户端",
+  },
+  {
+    text: "PxCook",
+    desc: "高效易用的自动标注工具, 生成前端代码, 设计研发协作利器",
+    link: "https://www.fancynode.com.cn/pxcook",
+    icon: "https://www.fancynode.com.cn/siteicon/PxCook.png",
+    type: "软件客户端",
+  },
+  {
+    text: "FileZilla",
+    desc: "免费开源的 FTP 方案",
+    link: "https://www.filezilla.cn/",
+    icon: "https://www.filezilla.cn/images/filezilla-48x48.png",
+    type: "软件客户端",
+  },
+  {
+    text: "Tabby",
+    desc: "A terminal for the modern age",
+    link: "https://tabby.sh/",
+    icon: "https://tabby.sh/41c0b2191a91f83bee77.png",
+    type: "软件客户端",
+  },
+  {
+    text: "uTools",
+    desc: "新一代效率工具平台。自由组合插件应用，打造专属你的趁手工具集",
+    link: "https://u.tools/",
+    icon: "https://res.u-tools.cn/website/v4/logo.png",
+    type: "软件客户端",
+  },
+];
 
 export const FileHandling: navigationItem[] = [
   {
