@@ -22,9 +22,9 @@ features:
     link: /pages/blog
     linkText: 了解更多
   - icon: 🛠️
-    title: 日常工具
-    details: 轻便快捷，即查即用
-    link: /pages/tool/favorites
+    title: 导航工具
+    details: 常用网站，即点即用
+    link: /pages/navigation
     linkText: 了解更多
   - icon: 🌞
     title: 开发中
