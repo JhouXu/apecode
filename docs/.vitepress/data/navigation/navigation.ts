@@ -218,7 +218,7 @@ export const MaterialResources: navigationItem[] = [
     text: "字由",
     desc: "千款免费字体，轻松一键换字，尽在字由客户端，超百万设计师正在使用",
     link: "https://www.hellofont.cn/",
-    icon: "https://www.hellofont.cn/favicon.ico",
+    icon: "https://resource.hellofont.cn/nav/logo.svg",
     type: FontSource,
   },
   {
