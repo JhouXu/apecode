@@ -22,7 +22,7 @@ defineProps<{
             <!-- no-zoom 禁用  -->
             <img
               v-show="navigationItem.icon"
-              class="w-8 h-8 rounded-[4px] overflow-hidden select-none no-zoom"
+              class="w-8 h-8 rounded-[4px] overflow-hidden select-none object-contain no-zoom"
               :src="navigationItem.icon"
               :alt="`${navigationItem.text} - ${navigationItem.desc}`"
               data-zoomable />
