@@ -25,12 +25,12 @@ import googleAnalytics from "vitepress-plugin-google-analytics";
 export default {
   ...theme,
 
-  Layout: h(theme.Layout, null, {
-    "nav-bar-content-before": () =>
-      h(Documate, {
-        endpoint: "https://g7zfhaz3dn.us.aircode.run/ask",
-      }),
-  }),
+  // Layout: h(theme.Layout, null, {
+  //   "nav-bar-content-before": () =>
+  //     h(Documate, {
+  //       endpoint: "https://g7zfhaz3dn.us.aircode.run/ask",
+  //     }),
+  // }),
 
   enhanceApp(ctx) {
     theme.enhanceApp(ctx);
