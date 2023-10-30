@@ -219,4 +219,10 @@ export const blog = [
     type: `${classify.css.value}`,
     time: "2020-08-28",
   },
+  {
+    text: "导读",
+    link: "/pages/blog/blog",
+    type: `${classify.blog.value}`,
+    time: "2023-10-30",
+  },
 ];
