@@ -12,8 +12,8 @@ layout: doc
   import * as pkg from 'vue3-calendar-heatmap';
   const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
 
-  import { getTimestamp, timestampToFormatTime } from '../utils/date.tool.js';
-  import { blog } from '../.vitepress/data/blog/blog.ts'
+  import { getTimestamp, timestampToFormatTime } from '../../utils/date.tool.js';
+  import { blog } from '../../.vitepress/data/blog/blog.ts'
 
   const publishDates = ref([])
   const nowDate = ref('1970-01-01')
