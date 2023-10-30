@@ -93,11 +93,12 @@ layout: doc
     const htmlElement = document.documentElement;
     const classList = htmlElement.classList;
     // init
-    isDarkMode.value = classList.value === '' ? false : true
+    isDarkMode.value = classList.value.indexOf('dark') > -1 ? true : false
+    console.log(classList.value)
 
     // observer
     const observer = new MutationObserver((mutationsList) => {
-      isDarkMode.value = classList.value === '' ? false : true
+      isDarkMode.value = classList.value.indexOf('dark') > -1 ? true : false
     });
 
     // 配置需要观察的属性和类型
