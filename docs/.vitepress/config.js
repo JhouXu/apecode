@@ -32,6 +32,10 @@ module.exports = {
     },
     lastUpdatedText: "最后更新",
 
+    search: {
+      provider: "local",
+    },
+
     // global config
     socialLinks,
     nav,
