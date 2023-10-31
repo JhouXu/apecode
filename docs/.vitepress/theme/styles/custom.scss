@@ -47,6 +47,14 @@
   --vp-c-brand-darker: var(--vp-c-purple-darker);
 }
 
+:root {
+  --vp-layout-max-width: 1650px;
+
+  .VPDoc.has-aside .content-container {
+    max-width: 100%;
+  }
+}
+
 // :root {
 //   --vp-layout-max-width: 1650px;
 
