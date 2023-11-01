@@ -3,10 +3,14 @@ layout: none
 ---
 
 <script setup>
-  import { DevTools, OnlineDocument, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation/navigation.ts'
+  import { TechnicalCommunity, DevTools, OnlineDocument, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation/navigation.ts'
 </script>
 
 # 导航
+
+## 技术社区
+
+<NavigationCard :navigationData=TechnicalCommunity />
 
 ## 开发工具
 

@@ -4,6 +4,7 @@ import { navigationItem } from "./types";
 // 在线文档
 // 在线工具
 // 软件客户端
+// const TechnicalCommunity = "技术社区"
 // const DevTools = "开发工具";
 // const OnlineDocument = "在线文档";
 // const OnlineTools = "在线工具";
@@ -40,6 +41,23 @@ const VideoSource = "视频素材";
 const ImgVideoSource = "图像视频素材";
 const AudioSource = "音频素材";
 const TemplatePlugin = "模板插件";
+
+export const TechnicalCommunity: navigationItem[] = [
+  {
+    text: "Medium",
+    desc: "好的想法在这里找到。",
+    link: "https://medium.com/",
+    icon: "https://miro.medium.com/v2/resize:fill:152:152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+    type: "技术社区",
+  },
+  {
+    text: "30secondsofcode",
+    desc: "发现满足您所有开发需求的简短代码片段。",
+    link: "https://www.30secondsofcode.org/",
+    icon: "https://www.30secondsofcode.org/assets/icons/icon-192x192.png",
+    type: "技术社区",
+  },
+];
 
 export const DevTools: navigationItem[] = [
   {
@@ -137,13 +155,6 @@ export const OnlineTools: navigationItem[] = [
     desc: "180个线性渐变颜色的免费集合",
     link: "https://webgradients.com/",
     icon: "https://webgradients.com/favicons/favicon-196x196.png",
-    type: "在线工具",
-  },
-  {
-    text: "30secondsofcode",
-    desc: "发现满足您所有开发需求的简短代码片段。",
-    link: "https://www.30secondsofcode.org/",
-    icon: "https://www.30secondsofcode.org/assets/icons/icon-192x192.png",
     type: "在线工具",
   },
 ];
