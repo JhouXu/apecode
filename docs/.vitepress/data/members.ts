@@ -7,8 +7,8 @@ export const members = [
     title: "Creator",
     links: [
       { icon: "github", link: "https://github.com/JhouXu" },
-      { icon: csdnIcon, link: "https://blog.csdn.net/weixin_44808483" },
-      { icon: juejinIcon, link: "https://juejin.cn/user/1126374170967367/posts" },
+      { icon: { svg: csdnIcon }, link: "https://blog.csdn.net/weixin_44808483" },
+      { icon: { svg: juejinIcon }, link: "https://juejin.cn/user/1126374170967367/posts" },
     ],
   },
 
@@ -18,8 +18,8 @@ export const members = [
     title: "Developer",
     links: [
       { icon: "github", link: "https://github.com/55sssda" },
-      { icon: csdnIcon, link: "https://blog.csdn.net/qq_44849271" },
-      { icon: juejinIcon, link: "https://juejin.cn/user/4486462433669981" },
+      { icon: { svg: csdnIcon }, link: "https://blog.csdn.net/qq_44849271" },
+      { icon: { svg: juejinIcon }, link: "https://juejin.cn/user/4486462433669981" },
     ],
   },
 ];
