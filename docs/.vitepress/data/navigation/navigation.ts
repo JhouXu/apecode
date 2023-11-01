@@ -68,7 +68,7 @@ export const TechnicalCommunity: navigationItem[] = [
     text: "CSDN",
     desc: "全球知名中文IT技术交流平台。",
     link: "https://www.csdn.net/",
-    icon: "https://g.csdnimg.cn/static/logo/favicon32.ico",
+    icon: "https://img-home.csdnimg.cn/images/20201124032511.png",
     type: "技术社区",
   },
 ];
