@@ -12,10 +12,6 @@ layout: none
 
 <NavigationCard :navigationData=TechnicalCommunity />
 
-## 开发工具
-
-<NavigationCard :navigationData=DevTools />
-
 ## 在线文档
 
 <NavigationCard :navigationData=OnlineDocument />
@@ -23,6 +19,10 @@ layout: none
 ## 在线工具
 
 <NavigationCard :navigationData=OnlineTools />
+
+## 开发工具
+
+<NavigationCard :navigationData=DevTools />
 
 ## 软件客户端
 
