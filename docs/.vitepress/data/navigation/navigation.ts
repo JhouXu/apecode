@@ -57,6 +57,20 @@ export const TechnicalCommunity: navigationItem[] = [
     icon: "https://www.30secondsofcode.org/assets/icons/icon-192x192.png",
     type: "技术社区",
   },
+  {
+    text: "稀土掘金",
+    desc: "掘金是面向全球中文开发者的技术内容分享与交流平台。",
+    link: "https://juejin.cn/",
+    icon: "https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/static/favicons/apple-touch-icon.png",
+    type: "技术社区",
+  },
+  {
+    text: "CSDN",
+    desc: "全球知名中文IT技术交流平台。",
+    link: "https://www.csdn.net/",
+    icon: "https://g.csdnimg.cn/static/logo/favicon32.ico",
+    type: "技术社区",
+  },
 ];
 
 export const DevTools: navigationItem[] = [
