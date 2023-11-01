@@ -30,3 +30,23 @@ features:
     title: 开发中
     details: 敬请期待...
 ---
+
+<script setup>
+import {
+  VPTeamPage,
+  VPTeamPageTitle,
+  VPTeamMembers,
+  VPTeamPageSection
+} from 'vitepress/theme'
+import { members } from './.vitepress/data/members.ts'
+
+const coreMembers = [...members]
+const partners = [...members]
+</script>
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title>核心团队</template>
+  </VPTeamPageTitle>
+  <VPTeamMembers size="medium" :members="coreMembers" />
+</VPTeamPage>
