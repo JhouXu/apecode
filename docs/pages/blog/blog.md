@@ -117,10 +117,10 @@ layout: doc
 
 # 随笔记
 
-## 贡献值
+## 近期
 
-`commit 热力图`
+## 指数
+
+同步当前仓库的 commit 数据；由于 Github 的限制，数据可能出现加载失败的问题。
 
 <CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" />
-
-## 近期笔记
