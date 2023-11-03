@@ -94,7 +94,6 @@ const darkModeMediaQuery = () => {
   const classList = htmlElement.classList;
   // init
   isDarkMode.value = classList.value.indexOf("dark") > -1 ? true : false;
-  console.log(classList.value);
 
   // observer
   const observer = new MutationObserver((mutationsList) => {
