@@ -3,107 +3,107 @@ layout: doc
 ---
 
 <script setup>
-  import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
-  // SyntaxError: Named export 'CalendarHeatmap' not found. 
-  // The requested module 'vue3-calendar-heatmap' is a CommonJS module, 
-  // which may not support all module.exports as named exports.
-  // import { CalendarHeatmap } from 'vue3-calendar-heatmap'
-  import * as pkg from 'vue3-calendar-heatmap';
-  const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
+import { blog } from "../../.vitepress/data/blog/blog.ts";
+import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 
-  import { getTimestamp, timestampToFormatTime } from '../../utils/date.tool.js';
-  import { blog } from '../../.vitepress/data/blog/blog.ts'
+// SyntaxError: Named export 'CalendarHeatmap' not found.
+// The requested module 'vue3-calendar-heatmap' is a CommonJS module,
+// which may not support all module.exports as named exports.
+// import { CalendarHeatmap } from 'vue3-calendar-heatmap'
+import * as pkg from "vue3-calendar-heatmap";
+const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
 
-  const publishDates = ref([])
-  const nowDate = ref('1970-01-01')
-  const isDarkMode = ref(false)
-  const lightRangeColor = ['#ebedf0', '#dae2ee', '#c1def8', '#74b5f1', '#3889de', '#12489b']
-  const darkRangeColor = ['#282c34', '#1e3449', '#1e476b', '#1e5887', '#1e6baa', '#2497cf']
+const publishDates = ref([]);
+const nowDate = ref("1970-01-01");
+const isDarkMode = ref(false);
+const lightRangeColor = ["#ebedf0", "#dae2ee", "#c1def8", "#74b5f1", "#3889de", "#12489b"];
+const darkRangeColor = ["#282c34", "#1e3449", "#1e476b", "#1e5887", "#1e6baa", "#2497cf"];
 
-  onMounted(() => {
-    nowDate.value = getNowDate()
+onMounted(() => {
+  nowDate.value = getNowDate();
 
-    fetchCommitData("jhouxu", "apecode").then((commitData) => {
-      // 接口请求放回空对象或空数组，直接中断后续处理
-      if (JSON.stringify(commitData) === '{}' || commitData.length === 0) {
-        return false
-      }
+  fetchCommitData("jhouxu", "apecode").then((commitData) => {
+    // 接口请求放回空对象或空数组，直接中断后续处理
+    if (JSON.stringify(commitData) === "{}" || commitData.length === 0) {
+      return false;
+    }
 
-      const timestampToDate = (timestamp) => {
-        return new Date(timestamp * 1000);
-      };
+    const timestampToDate = (timestamp) => {
+      return new Date(timestamp * 1000);
+    };
 
-      const processedData = commitData.map((entry) => {
-        const weekDate = timestampToDate(entry.week);
-        const dailyCommits = entry.days;
+    const processedData = commitData.map((entry) => {
+      const weekDate = timestampToDate(entry.week);
+      const dailyCommits = entry.days;
 
-        const weeklyData = weekDate.getDay();
-        const dailyData = dailyCommits.map((commits, index) => {
-          const date = new Date(weekDate);
-          date.setDate(weekDate.getDate() + index);
-          return { date: getYearMonthDate(date), count: commits };
-        });
-
-        return dailyData;
+      const weeklyData = weekDate.getDay();
+      const dailyData = dailyCommits.map((commits, index) => {
+        const date = new Date(weekDate);
+        date.setDate(weekDate.getDate() + index);
+        return { date: getYearMonthDate(date), count: commits };
       });
 
-      // 剔除空值
-      const processedDataFilter = processedData.flat(Infinity).filter((item) => item.count);
-
-      publishDates.value = processedDataFilter
+      return dailyData;
     });
 
-    darkModeMediaQuery()
-  })
+    // 剔除空值
+    const processedDataFilter = processedData.flat(Infinity).filter((item) => item.count);
 
-  // 获取当前时间
-  const getNowDate = () => {
-    return timestampToFormatTime(getTimestamp(), 'yyyy-MM-dd') 
-  }
+    publishDates.value = processedDataFilter;
+  });
 
-  const getYearMonthDate = (dateString) => {
-    let D = new Date(dateString);
-    let year = D.getFullYear();
-    let month = D.getMonth() + 1;
-    let day = D.getDate();
+  darkModeMediaQuery();
+});
 
-    month = month < 10 ? `0${month}` : month;
-    day = day < 10 ? `0${day}` : day;
+// 获取当前时间
+const getNowDate = () => {
+  return timestampToFormatTime(getTimestamp(), "yyyy-MM-dd");
+};
 
-    return `${year}-${month}-${day}`;
-  };
+const getYearMonthDate = (dateString) => {
+  let D = new Date(dateString);
+  let year = D.getFullYear();
+  let month = D.getMonth() + 1;
+  let day = D.getDate();
 
-  const fetchCommitData = async (owner, repo) => {
-    try {
-      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
-      if (response.ok) {
-        return await response.json();
-      } else {
-        console.error(`Failed to fetch commit data: ${response.status}`);
-        return null;
-      }
-    } catch (error) {
-      console.error("Error fetching commit data:", error);
+  month = month < 10 ? `0${month}` : month;
+  day = day < 10 ? `0${day}` : day;
+
+  return `${year}-${month}-${day}`;
+};
+
+const fetchCommitData = async (owner, repo) => {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
+    if (response.ok) {
+      return await response.json();
+    } else {
+      console.error(`Failed to fetch commit data: ${response.status}`);
       return null;
     }
-  };
-
-  const darkModeMediaQuery = () => {
-    const htmlElement = document.documentElement;
-    const classList = htmlElement.classList;
-    // init
-    isDarkMode.value = classList.value.indexOf('dark') > -1 ? true : false
-    console.log(classList.value)
-
-    // observer
-    const observer = new MutationObserver((mutationsList) => {
-      isDarkMode.value = classList.value.indexOf('dark') > -1 ? true : false
-    });
-
-    // 配置需要观察的属性和类型
-    observer.observe(htmlElement, { attributes: true });
+  } catch (error) {
+    console.error("Error fetching commit data:", error);
+    return null;
   }
+};
+
+const darkModeMediaQuery = () => {
+  const htmlElement = document.documentElement;
+  const classList = htmlElement.classList;
+  // init
+  isDarkMode.value = classList.value.indexOf("dark") > -1 ? true : false;
+  console.log(classList.value);
+
+  // observer
+  const observer = new MutationObserver((mutationsList) => {
+    isDarkMode.value = classList.value.indexOf("dark") > -1 ? true : false;
+  });
+
+  // 配置需要观察的属性和类型
+  observer.observe(htmlElement, { attributes: true });
+};
 </script>
 
 <style>
