@@ -6,6 +6,7 @@ layout: doc
 import { ref, onMounted } from "vue";
 
 import { blog } from "../../.vitepress/data/blog/blog.ts";
+import { classify } from "../../.vitepress/data/blog/classify.ts";
 import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 
 // SyntaxError: Named export 'CalendarHeatmap' not found.
@@ -55,6 +56,10 @@ onMounted(() => {
   });
 
   darkModeMediaQuery();
+
+  const sortBlog = blog.sort((a, b) =>  new Date(b.time).getTime() - new Date(a.time).getTime())
+  console.log(sortBlog)
+  console.log(classify)
 });
 
 // 获取当前时间
@@ -115,6 +120,8 @@ const darkModeMediaQuery = () => {
 </style>
 
 # 随笔记
+
+## 分类
 
 ## 近期
 
