@@ -44,6 +44,20 @@ const TemplatePlugin = "模板插件";
 
 export const TechnicalCommunity: navigationItem[] = [
   {
+    text: "Github",
+    desc: "全球最大的程序员交流网站。",
+    link: "https://github.com/",
+    icon: "https://github.com/fluidicon.png",
+    type: "技术社区",
+  },
+  {
+    text: "HuggingFace",
+    desc: "AI模型界的Github，開啟AI強大工具庫和預訓練模型",
+    link: "https://huggingface.co/",
+    icon: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    type: "技术社区",
+  },
+  {
     text: "Medium",
     desc: "好的想法在这里找到。",
     link: "https://medium.com/",
