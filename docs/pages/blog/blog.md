@@ -144,8 +144,8 @@ const getObjectValues = (obj) => {
 
 ## 近期
 
-## 指数
+## 更新
 
-同步当前仓库的 commit 数据；由于 Github 的限制，数据可能出现加载失败的问题。
+由于 Github 的限制，数据会出现加载异常的问题。[想看的可以多刷新几次 ╰(*°▽°*)╯]
 
 <CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" />
