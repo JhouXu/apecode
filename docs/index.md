@@ -16,15 +16,20 @@ hero:
       text: 参与建设
       link: https://github.com/JhouXu/apecode
 features:
+  - icon: 🔗
+    title: 导航
+    details: 常用网站，即点即用
+    link: /pages/navigation
+    linkText: 了解更多
   - icon: 🗃️
     title: 随笔记
     details: 简单而简约，始终如一
     link: /pages/blog/blog
     linkText: 了解更多
-  - icon: 🛠️
-    title: 导航工具
-    details: 常用网站，即点即用
-    link: /pages/navigation
+  - icon: 🧑‍💻
+    title: 轻代码
+    details: 最轻量的工具代码
+    link:
     linkText: 了解更多
   - icon: 🌞
     title: 开发中
