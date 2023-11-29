@@ -34,6 +34,11 @@ defineProps<{
               class="inline-block mt-[4px] text-sm text-gray-800 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50 min-h-[20px]">
               {{ classifyItem.desc }}
             </span>
+
+            <span
+              class="inline-block mt-[10px] text-sm text-right text-gray-800 opacity-50 dark:text-gray-300 min-h-[20px]">
+              文章数：{{ classifyItem.total }}
+            </span>
           </section>
         </section>
       </a>

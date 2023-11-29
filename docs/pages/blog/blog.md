@@ -68,8 +68,9 @@ onMounted(() => {
   arr.map((cItem) => {
     if (cItem.link === '') {
       let index = sortBlog.findIndex(sItem => sItem.type === cItem.value);
-      console.log(index, cItem.value)
+      let total = sortBlog.filter((sItem) => sItem.type === cItem.value).length;
       cItem.link = sortBlog[index]['link'];
+      cItem.total = total;
     }
   })
   classifyArr.value = arr;
