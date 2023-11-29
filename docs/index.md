@@ -29,7 +29,7 @@ features:
   - icon: 🧑‍💻
     title: 轻代码
     details: 最轻量的工具代码
-    link:
+    link: /pages/code/code
     linkText: 了解更多
   - icon: 🌞
     title: 开发中
