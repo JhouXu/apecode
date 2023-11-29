@@ -5,6 +5,7 @@ import giscusTalk from "vitepress-plugin-comment-with-giscus";
 import mediumZoom from "medium-zoom";
 
 import NavigationCard from "../components/NavigationCard.vue";
+import ClassifyCard from "../components/ClassifyCard.vue";
 
 import theme from "vitepress/theme";
 import Documate from "@documate/vue";
@@ -35,6 +36,7 @@ export default {
   enhanceApp(ctx) {
     theme.enhanceApp(ctx);
     ctx.app.component("NavigationCard", NavigationCard);
+    ctx.app.component("ClassifyCard", ClassifyCard);
 
     vitepressNprogress(ctx);
     googleAnalytics({

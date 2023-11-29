@@ -16,6 +16,8 @@ import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 import * as pkg from "vue3-calendar-heatmap";
 const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
 
+const classifyArr = ref([])
+
 const publishDates = ref([]);
 const nowDate = ref("1970-01-01");
 const isDarkMode = ref(false);
@@ -60,6 +62,17 @@ onMounted(() => {
   const sortBlog = blog.sort((a, b) =>  new Date(b.time).getTime() - new Date(a.time).getTime())
   console.log(sortBlog)
   console.log(classify)
+
+  // 初始化分类数据
+  let arr = getObjectValues(classify);
+  arr.map((cItem) => {
+    if (cItem.link === '') {
+      let index = sortBlog.findIndex(sItem => sItem.type === cItem.value);
+      console.log(index, cItem.value)
+      cItem.link = sortBlog[index]['link'];
+    }
+  })
+  classifyArr.value = arr;
 });
 
 // 获取当前时间
@@ -108,6 +121,10 @@ const darkModeMediaQuery = () => {
   // 配置需要观察的属性和类型
   observer.observe(htmlElement, { attributes: true });
 };
+
+const getObjectValues = (obj) => {
+  return Object.values(obj)
+}
 </script>
 
 <style>
@@ -122,6 +139,8 @@ const darkModeMediaQuery = () => {
 # 随笔记
 
 ## 分类
+
+<ClassifyCard :classifyData=classifyArr />
 
 ## 近期
 
