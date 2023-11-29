@@ -145,6 +145,8 @@ const getObjectValues = (obj) => {
 
 ## 近期
 
+<!-- <RecentlyCard :classifyData=classifyArr /> -->
+
 ## 更新
 
 由于 Github 的限制，数据会出现加载异常的问题。[想看的可以多刷新几次 ╰(*°▽°*)╯]
