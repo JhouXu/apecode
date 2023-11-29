@@ -18,7 +18,7 @@ defineProps<{
           <section class="flex justify-center items-center shrink-0">
             <img
               v-show="classifyItem.icon"
-              class="w-14 h-14 rounded-[4px] overflow-hidden select-none object-contain no-zoom"
+              class="w-14 h-14 rounded-[4px] overflow-hidden select-none object-cover no-zoom"
               :src="classifyItem.icon"
               :alt="`${classifyItem.value} - ${classifyItem.desc}`"
               data-zoomable />
