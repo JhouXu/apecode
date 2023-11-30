@@ -21,15 +21,15 @@ features:
     details: 常用网站，即点即用
     link: /pages/navigation
     linkText: 了解更多
-  - icon: 🗃️
+  - icon: 📝
     title: 随笔记
     details: 简单而简约，始终如一
     link: /pages/blog/blog
     linkText: 了解更多
-  - icon: 🧑‍💻
-    title: 轻代码
-    details: 最轻量的工具代码
-    link: /pages/code/code
+  - icon: 🚀
+    title: 轻函数
+    details: 最轻量的工具函数
+    link: /pages/function/function
     linkText: 了解更多
   - icon: 🌞
     title: 开发中
