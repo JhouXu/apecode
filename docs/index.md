@@ -30,15 +30,18 @@ features:
     title: 八股文
     details: 归纳、概括、整理、最新
     link: /pages/essay/essay
-    linkText:
+    linkText: 了解更多
   - icon: 🚀
     title: 轻函数
     details: 最轻量的工具函数
     link: /pages/function/function
     linkText: 了解更多
+features:
   - icon: 🌞
     title: 开发中
     details: 敬请期待...
+    link:
+    linkText:
 ---
 
 <script setup>
