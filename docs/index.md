@@ -36,7 +36,6 @@ features:
     details: 最轻量的工具函数
     link: /pages/function/function
     linkText: 了解更多
-features:
   - icon: 🌞
     title: 开发中
     details: 敬请期待...
