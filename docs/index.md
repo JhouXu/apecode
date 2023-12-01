@@ -18,22 +18,22 @@ hero:
 features:
   - icon: 🔗
     title: 导航工具
-    details: 常用网站，即点即用
+    details: 常用网站，即点即用。
     link: /pages/navigation
     linkText: 立即查看
   - icon: 🗃️
     title: 随笔记
-    details: 简单而简约，始终如一
+    details: 简单而简约，始终如一。
     link: /pages/blog/blog
     linkText: 了解更多
   - icon: 📝
     title: 八股文
-    details: 归纳、概括、整理、最新
+    details: 归纳、概括、整理、最新。
     link: /pages/essay/essay
     linkText: 了解更多
   - icon: 🚀
     title: 轻函数
-    details: 最轻量的工具函数
+    details: 最轻量的工具函数。
     link: /pages/function/function
     linkText: 了解更多
   - icon: 🌞
