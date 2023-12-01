@@ -37,10 +37,10 @@ features:
     link: /pages/function/function
     linkText: 了解更多
   - icon: 🌞
-    title: 更多
+    title: 语录
     details: 敬请期待...
     link:
-    linkText:
+    linkText: 了解更多
   - icon: 🚩
     title: 拥抱开源
     details: 文档开源，版权 ApeCode 所有，禁商业行为。
