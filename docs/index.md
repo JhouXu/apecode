@@ -17,16 +17,16 @@ hero:
       link: https://github.com/JhouXu/apecode
 features:
   - icon: 🔗
-    title: 导航
+    title: 导航工具
     details: 常用网站，即点即用
     link: /pages/navigation
-    linkText: 了解更多
-  - icon: 📝
+    linkText: 立即查看
+  - icon: 🗃️
     title: 随笔记
     details: 简单而简约，始终如一
     link: /pages/blog/blog
     linkText: 了解更多
-  - icon: 🗃️
+  - icon: 📝
     title: 八股文
     details: 归纳、概括、整理、最新
     link: /pages/essay/essay
@@ -36,13 +36,17 @@ features:
     details: 最轻量的工具函数
     link: /pages/function/function
     linkText: 了解更多
----
-
-  <!-- - icon: 🌞
-    title: 开发中
+  - icon: 🌞
+    title: 更多
     details: 敬请期待...
     link:
-    linkText: -->
+    linkText:
+  - icon: 🚩
+    title: 拥抱开源
+    details: 文档开源，版权 ApeCode 所有，禁商业行为。
+    link: https://github.com/JhouXu/apecode
+    linkText: 欢迎 ⭐
+---
 
 <script setup>
 import {
