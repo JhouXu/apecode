@@ -16,7 +16,8 @@ import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 import * as pkg from "vue3-calendar-heatmap";
 const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
 
-const classifyArr = ref([])
+const classifyArr = ref([]);
+const blogArr = ref([]);
 
 const publishDates = ref([]);
 const nowDate = ref("1970-01-01");
@@ -60,8 +61,6 @@ onMounted(() => {
   darkModeMediaQuery();
 
   const sortBlog = blog.sort((a, b) =>  new Date(b.time).getTime() - new Date(a.time).getTime())
-  console.log(sortBlog)
-  console.log(classify)
 
   // 初始化分类数据
   let arr = getObjectValues(classify);
@@ -74,6 +73,7 @@ onMounted(() => {
     }
   })
   classifyArr.value = arr;
+  blogArr.value = sortBlog;
 });
 
 // 获取当前时间
@@ -145,7 +145,7 @@ const getObjectValues = (obj) => {
 
 ## 近期
 
-<!-- <RecentlyCard :classifyData=classifyArr /> -->
+<RecentlyCard :blogData=blogArr />
 
 ## 更新
 
