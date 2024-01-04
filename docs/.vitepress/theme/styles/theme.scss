@@ -1,32 +1,4 @@
 :root {
-  @font-face {
-    font-family: "AlimamaShuHeiTi";
-    src: url("../fonts/AlimamaShuHeiTi-Bold.woff2") format("woff2"),
-      url("../fonts/AlimamaShuHeiTi-Bold.woff") format("woff"), url("../fonts/AlimamaShuHeiTi-Bold.otf") format("otf"),
-      url("../fonts/AlimamaShuHeiTi-Bold.ttf") format("ttf");
-  }
-
-  @keyframes rotateBgImg {
-    0%,
-    50%,
-    100% {
-      transform: translate(-50%, -50%) rotate(0deg);
-      transform-origin: center;
-    }
-
-    25% {
-      transform: translate(-50%, -50%) rotate(-45deg);
-      transform-origin: center;
-    }
-
-    75% {
-      transform: translate(-50%, -50%) rotate(45deg);
-      transform-origin: center;
-    }
-  }
-}
-
-:root {
   --vp-c-purple: #2196f3;
   --vp-c-purple-light: #42a5f5;
   --vp-c-purple-lighter: #64b5f6;
@@ -46,35 +18,6 @@
   --vp-c-brand-dark: var(--vp-c-purple-dark);
   --vp-c-brand-darker: var(--vp-c-purple-darker);
 }
-
-:root {
-  --vp-layout-max-width: 1650px;
-
-  .VPDoc.has-aside .content-container {
-    max-width: 100%;
-  }
-}
-
-// :root {
-//   --vp-layout-max-width: 1650px;
-
-//   .VPDoc.has-aside .content-container {
-//     max-width: inherit;
-//   }
-// }
-
-// :root {
-//   --vp-layout-max-width: 100%;
-//   --vp-sidebar-width: 15rem;
-//   --vp-nav-height-desktop: 50px;
-
-//   .content-container {
-//     max-width: 100% !important;
-//   }
-//   .container {
-//     max-width: var(--vp-layout-max-width) !important;
-//   }
-// }
 
 :root {
   /* 自定义滚动条样式 */
@@ -118,19 +61,30 @@
 }
 
 :root {
-  .VPHero.has-image .name {
-    font-family: "AlimamaShuHeiTi";
-  }
+  --vp-layout-max-width: 1650px;
 
-  .VPHero.has-image .image-bg {
-    animation: rotateBgImg 4s infinite linear;
+  .VPDoc.has-aside .content-container {
+    max-width: 100%;
   }
 }
 
-/* 图片点击放大优先级调整 */
-.medium-zoom {
-  &-overlay,
-  &-image {
-    z-index: 999 !important;
-  }
-}
+// :root {
+//   --vp-layout-max-width: 1650px;
+
+//   .VPDoc.has-aside .content-container {
+//     max-width: inherit;
+//   }
+// }
+
+// :root {
+//   --vp-layout-max-width: 100%;
+//   --vp-sidebar-width: 15rem;
+//   --vp-nav-height-desktop: 50px;
+
+//   .content-container {
+//     max-width: 100% !important;
+//   }
+//   .container {
+//     max-width: var(--vp-layout-max-width) !important;
+//   }
+// }

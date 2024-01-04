@@ -12,7 +12,10 @@ import theme from "vitepress/theme";
 import Documate from "@documate/vue";
 
 import "./tailwind.postcss";
-import "./styles/custom.scss";
+import "./styles/theme.scss"; // 主题定制
+import "./styles/font.scss"; // 字体引入
+import "./styles/anime.scss"; // 自定义动画
+import "./styles/style.scss"; // 自定义样式
 import "./styles/home.scss";
 import "./styles/nav.scss";
 import "./styles/search.scss";
