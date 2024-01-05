@@ -78,10 +78,10 @@
   }
 
   /* 宽度调整 导航单页 */
-  .VPDoc:not(.has-sidebar) .container[data-v-10119189] {
+  .VPDoc:not(.has-sidebar) .container {
     max-width: 1580px;
   }
-  .VPDoc:not(.has-sidebar) .content[data-v-10119189] {
+  .VPDoc:not(.has-sidebar) .content {
     max-width: 100%;
   }
 }
