@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid auto-cols-auto sm:grid-cols-2 grid-cols-1 gap-[14px]">
+  <div class="grid auto-cols-auto lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[14px]">
     <section v-for="(navigationItem, key) in navigationData" :key="key">
       <a
         rel="noreferrer"

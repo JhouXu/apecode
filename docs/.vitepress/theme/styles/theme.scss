@@ -71,9 +71,17 @@
 }
 
 :root {
+  /* 宽度调整 文章页 */
   --vp-layout-max-width: 1650px;
-
   .VPDoc.has-aside .content-container {
+    max-width: 100%;
+  }
+
+  /* 宽度调整 导航单页 */
+  .VPDoc:not(.has-sidebar) .container[data-v-10119189] {
+    max-width: 1580px;
+  }
+  .VPDoc:not(.has-sidebar) .content[data-v-10119189] {
     max-width: 100%;
   }
 }
