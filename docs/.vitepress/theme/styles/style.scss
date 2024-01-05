@@ -3,6 +3,13 @@
     font-family: "AlimamaShuHeiTi";
   }
 
+  .VPHero.has-image .text {
+    font-family: "AlimamaShuHeiTi";
+    color: var(--vp-home-hero-text-color);
+    background-image: var(--vp-home-hero-text-background);
+    -webkit-background-clip: text;
+  }
+
   .VPHero.has-image .image-bg {
     animation: rotateBgImg 4s infinite linear;
   }
