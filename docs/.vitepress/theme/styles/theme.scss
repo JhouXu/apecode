@@ -71,6 +71,10 @@
 }
 
 :root {
+  .vp-doc :not(pre) > code {
+    color: var(--vp-c-purple);
+  }
+
   /* 宽度调整 文章页 */
   --vp-layout-max-width: 1650px;
   .VPDoc.has-aside .content-container {
