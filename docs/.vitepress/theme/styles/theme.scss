@@ -71,6 +71,10 @@
 }
 
 :root {
+  ul {
+    margin-left: 20px;
+  }
+
   .vp-doc :not(pre) > code {
     color: var(--vp-c-purple);
   }
