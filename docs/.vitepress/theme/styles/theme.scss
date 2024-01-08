@@ -71,7 +71,7 @@
 }
 
 :root {
-  ul {
+  ul:not([class]) {
     margin-left: 20px;
   }
 
