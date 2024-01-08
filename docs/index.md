@@ -29,7 +29,7 @@ features:
   - icon: 📝
     title: 八股文
     details: 归纳、概括、整理、最新。
-    link: /pages/essay/essay
+    link: /pages/essays/essays
     linkText: 了解更多
   - icon: 🚀
     title: 轻函数
