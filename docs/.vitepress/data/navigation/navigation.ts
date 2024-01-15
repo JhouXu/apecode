@@ -185,6 +185,13 @@ export const OnlineTools: navigationItem[] = [
     icon: "https://webgradients.com/favicons/favicon-196x196.png",
     type: "在线工具",
   },
+  {
+    text: "LoremPicsum",
+    desc: "The Lorem Ipsum for photos.",
+    link: "https://picsum.photos/",
+    icon: "https://picsum.photos/200",
+    type: "在线工具",
+  },
 ];
 
 export const SoftwareClient: navigationItem[] = [
