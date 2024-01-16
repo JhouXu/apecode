@@ -15,6 +15,7 @@ module.exports = {
 
   themeConfig: {
     siteTitle: titleEn,
+    logo: logo,
 
     // default config
     outline: "deep",
