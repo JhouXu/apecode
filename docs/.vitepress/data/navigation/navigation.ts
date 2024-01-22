@@ -306,10 +306,10 @@ export const FileHandling: navigationItem[] = [
     type: ImageEditor,
   },
   {
-    text: "bigjpg",
-    desc: "AI人工智能圖片放大",
-    link: "https://bigjpg.com/",
-    icon: "https://bigjpg.com/static/css/touch-icon-iphone-retina.png",
+    text: "CodeFormer",
+    desc: "Robust Face Restoration and Enhancement Network",
+    link: "https://huggingface.co/spaces/sczhou/CodeFormer",
+    icon: "https://user-images.githubusercontent.com/14334509/189166076-94bb2cac-4f4e-40fb-a69f-66709e3d98f5.png",
     type: ImageEditor,
   },
   {
