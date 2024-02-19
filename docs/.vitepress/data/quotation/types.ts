@@ -1,4 +1,4 @@
-export interface quotationItems {
+export interface quotationItem {
   content: string;
   date?: string;
   source?: string;

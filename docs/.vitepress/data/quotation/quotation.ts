@@ -1,6 +1,6 @@
-import { quotationItems } from "./types";
+import { quotationItem } from "./types";
 
-export const quotationData: quotationItems[] = [
+export const quotationData: quotationItem[] = [
   {
     content: "他们的大学故事，始于一场初秋，终于一场盛夏。",
     date: "2023-10-31",
