@@ -18,7 +18,7 @@ hero:
 features:
   - icon: 🔗
     title: 导航工具
-    details: 常用网站，即点即用。
+    details: 有趣实用的网站，提高效率。
     link: /pages/navigation
     linkText: 立即查看
   - icon: 🗃️
