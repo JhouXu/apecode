@@ -38,8 +38,8 @@ features:
     linkText: 了解更多
   - icon: 🌞
     title: 语录
-    details: 敬请期待...
-    link:
+    details: 送给一直很努力的你。
+    link: /pages/quotation
     linkText: 了解更多
   - icon: 🚩
     title: 拥抱开源
