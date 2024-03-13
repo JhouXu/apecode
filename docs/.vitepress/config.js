@@ -44,7 +44,7 @@ module.exports = {
     // algolia,
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2023 - 2023 💓 Xiao Zan",
+      copyright: "Copyright © 2023 - 2024 💓 Xiao Zan",
     },
   },
 
