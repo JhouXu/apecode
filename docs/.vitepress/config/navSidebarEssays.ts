@@ -5,6 +5,7 @@ export const navSidebarEssays = [
   { text: "HTML", link: "/pages/essays/html.md" },
   { text: "CSS", link: "/pages/essays/css.md" },
   { text: "JavaScript", link: "/pages/essays/javascript.md" },
+  { text: "JS大师课", link: "/pages/essays/javascript_duyi.md" },
   { text: "Vue", link: "/pages/essays/vue.md" },
   { text: "React", link: "/pages/essays/react.md" },
   { text: "其它", link: "/pages/essays/other.md" },
