@@ -1,13 +1,9 @@
-<!-- ---
+---
 layout: doc
 ---
 
 <script setup>
 import { ref, onMounted } from "vue";
-
-import { blog } from "../../.vitepress/data/blog/blog.ts";
-import { classify } from "../../.vitepress/data/blog/classify.ts";
-import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 
 // SyntaxError: Named export 'CalendarHeatmap' not found.
 // The requested module 'vue3-calendar-heatmap' is a CommonJS module,
@@ -15,9 +11,6 @@ import { getTimestamp, timestampToFormatTime } from "../../utils/date.tool.js";
 // import { CalendarHeatmap } from 'vue3-calendar-heatmap'
 import * as pkg from "vue3-calendar-heatmap";
 const CalendarHeatmap = pkg.CalendarHeatmap || pkg;
-
-const classifyArr = ref([]);
-const blogArr = ref([]);
 
 const publishDates = ref([]);
 const nowDate = ref("1970-01-01");
@@ -59,21 +52,6 @@ onMounted(() => {
   });
 
   darkModeMediaQuery();
-
-  const sortBlog = blog.sort((a, b) =>  new Date(b.time).getTime() - new Date(a.time).getTime())
-
-  // 初始化分类数据
-  let arr = getObjectValues(classify);
-  arr.map((cItem) => {
-    if (cItem.link === '') {
-      let index = sortBlog.findIndex(sItem => sItem.type === cItem.value);
-      let total = sortBlog.filter((sItem) => sItem.type === cItem.value).length;
-      cItem.link = sortBlog[index]['link'];
-      cItem.total = total;
-    }
-  })
-  classifyArr.value = arr;
-  blogArr.value = sortBlog;
 });
 
 // 获取当前时间
@@ -139,16 +117,8 @@ const getObjectValues = (obj) => {
 
 # 随笔记
 
-## 分类
-
-<ClassifyCard :classifyData=classifyArr />
-
-## 近期
-
-<RecentlyCard :blogData=blogArr />
-
 ## 更新
 
 由于 Github 的限制，数据会出现加载异常的问题。[想看的可以多刷新几次 ╰(*°▽°*)╯]
 
-<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" /> -->
+<CalendarHeatmap :values="publishDates" :end-date="nowDate" :round="2" :max="10" :dark-mode="isDarkMode" :range-color="isDarkMode ? darkRangeColor : lightRangeColor" />
