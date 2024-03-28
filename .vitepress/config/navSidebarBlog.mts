@@ -2,8 +2,8 @@ const sidebarCollapsed: boolean = true;
 
 export const navBlog = [
   { text: "概述", link: "/blog/blog.md" },
-  { text: "Css", link: "/blog/css-center.md" },
   { text: "Javascript", link: "/blog/js-ajax.md" },
+  { text: "Css", link: "/blog/css-center.md" },
   { text: "微信小程序", link: "/blog/program-navigation-bar-height.md" },
   { text: "前端算法", link: "/blog/algorithm-encryption.md" },
   { text: "实际开发", link: "/blog/example-html2canvas.md" },
@@ -13,6 +13,18 @@ export const navBlog = [
 
 export const sidebarBlog = [
   { text: "概述", collapsed: sidebarCollapsed, link: "/blog/blog.md" },
+  {
+    text: "Javascript",
+    collapsed: sidebarCollapsed,
+    items: [
+      { text: "原生 AJAX 的异步请求", link: "/blog/js-ajax.md" },
+      { text: "浏览器对象模型 BOM", link: "/blog/js-bom.md" },
+      { text: "Canvas 学习笔记", link: "/blog/js-canvas.md" },
+      { text: "程序命名公式及规范", link: "/blog/js-standard.md" },
+      { text: "touch 触摸事件以及常用触摸功能", link: "/blog/js-touch.md" },
+      { text: "自封装常用的工具函数", link: "/blog/js-fun.md" },
+    ],
+  },
   {
     text: "Css",
     collapsed: sidebarCollapsed,
@@ -28,18 +40,6 @@ export const sidebarBlog = [
       { text: "CSS Flex 弹性布局", link: "/blog/css-flex.md" },
       { text: "CSS Grid 网格布局【待】", link: "/blog/css-grid.md" },
       { text: "CSS3 转换过渡动画", link: "/blog/css-animation.md" },
-    ],
-  },
-  {
-    text: "Javascript",
-    collapsed: sidebarCollapsed,
-    items: [
-      { text: "原生 AJAX 的异步请求", link: "/blog/js-ajax.md" },
-      { text: "浏览器对象模型 BOM", link: "/blog/js-bom.md" },
-      { text: "Canvas 学习笔记", link: "/blog/js-canvas.md" },
-      { text: "程序命名公式及规范", link: "/blog/js-standard.md" },
-      { text: "touch 触摸事件以及常用触摸功能", link: "/blog/js-touch.md" },
-      { text: "自封装常用的工具函数", link: "/blog/js-fun.md" },
     ],
   },
   {
