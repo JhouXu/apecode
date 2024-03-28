@@ -1,7 +1,7 @@
 # 语录
 
 <script setup>
-  import { quotationData } from '../.vitepress/data/quotation/quotation.ts'
+  import { quotationData } from '../.vitepress/config/quotation.mts'
 </script>
 
 <hr />
