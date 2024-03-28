@@ -4,6 +4,7 @@ layout: doc
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { getTimestamp, timestampToFormatTime } from '../../.vitepress/utils/date.tool.js'
 
 // SyntaxError: Named export 'CalendarHeatmap' not found.
 // The requested module 'vue3-calendar-heatmap' is a CommonJS module,
