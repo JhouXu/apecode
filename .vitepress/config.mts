@@ -20,7 +20,6 @@ import {
 import { socialLinks } from "./config/social.mts";
 import { nav } from "./config/nav.mts";
 import { sidebar } from "./config/sidebar.mts";
-import algolia from "./config/algolia.mts";
 
 export default defineConfig({
   title: titleEn,
