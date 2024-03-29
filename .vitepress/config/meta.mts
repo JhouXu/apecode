@@ -15,6 +15,21 @@ export const juejin: string = "https://juejin.cn/user/1126374170967367/posts";
 export const csdn: string = "https://blog.csdn.net/weixin_44808483";
 export const github: string = "https://github.com/JhouXu/apecode";
 
+// doc label
+export const outlineTitle: string = "目录";
+export const sidebarMenuLabel: string = "导航";
+export const docFooterPrev: string = "上一篇";
+export const docFooterNext: string = "下一篇";
+export const returnToTopLabel: string = "返回顶部";
+export const darkModeSwitchLabel: string = "外观";
+export const editLinkPattern: string = `${github}/blob/master/docs/:path`;
+export const editLinkText: string = "编辑此页";
+export const lastUpdatedText: string = "最后更新于";
+
+// footer
+export const footerMessage: string = "Released under the MIT License.";
+export const footerCopyright: string = "Copyright © 2023 - 2024 💓 Xiao Zan";
+
 // icon
 export const juejinIcon: string =
   '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="28" viewBox="0 0 36 28" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.5875 6.77268L21.8232 3.40505L17.5875 0.00748237L17.5837 0L13.3555 3.39757L17.5837 6.76894L17.5875 6.77268ZM17.5863 17.3955H17.59L28.5161 8.77432L25.5526 6.39453L17.59 12.6808H17.5863L17.5825 12.6845L9.61993 6.40201L6.66016 8.78181L17.5825 17.3992L17.5863 17.3955ZM17.5828 23.2891L17.5865 23.2854L32.2133 11.7456L35.1768 14.1254L28.5238 19.3752L17.5865 28L0.284376 14.3574L0 14.1291L2.95977 11.7531L17.5828 23.2891Z"/></svg>';

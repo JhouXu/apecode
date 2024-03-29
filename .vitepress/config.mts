@@ -1,6 +1,22 @@
 import { defineConfig } from "vitepress";
 
-import { title, titleEn, description, base, logo, github } from "./config/meta.mts";
+import {
+  titleEn,
+  description,
+  base,
+  logo,
+  outlineTitle,
+  sidebarMenuLabel,
+  docFooterPrev,
+  docFooterNext,
+  returnToTopLabel,
+  darkModeSwitchLabel,
+  editLinkPattern,
+  editLinkText,
+  lastUpdatedText,
+  footerMessage,
+  footerCopyright,
+} from "./config/meta.mts";
 import { socialLinks } from "./config/social.mts";
 import { nav } from "./config/nav.mts";
 import { sidebar } from "./config/sidebar.mts";
@@ -20,27 +36,27 @@ export default defineConfig({
     siteTitle: titleEn,
     logo: logo,
     outline: "deep",
-    outlineTitle: "目录",
-    sidebarMenuLabel: "导航",
+    outlineTitle: outlineTitle,
+    sidebarMenuLabel: sidebarMenuLabel,
     docFooter: {
-      prev: "上一篇",
-      next: "下一篇",
+      prev: docFooterPrev,
+      next: docFooterNext,
     },
-    returnToTopLabel: "返回顶部",
-    darkModeSwitchLabel: "外观",
+    returnToTopLabel: returnToTopLabel,
+    darkModeSwitchLabel: darkModeSwitchLabel,
     editLink: {
-      pattern: `${github}/blob/master/docs/:path`,
-      text: "在 GitHub 上编辑此页",
+      pattern: editLinkPattern,
+      text: editLinkText,
     },
-    lastUpdatedText: "最后更新",
+    lastUpdatedText: lastUpdatedText,
 
     nav: nav,
     sidebar: sidebar,
     socialLinks: socialLinks,
 
     footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2023 - 2024 💓 Xiao Zan",
+      message: footerMessage,
+      copyright: footerCopyright,
     },
     search: {
       provider: "local",
