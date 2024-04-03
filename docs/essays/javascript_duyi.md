@@ -184,3 +184,125 @@ repaint 的本质就是重新根据分层信息计算了绘制指令。
 因为 transform 既不会影响布局也不会影响绘制指令，它影响的只是渲染流程的最后一个「draw」阶段
 
 由于 draw 阶段在合成线程中，所以 transform 的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响 transform 的变化。
+
+## 三、CSS
+
+### 属性计算过程
+
+总的来讲，属性值的计算过程，分为如下这么 _4_ 个步骤：
+
+- 确定声明值：所谓声明值就是作者自己所书写的 CSS 样式；
+- 层叠冲突
+  - 比较源的重要性：页面作者样式 > 用户样式 > 用户代理样式。
+  - 比较优先级：选择器的权重。
+  - 比较次序：定义先后。
+- 使用继承：始终**最近的** div 元素样式；
+- 使用默认值
+
+### CSS 包含块
+
+包含块（**containing block**）：**就是元素的尺寸和位置，会受它的包含块所影响。对于一些属性，例如 width, height, padding, margin，绝对定位元素的偏移值（比如 position 被设置为 absolute 或 fixed），当我们对其赋予百分比值时，这些值的计算值，就是通过元素的包含块计算得来**。
+
+包含块分为两种，一种是根元素（HTML 元素）所在的包含块，被称之为**初始包含块**（**initial containing block**）。对于浏览器而言，初始包含块的的大小等于视口 viewport 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。
+
+另外一种是对于**非根元素**，对于非根元素的包含块判定就有几种不同的情况了。大致可以分为如下几种：
+
+- 如果元素的 positiion 是 relative 或 static ，那么包含块由离它最近的块容器（block container）的内容区域（content area）的边缘建立。
+- 如果 position 属性是 fixed，那么包含块由视口建立。
+- 如果元素使用了 absolute 定位，则包含块由它的最近的 position 的值不是 static （也就是值为 fixed、absolute、relative 或 sticky）的祖先元素的内边距区的边缘组成。
+
+前面两条实际上都还比较好理解，第三条往往是初学者容易比较忽视的，我们来看一个示例：
+
+```html
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="item2"></div>
+    </div>
+  </div>
+</body>
+```
+
+```css
+.container {
+  width: 500px;
+  height: 300px;
+  background-color: skyblue;
+  position: relative;
+}
+.item {
+  width: 300px;
+  height: 150px;
+  border: 5px solid;
+  margin-left: 100px;
+}
+.item2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+```
+
+首先阅读上面的代码，然后你能在脑海里面想出其大致的样子么？或者用笔和纸画一下也行。
+
+公布正确答案：
+
+<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-153548.png" alt="image-20220814233548188" style="zoom: 33%;" />
+
+怎么样？有没有和你所想象的对上？
+
+其实原因也非常简单，根据上面的第三条规则，对于 div.item2 来讲，它的包含块应该是 div.container，而非 div.item。
+
+如果你能把上面非根元素的包含块判定规则掌握，那么关于包含块的知识你就已经掌握 80% 了。
+
+实际上对于非根元素来讲，包含块还有一种可能，那就是如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近父级元素的内边距区的边缘组成的：
+
+- transform 或 perspective 的值不是 none
+- will-change 的值是 transform 或 perspective
+- filter 的值不是 none 或 will-change 的值是 filter(只在 Firefox 下生效).
+- contain 的值是 paint (例如: contain: paint;)
+
+我们还是来看一个示例：
+
+```html
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="item2"></div>
+    </div>
+  </div>
+</body>
+```
+
+```css
+.container {
+  width: 500px;
+  height: 300px;
+  background-color: skyblue;
+  position: relative;
+}
+.item {
+  width: 300px;
+  height: 150px;
+  border: 5px solid;
+  margin-left: 100px;
+  transform: rotate(0deg); /* 新增代码 */
+}
+.item2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+```
+
+我们对于上面的代码只新增了一条声明，那就是 transform: rotate(0deg)，此时的渲染效果却发生了改变，如下图所示：
+
+<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154347.png" alt="image-20220814234347149" style="zoom:33%;" />
+
+可以看到，此时对于 div.item2 来讲，包含块就变成了 div.item。
