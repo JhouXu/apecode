@@ -12,9 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: npm i pnpm -g
-      - run: npm install --no-frozen-lockfile
+          node-version: 18 # 将 Node.js 版本更新为 18
+      - run: npm i pnpm@6 -g # 使用适合 Node.js 18 的 pnpm 版本
+      - run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm build
