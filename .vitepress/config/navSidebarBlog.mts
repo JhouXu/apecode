@@ -99,7 +99,8 @@ export const sidebarBlog = [
       { text: "Prettier 一个固执的代码格式化程序", link: "/blog/plugin-prettier.md" },
       { text: "常用的 git 命令总结", link: "/blog/git.md" },
       { text: "关于将前端项目部署到 Linux", link: "/blog/nginx.md" },
-      { text: "前端工程化", link: "/blog/packing.md" },
+      { text: "前端工程化之 Webpack", link: "/blog/plugin-webpack.md" },
+      { text: "前端工程化之 Vite", link: "/blog/plugin-vite.md" },
     ],
   },
 ];

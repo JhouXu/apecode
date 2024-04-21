@@ -2,11 +2,9 @@
 layout: doc
 ---
 
-# 工程化
+# 前端工程化之 Webpack
 
 打包工具的出现，解决了浏览器的兼容问题，以及避免模块过多等问题。
-
-## Webpack
 
 > At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then combines every module your project needs into one or more bundles, which are static assets to serve your content from.
 
@@ -14,7 +12,7 @@ layout: doc
 
 [Webpack 官网 👉](https://webpack.js.org/)
 
-### 相关依赖
+## 相关依赖
 
 ```sh
 # webpack 核心文件
@@ -45,7 +43,7 @@ npm install -D webpack webpack-cli
 }
 ```
 
-### 配置文件
+## 配置文件
 
 ```js
 /* webpack.config.js */
@@ -54,7 +52,7 @@ module.exports = {
 };
 ```
 
-### entry
+## entry
 
 入口点指示 webpack 应该使用哪个模块来开始构建其内部依赖关系图。Webpack 将计算出入口点（直接和间接）依赖于哪些其他模块和库。
 
@@ -89,11 +87,11 @@ module.exports = {
 软件设计思想：约定优于配置
 :::
 
-### output
+## output
 
 输出属性告诉 webpack 在哪里发出它创建的捆绑包以及如何命名这些文件。默认为/用于主输出文件的 dist/main.js 和/任何其他生成文件的 dist 文件夹。
 
-#### 配置
+### 配置
 
 ```js
 /* webpack.config.js */
@@ -119,7 +117,7 @@ module.exports = {
 };
 ```
 
-#### 多入口文件
+### 多入口文件
 
 ```js
 /* webpack.config.js */
@@ -173,13 +171,13 @@ module.exports = {
 
 :::
 
-### loader
+## loader
 
 加载程序是应用于模块源代码的转换。它们允许您在导入或“加载”它们时预处理文件。因此，装载机就像其他构建工具中的“任务”一样，并提供了一种处理前端构建步骤的强大方法。加载程序可以将文件从其他语言（例如 TypeScript）转换为 JavaScript 或将内联图像加载为数据 URL。装载机甚至允许您直接从 JavaScript 模块中进行导入 CSS 文件之类的事情！
 
 > npm webpack 默认情况下，只会处理 js 文件，其它文件需要使用 loader 加载器。
 
-#### 安装
+### 安装
 
 ```sh
 # 安装 loader
@@ -188,7 +186,7 @@ module.exports = {
 npm install -D css-loader style-loader
 ```
 
-#### 配置
+### 配置
 
 ```js
 /* webpack.config.js */
@@ -213,7 +211,7 @@ module.exports = {
 };
 ```
 
-#### 使用
+### 使用
 
 ```js
 /* index.js */
@@ -230,7 +228,7 @@ document.body.insetAdjacentHtml("beforeend", `<img src="${img}" alt=""/>`);
 软件设计思想：单一职责
 :::
 
-### babel
+## babel
 
 在编写 js 代码时，经常需要使用一些 js 中的新特性，但新特性在旧的浏览器上兼容性并不好。Babel 是解决这一问题的工具。
 
@@ -242,7 +240,7 @@ Babel 是一种工具链，主要用于将 Ecmascript 2015+代码转换为当前
 
 [Webpack Babel 配置 👉](https://webpack.js.org/loaders/babel-loader/#root)
 
-#### 下载
+### 下载
 
 ```sh
 # 安装 babel 插件
@@ -252,7 +250,7 @@ Babel 是一种工具链，主要用于将 Ecmascript 2015+代码转换为当前
 npm install -D babel-loader @babel/core @babel/preset-env
 ```
 
-#### 配置
+### 配置
 
 ```js
 /* webpack.config.js */
@@ -276,7 +274,7 @@ module.exports = {
 };
 ```
 
-#### 使用
+### 使用
 
 ```json
 /* package.json */
@@ -287,11 +285,11 @@ module.exports = {
 
 [browserslist 更多配置项目 👉](https://github.com/browserslist/browserslist)
 
-### plugin
+## plugin
 
 > 扩展 webpack 的功能。
 
-#### 1. html-webpack-plugin
+### 1. html-webpack-plugin
 
 这个插件可以在项目打包后，自动生成 html 文件。
 
@@ -323,7 +321,7 @@ module.exports = {
 };
 ```
 
-#### 2. terser-webpack-plugin
+### 2. terser-webpack-plugin
 
 压缩打包后的 js 代码。
 
@@ -349,7 +347,7 @@ module.exports = {
 };
 ```
 
-#### 3. webpack-bundle-analyzer
+### 3. webpack-bundle-analyzer
 
 这是一个帮助分析的工具，它会可视化地展现打包过程中哪个文件占的体积比较大。
 
@@ -375,7 +373,7 @@ module.exports = {
 
 ![webpack-bundle-analyzer](../public/images/blog/webpack-bundle-analyzer.png)
 
-### 开发服务器
+## 开发服务器
 
 ```sh
 # 监视文件变化，并自动打包
@@ -409,7 +407,7 @@ module.exports = {
 
 `webpack --watch` 和 `webpack serve` 的区别是 `前者自动打包后需要手动刷新浏览器，后者会自动刷新`。
 
-#### 进阶
+### 进阶
 
 ```json
 {
@@ -431,7 +429,7 @@ module.exports = {
 }
 ```
 
-### soureMap
+## soureMap
 
 由于 webpack serve 运行的项目为打包后的，程序调试性差，为此 webpack 允许设置`代码映射`，可以将打包后的代码映射回源码，以便调试。
 
@@ -442,118 +440,6 @@ module.exports = {
   devtool: "inline-source-map", // 开发环境推荐使用 inline-source-map [!code ++]
   // devtool: 'eval-source-map', // 生产环境推荐使用 eval-source-map [!code ++]
 };
-```
-
-## Vite
-
-下一代的前端工具链
-
-[Vite 官网 👉](https://cn.vitejs.dev/)
-
-- vite 也是前端的构建工具
-- 相较于 webpack，vite 采用了不同的运行方式
-  - 开发时，不对代码打包，而是直接采用 ESM 的方式来运行项目
-  - 生产时，再进行项目打包
-- 除了运行速度外，vite 使用起来也特别方便
-- 基本使用
-  - 1. 安装开发依赖 vite
-  - 2. vite 的源码目录就是项目的根目录
-  - 3. 开发命令：
-    - `vite` 启动开发服务器
-    - `vite build` 打包代码
-    - `vite preview` 启动打包服务器
-
-### 自定义
-
-安装
-
-```sh
-npm install vite -D
-```
-
-配置
-
-```json
-/* package.json */
-{
-  "version": "0.0.1",
-  "devDependencies": {
-    // more
-  },
-  "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  }
-}
-```
-
-```html
-<!-- 根目录/index.html -->
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- 注意，vite 需要使用 ESM 的方式导入 -->
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body> </body>
-</html>
-```
-
-```js
-/* 根目录/index.js */
-console.log("Hello World");
-```
-
-完成上述三个文件的配置后，即可通过控制台执行相关命令实现项目的打包了。
-
-### 脚手架
-
-::: code-group
-
-```sh [npm]
-$ npm create vite@latest
-```
-
-```sh [yarn]
-$ yarn create vite
-```
-
-```sh [pnpm]
-$ pnpm create vite
-```
-
-```sh [bun]
-$ bun create vite
-```
-
-:::
-
-### 配置文件
-
-[官网案例 👉](https://cn.vitejs.dev/guide/using-plugins#using-plugins)
-
-若要使用一个插件，需要将它添加到项目的 devDependencies 并在 vite.config.js 配置文件中的 plugins 数组中引入它。例如，要想为传统浏览器提供支持，可以按下面这样使用官方插件 @vitejs/plugin-legacy：
-
-```sh
-npm add -D @vitejs/plugin-legacy
-```
-
-```js
-/* vite.config.js */
-import legacy from "@vitejs/plugin-legacy";
-import { defineConfig } from "vite";
-
-export default defineConfig({
-  plugins: [
-    legacy({
-      targets: ["defaults", "not IE 11"],
-    }),
-  ],
-});
 ```
 
 ## 参考
