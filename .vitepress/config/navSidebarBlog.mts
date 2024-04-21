@@ -1,21 +1,13 @@
 const sidebarCollapsed: boolean = true;
 
-export const navBlog = [
-  { text: "概述", link: "/blog/blog.md" },
-  { text: "Javascript", link: "/blog/js-ajax.md" },
-  { text: "Css", link: "/blog/css-center.md" },
-  { text: "微信小程序", link: "/blog/program-navigation-bar-height.md" },
-  { text: "前端算法", link: "/blog/algorithm-encryption.md" },
-  { text: "实际开发", link: "/blog/example-html2canvas.md" },
-  { text: "插件笔记", link: "/blog/js-preload.md" },
-  { text: "其它", link: "/blog/tencent-cloud-server.md" },
-];
-
-export const sidebarBlog = [
-  { text: "概述", collapsed: sidebarCollapsed, link: "/blog/blog.md" },
+export const BlogData = [
+  {
+    text: "概述",
+    link: "/blog/blog.md",
+    items: [],
+  },
   {
     text: "Javascript",
-    collapsed: sidebarCollapsed,
     items: [
       { text: "原生 AJAX 的异步请求", link: "/blog/js-ajax.md" },
       { text: "浏览器对象模型 BOM", link: "/blog/js-bom.md" },
@@ -27,7 +19,6 @@ export const sidebarBlog = [
   },
   {
     text: "Css",
-    collapsed: sidebarCollapsed,
     items: [
       { text: "元素水平垂直居中的六种方式", link: "/blog/css-center.md" },
       { text: "CSS 中实现隐藏", link: "/blog/css-hidden.md" },
@@ -44,7 +35,6 @@ export const sidebarBlog = [
   },
   {
     text: "微信小程序",
-    collapsed: sidebarCollapsed,
     items: [
       {
         text: "自定义小程序 navigationBar 的高度，以及避免设备系统不同产生不兼容",
@@ -58,12 +48,10 @@ export const sidebarBlog = [
   },
   {
     text: "前端算法",
-    collapsed: sidebarCollapsed,
     items: [{ text: "加密算法的认识及常用加密算法", link: "/blog/algorithm-encryption.md" }],
   },
   {
     text: "实际开发",
-    collapsed: sidebarCollapsed,
     items: [
       { text: "html2canvas 实现截图附上模糊处理方案", link: "/blog/example-html2canvas.md" },
       { text: "audio 自动播放产生的困扰解决方案", link: "/blog/example-audio.md" },
@@ -79,7 +67,6 @@ export const sidebarBlog = [
   },
   {
     text: "插件笔记",
-    collapsed: sidebarCollapsed,
     items: [
       { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload.md" },
       { text: "Swiper 实现指定的 slide 显示位置", link: "/blog/js-swiper-to.md" },
@@ -91,7 +78,6 @@ export const sidebarBlog = [
   },
   {
     text: "其它",
-    collapsed: sidebarCollapsed,
     items: [
       { text: "腾讯云服务器购买以及部署", link: "/blog/tencent-cloud-server.md" },
       { text: "ESLint 语法检验工具的使用", link: "/blog/plugin-eslint.md" },
@@ -104,3 +90,26 @@ export const sidebarBlog = [
     ],
   },
 ];
+
+export const navBlog = (() => {
+  const D = JSON.parse(JSON.stringify(BlogData));
+  const data: Array<Object> = [];
+
+  D.forEach((item: any) => {
+    let items = item["items"];
+    data.push({ text: item["text"], link: item["link"] || items[items.length - 1]["link"] });
+  });
+  return data;
+})();
+
+export const sidebarBlog = (() => {
+  // 数据作用域隔断处理
+  const D = JSON.parse(JSON.stringify(BlogData));
+  const data: Array<Object> = [];
+
+  D.forEach((item: any) => {
+    data.push({ ...item });
+    data["collapsed"] = sidebarCollapsed;
+  });
+  return data;
+})();
