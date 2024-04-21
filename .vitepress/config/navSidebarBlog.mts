@@ -87,7 +87,6 @@ export const sidebarBlog = [
       { text: "Vue-export2excel 导出表格", link: "/blog/js-vue-export2excel.md" },
       { text: "PannellumJS 快速搭建属于你的全景查看器", link: "/blog/js-pannellum.md" },
       { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/js-swiper.md" },
-      { text: "Vitepress 实战应用", link: "/blog/vue-vitepress.md" },
     ],
   },
   {
@@ -99,6 +98,7 @@ export const sidebarBlog = [
       { text: "Prettier 一个固执的代码格式化程序", link: "/blog/plugin-prettier.md" },
       { text: "常用的 git 命令总结", link: "/blog/git.md" },
       { text: "关于将前端项目部署到 Linux", link: "/blog/nginx.md" },
+      { text: "Vitepress 实战应用", link: "/blog/vue-vitepress.md" },
       { text: "前端工程化之 Webpack", link: "/blog/plugin-webpack.md" },
       { text: "前端工程化之 Vite", link: "/blog/plugin-vite.md" },
     ],
