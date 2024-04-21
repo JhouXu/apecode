@@ -431,7 +431,7 @@ module.exports = {
 }
 ```
 
-### 八、soureMap
+### soureMap
 
 由于 webpack serve 运行的项目为打包后的，程序调试性差，为此 webpack 允许设置`代码映射`，可以将打包后的代码映射回源码，以便调试。
 
