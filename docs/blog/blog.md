@@ -3,10 +3,7 @@ layout: doc
 ---
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { sidebarBlog } from '../../.vitepress/config/navSidebarBlog.mts'
-
-onMounted(() => {});
+  import DocsBlogSummary from '../../.vitepress/components/DocsBlogSummary.vue';
 </script>
 
 # 随笔记
@@ -26,3 +23,10 @@ onMounted(() => {});
 - 其他: 杂项.
 
 ## 近期
+
+## 数据
+
+分类占比
+
+<DocsBlogSummary />
+
