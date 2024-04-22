@@ -96,7 +96,7 @@ export const BlogData = [
   },
 ];
 
-export const navBlog = (() => {
+export const navBlog: any = (() => {
   const D = JSON.parse(JSON.stringify(BlogData));
   const data: Array<Object> = [];
 
@@ -107,7 +107,7 @@ export const navBlog = (() => {
   return data;
 })();
 
-export const sidebarBlog = (() => {
+export const sidebarBlog: any = (() => {
   // 数据作用域隔断处理
   const D = JSON.parse(JSON.stringify(BlogData));
   const data: Array<Object> = [];
