@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@documate/vue": "^0.3.1",
+    "echarts": "^5.5.0",
     "medium-zoom": "^1.1.0",
     "vue3-calendar-heatmap": "^2.0.5"
   }
