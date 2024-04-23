@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import DocsBlogSummary from '../../.vitepress/components/DocsBlogSummary.vue';
+  import DocsBlogPie from '../../.vitepress/components/DocsBlogPie.vue';
 </script>
 
 # 随笔记
@@ -28,5 +28,5 @@ layout: doc
 
 分类占比
 
-<DocsBlogSummary />
+<DocsBlogPie />
 
