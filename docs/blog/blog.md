@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import DocsBlogPie from '../../.vitepress/components/DocsBlogPie.vue';
+  import DocsBlogCharts from '../../.vitepress/components/DocsBlogCharts.vue';
 </script>
 
 # 随笔记
@@ -26,7 +26,4 @@ layout: doc
 
 ## 数据
 
-分类占比
-
-<DocsBlogPie />
-
+<DocsBlogCharts />
