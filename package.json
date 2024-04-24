@@ -12,7 +12,8 @@
     "vitepress": "^1.0.1",
     "vitepress-plugin-comment-with-giscus": "^1.1.1",
     "vitepress-plugin-google-analytics": "^1.0.2",
-    "vitepress-plugin-nprogress": "^0.0.4"
+    "vitepress-plugin-nprogress": "^0.0.4",
+    "vue3-calendar-heatmap": "^2.0.5"
   },
   "scripts": {
     "dev": "vitepress dev",
@@ -22,7 +23,6 @@
   "dependencies": {
     "@documate/vue": "^0.3.1",
     "echarts": "^5.5.0",
-    "medium-zoom": "^1.1.0",
-    "vue3-calendar-heatmap": "^2.0.5"
+    "medium-zoom": "^1.1.0"
   }
 }
