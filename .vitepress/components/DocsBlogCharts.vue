@@ -12,6 +12,17 @@ const dataHeatmap = ref<[string, number][]>([]); // 热力图数据
 let chartPie: echarts.ECharts; // 饼图实例
 let chartHeatmap: echarts.ECharts; // 热力图实例
 
+let heatmapTheme = {
+  "": {
+    color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+    borderColor: "#e2e2e3",
+  },
+  dark: {
+    color: ["#100c2a", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+    borderColor: "#2e2e32",
+  },
+};
+
 onMounted(() => {
   // 初始化页面主题
   theme.value = getPageTheme();
@@ -26,7 +37,7 @@ onMounted(() => {
 
   dataHeatmap.value = getYearTemplateData(getYear());
   dataHeatmap.value = getYearValueData(dataHeatmap.value, BlogData);
-  chartHeatmap = chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value);
+  chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
 
   window.addEventListener("resize", () => {
     chartPie.resize();
@@ -45,7 +56,7 @@ watch(theme, (newTheme: string) => {
   chartPie = initEchartPie(dataPie.value, theme.value);
 
   chartHeatmap.dispose();
-  chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value);
+  chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
 });
 
 const initEchartPie = (data: Object[], theme: string) => {
@@ -93,7 +104,15 @@ const initEchartPie = (data: Object[], theme: string) => {
   return example;
 };
 
-const initEchartHeatmap = (data: Object[], theme: string, yearRange: string | number = getYear()) => {
+const initEchartHeatmap = (
+  data: Object[],
+  theme: string,
+  yearRange: string | number,
+  themeColor: {
+    color: string[];
+    borderColor: string;
+  }
+) => {
   let chartDom: HTMLElement | null = document.getElementById("chart-heatmap");
   let example: echarts.ECharts = echarts.init(chartDom, theme);
   let option: Object | any;
@@ -108,7 +127,8 @@ const initEchartHeatmap = (data: Object[], theme: string, yearRange: string | nu
       right: 37,
       top: 150,
       inRange: {
-        color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+        color: themeColor.color,
+        borderColor: themeColor.borderColor,
       },
     },
     calendar: {
@@ -118,7 +138,7 @@ const initEchartHeatmap = (data: Object[], theme: string, yearRange: string | nu
       cellSize: ["auto", 14],
       range: yearRange,
       itemStyle: {
-        borderWidth: 0.5,
+        borderWidth: 1,
       },
       yearLabel: { show: true },
     },
