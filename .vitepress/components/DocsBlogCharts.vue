@@ -14,11 +14,11 @@ let chartHeatmap: echarts.ECharts; // 热力图实例
 
 let heatmapTheme = {
   "": {
-    color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+    colors: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
     borderColor: "#e2e2e3",
   },
   dark: {
-    color: ["#100c2a", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+    colors: ["#100c2a", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
     borderColor: "#2e2e32",
   },
 };
