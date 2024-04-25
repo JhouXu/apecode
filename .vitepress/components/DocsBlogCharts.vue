@@ -128,7 +128,7 @@ const initEchartHeatmap = (
       type: "continuous",
       orient: "horizontal",
       right: 37,
-      top: 150,
+      top: 160,
       inRange: {
         color: themeColor.color,
         borderColor: themeColor.borderColor,
@@ -246,7 +246,7 @@ function debounce(func: Function, delay: number): Function {
 
     <div class="heatmap">
       <p>发布频率</p>
-      <div id="chart-heatmap" class="w-100 h-[195px] rounded-md overflow-hidden bg-[#f1f1f1] dark:bg-[#100c2a]"></div>
+      <div id="chart-heatmap" class="w-100 h-[205px] rounded-md overflow-hidden bg-[#f1f1f1] dark:bg-[#100c2a]"></div>
     </div>
   </div>
 </template>
