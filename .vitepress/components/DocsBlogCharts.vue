@@ -52,11 +52,15 @@ onBeforeUnmount(() => {
 
 watch(theme, (newTheme: string) => {
   console.log("watch");
-  chartPie.dispose();
-  chartPie = initEchartPie(dataPie.value, theme.value);
+  debounce(() => {
+    chartPie.dispose();
+    chartPie = initEchartPie(dataPie.value, theme.value);
+  }, 400);
 
-  chartHeatmap.dispose();
-  chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
+  debounce(() => {
+    chartHeatmap.dispose();
+    chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
+  }, 400);
 });
 
 const initEchartPie = (data: Object[], theme: string) => {
@@ -219,6 +223,19 @@ const getYear = (): string | number => {
   let year = D.getFullYear();
   return year;
 };
+
+function debounce(func: Function, delay: number): Function {
+  let timer: number; // 定时器
+
+  return function () {
+    let context = this;
+    let args = arguments;
+    timer ? clearTimeout(timer) : null;
+    timer = setTimeout(() => {
+      func.apply(context, args);
+    }, delay);
+  };
+}
 </script>
 
 <template>
