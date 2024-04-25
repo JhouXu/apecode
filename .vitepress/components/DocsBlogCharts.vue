@@ -51,7 +51,6 @@ onBeforeUnmount(() => {
 });
 
 watch(theme, (newTheme: string) => {
-  console.log("watch");
   debounce(() => {
     chartPie.dispose();
     chartPie = initEchartPie(dataPie.value, theme.value);
