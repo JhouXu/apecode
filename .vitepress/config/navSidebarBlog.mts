@@ -92,6 +92,7 @@ export const BlogData = [
       { text: "Vitepress 实战应用", link: "/blog/vue-vitepress.md", time: "2023-01-01" },
       { text: "前端工程化之 Webpack", link: "/blog/plugin-webpack.md", time: "2024-04-19" },
       { text: "前端工程化之 Vite", link: "/blog/plugin-vite.md", time: "2024-04-19" },
+      { text: "Node 学习笔记", link: "/blog/plugin-node.md", time: "2024-04-26" },
     ],
   },
 ];
