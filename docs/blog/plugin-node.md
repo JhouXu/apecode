@@ -265,6 +265,89 @@ queueMicrotask() 可用来向微任务队列中添加一个任务
 
 ## 手写 Promise
 
+```javascript
+const PromiseState = {
+  PENDING: "0",
+  FULFILLED: "1",
+  REJECTED: "2",
+};
+
+class MyPromise {
+  #result;
+  #state = PromiseState.PENDING;
+  #callbacksFulfilled = [];
+  #callbacksRejected = [];
+
+  constructor(executor) {
+    executor(this.#resolve.bind(this), this.#reject.bind(this));
+  }
+
+  #resolve(result) {
+    if (this.#state !== PromiseState.PENDING) return;
+
+    this.#result = result;
+    this.#state = PromiseState.FULFILLED;
+
+    queueMicrotask(() => {
+      this.#callbacksFulfilled.forEach((cb) => {
+        cb();
+      });
+    });
+  }
+
+  #reject(reason) {
+    if (this.#state !== PromiseState.PENDING) return;
+
+    this.#result = reason;
+    this.#state = PromiseState.REJECTED;
+
+    queueMicrotask(() => {
+      this.#callbacksRejected.forEach((cb) => {
+        cb();
+      });
+    });
+  }
+
+  then(onFulfilled, onRejected) {
+    return new MyPromise((resolve, reject) => {
+      if (this.#state === PromiseState.PENDING) {
+        this.#callbacksFulfilled.push(() => {
+          resolve(onFulfilled(this.#result));
+        });
+        this.#callbacksRejected.push(() => {
+          reject(onRejected(this.#result));
+        });
+      } else if (this.#state === PromiseState.FULFILLED) {
+        queueMicrotask(() => resolve(onFulfilled(this.#result)));
+      } else if (this.#state === PromiseState.REJECTED) {
+        queueMicrotask(() => reject(onRejected(this.#result)));
+      }
+    });
+  }
+}
+
+const mp = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("哈哈");
+  }, 1000);
+});
+
+mp.then((result) => {
+  console.log("第1次读取数据", result);
+}).then((result) => {
+  console.log("第2次读取数据", result);
+});
+```
+
+::: details 结果
+
+```javascript
+// 第1次读取数据 哈哈
+// 第2次读取数据 undefined
+```
+
+:::
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
