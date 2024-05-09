@@ -348,6 +348,127 @@ mp.then((result) => {
 
 :::
 
+## async & await
+
+通过 async 可以创建一个异步函数，其中异步函数的返回值会自动封装到一个 Promise 中返回；
+
+在 async 声明的异步函数中，可以使用 await 关键字来调用异步函数；
+
+```javascript
+async function fun1() {
+  return 10;
+}
+
+// 等价于
+function fun2() {
+  return Promise.resolve(10);
+}
+```
+
+```javascript
+function sum(a, b) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b);
+    });
+  });
+}
+
+async function fun3() {
+  try {
+    let result = 0;
+    result = await sum(123, 456);
+    result = await sum(result, 789);
+    console.log(result);
+  } catch (err) {} // 异常捕获
+}
+fun3(); // 输出: 1368
+
+// 等价于
+function fun4() {
+  sum(123, 456)
+    .then((res) => {
+      return sum(res, 789);
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {}); // 异常捕获
+}
+fun4();
+```
+
+:::tip
+Promise 的出现解决了回调地狱的问题，但是过于 Promise 链式调用时，代码的可读性变差，所以出现了 async 和 await 来实现`同步写法`。
+:::
+
+执行顺序
+
+```javascript
+/* 
+  如果 async 声明的函数中没有写 await，那么会依次执行
+*/
+async function fun5() {
+  console.log(1);
+  console.log(2);
+  console.log(3);
+}
+fun5(); // 输出: 1 2 3
+
+// 等价于
+function fun6() {
+  return new Promise((resolve) => {
+    console.log(1);
+    console.log(2);
+    console.log(3);
+    resolve();
+  });
+}
+fun6();
+```
+
+```javascript
+/* 
+  如果使用 await 关键字，则后面的代码，会在当前函数执行完毕后，放置微任务队列中执行
+*/
+async function fun7() {
+  console.log(1);
+  await console.log(2);
+  await console.log(3);
+  console.log(4);
+}
+fun7();
+console.log(5); // 依此输出: 1 2 5 3 4
+
+// 等价于
+function fun8() {
+  new Promise((resolve) => {
+    console.log(1);
+    console.log(2);
+    resolve();
+  })
+    .then(() => {
+      console.log(3);
+    })
+    .then(() => {
+      console.log(4);
+    });
+}
+fun8();
+console.log(5);
+```
+
+:::tip 细节
+
+1. 当通过 await 去调用异步函数时，它会暂停代码的执行，并等待异步函数的返回结果，知道异步代码执行有结果时，才会将结果返回；
+2. await 必须写在 async 函数中，或 ES Modules 的顶级作用域中；
+3. await 只会阻塞异步函数的内部代码，不会影响外部代码的执行；
+4. 通过使用 await 调用异步函数，需要使用 try-catch 来处理异常；
+5. 如果 async 声明的函数中没有写 await，那么会依次执行；
+6. 如果使用 await 关键字，则后面的代码，会在当前函数执行完毕后，放置微任务队列中执行。
+
+:::
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
