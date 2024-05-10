@@ -366,13 +366,31 @@ $ git reset --keep [commit]
 # 后者的所有变化都将被前者抵消，并且应用到当前分支
 
 $ git revert [commit]
-
-暂时将未提交的变化移除，稍后再移入
-$ git stash
-$ git stash pop
 ```
 
-## 九、其他
+## 九、备份
+
+```shell
+# 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到 Git 栈中。
+$ git stash
+
+# 显示 Git 栈内的所有备份
+$ git stash list
+
+# 删除 Git 栈内的指定备份
+$ git stash drop
+
+# 恢复最近一次的备份内容，恢复后，Git 栈内的该备份内容消失
+$ git stash pop
+
+# 恢复指定的备份内容，恢复后，Git 栈内的该备份内容消失
+$ git stash apply stash@{0}
+
+# 删除 Git 栈中所有备份
+$ git stash clear
+```
+
+## 十、其他
 
 ```md
 # 生成一个可供发布的压缩包
