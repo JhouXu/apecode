@@ -2,8 +2,9 @@
 
 <script setup>
   import { quotationData } from '../.vitepress/config/quotation.mts'
+  import Quotations from '../.vitepress/components/Quotations.vue'
 </script>
 
 <hr />
 
-<QuotationCard :quotationData=quotationData />
+<Quotations :quotationData=quotationData />

@@ -6,7 +6,6 @@ import mediumZoom from "medium-zoom";
 
 import NavigationCard from "../components/NavigationCard.vue";
 import ClassifyCard from "../components/ClassifyCard.vue";
-import QuotationCard from "../components/QuotationCard.vue";
 import RecentlyCard from "../components/RecentlyCard.vue";
 
 import theme from "vitepress/theme";
@@ -42,7 +41,6 @@ export default {
     theme.enhanceApp(ctx);
     ctx.app.component("NavigationCard", NavigationCard);
     ctx.app.component("ClassifyCard", ClassifyCard);
-    ctx.app.component("QuotationCard", QuotationCard);
     ctx.app.component("RecentlyCard", RecentlyCard);
 
     vitepressNprogress(ctx);
