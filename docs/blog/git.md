@@ -310,8 +310,7 @@ $ git stash clear
 
 ## 十、其他
 
-```md
+```shell
 # 生成一个可供发布的压缩包
-
 $ git archive
 ```
