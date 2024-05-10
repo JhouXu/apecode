@@ -4,13 +4,15 @@ import type { quotationItem } from "../config/quotation.mts";
 defineProps<{
   quotation: quotationItem;
   index: number;
+  sortBy: "start" | "end";
+  total: number;
 }>();
 </script>
 
 <template>
   <div class="card">
     <div class="container">
-      <span class="badge">{{ index + 1 }}、</span>
+      <span class="badge">{{ sortBy === "start" ? index + 1 : total - index }}、</span>
       <span class="content">{{ quotation.content }}</span>
     </div>
     <div class="info">
