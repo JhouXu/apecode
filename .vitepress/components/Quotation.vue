@@ -99,5 +99,6 @@ span.content:hover {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  font-size: 14px;
 }
 </style>
