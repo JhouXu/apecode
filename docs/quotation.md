@@ -7,4 +7,4 @@
 
 <hr />
 
-<Quotations :quotationData=quotationData.toReversed() sortBy='end' />
+<Quotations :quotationData=quotationData  sortBy='end' />
