@@ -32,7 +32,7 @@ onMounted(() => {
 const getSpecifiedFields = (source: quotationItem[], fields: string[]): string[] => {
   const arr: string[] = [];
   source.forEach((item) => {
-    arr.push(`${item[fields[0]]}    ~~${item[fields[1]]}`);
+    arr.push(`${item[fields[0]]}  by${item[fields[1]]}`);
   });
   return arr;
 };
