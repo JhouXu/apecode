@@ -55,6 +55,7 @@ span.typed-cursor {
 <style scoped>
 .container {
   padding: 20px;
+  min-height: 222px; /* 四行文本显示高度 */
   background-color: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-bg-soft);
   border-radius: 12px;
