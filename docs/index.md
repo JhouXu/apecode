@@ -38,7 +38,7 @@ features:
     linkText: 了解更多
   - icon: 🌞
     title: 语录
-    details: 送给一直很努力的你。
+    details: 一些有趣的句子。
     link: /quotation.md
     linkText: 了解更多
   - icon: 🚩
