@@ -1,29 +1,34 @@
 export interface quotationItem {
   content: string;
   date: string;
-  source?: string;
+  source: string;
   profession?: string;
 }
 
 export const quotationData: quotationItem[] = [
   {
     content: "自律使我自由。",
+    source: "【Keep App】",
     date: "2020-01-01",
   },
   {
     content: "这么年轻，升本+考验，同时软考。",
+    source: "佚名",
     date: "2020-01-01",
   },
   {
     content: "我们不能站在现在的高度去评判当年的自己这不公平，如果重来一次，以当年的阅历和心智也会做出同样的选择。",
+    source: "佚名",
     date: "2020-01-01",
   },
   {
     content: "我要悄悄的努力，然后惊艳所有人。",
+    source: "佚名",
     date: "2021-03-25",
   },
   {
     content: "除非别人主动向你请教，否则，不要强行去说教别人，以希望别人改变。",
+    source: "佚名",
     date: "2021-03-31",
   },
   {
@@ -72,6 +77,7 @@ export const quotationData: quotationItem[] = [
   },
   {
     content: "他们的大学故事，始于一场初秋，终于一场盛夏。",
+    source: "佚名",
     date: "2023-10-31",
   },
   {
