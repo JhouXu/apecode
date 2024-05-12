@@ -64,7 +64,7 @@ span.badge {
 }
 
 span.content {
-  background: linear-gradient(to right, var(--vp-c-brand-3), var(--vp-c-brand-1));
+  background: linear-gradient(to right bottom, var(--quotation-color2), var(--quotation-color1));
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 0px 2px;

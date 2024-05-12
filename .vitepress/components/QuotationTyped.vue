@@ -71,7 +71,7 @@ span.typed {
   font-size: 30px;
   font-family: "AlimamaShuHeiTi";
   letter-spacing: 1.5px;
-  background: linear-gradient(to right, var(--quotation-color2), var(--quotation-color1));
+  background: linear-gradient(to right bottom, var(--quotation-color2), var(--quotation-color1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
