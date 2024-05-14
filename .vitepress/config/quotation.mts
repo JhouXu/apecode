@@ -81,10 +81,10 @@ export const quotationData: quotationItem[] = [
     date: "2023-10-31",
   },
   {
-    content:
-      "这个世界上，没有失败，只有反馈。本质上我们的人生是不存在失败的，因为我们来和去的终点都是一样的，如果我们是一个成长的心态，你经历的所有困难、所有的挫折，只是真实世界给你的一个反馈。",
-    source: "国辉老师",
-    date: "2024-05-11",
+    content: "一周是一年的2%",
+    source: "纳特·弗里德曼（Nat Friedman）",
+    profession: "前 GitHub CEO / 风险投资家",
+    date: "2024-03-15",
   },
   {
     content: "在你没有办法说服自己前，不要想着去说服别人。",
@@ -137,9 +137,9 @@ export const quotationData: quotationItem[] = [
     date: "2024-04-17",
   },
   {
-    content: "一周是一年的2%",
-    source: "纳特·弗里德曼（Nat Friedman）",
-    profession: "前 GitHub CEO / 风险投资家",
-    date: "2024-03-15",
+    content:
+      "这个世界上，没有失败，只有反馈。本质上我们的人生是不存在失败的，因为我们来和去的终点都是一样的，如果我们是一个成长的心态，你经历的所有困难、所有的挫折，只是真实世界给你的一个反馈。",
+    source: "国辉老师",
+    date: "2024-05-11",
   },
 ];
