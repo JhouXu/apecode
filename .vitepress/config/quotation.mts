@@ -136,4 +136,10 @@ export const quotationData: quotationItem[] = [
     source: "鱼皮",
     date: "2024-04-17",
   },
+  {
+    content: "一周是一年的2%",
+    source: "纳特·弗里德曼（Nat Friedman）",
+    profession: "前 GitHub CEO / 风险投资家",
+    date: "2024-03-15",
+  },
 ];
