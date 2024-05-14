@@ -469,6 +469,92 @@ console.log(5);
 
 :::
 
+## 模块化
+
+在早期的网页中，是没有一个实质的模块化规范的，此前想要实现模块的方式，就是通过最原始的方式 script 标签来引入多个 js 文件（例如 jquery 和 bootstrapUI）。
+
+通过 script 标签实现的模块化，会存在以下问题：
+
+1. 无法选择要引入的模块内容（无法按需引入）
+2. 在复杂的模块场景下非常容易出错（如果模块之间存在依赖关系，那么模块的载入顺序是隐形要求的）
+
+::: info
+
+jQuery 是通过 script 标签引入的形式来完成模块化的，引入后实际效果是向全局作用域中添加了一个变量$（或 jQuery）这样很容易出现模块间互相覆盖的情况。并且当我们使用了较多的模块时，有一些模块是相互依赖的，必须先引入某个组件再引入某个组件，模块才能够正常工作。比如 jQuery 和 jQueryUI，就必须先引入 jQuery，如果引入顺序出错将导致 jQueryUI 无法使用。这还仅仅是两个组件，而实际开发中的依赖关系往往更加复杂，像是 a 依赖 b，b 依赖 c，c 依赖 d 这种关系，必须按照 d、c、b、a 的顺序进行引入，有一个顺序错误就会导致其他的一起失效。所以通过 script 标签实现的模块化是非常的不靠谱的。
+
+[超哥笔记](https://lilichao.com/?p=6449)
+
+:::
+
+### CommonJS
+
+CommonJS 是 Node.js 最早采用的模块化规范（2009 年）。
+
+**文件作为模块**时，引入模块：
+
+- 使用 require("模块的路径")函数来引入模块
+- 引入`自定义模块`时
+  - 模块名要以 ./ 或 ../ 开头
+  - 扩展名可以省略
+    - 在 CommonJS 中，如果省略的 js 文件的扩展名 node，会自动为文件补全扩展名 ./m1.js 如果没有 js 它会寻找 ./m1.json
+    - 搜索优先级：.js --> .json --> .node（特殊）
+- 引入`核心模块`时
+  - 直接写核心模块的名字即可
+  - 也可以在核心模块前添加 '**node:**' （可以加快模块的检索时间）
+
+```javascript
+/* /index.js */
+const path = require("path"); // 导入核心模块
+const path = require("node:path"); // 效果同上
+
+const m1 = require("./m1");
+console.log(m1); // 输出：{ a: '孙悟空' }
+console.log(m1.a); // 输出：孙悟空
+
+/* /m1.js */
+/*
+  在定义模块时，模块中的内容默认是不能被外部看到的，可以通过exports来设置要向外部暴露的内容。
+
+  访问exports的方式有两种：
+    - exports
+    - module.exports
+
+  当我们在其他模块中引入当前模块时，require 函数返回的就是 exports，可以将希望暴露给外部模块的内容设置为 exports 的属性。
+*/
+let a = "孙悟空";
+
+// module.exports === export
+export.a = a;
+// 或
+module.exports = {
+  a: a,
+}
+```
+
+**文件夹作为模块**时：
+
+当我们使用一个文件夹作为模块时，文件夹中必须有一个模块的主文件。如果文件夹中含有 package.json 文件且文件中设置 main 属性，则 main 属性指定的文件会成为主文件，导入模块时就是导入该文件。如果没有 package.json，则 node 会按照 index.js、index.node 的顺序寻找主文件。
+
+**模块的包装**：
+
+```javascript
+(function (exports, require, module, __filename, __dirname) {
+  // 模块代码会被放到这里
+});
+```
+
+每一个 CommonJS 模块在执行时，外层都会被套上一个函数，所以我们之所以能在 CommonJS 模块中使用 exports、require 并不是因为它们是全局变量。它们实际上以参数的形式传递进模块的。
+
+参数：
+
+- exports 用来设置模块向外部暴露的内容
+- require 用来引入模块的方法
+- module 当前模块的引用
+- \_\_filename 模块的路径
+- \_\_dirname 模块所在目录的路径
+
+### ESModule
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
