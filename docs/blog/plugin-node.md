@@ -488,7 +488,7 @@ jQuery 是通过 script 标签引入的形式来完成模块化的，引入后�
 
 ### CommonJS
 
-CommonJS 是 Node.js 最早采用的模块化规范（2009 年）。
+CommonJS 是 Node.js 最早采用的模块化规范（2009 年）【默认】。
 
 **文件作为模块**时，引入模块：
 
@@ -503,7 +503,8 @@ CommonJS 是 Node.js 最早采用的模块化规范（2009 年）。
   - 也可以在核心模块前添加 '**node:**' （可以加快模块的检索时间）
 
 ```javascript
-/* /index.js */
+/* index.js */ // [!code ++]
+// 引入 // [!code ++]
 const path = require("path"); // 导入核心模块
 const path = require("node:path"); // 效果同上
 
@@ -511,7 +512,8 @@ const m1 = require("./m1");
 console.log(m1); // 输出：{ a: '孙悟空' }
 console.log(m1.a); // 输出：孙悟空
 
-/* /m1.js */
+/* m1.js */ // [!code ++]
+// 导出 // [!code ++]
 /*
   在定义模块时，模块中的内容默认是不能被外部看到的，可以通过exports来设置要向外部暴露的内容。
 
@@ -525,10 +527,28 @@ let a = "孙悟空";
 
 // module.exports === export
 export.a = a;
-// 或
+// 或者
 module.exports = {
   a: a,
 }
+```
+
+按需加载
+
+```javascript
+/* index.js */ // [!code ++]
+// 引入 // [!code ++]
+const name = require("./m1").name;
+// 或者
+const { name } = require("./m1"); // 解构赋值
+
+/* m2.js */ // [!code ++]
+// 导出 // [!code ++]
+module.exports = {
+  name: "孙悟空",
+  age: 18,
+  gender: "男",
+};
 ```
 
 **文件夹作为模块**时：
@@ -554,6 +574,50 @@ module.exports = {
 - \_\_dirname 模块所在目录的路径
 
 ### ESModule
+
+2015 年随着 ES6 标准的发布，ES 的内置模块化系统也应运而生，并且在 Node.js 中同样也支持 ES 标准的模块化。说来说去使用模块化无非需要注意两件事导出和引入。
+
+默认情况下，node 的模块化是 CommonJS，如想要使用 ESModule，有以下两种方式。
+
+- 使用 .mjs 作为文件扩展名
+- 在 package.json 中设置 type 属性为 module
+
+```javascript
+/* m3.mjs */ // [!code ++]
+// 导出 // [!code ++]
+export let name = "猪八戒";
+export let information = {
+  age: 19,
+  gender: "男",
+};
+// 定义默认模块
+// 一个模块只能有一个默认模块
+export default function sayHello() {
+  console.log("Hello");
+}
+
+/* index.js */ // [!code ++]
+// 导入 // [!code ++]
+import { name, information } from "./m3.mjs";
+// 或者
+import { name as n, information as i } from "./m3.mjs"; // 为导入的模块重新命名
+// 或者
+import * as m3 from "./m3.mjs"; // 导入所有模块，并赋值给一个变量。
+// 或者
+import sayHello, { name, information } from "./m3.mjs"; // 导入默认模块
+```
+
+:::tip
+通过 ESM，导入的内容都是常量；
+
+ESM 都是运行在严格模式下的；
+
+ESM 在浏览器中同样支持，但是可能会存在兼容性问题（IE），为此通常会结合打包工具使用；
+:::
+
+:::tip
+`.cjs` 文件是 CommonJS 模块的文件扩展名，`.mjs` 文件是 ESModule 模块的文件扩展名。
+:::
 
 ## 参考
 
