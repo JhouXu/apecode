@@ -781,6 +781,122 @@ fsp
   });
 ```
 
+## 包管理器
+
+> 随着项目复杂度的提升，在开发中不可能所有的代码都要手动一行一行的编写，于是我们就需要一些将一些现成写好的代码引入到我们的项目中来帮助我们完成开发，就像是我们之前使用 jQuery。jQuery 这种外部代码在项目中，我们将其称之为包。
+
+### npm
+
+node 中的包管理局叫做 npm（node package manage），npm 是世界上最大的包管理库。
+
+npm 由以下三个部分组成：
+
+1. npm 网站 （通过 npm 网站可以查找包，也可以管理自己开发提交到 npm 中的包。https://www.npmjs.com/
+2. npm CLI（Command Line Interface 即 命令行）（通过 npm 的命令行，可以在计算机中操作 npm 中的各种包（下载和上传等））
+3. 仓库（仓库用来存储包以及包相关的各种信息）
+
+### package.json
+
+package.json 顾名思义，它就是一个用来描述包的 json 文件，node 通过该文件对项目进行描述，每一个 node 项目必须要有。它里边需要一个 json 格式的数据（json 对象），在 json 文件中通过各个属性来描述包的基本信息，像包名、版本、依赖等包相关的一切信息。
+
+```json
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+配置属性说明：
+
+- name（必备）
+  - 包的名称，可以包含小写字母、\_和-
+- version（必备）
+  - 包的版本，需要遵从 x.x.x 的格式
+  - 规则：
+  - 版本从 1.0.0 开始
+  - 修复错误，兼容旧版（补丁）1.0.1、1.0.2
+  - 添加功能，兼容旧版（小更新）1.1.0
+  - 更新功能，影响兼容（大更新）2.0.0
+- author
+  - 包的作者，格式：Your Name \<email@example.com\>
+- description
+  - 包的描述
+- repository
+  - 仓库地址（git）
+- scripts
+  - 自定义一些命令
+  - start 和 test 可以直接通过 npm + 执行，其余需要 npm run + 执行
+
+### 相关命令
+
+```bash
+# 1. 初始化项目
+# 创建 package.json 文件（需要回答问题）
+$ npm init
+# 创建 package.json 文件（所有值都采用默认值）
+$ npm init -y
+
+# 2. 下载包
+# 将指定包下载到当前项目中
+$ npm install 包名
+# 将指定包下载到全局，常常使用于脚手架等
+$ npm install 包名 -g
+# 自动安装所有依赖
+$ npm install
+
+# 3. 卸载包
+# 卸载指定包
+$ npm uninstall 包名
+# 卸载指定全局包
+$ npm uninstall 包名 -g
+```
+
+```shell
+# 安装指定版本
+$ npm install lodash@3.2.0
+
+# 安装大于的版本
+$ npm install lodash@"> 3.2.0"
+```
+
+:::tip npm install 时发生了什么？
+
+1. 将包下载当前项目的 node_modules 目录下
+2. 会在 package.json 的 dependencies 属性中添加一个新属性 "lodash": "^4.17.21"
+3. 会自动添加 package-lock.json 文件，帮助加速 npm 下载的
+
+:::
+
+:::tip 版本描述
+设置依赖项时"lodash": "^4.17.21"前边的 loadsh 表示包的名字，后边是包的版本。"^4.17.21"表示匹配最新的 4.x.x 的版本，也就是如果后期 lodash 包更新到了 4.18.1，我们的包也会一起更新，但是如果更新到了 5.0.0，我们的包是不会随之更新的。如果是"~4.17.21"，~表示匹配最小依赖，也就是 4.17.x。如果是"\*"则表示匹配最新版本，即 x.x.x（不建议使用）。当然也可以不加任何前缀，这样只会匹配到当前版本。
+:::
+
+### 配置镜像
+
+```shell
+# 1. 使用国内镜像
+# 使用 cnpm
+$ npm install -g cnpm --registry=https://registry.npmmirror.com
+
+# 2. 修改 npm 源
+# 配置 npm 源
+$ npm config set registry https://registry.npmmirror.com
+
+# 查看 npm 源
+$ npm config get registry
+
+# 删除 npm 源
+$ npm config delete registry
+```
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
