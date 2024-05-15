@@ -662,6 +662,125 @@ console.log(4); // 调用栈
 
 :::
 
+### path
+
+path
+
+- 表示路径
+- 通过该对象，可以获取各种路径
+- 如何使用
+  - 1. 不是全局变量，需要进行引入
+    - const path = require("node:path");
+  - 2. 属性和方法
+    - path.resolve([...paths])
+      - 用来生成一个绝对路径
+
+```javascript
+const path = require("path");
+let href = "";
+
+href = path.resolve(); // 获取当前的工作目录绝对路径，由于运行的位置不同，调试控制台和终端得到的路径会有出入，存在不确定性
+console.log(href); // 输出 C:\Users\23248\Desktop\apecode
+
+href = path.resolve("./hello.js"); // 获取 hello 模块的绝对路径，存在不确定性
+console.log(href); // 输出 C:\Users\23248\Desktop\apecode\hello.js
+
+href = path.resolve("C:\\Users\\23248\\Desktop\\apecode", "./hello.js"); // 指定工作目录绝对路径和模块的相对路径，计算出该模块的绝对路径，属于硬编码
+console.log(href); // C:\Users\23248\Desktop\apecode\hello.js
+
+href = path.resolve(__dirname, "./hello.js"); // 最终模块的绝对路径获取方式【推荐】
+console.log(href); // C:\Users\23248\Desktop\apecode\hello.js
+```
+
+### fs
+
+fs(File System)
+
+- 文件系统
+- 用来帮助 node 来操作磁盘中的文件，I/O 操作（input output）
+- 如何使用
+  - 1. 不是全局变量，需要进行引入
+    - const fs = require("node:fs")
+  - 2. 属性和方法
+    - fs.readFile(path[, options], callback) 读取文件
+    - fs.appendFile(path[, options], data[, encoding], callback) 创建新文件，或追加新数据
+    - fs.mkdir(path[, options], callback) 创建目录
+    - fs.rmdir(path[, options], callback) 删除目录
+    - fs.rm(path[, options], callback) 删除文件
+    - fs.rename(oldPath, newPath, callback) 重命名文件或目录
+    - fs.copyFile(src, dest, callback) 复制文件
+
+基于 fs 模块的 readFile 方法，分别通过同步方法，异步方法，Promise 写法，以及 async/await 写法来读取文件内容。
+
+```javascript
+const path = require("node:path");
+const fs = require("node:fs");
+const fsp = require("node:fs/promises"); // 注意，需要 node v14.0.0 及以上
+
+// 同步方法，会阻塞后面的代码执行
+try {
+  const buffer = fs.readFileSync(path.join(__dirname, "./hello.txt"));
+  console.log("文件内容:", buffer.toString());
+} catch (err) {
+  console.error("读取文件出错:", err);
+}
+
+// 异步方法
+fs.readFile(path.join(__dirname, "./hello.txt"), (err, buffer) => {
+  if (err) {
+    console.error("读取文件出错:", err);
+    return;
+  }
+  console.log("文件内容:", buffer.toString());
+});
+
+// 异步方法，Promise
+fsp
+  .readFile(path.join(__dirname, "./hello.txt"))
+  .then((buffer) => {
+    console.log("文件内容:", buffer.toString());
+  })
+  .catch((err) => {
+    console.error("读取文件出错:", err);
+  });
+
+// 异步方法，async/await
+(async () => {
+  try {
+    const buffer = await fsp.readFile(path.join(__dirname, "./hello.txt"));
+    console.log("文件内容:", buffer.toString());
+  } catch (err) {
+    console.log(err);
+  }
+})();
+```
+
+测试文件
+
+```txt
+今天天气真不错，我们一起来上课
+```
+
+基于 fs.readFile 和 fs.appendFile 实现文件复制功能。
+
+```javascript
+const path = require("node:path");
+const fsp = require("node:fs/promises");
+
+fsp
+  .readFile("C:\\Users\\23248\\Desktop\\test.jpg")
+  .then((buffer) => {
+    console.log(buffer);
+    return fsp.appendFile(path.resolve(__dirname, "./test-img-copy.jpg"), buffer);
+  })
+  .then(() => {
+    console.log("复制成功");
+  })
+  .catch((err) => {
+    console.log("复制失败：", err);
+  });
+```
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
