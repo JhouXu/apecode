@@ -701,14 +701,14 @@ fs(File System)
 - 如何使用
   - 1. 不是全局变量，需要进行引入
     - const fs = require("node:fs")
-  - 2. 属性和方法
+  - 2. 属性和方法（回调函数版本）
     - fs.readFile(path[, options], callback) 读取文件
     - fs.appendFile(path[, options], data[, encoding], callback) 创建新文件，或追加新数据
     - fs.mkdir(path[, options], callback) 创建目录
     - fs.rmdir(path[, options], callback) 删除目录
     - fs.rm(path[, options], callback) 删除文件
-    - fs.rename(oldPath, newPath, callback) 重命名文件或目录
-    - fs.copyFile(src, dest, callback) 复制文件
+    - fs.rename(oldPath, newPath, callback) 重命名文件或目录（复制）
+    - fs.copyFile(src, dest, callback) 复制文件（剪切）
 
 基于 fs 模块的 readFile 方法，分别通过同步方法，异步方法，Promise 写法，以及 async/await 写法来读取文件内容。
 
