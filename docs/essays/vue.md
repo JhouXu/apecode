@@ -272,7 +272,3 @@ Vuex 是一个专为 Vue 应用程序开发的状态管理模式。每一个 Vue
    5. Module：允许将单一的 Store 拆分为多个 store 且同时保存在单一的状态树中。
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7249773a1634f779c48f3f0ffabf968~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
-
-## vue2 和 vue3 中 diff 算法的区别
-
-1. vue2 中采用双端比较的算法，即比较新旧两棵树的同一位置，直到发现有差异的位置。vue3 中则将 diff 算法转化为位运算，在首尾进行标记，再从中间比较，通过位运算来减少判断次数，提高性能。

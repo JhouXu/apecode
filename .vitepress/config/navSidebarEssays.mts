@@ -7,6 +7,7 @@ const EssaysData = [
   { text: "JavaScript", link: "/essays/javascript.md" },
   { text: "渡一大师课", link: "/essays/javascript_duyi.md" },
   { text: "Vue", link: "/essays/vue.md" },
+  { text: "Vue3", link: "/essays/vue3.md" },
   { text: "React", link: "/essays/react.md" },
   { text: "其它", link: "/essays/other.md" },
 ];
