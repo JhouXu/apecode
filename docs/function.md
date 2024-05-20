@@ -261,7 +261,7 @@ export const fillingZero = (field, value) => {
 
 ### GUID
 
-:::tip GUID
+:::tip GetGuid
 
 `全局唯一标识符`
 
@@ -270,7 +270,7 @@ export const fillingZero = (field, value) => {
  * 全局唯一标识符 GUID
  * @returns {String} xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
  */
-export const generateGuid = () => {
+export const getGuid = () => {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
     const v = c === "x" ? r : (r & 0x3) | 0x8;
