@@ -377,7 +377,6 @@ export const throttle = (fn, delay = 200) => {
     if (!timer) {
       fn.apply(this, arguments);
       timer = setTimeout(() => {
-        clearTimeout(timer);
         timer = null;
       }, delay);
     }
