@@ -6,6 +6,6 @@ export const nav = [
   { text: "导航", link: "/navigation" },
   { text: "随笔记", items: [...navBlog] },
   { text: "八股文", items: [...navEssays] },
-  { text: "轻函数", link: "/function/function.md" },
+  { text: "轻函数", link: "/function.md" },
   { text: "语录", link: "/quotation.md" },
 ];

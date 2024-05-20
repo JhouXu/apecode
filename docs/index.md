@@ -34,7 +34,7 @@ features:
   - icon: 🚀
     title: 轻函数
     details: 最轻量的工具函数。
-    link: /function/function.md
+    link: /function.md
     linkText: 了解更多
   - icon: 🌞
     title: 语录
