@@ -358,6 +358,34 @@ export const getUrlParam = (name) => {
 
 ## 性能优化
 
+### 防抖
+
+:::tip debounce
+
+`防抖函数：指定时间间隔内相同的事件触发只执行最后一次。`
+
+```javascript
+/**
+ * 前端性能优化：防抖函数
+ * @param {Function} fn 防抖处理回调
+ * @param {Number} delay 时间间隔阈值
+ * @returns {Function} 封装好的防抖函数
+ */
+export const debounce = (fn, delay = 200) => {
+  let timer;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(context, args);
+    }, delay);
+  };
+};
+```
+
+:::
+
 ### 节流
 
 :::tip throttle
