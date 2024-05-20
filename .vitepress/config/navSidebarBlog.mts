@@ -114,8 +114,7 @@ export const sidebarBlog: any = (() => {
   const data: Array<Object> = [];
 
   D.forEach((item: any) => {
-    data.push({ ...item });
-    data["collapsed"] = sidebarCollapsed;
+    data.push({ ...item, collapsed: sidebarCollapsed });
   });
   return data;
 })();
