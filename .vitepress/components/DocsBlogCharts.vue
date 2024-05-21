@@ -13,13 +13,13 @@ let chartPie: echarts.ECharts; // 饼图实例
 let chartHeatmap: echarts.ECharts; // 热力图实例
 
 let heatmapTheme = {
-  "": {
-    color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
-    borderColor: "#e2e2e3",
-  },
   dark: {
     color: ["#100c2a", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
     borderColor: "#2e2e32",
+  },
+  default: {
+    color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
+    borderColor: "#e2e2e3",
   },
 };
 
@@ -37,7 +37,12 @@ onMounted(() => {
 
   dataHeatmap.value = getYearTemplateData(getYear());
   dataHeatmap.value = getYearValueData(dataHeatmap.value, BlogData);
-  chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
+  chartHeatmap = initEchartHeatmap(
+    dataHeatmap.value,
+    theme.value,
+    getYear(),
+    ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
+  );
 
   window.addEventListener("resize", () => {
     chartPie.resize();
@@ -58,7 +63,12 @@ watch(theme, (newTheme: string) => {
 
   debounce(() => {
     chartHeatmap.dispose();
-    chartHeatmap = initEchartHeatmap(dataHeatmap.value, theme.value, getYear(), heatmapTheme[theme.value]);
+    chartHeatmap = initEchartHeatmap(
+      dataHeatmap.value,
+      theme.value,
+      getYear(),
+      ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
+    );
   }, 400);
 });
 
