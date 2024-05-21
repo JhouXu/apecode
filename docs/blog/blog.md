@@ -3,7 +3,34 @@ layout: doc
 ---
 
 <script setup>
-  import DocsBlogCharts from '../../.vitepress/components/DocsBlogCharts.vue';
+  import { ref, onMounted, computed } from "vue";
+  import { base } from '../../.vitepress/config/meta.mts'
+  import { BlogData } from "../../.vitepress/config/navSidebarBlog.mts";
+  import DocsBlogCharts from "../../.vitepress/components/DocsBlogCharts.vue";
+
+  const renderDate = ref([]);
+
+  onMounted(() => {
+    renderDate.value = getRenderDate(BlogData).sort((a, b) => new Date(b.time) - new Date(a.time));
+  });
+
+  let getRenderDate = (sourceDate) => {
+    let arr = [];
+    sourceDate.map(({ text, items }) => {
+      if (items.length) {
+        let list = [];
+        items.map((item) => {
+          list.push({ ...item, href: item.link.replace(/\.md$/, ""),type: text });
+        });
+        arr.push(...list);
+      }
+    });
+    return arr;
+  };
+
+  let getRenderDateSlice = (date, length) => {
+    return date.slice(0, length);
+  }
 </script>
 
 # 随笔记
@@ -23,6 +50,14 @@ layout: doc
 - 其他: 杂项.
 
 ## 近期
+
+<div class="recent">
+  <p v-for="(item, key) in getRenderDateSlice(renderDate, 8)" :key="key">
+    <a :href="`${base.slice(0, base.length - 1)}${item.href}`">
+      {{item.type}} - {{item.text}} : {{item.time}}
+    </a>
+  </p>
+</div>
 
 ## 数据
 
