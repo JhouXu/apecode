@@ -127,7 +127,18 @@ layout: doc
 }
 ```
 
-## 五、calc()
+## 五、Grid 布局
+
+Grid 网格布局，新出的布局方式
+
+```css
+.parents {
+  display: grid;
+  place-items: center;
+}
+```
+
+## 六、calc()
 
 calc() 函数是 css 中用于动态计算长度值，运算符 ”-“ 前后都需要保留一个空格。
 
