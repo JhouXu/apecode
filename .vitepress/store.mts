@@ -1,4 +1,9 @@
 import { reactive, nextTick } from "vue";
+import { JSDOM } from "jsdom";
+
+// 创建虚拟 DOM 环境
+const { window } = new JSDOM();
+const document = window.document;
 
 // 监听主题变化
 const observerTheme = (callback: Function = () => {}) => {
