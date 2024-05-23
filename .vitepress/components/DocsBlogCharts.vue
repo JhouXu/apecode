@@ -2,6 +2,7 @@
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import * as echarts from "echarts";
 
+import { store } from "../store.mts";
 import { BlogData } from "./../config/navSidebarBlog.mts";
 
 const theme = ref<string>(""); // '' | dark
@@ -17,31 +18,23 @@ let heatmapTheme = {
     color: ["#100c2a", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
     borderColor: "#2e2e32",
   },
-  default: {
+  light: {
     color: ["#f1f1f1", "#dae2ef", "#c0ddf9", "#73b3f3", "#3886e1", "#17459e"],
     borderColor: "#e2e2e3",
   },
 };
 
 onMounted(() => {
-  // 初始化页面主题
-  theme.value = getPageTheme();
-
-  // 监听页面主题
-  observerPageTheme((t: string) => {
-    theme.value = t;
-  });
-
   dataPie.value = getDataPie();
-  chartPie = initEchartPie(dataPie.value, theme.value);
+  chartPie = initEchartPie(dataPie.value, store.theme);
 
   dataHeatmap.value = getYearTemplateData(getYear());
   dataHeatmap.value = getYearValueData(dataHeatmap.value, BlogData);
   chartHeatmap = initEchartHeatmap(
     dataHeatmap.value,
-    theme.value,
+    store.theme,
     getYear(),
-    ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
+    ["", " "].includes(store.theme) ? heatmapTheme["default"] : heatmapTheme[store.theme]
   );
 
   window.addEventListener("resize", () => {
@@ -53,23 +46,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   chartPie.dispose();
   chartHeatmap.dispose();
-});
-
-watch(theme, (newTheme: string) => {
-  debounce(() => {
-    chartPie.dispose();
-    chartPie = initEchartPie(dataPie.value, theme.value);
-  }, 400);
-
-  debounce(() => {
-    chartHeatmap.dispose();
-    chartHeatmap = initEchartHeatmap(
-      dataHeatmap.value,
-      theme.value,
-      getYear(),
-      ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
-    );
-  }, 400);
 });
 
 const initEchartPie = (data: Object[], theme: string) => {
@@ -176,23 +152,6 @@ const getDataPie = (): { value: string; name: string }[] => {
     }
   });
   return dataPie;
-};
-
-const getPageTheme = (): string => {
-  return document.documentElement["classList"].value;
-};
-
-const observerPageTheme = (updateTheme: Function = () => {}) => {
-  const htmlElement = document.documentElement;
-  const config = { attributes: true, attributeFilter: ["class"], attributeOldValue: true };
-  const observer = new MutationObserver((mutationsList, observer) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type === "attributes" && mutation.attributeName === "class") {
-        updateTheme ? updateTheme(htmlElement.className) : "";
-      }
-    }
-  });
-  observer.observe(htmlElement, config);
 };
 
 /**
