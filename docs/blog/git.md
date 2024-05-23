@@ -286,6 +286,20 @@ $ git reset --keep [commit]
 $ git revert [commit]
 ```
 
+:::tip
+
+在我们使用 git 作为版本控制工具进行代码管理之后，经常性的会碰到一个问题：git commit 后，如何撤销 commit
+
+```shell
+# 撤销最后一次 commit
+$ git reset --soft HEAD^
+
+# 撤销最后一次 commit，以及撤销最后一次 add
+$ git reset --soft HEAD^
+```
+
+:::
+
 ## 九、备份
 
 ```shell
