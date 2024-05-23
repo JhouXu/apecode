@@ -1,9 +1,10 @@
 import { reactive, nextTick } from "vue";
 import { JSDOM } from "jsdom";
+import MutationObserver from "mutationobserver-shim";
 
-// 创建虚拟 DOM 环境
-const { window } = new JSDOM();
+const { window } = new JSDOM(); // 创建虚拟 DOM 环境
 const document = window.document;
+window.MutationObserver = MutationObserver; // 绑定 MutationObserver
 
 // 监听主题变化
 const observerTheme = (callback: Function = () => {}) => {
