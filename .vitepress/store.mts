@@ -1,4 +1,4 @@
-import { reactive, onMounted } from "vue";
+import { reactive, nextTick } from "vue";
 
 // 监听主题变化
 const observerTheme = (callback: Function = () => {}) => {
@@ -15,7 +15,7 @@ const observerTheme = (callback: Function = () => {}) => {
 };
 
 // 当主题发生变化时，更新 store 数据
-onMounted(() => {
+nextTick(() => {
   observerTheme((theme: string) => {
     switch (theme) {
       case "dark":
@@ -27,6 +27,7 @@ onMounted(() => {
         theme = "light";
     }
     store.theme = theme;
+    console.log(theme);
   });
 });
 
