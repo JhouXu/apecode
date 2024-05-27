@@ -158,4 +158,9 @@ export const quotationData: quotationItem[] = [
     source: "【BusinessInsider.com】",
     date: "2024-05-17",
   },
+  {
+    content: "时间就是金钱，效率就是生命。",
+    source: "【深圳市】",
+    date: "2024-05-27",
+  },
 ];
