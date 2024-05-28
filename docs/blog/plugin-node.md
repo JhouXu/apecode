@@ -1025,6 +1025,169 @@ $ corepack prepare yarn@1.x.x --activate
 $ corepack prepare yarn@latest --activate
 ```
 
+## Http 协议
+
+### 两道面试题
+
+:::tip 当在浏览器中输入地址以后发什么？
+
+1. DNS 解析，获取网站的 ip 地址
+2. 浏览器需要和服务器建立连接（tcp/ip）（三次握手）
+3. 向服务器发送请求（http 协议）
+4. 服务器处理请求，并返回响应（http 协议）
+5. 浏览器将响应的页面渲染
+6. 断开与服务器的连接（四次挥手）
+
+:::
+
+:::tip 客户端如何和服务器建立（断开）连接
+
+- 三次握手（建立连接）
+
+  1. 客户端向服务器发送连接请求（SYN）；
+  2. 服务器收到连接请求，向客户端返回消息（ACK + SYN）；
+  3. 客户端向服务器发送同意连接的信息（SYN）；
+
+- 四次挥手（断开连接）
+
+  1. 客户端向服务器发送断开请求，服务器时数据发送完毕，请求断开连接（FIN）；
+  2. 服务器向客户端返回数据，收到请求（ACK）；
+  3. 服务器向客户端返回数据，数据接收完成，可以断开（FIN + ACK）；
+  4. 客户端向服务器发送数据，同意断开连接（ACK）；
+
+:::
+
+### 网络通讯
+
+`TCP/IP 协议族`中包含了一组协议，这组协议规定了互联网中所有的通讯的细节。
+
+`网络通讯`过程由四层组成：
+
+- `应用层`: HTTP、FTP、SMTP、DNS
+  - 软件层面，浏览器、服务器都属于应用层
+- `传输层`: TCP、UDP
+  - 负责对数据拆分，把大数据拆分为一个个小包（请求时），负责对数据合并，将一个个小包合并成大数据（接收时）
+- `网络层`: IP、ICMP、ARP
+  - 负责给数据包添加信息（请求时）；负责给数据包移除信息（接收时）
+- `数据链路层`: MAC
+  - 传输数据
+
+其中，`HTTP 协议（超文本传输协议）`是应用层的协议，用来规定客户端和服务器之间的通讯规则，即规定`报文`格式。
+
+### 报文
+
+报文（message）？
+
+浏览器和服务器之间的通讯时基于`请求和响应`
+
+- 浏览器向服务器发送`请求（request）`，相当于发信
+- 服务器向浏览器返回`响应（response）`，相当于回信
+
+### 报文类型
+
+报文类型可以分为以下两种：
+
+- `请求报文（request）`: 客户端发送给服务器的报文称为请求报文。
+- `响应报文（response）`: 服务器发送给客户端的报文称为响应报文。
+
+#### 请求报文
+
+- 请求首行
+- 请求头
+- 空行
+- 请求体
+
+```javascript
+/* 请求报文示例 */
+// GET /07_http%E5%8D%8F%E8%AE%AE/01_http%E5%8D%8F%E8%AE%AE.html?username=sunwukong HTTP/1.1
+// Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+// Accept-Encoding: gzip, deflate, br
+// Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,la;q=0.7
+// Cache-Control: max-age=0
+// Connection: keep-alive
+// Host: 127.0.0.1:5500
+// If-Modified-Since: Thu, 27 Oct 2022 11:10:28 GMT
+// If-None-Match: W/"1b8-1841922e832"
+// Referer: http://127.0.0.1:5500/07_http%E5%8D%8F%E8%AE%AE/01_http%E5%8D%8F%E8%AE%AE.html?username=sunwukong
+// Sec-Fetch-Dest: document
+// Sec-Fetch-Mode: navigate
+// Sec-Fetch-Site: same-origin
+// Upgrade-Insecure-Requests: 1
+// User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
+// sec-ch-ua: "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
+// sec-ch-ua-mobile: ?0
+// sec-ch-ua-platform: "Windows"
+```
+
+分析：
+
+- `请求首行`: 请求首行就是请求报文的第一行;
+  - GET /index.html?username=sunwukong HTTP/1.1
+    - 1. GET 表示发送 get 请求
+    - 2. /index.html?username=sunwukong 表示请求资源路径，其中 '?' 后面的内容叫做`查询字符串`
+    - 3. HTTP/1.1 表示使用 http 协议的 1.1 版本
+- `请求头`: 请求头是键值对结构，用来告诉服务器我们浏览器的信息;
+  - Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,_/_;q=0.8,application/signed-exchange;v=b3;q=0.9
+    - Accept 浏览器可以接受的文件类型
+    - Accept-Encoding 浏览器允许的压缩的编码
+    - User-Agent 用户代理，它是一段用来描述浏览器信息的字符串
+- `空行`: 用来分隔请求头和请求体;
+- `请求体`: get 没有，post 通过请求体来发送数据;
+
+:::tip
+
+| 请求方式 |               传参方式               |                                           长度限制                                            |
+| :------: | :----------------------------------: | :-------------------------------------------------------------------------------------------: |
+|   Get    | 通过查询字符串发送数据，URL 可以看到 |  HTTP 协议并没有对 URL 长度限制，主要的限制来源于特定的浏览器和服务器。2083 个字符 IE 标准。  |
+|   POST   |   通过请求体发送数据，URL 无法查看   | HTTP 协议规范也没有进行大小限制，起限制作用的是服务器的处理程序的处理能力。。Tomcat 默认 2M。 |
+
+[关于 HTTP GET/POST 请求参数长度最大值的一个理解误区 - jasonhsu9](https://www.jianshu.com/p/ea99c1e4f6a4)
+
+:::
+
+#### 响应报文
+
+- 响应首行
+- 响应头
+- 空行
+- 响应体
+
+```javascript
+/* 响应报文示例 */
+// HTTP/1.1 200 OK
+// Vary: Origin
+// Access-Control-Allow-Credentials: true
+// Accept-Ranges: bytes
+// Cache-Control: public, max-age=0
+// Last-Modified: Thu, 27 Oct 2022 11:31:54 GMT
+// ETag: W/"20c-18419368696"
+// Content-Type: text/html; charset=UTF-8
+// Content-Length: 2017
+// Date: Thu, 27 Oct 2022 11:52:29 GMT
+// Connection: keep-alive
+// Keep-Alive: timeout=5
+```
+
+分析：
+
+- `响应首行`: 响应报文的第一行;
+  - HTTP/1.1 200 OK
+  - 200 响应状态码
+  - ok 对响应状态码的描述
+  - 响应状态码
+    - 1xx 请求处理中
+    - 2xx 表示成功
+    - 3xx 表示请求的重定向
+    - 4xx 表示客户端错误
+    - 5xx 表示服务器的错误
+- `响应头`: 是一个一个的名值对结构，用来告诉浏览器响应的信息;
+  - Content-Type 用来描述响应体的类型
+  - Content-Length 用来描述响应体大小
+  - Content-Type: text/html; charset=UTF-8
+  - Content-Length: 2017
+- `空行`: 用来分隔响应头和响应体;
+- `响应体`: 响应体就是服务器返回给客户端的内容;
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
