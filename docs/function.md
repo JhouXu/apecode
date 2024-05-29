@@ -91,6 +91,100 @@ export const throttle = (fn, delay = 200) => {
 
 ## {{ getNumEmoji() }} 项目开发
 
+### 浅拷贝
+
+:::tip ShallowClone
+
+`浅拷贝`
+
+```javascript
+/**
+ * 浅拷贝对象或数组
+ * @param {any} value - 需要浅拷贝的值
+ * @returns {any} - 浅拷贝后的值
+ */
+function shallowClone(value) {
+  if (value === null || typeof value !== "object") {
+    return value;
+  }
+
+  const type = Object.prototype.toString.call(value);
+
+  if (type === "[object Array]") {
+    return [...value];
+  } else if (type === "[object Object]") {
+    return { ...value };
+  } else {
+    return value; // 对于 Date, RegExp, Map, Set 等非普通对象类型，直接返回原值
+  }
+}
+```
+
+:::
+
+### 深拷贝
+
+:::tip DeepClone
+
+`深拷贝`
+
+```javascript
+/**
+ * 深拷贝对象或数组
+ * @param {any} value - 需要深拷贝的值
+ * @param {WeakMap} [hash=new WeakMap()] - 用于处理循环引用的WeakMap
+ * @returns {any} - 深拷贝后的值
+ */
+function deepClone(value, hash = new WeakMap()) {
+  if (value === null || typeof value !== "object") {
+    return value;
+  }
+
+  if (hash.has(value)) {
+    return hash.get(value);
+  }
+
+  let result;
+  const type = Object.prototype.toString.call(value);
+
+  if (type === "[object Array]") {
+    result = [];
+    hash.set(value, result);
+    value.forEach((item, index) => {
+      result[index] = deepClone(item, hash);
+    });
+  } else if (type === "[object Date]") {
+    result = new Date(value);
+  } else if (type === "[object RegExp]") {
+    result = new RegExp(value);
+  } else if (type === "[object Map]") {
+    result = new Map();
+    hash.set(value, result);
+    value.forEach((val, key) => {
+      result.set(key, deepClone(val, hash));
+    });
+  } else if (type === "[object Set]") {
+    result = new Set();
+    hash.set(value, result);
+    value.forEach((val) => {
+      result.add(deepClone(val, hash));
+    });
+  } else {
+    result = Object.create(Object.getPrototypeOf(value));
+    hash.set(value, result);
+    for (const key in value) {
+      if (value.hasOwnProperty(key)) {
+        result[key] = deepClone(value[key], hash);
+      }
+    }
+  }
+
+  return result;
+}
+```
+
+:::
+
 ### GUID
 
 :::tip GetGuid
