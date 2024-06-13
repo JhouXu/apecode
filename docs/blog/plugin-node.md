@@ -1188,6 +1188,16 @@ $ corepack prepare yarn@latest --activate
 - `空行`: 用来分隔响应头和响应体;
 - `响应体`: 响应体就是服务器返回给客户端的内容;
 
+## Express
+
+Express 是一个基于 Node.js 平台的 web 应用开发框架，它提供了一系列强大特性帮助你创建各种 Web 和移动设备应用。
+
+Express 框架核心特性：
+
+- 可以设置中间件来响应 HTTP 请求
+- 定义了路由表用于执行不同的 HTTP 请求动作
+- 可以通过向模板传递参数来动态渲染 HTML 页面
+
 ## 参考
 
 [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
