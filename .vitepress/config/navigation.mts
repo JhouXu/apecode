@@ -72,10 +72,17 @@ export const TechnicalCommunity: navigationItem[] = [
     type: "技术社区",
   },
   {
-    text: "30secondsofcode",
+    text: "30SecondSofCode",
     desc: "发现满足您所有开发需求的简短代码片段。",
     link: "https://www.30secondsofcode.org/",
     icon: "https://www.30secondsofcode.org/assets/icons/icon-192x192.png",
+    type: "技术社区",
+  },
+  {
+    text: "CodePen",
+    desc: "建造，测试和发现前端代码的最佳场所。",
+    link: "https://codepen.io/trending",
+    icon: "https://cpwebassets.codepen.io/assets/social/facebook-default-05cf522ae1d4c215ae0f09d866d97413a2204b6c9339c6e7a1b96ab1d4a7340f.png",
     type: "技术社区",
   },
   {
@@ -281,6 +288,13 @@ export const FileHandling: navigationItem[] = [
     link: "https://www.ilovepdf.com/",
     icon: "https://www.ilovepdf.com/img/app-icon.png",
     // https://www.ilovepdf.com/img/favicons-img/favicon-32x32.png
+    type: FileConversion,
+  },
+  {
+    text: "pdf2go",
+    desc: "免费的在线 PDF 转换器",
+    link: "https://www.pdf2go.com/zh",
+    icon: "https://www.pdf2go.com/favicon.ico",
     type: FileConversion,
   },
   {
