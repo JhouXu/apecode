@@ -46,7 +46,7 @@ layout: doc
  * @param {Number} delay 时间间隔阈值
  * @returns {Function} 封装好的防抖函数
  */
-export const debounce = (fn, delay = 200) => {
+export const debounce = function (fn, delay = 200) {
   let timer;
   return function () {
     const context = this;
@@ -74,7 +74,7 @@ export const debounce = (fn, delay = 200) => {
  * @param {Number} delay 时间间隔阈值
  * @returns {Function} 封装好的节流函数
  */
-export const throttle = (fn, delay = 200) => {
+export const throttle = function (fn, delay = 200) {
   let timer;
   return function () {
     if (!timer) {
@@ -103,7 +103,7 @@ export const throttle = (fn, delay = 200) => {
  * @param {any} value - 需要浅拷贝的值
  * @returns {any} - 浅拷贝后的值
  */
-function shallowClone(value) {
+export const shallowClone = function (value) {
   if (value === null || typeof value !== "object") {
     return value;
   }
@@ -117,7 +117,7 @@ function shallowClone(value) {
   } else {
     return value; // 对于 Date, RegExp, Map, Set 等非普通对象类型，直接返回原值
   }
-}
+};
 ```
 
 :::
@@ -135,7 +135,7 @@ function shallowClone(value) {
  * @param {WeakMap} [hash=new WeakMap()] - 用于处理循环引用的WeakMap
  * @returns {any} - 深拷贝后的值
  */
-function deepClone(value, hash = new WeakMap()) {
+export const deepClone = function (value, hash = new WeakMap()) {
   if (value === null || typeof value !== "object") {
     return value;
   }
@@ -180,7 +180,7 @@ function deepClone(value, hash = new WeakMap()) {
   }
 
   return result;
-}
+};
 ```
 
 :::
@@ -196,7 +196,7 @@ function deepClone(value, hash = new WeakMap()) {
  * 全局唯一标识符 GUID
  * @returns {String} xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
  */
-export const getGuid = () => {
+export const getGuid = function () {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
     const v = c === "x" ? r : (r & 0x3) | 0x8;
@@ -218,7 +218,7 @@ export const getGuid = () => {
  * 获取浏览器环境
  * @returns {Object} 浏览器环境对象 {isMobile: boolean, isPc: boolean, isWeixin: boolean}
  */
-export const getBrowserEnvironment = () => {
+export const getBrowserEnvironment = function () {
   const { userAgent } = navigator;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator);
   const isPc = !isMobile;
@@ -242,7 +242,7 @@ export const getBrowserEnvironment = () => {
  * @param {String} url 网址
  * @returns {Object} 解析后的参数对象
  */
-export const getParams = (url = "") => {
+export const getParams = function (url = "") {
   // str为？之后的参数部分字符串
   const str = url.substr(url.indexOf("?") + 1);
   // arr每个元素都是完整的参数键值
@@ -272,7 +272,7 @@ export const getParams = (url = "") => {
  * @param {String} name 需要查找的参数名
  * @returns {String||Null} 查找值结果
  */
-export const getUrlParam = (name) => {
+export const getUrlParam = function (name) {
   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
   var r = window.location.search.substr(1).match(reg); // 匹配目标参数
   if (r != null) return unescape(r[2]);
@@ -295,7 +295,7 @@ export const getUrlParam = (name) => {
  * 获取当前时刻的时间戳
  * @return {String} 时间戳
  */
-export const getTimestamp = () => {
+export const getTimestamp = function () {
   return new Date().getTime();
 };
 ```
@@ -315,7 +315,7 @@ export const getTimestamp = () => {
  * @param {String} rule 时间格式
  * @returns {String}
  */
-export const timestampToFormatTime = (timestamp, rule = "yyyy-MM-dd HH:mm:ss") => {
+export const timestampToFormatTime = function (timestamp, rule = "yyyy-MM-dd HH:mm:ss") {
   const D = new Date(timestamp);
   const timeObj = {};
   const rules = rule.match(/\w+/g);
@@ -390,7 +390,7 @@ export const formatTime = (time, rule = "yyyy-MM-dd HH:mm:ss") => {
  * @param {String} value 预处理值
  * @returns {String|Number}
  */
-export const fillingZero = (field, value) => {
+export const fillingZero = function (field, value) {
   switch (field) {
     case "MM":
     case "dd":
@@ -428,7 +428,7 @@ export const fillingZero = (field, value) => {
  * @param { String } type 计算类型
  * @return { Number } result 计算结果
  */
-function calc(num1, num2, type) {
+export const calc = function (num1, num2, type) {
   const n1 = num1.toString().split(".")[1] ?? "0";
   const n2 = num2.toString().split(".")[1] ?? "0";
   const point = 10 ** (+n1 > +n2 ? n1.length : n2.length); // 精度
@@ -448,7 +448,7 @@ function calc(num1, num2, type) {
       break;
   }
   return result;
-}
+};
 ```
 
 :::
@@ -466,7 +466,7 @@ function calc(num1, num2, type) {
  * @param {Number} max 最大值
  * @returns 随机整数
  */
-export const getRandomInt = (min, max) => {
+export const getRandomInt = function (min, max) {
   // 使用 Math.floor() 向下取整，确保结果是整数
   // 使用 Math.random() 生成一个介于 0 到 1 之间的随机小数
   // 然后将其乘以 (max - min + 1) 来获取一个介于 0 到 (max - min) 之间的随机小数
@@ -491,7 +491,7 @@ export const getRandomInt = (min, max) => {
  * @param {Number|undefined} excludeValue 限制重值
  * @returns {Number}
  */
-export const getRandomIntWithExclusion = (min, max, excludeValue) => {
+export const getRandomIntWithExclusion = function (min, max, excludeValue) {
   let randomValue;
   do {
     randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -521,12 +521,12 @@ export const getRandomIntWithExclusion = (min, max, excludeValue) => {
  * @param {String} replaceStr 计划替换内容
  * @returns {String} 替换结果
  */
-function replaceString(sourceStr, checkStr, replaceStr = "") {
+export const replaceString = function (sourceStr, checkStr, replaceStr = "") {
   if (!sourceStr) return console.error("sourceStr 为必传字段");
   if (!checkStr) return console.error("checkStr 为必传字段");
   const reg = new RegExp(checkStr);
   return sourceStr.replace(reg, replaceStr);
-},
+};
 ```
 
 :::
