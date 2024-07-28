@@ -3,12 +3,20 @@ layout: doc
 ---
 
 <script setup>
+  import { ref, onMounted } from "vue";
+
   const numEmojiMapping = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
   let num = 0;
   let getNum = () => ++num; // 每次调用 getNum()，num 的值加 1
 
+  const total = ref(0);
+
+  onMounted(() => {
+    total.value = document.querySelectorAll('h3').length
+  })
+
   // 返回数字的数组表示形式，例如，getNumSplits(123) 返回 [1, 2, 3]
-  let getNumSplits = (number) => {
+  const getNumSplits = function (number) {
     return number
       .toString()
       .split("")
@@ -16,7 +24,7 @@ layout: doc
   };
 
   // 返回一个字符串，表示数字的 emoji 表示形式
-  let getNumEmoji = () => {
+  const getNumEmoji = function () {
     let emojis = "";
     getNumSplits(getNum()).forEach((item) => {
       emojis += numEmojiMapping[item];
@@ -27,9 +35,11 @@ layout: doc
 
 # 轻函数
 
+> 前身 [自封装常用的工具函数 👉](https://jhouxu.github.io/apecode/blog/js-fun.html)
+
 封装常用量、轻量的工具函数。
 
-前身 [自封装常用的工具函数 👉](https://jhouxu.github.io/apecode/blog/js-fun.html)
+截至，已有 **{{ total }}** 个。
 
 ## {{ getNumEmoji() }} 性能优化
 
