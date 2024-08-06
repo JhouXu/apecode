@@ -168,4 +168,9 @@ export const quotationData: quotationItem[] = [
     source: "金庸《倚天屠龙记》",
     date: "2024-08-06",
   },
+  {
+    content: "这世界很喧嚣，做你自己就好。",
+    source: "房琪",
+    date: "2024-08-06",
+  },
 ];
