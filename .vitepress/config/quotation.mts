@@ -163,4 +163,9 @@ export const quotationData: quotationItem[] = [
     source: "【深圳市】",
     date: "2024-05-27",
   },
+  {
+    content: "他强任他强，清风拂山岗；他横任他横，明月照大江。他自狠来他自恶，我自一口真气足。",
+    source: "金庸《倚天屠龙记》",
+    date: "2024-08-06",
+  },
 ];
