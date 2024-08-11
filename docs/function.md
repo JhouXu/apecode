@@ -325,16 +325,16 @@ export const getTimestamp = function () {
  * @param {String} rule 时间格式
  * @returns {String}
  */
-export const timestampToFormatTime = function (timestamp, rule = "yyyy-MM-dd HH:mm:ss") {
+export const timestampToFormatTime = function (timestamp, rule = "YYYY-MM-DD hh:mm:ss") {
   const D = new Date(timestamp);
   const timeObj = {};
   const rules = rule.match(/\w+/g);
   let ft = rule;
 
-  timeObj["yyyy"] = D.getFullYear();
+  timeObj["YYYY"] = D.getFullYear();
   timeObj["MM"] = D.getMonth() + 1;
-  timeObj["dd"] = D.getDate();
-  timeObj["HH"] = D.getHours();
+  timeObj["DD"] = D.getDate();
+  timeObj["hh"] = D.getHours();
   timeObj["mm"] = D.getMinutes();
   timeObj["ss"] = D.getSeconds();
   timeObj["ms"] = D.getMilliseconds();
