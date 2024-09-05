@@ -2,46 +2,13 @@
 layout: doc
 ---
 
-<script setup>
-  import { ref, onMounted } from "vue";
-
-  const numEmojiMapping = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
-  let num = 0;
-  let getNum = () => ++num; // 每次调用 getNum()，num 的值加 1
-
-  const total = ref(0);
-
-  onMounted(() => {
-    total.value = document.querySelectorAll('h3').length
-  })
-
-  // 返回数字的数组表示形式，例如，getNumSplits(123) 返回 [1, 2, 3]
-  const getNumSplits = function (number) {
-    return number
-      .toString()
-      .split("")
-      .map((item) => (item = Number(item)));
-  };
-
-  // 返回一个字符串，表示数字的 emoji 表示形式
-  const getNumEmoji = function () {
-    let emojis = "";
-    getNumSplits(getNum()).forEach((item) => {
-      emojis += numEmojiMapping[item];
-    });
-    return emojis;
-  };
-</script>
-
 # 轻函数
 
 > 前身 [自封装常用的工具函数 👉](https://jhouxu.github.io/apecode/blog/js-fun.html)
 
 封装常用量、轻量的工具函数。
 
-截至，已有 **{{ total }}** 个。
-
-## {{ getNumEmoji() }} 性能优化
+## 1️⃣ 性能优化
 
 ### 防抖
 
@@ -99,7 +66,7 @@ export const throttle = function (fn, delay = 200) {
 
 :::
 
-## {{ getNumEmoji() }} 项目开发
+## 2️⃣ 项目开发
 
 ### 浅拷贝
 
@@ -292,7 +259,7 @@ export const getUrlParam = function (name) {
 
 :::
 
-## {{ getNumEmoji() }} 时间处理
+## 3️⃣ 时间处理
 
 ### 时间戳
 
@@ -422,7 +389,7 @@ export const fillingZero = function (field, value) {
 
 :::
 
-## {{ getNumEmoji() }} 数学运算
+## 4️⃣ 数学运算
 
 ### 四则运算
 
@@ -515,7 +482,7 @@ export const getRandomIntWithExclusion = function (min, max, excludeValue) {
 
 :::
 
-## {{ getNumEmoji() }} 字符串处理
+## 5️⃣ 字符串处理
 
 ### 替换字符串
 
