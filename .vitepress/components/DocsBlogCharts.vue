@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import * as echarts from "echarts";
 
-import { BlogData } from "./../config/navSidebarBlog.mts";
+import { BlogData } from "./../config/nsBlog.mts";
 
 const theme = ref<string>(""); // '' | dark
 
