@@ -1,5 +1,5 @@
-import { navBlog } from "./navSidebarBlog.mts";
-import { navEssays } from "./navSidebarEssays.mts";
+import { navBlog } from "./nsBlog.mts";
+import { navEssays } from "./nsEssays.mts";
 
 export const nav = [
   { text: "首页", link: "/" },

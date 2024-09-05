@@ -1,5 +1,5 @@
-import { sidebarBlog } from "./navSidebarBlog.mts";
-import { sidebarEssays } from "./navSidebarEssays.mts";
+import { sidebarBlog } from "./nsBlog.mts";
+import { sidebarEssays } from "./nsEssays.mts";
 
 export const sidebar = {
   "/blog/": [...sidebarBlog],
