@@ -265,6 +265,13 @@ export const SoftwareClient: navigationItem[] = [
     icon: "https://res.u-tools.cn/website/v4/logo.png",
     type: "软件客户端",
   },
+  {
+    text: "Upscayl",
+    desc: "一种功能强大的图像放大工具，它使用高级AI技术来增强您的图像。",
+    link: "https://upscayl.org/",
+    icon: "https://upscayl.org/logo/64x64.png",
+    type: "软件客户端",
+  },
 ];
 
 export const FileHandling: navigationItem[] = [
