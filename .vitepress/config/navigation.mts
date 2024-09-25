@@ -226,8 +226,8 @@ export const SoftwareClient: navigationItem[] = [
   {
     text: "PotPlayer",
     desc: "万能格式影音视频播放器",
-    link: "https://images.sftcdn.net/images/t_app-icon-s/p/d3c12354-96d3-11e6-bfbf-00163ed833e7/1418749125/potplayer-PotPlayer_logo_(2017).png",
-    icon: "",
+    link: "https://potplayer.daum.net/",
+    icon: "https://images.sftcdn.net/images/t_app-icon-s/p/d3c12354-96d3-11e6-bfbf-00163ed833e7/1418749125/potplayer-PotPlayer_logo_(2017).png",
     type: "软件客户端",
   },
   {
