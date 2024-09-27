@@ -259,6 +259,43 @@ export const getUrlParam = function (name) {
 
 :::
 
+### 数据类型
+
+:::tip GetTypeOf
+
+`自动获取当前页面地址，根据指定参数名进行查找，返回查找到的参数值，如果没有返沪 null`
+
+```javascript
+/**
+ * 返回数据类型
+ * @param value 待检测数据
+ * @returns {String} [undefined | object | boolean | number | bigint | string | symbol | function]
+ */
+export const getTypeof = function (value) {
+  let type = "";
+  if (isArray(value)) {
+    type = "array";
+  } else if (isObject(value)) {
+    type = "object";
+  } else {
+    type = typeof value;
+  }
+  return type;
+};
+
+/* 是否为数组 */
+export const isArray = function (value) {
+  return Array.isArray(value);
+};
+
+/* 是否为对象 */
+export const isObject = function (value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+};
+```
+
+:::
+
 ## 3️⃣ 时间处理
 
 ### 时间戳
