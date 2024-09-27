@@ -64,4 +64,13 @@ export default defineConfig({
   },
 
   head: [...head],
+
+  /* 语言配置 */
+  markdown: {
+    languageAlias: {
+      dos: "html",
+      dash: "html",
+      shall: "html",
+    },
+  },
 });
