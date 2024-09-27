@@ -130,7 +130,7 @@ export const OnlineDocument: navigationItem[] = [
     text: "MDN Web Docs",
     desc: "自 2005 年以来记录 Web 技术，包括 CSS、HTML 和 JavaScript。",
     link: "https://developer.mozilla.org/",
-    icon: "https://developer.mozilla.org/apple-touch-icon.6803c6f0.png",
+    icon: "https://developer.mozilla.org/apple-touch-icon.528534bba673c38049c2.png",
     type: "在线文档",
   },
   {
@@ -241,7 +241,6 @@ export const SoftwareClient: navigationItem[] = [
     text: "PxCook",
     desc: "高效易用的自动标注工具, 生成前端代码, 设计研发协作利器",
     link: "https://www.fancynode.com.cn/pxcook",
-    icon: "https://www.fancynode.com.cn/siteicon/PxCook.png",
     type: "软件客户端",
   },
   {
@@ -488,7 +487,7 @@ export const MaterialResources: navigationItem[] = [
     text: "字体天下",
     desc: "海量字体免费高速下载",
     link: "http://www.fonts.net.cn",
-    icon: "",
+    icon: "https://www.fonts.net.cn/favicon.ico",
     type: FontSource,
   },
   {
@@ -525,7 +524,7 @@ export const MaterialResources: navigationItem[] = [
     text: "Splitshire",
     desc: "Beautiful & exclusive free stock photos.",
     link: "https://www.splitshire.com",
-    icon: "",
+    icon: "https://www.splitshire.com/favicon.ico",
     type: ImgSource,
   },
   {
@@ -567,7 +566,7 @@ export const MaterialResources: navigationItem[] = [
     text: "Life of pix",
     desc: "免费高分辨率摄影",
     link: "https://www.lifeofpix.com",
-    icon: "https://www.lifeofpix.com/wp-content/themes/lifeofpix_v2/img/lop-logo-noir.svg",
+    icon: "https://www.lifeofpix.com/dist/apple-touch-icon.png",
     type: ImgSource,
   },
   {
@@ -589,7 +588,7 @@ export const MaterialResources: navigationItem[] = [
     text: "Life of Vids",
     desc: "Free Videos, Clips & Loops",
     link: "https://www.lifeofvids.com/",
-    icon: "https://www.lifeofvids.com/favicon.ico",
+    icon: "",
     type: VideoSource,
   },
   {
@@ -604,13 +603,6 @@ export const MaterialResources: navigationItem[] = [
     desc: "为您的下一个视频项目提供免费资产",
     link: "https://mixkit.co",
     icon: "https://assets.mixkit.co/build/mixkit-logo--black-a90b84b6ac6ad0fbd410b16466b4cb252d399b5caaf03603f36c52ffc648455c.svg",
-    type: VideoSource,
-  },
-  {
-    text: "Vidlery",
-    desc: "艺术无处不在，免费动画视频背景",
-    link: "http://vidlery.com/",
-    icon: "https://www.vidlery.com/wp-content/uploads/2023/07/Vidlery-Logo-200x80.png",
     type: VideoSource,
   },
   {
