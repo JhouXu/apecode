@@ -392,6 +392,13 @@ export const DesignRelated: navigationItem[] = [
     icon: "http://brandcolors.net/assets/img/logo.png",
     type: ColorReference,
   },
+  {
+    text: "ColorPaletteGenerator - 可画",
+    desc: "从图片中提取颜色",
+    link: "https://www.canva.cn/colors/color-palette-generator/",
+    icon: "https://static.canva.com/static/images/favicon-1.ico",
+    type: ColorReference,
+  },
 
   {
     text: "Material Design",
