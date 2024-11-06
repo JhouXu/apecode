@@ -256,6 +256,8 @@ $ git push [remote] --all
 
 ## 八、撤销
 
+### reset
+
 ```shell
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
@@ -297,6 +299,67 @@ $ git reset --soft HEAD^
 # 撤销最后一次 commit，以及撤销最后一次 add
 $ git reset --soft HEAD^
 ```
+
+:::
+
+### revert
+
+git revert 命令用于撤销先前提交的更改。它通过创建一个新的提交来实现这一点，这个新提交的更改与被撤销提交的更改相反。以下是一些使用 git revert 的常见命令和场景：
+
+记住，git revert 是一个安全的操作，因为它不会改变项目的历史记录，而是在历史记录中添加一个新的提交来“反做”之前的更改。这使得 git revert 在多人协作的项目中非常有用。
+
+```bash
+# 撤销特定的提交
+# 这里的 <commit> 可以是提交的哈希值，也可以是引用，比如分支名或标签。
+$ git revert <commit>
+
+# 撤销一系列提交
+# 这里的 <commit1> <commit2> <commit3> 是一系列提交的哈希值。
+$ git revert <commit1> <commit2> <commit3>
+
+# 交互式变基
+# 如果你想要撤销一系列提交，但不确定具体要撤销哪些提交，可以使用交互式变基：
+# 这里的 <commit> 是你想要撤销更改的起始点。这将打开一个交互式界面，允许你选择要撤销的提交。
+$ git revert -i <commit>
+
+# 撤销到特定的提交
+# 如果你想要撤销从某个特定提交到现在的所有更改，可以使用：
+$ git revert --onto <commit>
+
+# 撤销合并提交
+# 如果你需要撤销一个合并提交，可以使用：
+# 这里的 <parent_number> 是合并提交的父提交编号（通常是 1 或 2），而 <merge_commit> 是合并提交的哈希值。
+$ git revert -m <parent_number> <merge_commit>
+
+# 撤销特定分支上的提交
+# 如果你想要撤销特定分支上的一系列提交，可以这样做：
+# 这里的 <n> 是分支上你想要撤销的起始提交的位置。
+$ git revert <branch_name>~<n>..<branch_name>
+
+# 撤销操作中处理冲突
+# 如果在撤销过程中出现冲突，Git 会停止撤销操作，让你解决冲突：
+# 在你解决了所有冲突并添加了更改之后，使用这个命令来继续撤销操作。
+$ git revert --continue
+
+# 撤销撤销操作
+# 如果你开始了一个撤销操作，但想要撤销这个撤销操作（例如，因为冲突无法解决），可以使用：
+# 这将中止当前的撤销操作。
+$ git revert --abort
+
+# 使用 ORIG_HEAD 引用
+# 在撤销操作之后，如果你想要回到撤销操作之前的状态，可以使用：
+# ORIG_HEAD 是一个特殊的引用，它指向撤销操作之前 HEAD 的位置。
+$ git checkout ORIG_HEAD
+```
+
+### 总结
+
+:::tip
+
+- 使用 git reset 当你想要改变仓库的历史记录，或者重新安排提交的顺序。
+- 使用 git revert 当你想要保留历史记录，但需要撤销某些更改，特别是在公共分支上。
+
+`注意`：在多人协作的环境中，使用 git reset --hard 和 git push --force 可以覆盖远程仓库的历史记录，这可能会对其他协作者造成影响。在这种情况下，git revert 是一个更安全的选择，因为它不会改变历史记录。
 
 :::
 
