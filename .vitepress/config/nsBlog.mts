@@ -68,6 +68,7 @@ export const BlogData = [
       },
       { text: "日期倒计时计算 countdown", link: "/blog/example-get-countdown.md", time: "2021-10-17" },
       { text: "关于 IOS 移动设备常见的触控问题以及解决方案", link: "/blog/example-ios-touch.md", time: "2022-03-25" },
+      { text: "如何在 vite 动态设置打包目录", link: "/blog/vite-build-dynamic.md", time: "2024-11-12" },
     ],
   },
   {
