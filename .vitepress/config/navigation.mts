@@ -113,6 +113,34 @@ export const TechnicalCommunity: navigationItem[] = [
     icon: "https://img-home.csdnimg.cn/images/20201124032511.png",
     type: "技术社区",
   },
+  {
+    text: "力扣",
+    desc: "海量技术面试题库，拥有算法、数据结构、系统设计等1000+题目，帮助你高效提升编程技能，轻松拿下世界IT 名企Dream Offer。",
+    link: "https://leetcode.cn/",
+    icon: "https://leetcode.cn/favicon.ico",
+    type: "技术社区",
+  },
+  {
+    text: "豆包MarsCode",
+    desc: "比牛客更好用的刷题AI助手。",
+    link: "https://www.marscode.cn/",
+    icon: "https://lf-cdn.marscode.cn/obj/marscode-bucket-cn/marscode-favicon.ico",
+    type: "技术社区",
+  },
+  {
+    text: "牛客网",
+    desc: "求职之前，先上牛客，就业找工作一站解决。",
+    link: "https://www.nowcoder.com/",
+    icon: "https://www.nowcoder.com/favicon.ico",
+    type: "技术社区",
+  },
+  {
+    text: "知乎",
+    desc: "知乎，是一个中文问答社区。",
+    link: "https://www.zhihu.com/",
+    icon: "https://static.zhihu.com/heifetz/favicon.ico",
+    type: "技术社区",
+  },
 ];
 
 export const DevTools: navigationItem[] = [
