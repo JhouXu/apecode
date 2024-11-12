@@ -391,3 +391,34 @@ $ git stash clear
 # 生成一个可供发布的压缩包
 $ git archive
 ```
+
+## 十一、实操
+
+### 撤销最后一次 commit
+
+```shell
+# 撤销最后一次 commit
+$ git reset --soft HEAD^
+```
+
+
+### 撤销最后一次 commit，以及撤销最后一次 add
+
+```shell
+# 撤销最后一次 commit，以及撤销最后一次 add
+$ git reset --soft HEAD^
+```
+
+
+### 删除本地分支，并拉取远程分支到本地
+
+```shell
+# 切换到其他分支
+$ git checkout master
+
+# 删除本地test分支
+$ git branch -D dev
+
+# 拉取远程库 dev 分支到本地的 dev，并创建本地 dev 分支
+$ git fetch origin dev:dev
+```
