@@ -72,7 +72,7 @@ export const BlogData = [
     ],
   },
   {
-    text: "插件笔记",
+    text: "插件扩展",
     items: [
       { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/js-preload.md", time: "2021-02-23" },
       { text: "Swiper 实现指定的 slide 显示位置", link: "/blog/js-swiper-to.md", time: "2021-03-22" },
