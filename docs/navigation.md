@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import { TechnicalCommunity, DevTools, OnlineDocument, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/config/navigation.mts'
+  import { TechnicalCommunity, DevTools, OnlineDocument, TechnologyStack, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/config/navigation.mts'
 </script>
 
 # 导航
@@ -15,6 +15,10 @@ layout: doc
 ## 在线文档
 
 <NavigationCard :navigationData=OnlineDocument />
+
+## 技术栈
+
+<NavigationCard :navigationData=TechnologyStack />
 
 ## 在线工具
 

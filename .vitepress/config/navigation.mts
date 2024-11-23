@@ -190,25 +190,28 @@ export const OnlineDocument: navigationItem[] = [
     type: "在线文档",
   },
   {
+    text: "Code Points",
+    desc: "Unicode 标准中定义的所有字符。字符码点(code point)信息。",
+    link: "https://codepoints.net/",
+    icon: "https://codepoints.net/apple-touch-icon.png",
+    type: "在线文档",
+  },
+];
+
+export const TechnologyStack: navigationItem[] = [
+  {
     text: "ThreeJS",
     desc: "Three.js 是一个跨浏览器的 JavaScript 库和 API，用于在网页上创建和显示 3D 图形。",
     link: "https://threejs.org/",
     icon: "https://threejs.org/files/favicon.ico",
-    type: "在线文档",
+    type: "技术栈",
   },
   {
     text: "BabylonJS",
     desc: "Babylon.js 是一个强大的、开放源代码的 3D 渲染引擎，用于创建 3D 游戏和图形。",
     link: "https://www.babylonjs.com/",
     icon: "https://www.babylonjs.com/favicon.ico",
-    type: "在线文档",
-  },
-  {
-    text: "Code Points",
-    desc: "Unicode 标准中定义的所有字符。字符码点(code point)信息。",
-    link: "https://codepoints.net/",
-    icon: "https://codepoints.net/apple-touch-icon.png",
-    type: "在线文档",
+    type: "技术栈",
   },
 ];
 
