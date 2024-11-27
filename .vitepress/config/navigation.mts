@@ -496,6 +496,13 @@ export const OnlineTools: navigationItem[] = [
     icon: "https://live.browserstack.com/favicon.ico",
     type: "在线工具",
   },
+  {
+    text: "Obfuscator",
+    desc: "JavaScript Obfuscator Tool",
+    link: "https://obfuscator.io/",
+    icon: "https://obfuscator.io/static/images/logo.png",
+    type: "在线工具",
+  },
 ];
 
 export const SoftwareClient: navigationItem[] = [
