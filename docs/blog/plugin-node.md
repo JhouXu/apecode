@@ -4,6 +4,10 @@ layout: doc
 
 # Node 学习笔记
 
+<br />
+
+[Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
+
 ## 简介
 
 - 运行在服务器端的 JS
@@ -1197,7 +1201,3 @@ Express 框架核心特性：
 - 可以设置中间件来响应 HTTP 请求
 - 定义了路由表用于执行不同的 HTTP 请求动作
 - 可以通过向模板传递参数来动态渲染 HTML 页面
-
-## 参考
-
-[Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
