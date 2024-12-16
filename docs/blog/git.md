@@ -422,3 +422,12 @@ $ git branch -D dev
 # 拉取远程库 dev 分支到本地的 dev，并创建本地 dev 分支
 $ git fetch origin dev:dev
 ```
+
+
+### 本次 commit，忽略 eslint 校验
+
+```shell
+$ git commit --no-verify -m "信息"
+# or
+$ git commit -m "信息" --no-verify
+```
