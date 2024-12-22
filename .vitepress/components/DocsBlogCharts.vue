@@ -41,7 +41,7 @@ onMounted(() => {
     dataHeatmap.value,
     theme.value,
     getYear(),
-    ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
+    ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme["dark"]
   );
 
   window.addEventListener("resize", () => {
@@ -67,7 +67,7 @@ watch(theme, (newTheme: string) => {
       dataHeatmap.value,
       theme.value,
       getYear(),
-      ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme[theme.value]
+      ["", " "].includes(theme.value) ? heatmapTheme["default"] : heatmapTheme["dark"]
     );
   }, 400);
 });
