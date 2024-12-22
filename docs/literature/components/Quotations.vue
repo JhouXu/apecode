@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Quotation from "./Quotation.vue";
-import type { quotationItem } from "../config/quotation.mts";
+import type { quotationItem } from "../../../.vitepress/config/quotation.mts";
 
 const props = defineProps<{
   quotationData: quotationItem[];

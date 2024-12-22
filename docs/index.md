@@ -39,7 +39,7 @@ features:
   - icon: 🌞
     title: 语录
     details: 一些有趣的句子。
-    link: /quotation.md
+    link: /literature/quotation.md
     linkText: 了解更多
   - icon: 🚩
     title: 拥抱开源

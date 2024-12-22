@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import Typed from "typed.js";
-import type { quotationItem } from "../config/quotation.mts";
+import type { quotationItem } from "../../../.vitepress/config/quotation.mts";
 
 const props = defineProps<{
   typedData: quotationItem[];
