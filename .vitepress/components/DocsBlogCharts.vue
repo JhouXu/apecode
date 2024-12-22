@@ -80,9 +80,6 @@ const initEchartPie = (data: Object[], theme: string) => {
   option = {
     aria: {
       show: true,
-      decal: {
-        show: true,
-      },
     },
     tooltip: {
       trigger: "item",
@@ -172,7 +169,7 @@ const getDataPie = (): { value: string; name: string }[] => {
   const dataPie: { value: string; name: string }[] = [];
   data.map((item: Object) => {
     if (item["text"] !== "概述") {
-      dataPie.push({ value: item["items"].length, name: item["text"] });
+      dataPie.push({ value: item["items"].length, name: `${item["text"]} ${item["items"].length}篇` });
     }
   });
   return dataPie;
