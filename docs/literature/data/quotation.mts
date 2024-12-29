@@ -1,11 +1,6 @@
-export interface quotationItem {
-  content: string;
-  date: string;
-  source: string;
-  profession?: string;
-}
+import type { Item } from "../config/config.mjs";
 
-export const quotationData: quotationItem[] = [
+export const quotationData: Item[] = [
   {
     content: "自律使我自由。",
     source: "【Keep App】",

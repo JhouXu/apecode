@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import Typed from "typed.js";
-import type { quotationItem } from "../../../.vitepress/config/quotation.mts";
+import type { Item } from "../config/config.mjs";
 
 const props = defineProps<{
-  typedData: quotationItem[];
+  data: Item[];
 }>();
 
 onMounted(() => {
   let strings: string[] = [];
-  strings = getSpecifiedFields(props.typedData, ["content", "source"]);
+  strings = getSpecifiedFields(props.data, ["content", "source"]);
   strings = strings.sort(() => Math.random() - 0.5);
 
   const options = {
@@ -29,7 +29,7 @@ onMounted(() => {
   const typed = new Typed(".typed", options);
 });
 
-const getSpecifiedFields = (source: quotationItem[], fields: string[]): string[] => {
+const getSpecifiedFields = (source: Item[], fields: string[]): string[] => {
   const arr: string[] = [];
   source.forEach((item) => {
     arr.push(`${item[fields[0]]}  by${item[fields[1]]}`);

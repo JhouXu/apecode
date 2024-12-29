@@ -10,12 +10,12 @@
 
 <script setup>
   import { quotationData } from './data/quotation.mts';
-  import Quotations from './components/Quotations.vue';
-  import QuotationTyped from './components/QuotationTyped.vue'
+  import Items from './components/Items.vue'; 
+  import Typed from './components/Typed.vue'
 </script>
 
-<QuotationTyped :typedData=[...quotationData] />
+<Typed :data=[...quotationData] />
 
 ## 合集
 
-<Quotations :quotationData=[...quotationData]  sortBy='end' />
+<Items :data=[...quotationData] />

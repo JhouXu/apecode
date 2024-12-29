@@ -1,29 +1,27 @@
 <script setup lang="ts">
-import type { quotationItem } from "../../../.vitepress/config/quotation.mts";
+import type { Item } from "../config/config.mjs";
 
 defineProps<{
-  quotation: quotationItem;
+  data: Item;
   index: number;
-  sortBy?: "start" | "end";
-  total: number;
 }>();
 </script>
 
 <template>
-  <div class="card">
-    <div class="container">
-      <!-- \!sortBy 正序 -->
-      <!-- sortBy === 'start' 正序 | sortBy === 'end' 倒序 -->
-      <span class="badge">{{ !sortBy || sortBy === "start" ? index + 1 : total - index }}、</span>
-      <span class="content">{{ quotation.content }}</span>
-    </div>
-    <div class="info">
-      <div class="source">
-        {{ quotation.source }}
-        <span v-if="quotation.profession"> - </span>
-        {{ quotation.profession }}
+  <div class="list">
+    <div class="item" v-for="(item, index) in data" :key="index">
+      <div class="container">
+        <span class="badge">{{ index + 1 }}、</span>
+        <span class="content">{{ item.content }}</span>
       </div>
-      <div class="date">收录于：{{ quotation.date }}</div>
+      <div class="info">
+        <div class="source">
+          {{ item.source }}
+          <span v-if="item.profession"> - </span>
+          {{ item.profession }}
+        </div>
+        <div class="date">收录于：{{ item.date }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +35,13 @@ defineProps<{
   --tips-color: #fff;
 }
 
-.card {
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
   display: block;
   padding: 20px;
   height: 100%;
@@ -47,7 +51,7 @@ defineProps<{
   transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
 }
 
-.card:hover {
+.item:hover {
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 0 5px 2px var(--vp-c-brand-3);
 }
@@ -71,7 +75,7 @@ span.content {
   transition: background-size 0.5s;
 }
 
-.card:hover span.content {
+.item:hover span.content {
   background-position: left bottom;
   background-size: 100% 2px;
 }
