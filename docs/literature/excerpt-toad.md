@@ -8,8 +8,15 @@
 
 在这本书里，作者借由蛤蟆和心理咨询师苍鹭的互动，探索了蛤蟆自卑、软弱、爱炫耀的个性与抑郁的情绪究竟来源于何处，让读者看到童年经历对人格的深刻影响，以及如何才能在心理上真正长大成人，独立、自信、充满希望地生活。
 
-[豆瓣评分 8.3](https://book.douban.com/subject/35143790/)
+豆瓣评分 8.3
 
-[在线阅读](https://weread.qq.com/web/reader/66832530721e777066806c9)
+在线阅读：[微信读书](https://weread.qq.com/web/reader/66832530721e777066806c9)
 
 ## 摘抄
+
+<Items :data=[...ExcerptToadData] />
+
+<script setup>
+  import { ExcerptToadData } from './data/excerpt-toad.mts';
+  import Items from './components/Items.vue';
+</script>
