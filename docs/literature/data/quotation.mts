@@ -169,9 +169,10 @@ export const quotationData: Item[] = [
     date: "2024-08-06",
   },
   {
-    content: "我们能赶上同一班车，真是很不容易。与其担心自己什么时候下车，倒不如好好享受这一程，看一下沿途的风景。",
+    content:
+      "我们能赶上同一班车，真是很不容易。与其担心自己什么时候下车，倒不如好好享受这一程，看一下沿途的风景，好好跟身边那位聊一聊。",
     contentEn:
-      "It's not easy to end up on the same bus. Instead of worrying about when the ride ends… Let's just enjoy the ride and enjoy the view.",
+      "It's not easy to end up on the same bus. Instead of worrying about when the ride ends… Let's just enjoy the ride and enjoy the view. Chat with the person next to you.",
     source: "【电影：破地狱】",
     date: "2024-12-27",
   },
