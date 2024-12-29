@@ -18,4 +18,4 @@
 
 ## 合集
 
-<Items :data=[...quotationData] />
+<Items :data=[...quotationData] :reverse="true" />

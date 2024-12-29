@@ -1,17 +1,38 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import type { Item } from "../config/config.mjs";
 
-defineProps<{
-  data: Item;
-  index: number;
+const props = defineProps<{
+  data: Item[];
+  reverse?: boolean;
 }>();
+
+const getDataLength = computed(() => {
+  return props.data.length;
+});
+
+const getData = computed(() => {
+  if (props.reverse) {
+    return props.data.reverse();
+  } else {
+    return props.data;
+  }
+});
+
+const getIndex = function (nowIndex: number) {
+  if (props.reverse) {
+    return getDataLength.value - nowIndex;
+  } else {
+    return nowIndex + 1;
+  }
+};
 </script>
 
 <template>
   <div class="list">
-    <div class="item" v-for="(item, index) in data" :key="index">
+    <div class="item" v-for="(item, index) in getData" :key="index">
       <div class="container">
-        <span class="badge">{{ index + 1 }}、</span>
+        <span class="badge">{{ getIndex(index) }}、</span>
         <span class="content">{{ item.content }}</span>
       </div>
       <div class="info">
