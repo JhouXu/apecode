@@ -30,11 +30,9 @@ onMounted(() => {
 });
 
 const getSpecifiedFields = (source: Item[], fields: string[]): string[] => {
-  const arr: string[] = [];
-  source.forEach((item) => {
-    arr.push(`${item[fields[0]]}  by${item[fields[1]]}`);
+  return source.map((item) => {
+    return `${item[fields[0]]}  by${item[fields[1]]}`;
   });
-  return arr;
 };
 </script>
 
