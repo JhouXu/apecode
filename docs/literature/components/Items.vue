@@ -35,6 +35,9 @@ const getIndex = function (nowIndex: number) {
         <span class="badge">{{ getIndex(index) }}、</span>
         <span class="content">{{ item.content }}</span>
       </div>
+      <div v-if="item.contentEn">
+        {{ item.contentEn }}
+      </div>
       <div class="info">
         <div class="source">
           {{ item.source }}
