@@ -71,6 +71,7 @@ export default defineConfig({
       dos: "html",
       dash: "html",
       shall: "html",
+      ejs: "html",
     },
   },
 });
