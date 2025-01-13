@@ -6,7 +6,11 @@ layout: doc
 
 <br />
 
-[Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
+> [Node.js 完全指南（直播回放）李立超 - bilibili 📺](https://www.bilibili.com/video/BV1qN4y1A7jM)
+> 
+> 源码笔记链接：https://pan.baidu.com/s/1jE10ooFCzpV6ddSqHyYJow?pwd=9658
+> 
+> 提取码：9658
 
 ## 简介
 
@@ -1194,6 +1198,8 @@ $ corepack prepare yarn@latest --activate
 
 ## Express
 
+Fast, unpinionated, minimalist web framework for Node.js
+
 Express 是一个基于 Node.js 平台的 web 应用开发框架，它提供了一系列强大特性帮助你创建各种 Web 和移动设备应用。
 
 Express 框架核心特性：
@@ -1201,3 +1207,1269 @@ Express 框架核心特性：
 - 可以设置中间件来响应 HTTP 请求
 - 定义了路由表用于执行不同的 HTTP 请求动作
 - 可以通过向模板传递参数来动态渲染 HTML 页面
+
+### 安装 & 配置 & 访问
+
+```shell
+npm install express
+```
+
+```javascript
+// 引入 express 模块
+const express = require("express");
+
+// 创建 express 应用 (对象)
+const app = express();
+
+// 配置路由
+app.get("/hello", (req, res) => {
+  res.send("Hello World");
+});
+
+// 启动服务器
+// 监听端口
+app.listen(3000, () => {
+  console.log("服务器启动成功");
+});
+```
+
+```shell
+# 服务器启动后，我们便可以通过 3000 端口来访问
+# 协议名://ip 地址:端口号/路径
+# http://locahost:3000
+# http://127.0.0.1:3000
+```
+
+### 路由 & 路径 & 中间件
+
+`路由`
+
+如果希望服务器可以正常访问，则需要为服务器设置`路由`.
+
+`路由`可以根据不同的请求方式和请求地址来处理用户的请求.
+
+app.method([路径], callback) 方法用来设置`路由`
+
+- 路由回调函数执行时，会接收到`三个参数`
+- request 用户的请求信息，请求报文
+- response 服务器的响应信息
+- next 它是一个函数，调用函数后，可以触发后续的中间间，且不能在响应处理完毕后使用
+
+例如
+
+```javascript
+app.get("/", (request, response) => {
+  // 1.处理请求（request）
+  // 2.响应请求（response）
+  console.log("有人访问我了~");
+  response.send("Hello World");
+
+  // 响应请求常用方法
+  // response.sendStatue() 用来向客户端发送响应状态码
+  // response.status() 用来设置响应状态码,但不发送
+  // response.send() 用来向客户端发送响应
+});
+```
+
+`路径`，用来匹配用户请求的地址，即 app.method() 中的第一个参数
+
+`中间件`
+
+> 实际场景：`权限验证`
+
+- 在 express 中，使用 app.use([路径]) 方法来注册`中间件`，`中间件`作用和路由很像，用法很像，但是路由不区分请求的方式，只看路径。
+- 和路由的区别
+  - 1. 会匹配所有请求，不区分请求方式，路径为模糊查询，都会执行（`类似拦截器`）。
+  - 2. 路径设置父目录，子目录都会触发，如 app.use("/user")，访问 /user 和 /user/xxx 都会触发。
+
+例如
+
+```javascript
+app.use("/", (request, response) => {
+  console.log("收到请求~");
+  response.send("这是通过中间件返回的响应");
+});
+```
+
+:::tip
+
+```javascript
+app.use("/", (request, response) => {
+  response.send("这是通过中间件返回的响应");
+});
+```
+
+等同于
+
+```javascript
+app.use((request, response) => {
+  response.send("这是通过中间件返回的响应");
+});
+```
+
+:::
+
+```javascript
+/* 
+  运行这里，会只执行第一个中间件，
+  因为第一个中间件没有调用 next()，
+  所以不会执行后面的中间件
+*/
+app.use((req, res, next) => {
+  console.log("111", Date.now());
+  res.send("<h1>111</h1>");
+});
+app.use((req, res) => {
+  console.log("222", Date.now());
+  res.send("<h1>222</h1>");
+});
+app.use((req, res) => {
+  console.log("333", Date.now());
+  res.send("<h1>333</h1>");
+});
+
+/* 
+  next() 是回调函数的第三个参数，它是一个函数，调用函数后，可以触发后续的中间间
+  next() 不能在响应处理完毕后使用
+*/
+app.use((req, res, next) => {
+  console.log("111", Date.now());
+  next(); // [!code ++]
+});
+app.use((req, res, next) => {
+  console.log("222", Date.now());
+  next(); // [!code ++]
+});
+app.use((req, res, next) => {
+  console.log("333", Date.now());
+  next(); // [!code ++]
+});
+```
+
+### nodemon
+
+`nodemon` 是一个命令行工具（监视器），用来监视 node.js 应用程序中的任何更改并自动重新启动服务器。
+
+使用方式：
+
+1. 全局安装
+
+```shell
+# 安装
+$ npm install -g nodemon # npm 全局安装
+$ yarn global add nodemon # yarn 全局安装
+
+# 启动
+$ nodemon # 默认启动 index.js
+$ nodemon xxx.js # 启动指定的 js
+```
+
+:::warning
+通过 yarn 进行全局安装时，默认 yarn 的目录并不在环境变量中，需要手动将路径添加到环境变量中
+
+```shell
+# 查询 yarn 全局安装的路径
+$ yarn global bin # 例 /Users/xxx/.yarn/bin
+```
+
+将上述查询到的 `yarn 全局安装的路径`添加到`系统环境变量 Path`中，`重启开发工具`即可
+:::
+
+2. 项目安装
+
+```shell
+# 开发依赖
+$ npm i -D nodemon # npm 项目安装
+$ yarn add -D nodemon # yarn 项目安装
+
+# npx 执行 node 模块
+npx nodemon # 启动 index.js
+npx nodemon xxx.js # 启动指定的 js
+```
+
+```javascript
+// package.json
+{
+  "scripts": {
+    "start": "npx nodemon index.js" // 简化启动命令
+  }
+}
+```
+
+:::tip 端口知识
+端口号，为 0 ~ 65535
+
+一般自定义的，为四位端口号
+:::
+
+### 静态资源
+
+服务器中的代码，对于外部来说都是不可见的
+
+所以我们写的 html 页面，`浏览器无法直接访问`
+
+如果希望浏览器可以访问，则需要将页面所在的目录设置`静态资源`的目录
+
+```javascript
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+// 设置 static 中间间后，  // [!code ++]
+// 浏览器访问时，会自动去 public 目录寻找是否有匹配的静态资源  // [!code ++]
+app.use(express.static(path.resolve(__dirname, "./public"))); // 设置静态资源的中间件 // [!code ++]
+
+app.get("/hello", (req, res) => {
+  res.send("Hello World");
+});
+app.listen(3000, () => {
+  console.log("服务器启动成功");
+});
+```
+
+```html
+<!-- /public/index.html -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>
+```
+
+访问路径 `localhost:3000` 或 `localhost:3000/index.html`
+
+:::details Demo 用户登录 （Get 请求）
+
+```html
+<!-- /public/login.html -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/login" method="get">
+      <p>
+        <span>用户名</span>
+        <input type="text" name="username" />
+      </p>
+      <p>
+        <span>密码</span>
+        <input type="password" name="password" />
+      </p>
+      <p>
+        <input type="submit" value="登录" />
+      </p>
+    </form>
+  </body>
+</html>
+```
+
+<br />
+
+```javascript
+/* /index.js */
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.send("<h1>大聪明</h1>");
+});
+
+app.get("/login", (req, res) => {
+  console.log("接收到登录请求");
+  const { username, password } = req.query;
+  if (username === "admin" && password === "123456") {
+    res.send("<h1>登录成功</h1>");
+  } else {
+    res.send("<h1>用户名或密码错误</h1>");
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+<br />
+
+```json
+/* package.json */
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
+```
+
+:::
+
+### param & post 请求
+
+#### param
+
+get 请求发送给参数的第二种方式
+
+/hello/:id 表示当用户访问 /hello/xxx 时就会触发
+
+/hello/:name/:age/:gender 多个参数时表示
+
+在路径中以冒号命名的部分我们称为 param （请求参数），在 get 请求时，它可以被接收到
+
+```javascript
+app.get("/hello/:id", (req, res) => {
+  // 通过 req.params 属性来获取这些参数
+  console.log(req.params);
+});
+```
+
+:::warning
+本质上两者没有区别，均是通过路径的方式去传递参数。
+
+query `查询字符串`（以对象的方式传参，参数可选）
+
+param `请求参数`（不用指定属性名，服务端接收才指定，参数不可选）
+:::
+
+#### post
+
+在请求体中，接收参数 req.body
+
+`默认情况下 express 不会自定解析请求体，需要配置中间件`
+
+:::details Demo 用户登录 （Post 请求）
+
+```html
+<!-- /public/login.html -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/login" method="post">
+      <p>
+        <span>用户名</span>
+        <input type="text" name="username" />
+      </p>
+      <p>
+        <span>密码</span>
+        <input type="password" name="password" />
+      </p>
+      <p>
+        <input type="submit" value="登录" />
+      </p>
+    </form>
+  </body>
+</html>
+```
+
+<br />
+
+```javascript
+/* /index.js */
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true })); // 配置解析请求体的中间件 // [!code ++]
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.send("<h1>大聪明</h1>");
+});
+
+app.get("/login", (req, res) => {
+  console.log("接收到登录请求");
+  const { username, password } = req.query;
+  if (username === "admin" && password === "123456") {
+    res.send("<h1>登录成功</h1>");
+  } else {
+    res.send("<h1>用户名或密码错误</h1>");
+  }
+});
+
+app.post("/login", (req, res) => {
+  console.log("接收到登录请求 post");
+  const { username, password } = req.body; // [!code ++]
+  if (username === "admin" && password === "123456") {
+    res.send("<h1>登录成功</h1>");
+  } else {
+    res.send("<h1>用户名或密码错误</h1>");
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+<br />
+
+```json
+/* package.json */
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
+```
+
+:::
+
+### 模板引擎
+
+:::tip 处理错误的路由
+
+可以在所有路由的后边配置错误路由
+
+只要这个中间件一执行，说明上面的地址都没有匹配
+
+```javascript
+const express = require("express");
+const path = require("path");
+const app = express();
+app.use(express.urlencoded());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use((req, res) => {
+  res.statue(404);
+  res.send("<h1>您访问的地址已被外星人劫持！</h1>");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+:::
+
+html 页面属于静态页面，创建的时候什么样子，用户看到就是什么样子，不会自动跟随服务器中数据的变化而变化。
+
+希望有这么一个东西，它长得像是网页，但它里边可以嵌入变量，这个东西在 node 中被称为`模板`
+
+在 node 中有很多个`模板引擎`，推荐 `ejs`
+
+:::tip
+
+Which template engines does Express support?
+
+Express 支持哪些模板引擎？
+
+Express supports any template engine that conforms with the (path, locals, callback) signature. To normalize template engine interfaces and caching, see the [consolidate.js](https://github.com/visionmedia/consolidate.js) project for support. Unlisted template engines might still support the Express signature.
+
+Express 支持任何符合 （path， locals， callback） 签名的模板引擎。 要规范化模板引擎接口和缓存，请参阅 [consolidate.js](https://github.com/visionmedia/consolidate.js) 项目寻求支持。未列出的模板引擎可能仍支持 Express 签名。
+
+For more information, see [Using template engines with Express](https://expressjs.com/en/guide/using-template-engines.html).
+
+有关更多信息，请参阅[将模板引擎与 Express 结合使用](https://expressjs.com/en/guide/using-template-engines.html)。
+
+<hr />
+
+[正在阅读 👉](https://expressjs.com/en/starter/faq.html#which-template-engines-does-express-support)
+:::
+
+#### 使用步骤
+
+1. 安装 ejs；
+2. 配置 express 的模板引擎为 ejs；
+3. 配置模板路径；`注意，模板引擎需要被 express 渲染后才能使用`
+
+[EJS Github 👉](https://github.com/mde/ejs)
+
+```shell
+npm install ejs
+```
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+
+// 1.
+// 将 ejs 设置为默认的模板引擎 // [!code ++]
+app.set("view engine", "ejs"); // [!code ++]
+
+// 2.
+// 配置模板路径【默认】 // [!code ++]
+// app.set("views", "views"); // [!code ++]
+// 配置模板路径【自定义】 // [!code ++]
+app.set("views", path.resolve(__dirname, "views")); // [!code ++]
+
+// 3. 渲染 // [!code ++]
+app.get("/students", (req, res) => {
+  // res.render() 用来渲染一个模板引擎，并将其返回给浏览器 // [!code ++]
+  res.render("students"); // [!code ++]
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+```ejs
+<!-- /views/students.ejs -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>这是 ejs 模板</title>
+  </head>
+  <body>
+    <h1>Hello EJS</h1>
+  </body>
+</html>
+```
+
+#### 传递数据
+
+:::details 传递数据，且渲染
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
+app.get("/students", (req, res) => {
+  res.render("students", { name: "孙悟空", age: 18 }); // [!code ++]
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+<br />
+
+```ejs
+<!-- /views/students.ejs -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>这是 ejs 模板</title>
+  </head>
+  <body>
+    <h1>Hello EJS</h1>
+    <!-- 接收参数，且渲染 -->
+    <h2><%=name %></h2>
+    <h2><%=age %></h2>
+  </body>
+</html>
+```
+
+:::
+
+:::warning
+<%= %> 语法，在 ejs 中输出内容时，它会自动对字符串的特殊符号进行转义
+
+`防止 XSS 攻击`
+
+```javascript
+res.render("students", { hello: "<h1>哈哈哈</h1>" });
+```
+
+<br />
+
+```ejs
+<%# 将直接渲染为字符串，不会解析为h1标签 %>
+<%=hello %>
+
+<%# 原样输出，即解析h1标签 %>
+<%-hello %>
+```
+
+:::
+
+注释语法
+
+```ejs
+<%#单行注释  %>
+
+<%
+  // console.log('js 语法注释')
+%>
+```
+
+### 练习
+
+增删查改 CRUD
+
+全称增加（Create，意为“建立”）、删除（Delete）、查询（Read，意为“读取”）、改正（Update，意为“更新”）
+
+完整练习内容请观看 第二十五和第二十六集视频， [Node.js 完全指南（直播回放）李立超](https://www.bilibili.com/video/BV1qN4y1A7jM/)
+
+#### 代码小抄
+
+```javascript
+res.redirect(); // 路由重定向
+```
+
+```javascript
+/* main.js */
+// 数据持久化，存 json 文件
+
+// 读
+const STUDENT_ARR = require("./data/students.json");
+
+// 写
+const path = require("path");
+const fs = require("fs/promises");
+fs.writeFile(path.resolve("__dirname", "./data/students.json"), JSON.stringify(STUDENT_ARR))
+  .then((res) => {
+    // 写入成功
+  })
+  .catch((err) => {
+    // 写入失败
+  });
+```
+
+### Router
+
+`Router` 是 express 中创建的一个对象
+
+router 实际上是一个中间件，可以在该中间件绑定各种路由以及其他的中间件
+
+`可以用来绑定路由的一个工具`
+
+#### 创建
+
+```javascript
+/* main.js */
+const express = require("express");
+const router = express.Router();
+```
+
+#### 绑定
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+const router = express.Router();
+
+router.get("/Hello", (req, res) => {
+  res.send("Hello World");
+});
+
+app.use(router);
+```
+
+#### 最终使用
+
+`实现路由的拆分，代码解耦`
+
+express() 只能实例一次
+
+```javascript
+/* /routes/user.js */
+const express = require("express");
+
+// 创建路由
+const router = express.Router();
+router.get("/hello", (req, res) => {
+  res.send("Hello World");
+});
+
+// 暴露到模块外
+module.export = router;
+```
+
+```javascript{3}
+/* main.js */
+const express = require("express");
+const app = express();
+const userRouter = require("./routes/user.js");
+
+app.use(userRouter);
+
+app.license(3000, () => {
+  console.log("服务器已启动！");
+});
+```
+
+#### 路由重复解决
+
+当路由过多时，存在路由重复的情况，可以在 app.use() 的时候指定`前缀/命名空间/子路由`
+
+```javascript{4}
+/* /routes/user.js */
+const express = require("express");
+const router = express.Router();
+router.get("/list", (req, res) => {
+  res.send("list-user");
+});
+module.export = router;
+```
+
+```javascript{4}
+/* /routes/goods.js */
+const express = require("express");
+const router = express.Router();
+router.get("/list", (req, res) => {
+  res.send("list-goods");
+});
+module.export = router;
+```
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+const userRouter = require("./routes/user.js");
+const goodsRouter = require("./routes/goods.js");
+
+app.use(userRouter); // [!code --]
+app.use(goodsRouter); // [!code --]
+app.use("/user", userRouter); // [!code ++]
+app.use("/goods", goodsRouter); // [!code ++]
+
+app.license(3000, () => {
+  console.log("服务器已启动！");
+});
+```
+
+### Cookie
+
+#### 简介
+
+HTTP 协议是一个无状态的协议，服务器无法区分请求是否发送自同一个客户端。
+
+cookie 是 Http 协议中用来解决无状态问题的技术。
+
+cookie 的本质就是一个头
+
+服务器以响应头的形式将 cookie 发送给客户端，客户端收到以后会将其存储，并在下次向服务器发送发送请求时将其传回，这样服务器就可以根据 cookie 来识别客户端了。
+
+#### 使用
+
+##### 1. 设置 cookie
+
+服务器向客户端发送 cookie：
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+
+app.get("/set-cookie", (req, res) => {
+  res.cookie("token", 123123); // [!code ++]
+  res.send("设置 cookie");
+});
+```
+
+当请求 `/set-cookie` 后，可以在`浏览器控制面板-网络-响应标头`中看到设置的 Set-Cookie 字段。
+
+##### 2. 接收 cookie
+
+服务器读取客户端返回的 cookie：
+
+`需要安装中间件 cookie-parser 插件`
+
+```shell
+npm install cookie-parser
+```
+
+```javascript
+/* main.js */
+const express = require("express");
+const app = express();
+const cookieParser = require("cookie-parser"); // [!code ++]
+
+app.use(cookieParser()); // 设置 cookie 解析中间件 // [!code ++]
+app.get("/get-cookie", (req, res) => {
+  const token = req.cookies.token; // [!code ++]
+  res.send("获取 cookie");
+});
+```
+
+当请求 `/get-cookie` 后，可以在`浏览器控制面板-网络-请求标头`中看到设置的 Cookie 字段。
+
+##### 3. cookie 有效期
+
+cookie 是有有效期的
+
+默认情况下，cookie 的有效期就是一次会话（session），会话是一次打开到关闭浏览器的过程。
+
+###### 3.1 expires
+
+指定具体过期时间
+
+```javascript
+app.get("/set", (req, res) => {
+  res.cookie("token", 123123, {
+    expires: new Date(), // [!code ++]
+  });
+});
+```
+
+###### 3.2 maxAge
+
+设置有效时间，多久后过期，单位：ms
+
+```javascript
+app.get("/set", (req, res) => {
+  res.cookie("token", 123123, {
+    maxAge: 2000, // [!code ++]
+  });
+});
+```
+
+##### 4. 删除 cookie
+
+cookie 一旦发送给浏览器，我们就不能再修改了
+
+但是，我们可以通过发送`新的同名`cookie 来替换旧 cookie，从而达到修改的目的
+
+```javascript
+app.get("/delete", (req, res) => {
+  res.cookie("token", "", { maxAge: 0 }); // [!code ++]
+  res.send("删除 cookie");
+});
+```
+
+:::details CookieOptions 配置对象
+
+```typescript
+{
+  cookie(name: string, val: any, options: CookieOptions): this;
+}
+```
+
+<br />
+
+```typescript
+/**
+ * Options passed down into `res.cookie`
+ * @link https://expressjs.com/en/api.html#res.cookie
+ */
+export interface CookieOptions {
+  /** Convenient option for setting the expiry time relative to the current time in **milliseconds**. */
+  maxAge?: number | undefined;
+  /** Indicates if the cookie should be signed. */
+  signed?: boolean | undefined;
+  /** Expiry date of the cookie in GMT. If not specified or set to 0, creates a session cookie. */
+  expires?: Date | undefined;
+  /** Flags the cookie to be accessible only by the web server. */
+  httpOnly?: boolean | undefined;
+  /** Path for the cookie. Defaults to “/”. */
+  path?: string | undefined;
+  /** Domain name for the cookie. Defaults to the domain name of the app. */
+  domain?: string | undefined;
+  /** Marks the cookie to be used with HTTPS only. */
+  secure?: boolean | undefined;
+  /** A synchronous function used for cookie value encoding. Defaults to encodeURIComponent. */
+  encode?: ((val: string) => string) | undefined;
+  /**
+   * Value of the “SameSite” Set-Cookie attribute.
+   * @link https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00#section-4.1.1.
+   */
+  sameSite?: boolean | "lax" | "strict" | "none" | undefined;
+  /**
+   * Value of the “Priority” Set-Cookie attribute.
+   * @link https://datatracker.ietf.org/doc/html/draft-west-cookie-priority-00#section-4.3
+   */
+  priority?: "low" | "medium" | "high";
+  /** Marks the cookie to use partioned storage. */
+  partitioned?: boolean | undefined;
+}
+```
+
+:::
+
+### Session
+
+cookie 的不足：
+
+cookie 是由服务器创建，浏览器保存，`每次`浏览器访问服务器时都需要将 cookie 发回，导致`不能在 cookie 中存放较多的数据`，并且 cookie 是直接存储在客户端中，`容易被篡改盗用（明文存储）`
+
+注意，我们在使用 cookie 一定不会在 cookie 中春初敏感信息
+
+为了解决 cookie 的不足，我们希望可以将用户的数据统一存储在服务器中，每一个用户的数据都有一个对应的 id，我们只需要通过 cookie 将 id 发送给浏览器,浏览器只需每次访问时将 id 发回，即可读取到服务器中存储的数据。
+
+这个技术我们称之为 session（会话）
+
+#### 简介
+
+`session 是服务器中的一个对象`，这个对象用来存储用户的数据；
+
+每一个 session 对象都有一个唯一的 id，session 创建后，id 会以 cookie 的形式发送给客户端；
+
+客户端收到以后，每次访问/请求都会将 id 发回，服务器中就可以根据 id 找到对应的 session
+
+主要的两部分：
+
+1. 服务器端：存储 session 数据的对象
+2. 客户端：存储 session id 的 cookie
+
+什么时候会失效？
+
+1. 服务器中的 session 对象没了
+2. cookie 过期
+
+在 express 中，可以通过 express-session 组件来实现 session 功能，express-session 默认是将 session 存储到内存中的，所有服务器一旦重启 session 会自动重置。所以`使用 session 通常会对 session 进行持久化的操作（写到文件或数据库）` [立即阅读](#持久化)
+
+#### 使用
+
+1. 安装组件
+
+```shell
+npm install express-session
+```
+
+2. 配置中间件
+
+```javascript{6,7,8,9,10}
+/* main.js */
+const express = require("express");
+const app = express();
+const expressSession = require("express-session");
+
+app.use(
+  expressSession({
+    secret: "123123", // 密钥
+  })
+);
+```
+
+:::details SessionOptions 配置对象
+
+```typescript
+declare function session(options?: session.SessionOptions): express.RequestHandler;
+
+declare namespace session {
+  interface SessionOptions {
+    /**
+     * This is the secret used to sign the session ID cookie.
+     * The secret can be any type of value that is supported by Node.js `crypto.createHmac` (like a string or a Buffer).
+     * This can be either a single secret, or an array of multiple secrets.
+     * If an array of secrets is provided, only the first element will be used to sign the session ID cookie, while all the elements will be considered when verifying the signature in requests.
+     * The secret itself should be not easily parsed by a human and would best be a random set of characters.
+     *
+     * A best practice may include:
+     * * The use of environment variables to store the secret, ensuring the secret itself does not exist in your repository.
+     * * Periodic updates of the secret, while ensuring the previous secret is in the array.
+     *
+     * Using a secret that cannot be guessed will reduce the ability to hijack a session to only guessing the session ID (as determined by the `genid` option).
+     *
+     * Changing the secret value will invalidate all existing sessions.
+     * In order to rotate the secret without invalidating sessions, provide an array of secrets, with the new secret as first element of the array, and including previous secrets as the later elements.
+     *
+     * Note HMAC-256 is used to sign the session ID. For this reason, the secret should contain at least 32 bytes of entropy.
+     */
+    secret: CipherKey | CipherKey[];
+
+    /**
+     * Function to call to generate a new session ID. Provide a function that returns a string that will be used as a session ID.
+     * The function is given the request as the first argument if you want to use some value attached to it when generating the ID.
+     *
+     * The default value is a function which uses the uid-safe library to generate IDs.
+     * Be careful to generate unique IDs so your sessions do not conflict.
+     */
+    genid?(req: express.Request): string;
+
+    /**
+     * The name of the session ID cookie to set in the response (and read from in the request).
+     * The default value is 'connect.sid'.
+     *
+     * Note if you have multiple apps running on the same hostname (this is just the name, i.e. `localhost` or `127.0.0.1`; different schemes and ports do not name a different hostname),
+     *   then you need to separate the session cookies from each other.
+     * The simplest method is to simply set different names per app.
+     */
+    name?: string | undefined;
+
+    /**
+     * The session store instance, defaults to a new `MemoryStore` instance.
+     * @see MemoryStore
+     */
+    store?: Store | undefined;
+
+    /**
+     * Settings object for the session ID cookie.
+     * @see CookieOptions
+     */
+    cookie?: CookieOptions | undefined;
+
+    /**
+     * Force the session identifier cookie to be set on every response. The expiration is reset to the original `maxAge`, resetting the expiration countdown.
+     * The default value is `false`.
+     *
+     * With this enabled, the session identifier cookie will expire in `maxAge` *since the last response was sent* instead of in `maxAge` *since the session was last modified by the server*.
+     * This is typically used in conjuction with short, non-session-length `maxAge` values to provide a quick timeout of the session data
+     *   with reduced potential of it occurring during on going server interactions.
+     *
+     * Note that when this option is set to `true` but the `saveUninitialized` option is set to `false`, the cookie will not be set on a response with an uninitialized session.
+     * This option only modifies the behavior when an existing session was loaded for the request.
+     *
+     * @see saveUninitialized
+     */
+    rolling?: boolean | undefined;
+
+    /**
+     * Forces the session to be saved back to the session store, even if the session was never modified during the request.
+     * Depending on your store this may be necessary, but it can also create race conditions where a client makes two parallel requests to your server
+     *   and changes made to the session in one request may get overwritten when the other request ends, even if it made no changes (this behavior also depends on what store you're using).
+     *
+     * The default value is `true`, but using the default has been deprecated, as the default will change in the future.
+     * Please research into this setting and choose what is appropriate to your use-case. Typically, you'll want `false`.
+     *
+     * How do I know if this is necessary for my store? The best way to know is to check with your store if it implements the `touch` method.
+     * If it does, then you can safely set `resave: false`.
+     * If it does not implement the `touch` method and your store sets an expiration date on stored sessions, then you likely need `resave: true`.
+     */
+    resave?: boolean | undefined;
+
+    /**
+     * Trust the reverse proxy when setting secure cookies (via the "X-Forwarded-Proto" header).
+     * The default value is undefined.
+     *
+     * - `true`: The `X-Forwarded-Proto` header will be used.
+     * - `false`: All headers are ignored and the connection is considered secure only if there is a direct TLS/SSL connection.
+     * - `undefined`: Uses the "trust proxy" setting from express
+     */
+    proxy?: boolean | undefined;
+
+    /**
+     * Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified.
+     * Choosing `false` is useful for implementing login sessions, reducing server storage usage, or complying with laws that require permission before setting a cookie.
+     * Choosing `false` will also help with race conditions where a client makes multiple parallel requests without a session.
+     *
+     * The default value is `true`, but using the default has been deprecated, as the default will change in the future.
+     * Please research into this setting and choose what is appropriate to your use-case.
+     *
+     * **If you are using `express-session` in conjunction with PassportJS:**
+     * Passport will add an empty Passport object to the session for use after a user is authenticated, which will be treated as a modification to the session, causing it to be saved.
+     * This has been fixed in PassportJS 0.3.0.
+     */
+    saveUninitialized?: boolean | undefined;
+
+    /**
+     * Control the result of unsetting req.session (through delete, setting to null, etc.).
+     * - `destroy`: The session will be destroyed (deleted) when the response ends.
+     * - `keep`: The session in the store will be kept, but modifications made during the request are ignored and not saved.
+     * @default 'keep'
+     */
+    unset?: "destroy" | "keep" | undefined;
+  }
+}
+```
+
+:::
+
+3. 设置 & 获取 session
+
+```javascript{12,13,14,15,17,18,19,20,21}
+/* main.js */
+const express = require("express");
+const app = express();
+const expressSession = require("express-session");
+
+app.use(
+  expressSession({
+    secret: "123123", // 密钥
+  })
+);
+
+app.get("/set", (req, res) => {
+  req.session.username = "sunwukong";
+  res.send("设置 session");
+});
+
+app.get("/get", (req, res) => {
+  const username = req.session.username;
+  console.log(username);
+  res.send("获取 session");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+4. 统一验证
+
+```javascript{9,10,11,12,13,14,15}
+/* /routes/goods.js */
+const express = require("express");
+const router = express.Router();
+
+/*
+  当 goods 中的路由均需要验证 session 时
+  可以通过设置中间件进行拦截，如验证通过就 next() 放行
+*/
+router.use((req, res) => {
+  if (req.session.username) {
+    next();
+  } else {
+    res.redirect("/");
+  }
+});
+
+router.get("/list", (req, res) => {
+  //
+});
+router.get("/add", (req, res) => {
+  //
+});
+router.get("/delete", (req, res) => {
+  //
+});
+
+module.export = router;
+```
+
+#### 持久化
+
+[Compatible Session Stores - 持久化方案](https://www.npmjs.com/package/express-session#compatible-session-stores)
+
+[session-file-store](https://www.npmjs.com/package/session-file-store)
+
+将演示`存储文件`的方式。
+
+① 安装 session-file-store
+② 引入
+③ 设置为中间件
+
+```shell
+$ 安装 session-file-store
+npm install session-file-store
+```
+
+```javascript
+const express = require("express");
+const path = require("path");
+const expressSession = require("express-session"); // 引入 express-session
+const FileStore = require("session-file-store")(expressSession); // 引入 session-file-store
+
+app.use(
+  expressSession({
+    store: new FileStore({
+      // 配置对象
+      // https://www.npmjs.com/package/session-file-store#Options
+
+      /*
+        指定 session 本地文件的路径
+      */
+      path: path.resolve(__dirname, "./sessions"),
+
+      /* 
+        加密密钥
+      */
+      secret: "123123",
+
+      /* 
+        过期时间，最大闲置时间
+        默认 3600（1小时），单位：秒
+      */
+      ttl: 3600,
+
+      /* 
+        指定清除 session 的间隔
+        默认 3600（1小时），单位：秒
+      */
+      reapInterval: 3600,
+    }),
+    secret: "123123",
+  })
+);
+```
+
+### CSRF
+
+`跨站请求伪造`（CSRF）是一种冒充受信任用户，向服务器发送非预期请求的攻击方式。
+
+[MDN - CSRF](https://developer.mozilla.org/zh-CN/docs/Glossary/CSRF)
+
+#### csrf 攻击演示
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 图像 -->
+    <img src="http://loaclhost:3000/students/delete?id=3" />
+
+    <!-- 表单 -->
+    <form action="http://localhost:3000/students/add" method="get">
+      <input type="text" name="username" value="dazhaxie" />
+      <input type="text" name="age" value="77" />
+      <input type="text" name="gender" value="女" />
+      <input type="text" name="address" value="宁波" />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
+```
+
+#### 防御 csrf 攻击
+
+1. 使用 referer 头来检查请求来源
+
+```javascript
+router.use((req, res, next) => {
+  const referer = req.get("referer");
+  // console.log("请求来自：", referer);
+  if (!referer || !referer.startsWith("http://localhost:3000/")) {
+    res.status(403).send("你没有这个权限！");
+    return;
+  }
+});
+```
+
+2. 使用验证码
+3. 尽量使用 post 请求（结合 token）
+
+:::tip
+
+token（令牌）
+
+可以在创建表单时随机生成一个令牌，然后将令牌存储到 session 中，并通过模板发送给用户，用户提交保单时，必须将 token 发回，才可以进行后续操作。（可以使用 uuid 来生成 token）
+
+:::
