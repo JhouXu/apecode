@@ -104,6 +104,7 @@ export const BlogData = [
       { text: "腾讯云服务器购买以及部署", link: "/blog/other/tencent-cloud-server.md", time: "2021-03-14" },
       { text: "常用的 git 命令总结", link: "/blog/other/git.md", time: "2021-11-23" },
       { text: "关于将前端项目部署到 Linux", link: "/blog/other/nginx.md", time: "2023-09-26" },
+      { text: "开源许可的全面指南", link: "/blog/other/licenses.md", time: "2025-01-16" },
     ],
   },
 ];
