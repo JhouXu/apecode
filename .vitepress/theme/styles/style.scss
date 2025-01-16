@@ -7,7 +7,10 @@
     font-family: "AlimamaShuHeiTi";
     color: var(--vp-home-hero-text-color);
     background-image: var(--vp-home-hero-text-background);
+    background-size: 200% 200%;
+    animation: gradientBg 1.4s ease infinite;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* 仅在Webkit浏览器中生效 */
   }
 
   .VPHero.has-image .image-bg {
