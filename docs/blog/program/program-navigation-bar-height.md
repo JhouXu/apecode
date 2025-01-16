@@ -8,7 +8,7 @@ layout: doc
 
 在小程序中通过 navigationStyle: custom; 属性，自定 navigationBar 的时候。
 
-![在这里插入图片描述](/images/blog/program/20210414112718906.png)
+![在这里插入图片描述](../../public/images/blog/program/20210414112718906.png)
 
 自定 navigationBar 实现思路：
 
@@ -25,7 +25,7 @@ let navigationBar = statusBarHeight + (top - statusBarHeight) * 2;
 ## 问题描述：
 
 通过上述方式，实现了 navigationBar，但是发现在 iPhone 设备上，却和系统默认的高度不同。（如图所示，前面图层是自动的 navigationBar，后面图层则是系统默认的 navigationBar，可以清晰看出默认的 navigationBar 在 iPhone 设备上会`大于` 上述计算方式。）
-![在这里插入图片描述](/images/blog/program/20210414113812989.png)
+![在这里插入图片描述](../../public/images/blog/program/20210414113812989.png)
 
 ## 原因分析：
 

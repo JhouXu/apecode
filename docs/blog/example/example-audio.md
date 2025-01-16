@@ -10,7 +10,7 @@ layout: doc
 
 比如这样：
 
-![在这里插入图片描述](/images/blog/example/20210220154829553.png)
+![在这里插入图片描述](../../public/images/blog/example/20210220154829553.png)
 
 ## 问题描述
 
@@ -37,8 +37,7 @@ layout: doc
     preload="load"
     autoplay="autoplay"
     loop="loop"
-    src="http://m701.music.126.net/20210426183230/713ac2b215d49da62b627bce606a7af9/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/7564479985/d0de/330f/68b3/86b3a474f213f9026f340672157b749c.mp3"
-  >
+    src="http://m701.music.126.net/20210426183230/713ac2b215d49da62b627bce606a7af9/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/7564479985/d0de/330f/68b3/86b3a474f213f9026f340672157b749c.mp3">
     您的浏览器尚未支持播放当前音乐，建议更换浏览器再来。
   </audio>
 </div>

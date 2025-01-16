@@ -110,13 +110,13 @@ sass style.scss:style.css --style compressed
 ```
 
 在使用命令行编译的时候，需要注意 cdm 的路径中需要当下就是包含需要编译的 sass 文件才可以，否则编译错误。（包含的关系）
-![在这里插入图片描述](/images/blog/css/20210221124743437.png#pic_center)
+![在这里插入图片描述](../../public/images/blog/css/20210221124743437.png#pic_center)
 
 ### 2. 插件保存编译
 
 在此先前，我们需要到 vscode 的扩展插件当中找到 Live Sass Compiler 插件安装，并到 setting.json 中进行配置。
 
-![在这里插入图片描述](/images/blog/css/20210221110642436.png#pic_center)
+![在这里插入图片描述](../../public/images/blog/css/20210221110642436.png#pic_center)
 打开 vscode 的 setting.json 文件，添加以下配置项。
 
 ```json
@@ -132,7 +132,7 @@ sass style.scss:style.css --style compressed
 
 添加完成之后，回到需要编译的 sass 文件中，在 vscode 右下角会有 Watch Sass 字样，他是监测 sass 文件的，当保存之后自动编译成 setting.json 定义的格式文件，点击开启即可。
 之后就可以随意编写 sass 文件了，并且在输出控制台会有编译的成功或错误信息，可以及时纠正。
-![在这里插入图片描述](/images/blog/css/20210221130050853.png?)
+![在这里插入图片描述](../../public/images/blog/css/20210221130050853.png?)
 
 ## 总结
 
