@@ -222,4 +222,9 @@ export const quotationData: Item[] = [
     source: "佚名",
     date: "2025-01-03",
   },
+  {
+    content: "你要记住，弼马温是别人给你封的，而齐天大圣可是自己封的。",
+    source: "佚名",
+    date: "2025-01-11",
+  },
 ];
