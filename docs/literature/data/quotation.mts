@@ -227,4 +227,9 @@ export const quotationData: Item[] = [
     source: "佚名",
     date: "2025-01-11",
   },
+  {
+    content: "真正失败的人，就是那种特别害怕不能成功，怕死了，连试都不敢试的人。",
+    source: "【电影：阳光小女孩】",
+    date: "2025-01-19",
+  },
 ];
