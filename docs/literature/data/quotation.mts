@@ -7,7 +7,7 @@ export const quotationData: Item[] = [
     date: "2020-01-01",
   },
   {
-    content: "这么年轻，升本+考验，同时软考。",
+    content: "这么年轻，升本+考研，同时软考。",
     source: "佚名",
     date: "2020-01-01",
   },
