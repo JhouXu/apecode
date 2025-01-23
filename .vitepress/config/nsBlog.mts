@@ -79,7 +79,7 @@ export const BlogData = [
         time: "2022-03-25",
       },
       { text: "如何在 vite 动态设置打包目录", link: "/blog/example/vite-build-dynamic.md", time: "2024-11-12" },
-      { text: "表格开发常见的渲染方式", link: "/blog/example/example-table-render.md", time: "2025-1-23" },
+      { text: "表格开发常见的渲染方式", link: "/blog/example/example-table-render.md", time: "2025-01-23" },
     ],
   },
   {
