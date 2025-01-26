@@ -4,7 +4,7 @@ layout: doc
 
 # 轻函数
 
-> 前身 [自封装常用的工具函数 👉](https://jhouxu.github.io/apecode/blog/js-fun.html)
+> 前身 [自封装常用的工具函数 👉](https://jhouxu.github.io/apecode/blog/js/js-fun.html)
 
 封装常用量、轻量的工具函数。
 
