@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import * as echarts from "echarts";
-import { CalendarHeatmap } from "vue3-calendar-heatmap";
+import * as CalendarHeatmapModule from "vue3-calendar-heatmap";
+const { CalendarHeatmap } = CalendarHeatmapModule;
 import "vue3-calendar-heatmap/dist/style.css";
 import { BlogData } from "./../config/nsBlog.mts";
 
