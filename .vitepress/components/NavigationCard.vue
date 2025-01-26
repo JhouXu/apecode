@@ -1,9 +1,19 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import type { navigationItem } from "../config/navigation.mts";
 
 defineProps<{
   navigationData: navigationItem[];
 }>();
+
+const defaultIcon = new URL("../assets/svg/image-error-8A8A8A.svg", import.meta.url).href;
+
+function handleImageError(event: Event) {
+  const img = event.target as HTMLImageElement;
+  if (img.src !== defaultIcon) {
+    img.src = defaultIcon;
+  }
+}
 </script>
 
 <template>
@@ -23,9 +33,11 @@ defineProps<{
             <img
               v-show="navigationItem.icon"
               class="w-8 h-8 rounded-[4px] overflow-hidden select-none object-contain no-zoom"
+              loading="lazy"
+              data-zoomable
               :src="navigationItem.icon"
               :alt="`${navigationItem.text} - ${navigationItem.desc}`"
-              data-zoomable />
+              @error="handleImageError" />
           </section>
 
           <!-- 网站文字信息 -->
