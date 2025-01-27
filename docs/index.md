@@ -16,11 +16,6 @@ hero:
       text: 参与建设
       link: https://github.com/JhouXu/apecode
 features:
-  - icon: 🔗
-    title: 导航工具
-    details: 有趣实用的网站，提高效率。
-    link: /navigation.md
-    linkText: 立即查看
   - icon: 🗃️
     title: 随笔记
     details: 简单而简约，始终如一。
@@ -36,8 +31,13 @@ features:
     details: 最轻量的工具函数。
     link: /function.md
     linkText: 了解更多
+  - icon: 🔗
+    title: 导航工具
+    details: 有趣实用的网站，提高效率。
+    link: /navigation.md
+    linkText: 了解更多
   - icon: 🌞
-    title: 语录
+    title: 文摘
     details: 一些有趣的句子。
     link: /literature/quotation.md
     linkText: 了解更多
