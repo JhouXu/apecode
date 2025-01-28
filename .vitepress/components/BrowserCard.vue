@@ -24,6 +24,12 @@
       </div>
       <div class="item-version">Edge {{ props.ev }}</div>
     </div>
+    <div v-if="props.oev" class="item item-old-edge">
+      <div class="item-logo">
+        <img src="../assets/svg/logo-edge10.svg" />
+      </div>
+      <div class="item-version">Edge {{ props.oev }}</div>
+    </div>
     <div v-if="props.iev" class="item item-ie">
       <div class="item-logo">
         <img src="../assets/svg/logo-ie.svg" />
@@ -53,6 +59,7 @@ const props = defineProps({
   fv: { type: String, default: "" },
   sv: { type: String, default: "" },
   ev: { type: String, default: "" },
+  oev: { type: String, default: "" },
   iev: { type: String, default: "" },
   ov: { type: String, default: "" },
   nv: { type: String, default: "" },
