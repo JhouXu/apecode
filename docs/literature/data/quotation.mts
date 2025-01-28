@@ -255,4 +255,9 @@ export const quotationData: Item[] = [
     source: "【晚熟的人】莫言",
     date: "2025-01-26",
   },
+  {
+    content: "人不能忘本，树不能忘根，做人要饮水思源！",
+    source: "曾仕强",
+    date: "2025-01-28",
+  },
 ];
