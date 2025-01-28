@@ -14,6 +14,18 @@ export const BlogData = [
     ],
   },
   {
+    text: "ECMAScript",
+    items: [
+      { text: "ES 2018", link: "/blog/es/es-2018.md", time: "2025-01-27" },
+      { text: "ES 2019", link: "/blog/es/es-2019.md", time: "2025-01-27" },
+      { text: "ES 2020", link: "/blog/es/es-2020.md", time: "2025-01-27" },
+      { text: "ES 2021", link: "/blog/es/es-2021.md", time: "2025-01-27" },
+      { text: "ES 2022", link: "/blog/es/es-2022.md", time: "2025-01-27" },
+      { text: "ES 2023", link: "/blog/es/es-2023.md", time: "2025-01-27" },
+      { text: "ES 2024", link: "/blog/es/es-2024.md", time: "2025-01-26" },
+    ],
+  },
+  {
     text: "Css",
     items: [
       { text: "元素水平垂直居中的六种方式", link: "/blog/css/css-center.md", time: "2020-08-28" },
