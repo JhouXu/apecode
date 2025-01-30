@@ -12,13 +12,16 @@
 
 在线阅读：[微信读书](https://weread.qq.com/web/reader/66832530721e777066806c9)
 
-## 目录
-
-## 摘抄
-
 <script setup>
-  import { ExcerptToadData } from '../../.vitepress/data/excerpt-toad.mts';
+  import { TocData, ExcerptToadData } from '../../.vitepress/data/excerpt-toad.mts';
+  import Toc from '../../.vitepress/components/Literature/Toc.vue';
   import Items from '../../.vitepress/components/Literature/Items.vue';
 </script>
+
+## 目录
+
+<Toc :data=[...TocData] />
+
+## 摘抄
 
 <Items :data=[...ExcerptToadData] />

@@ -1,6 +1,7 @@
 import type { Item } from "../config/config.mjs";
 
-export const ContentsData: string[] = [
+export const TocData: string[] = [
+  "前言",
   "第一章：整个人都不太好",
   "第二章：挚友前来相助",
   "第三章：初见咨询师",
