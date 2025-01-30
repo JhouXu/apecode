@@ -9,9 +9,9 @@
 :::
 
 <script setup>
-  import { quotationData } from './data/quotation.mts';
-  import Items from './components/Items.vue'; 
-  import Typed from './components/Typed.vue'
+  import { quotationData } from '../../.vitepress/data/quotation.mts';
+  import Items from '../../.vitepress/components/Literature/Items.vue'; 
+  import Typed from '../../.vitepress/components/Literature/Typed.vue'
 </script>
 
 <Typed :data=[...quotationData] />

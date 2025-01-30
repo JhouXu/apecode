@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import Typed from "typed.js";
-import type { Item } from "../config/config.mjs";
+import type { Item } from "../../types/literature.mjs";
 
 const props = defineProps<{
   data: Item[];

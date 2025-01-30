@@ -17,8 +17,8 @@
 ## 摘抄
 
 <script setup>
-  import { ExcerptToadData } from './data/excerpt-toad.mts';
-  import Items from './components/Items.vue';
+  import { ExcerptToadData } from '../../.vitepress/data/excerpt-toad.mts';
+  import Items from '../../.vitepress/components/Literature/Items.vue';
 </script>
 
 <Items :data=[...ExcerptToadData] />
