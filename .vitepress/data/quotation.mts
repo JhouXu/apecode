@@ -260,4 +260,26 @@ export const quotationData: Item[] = [
     source: "曾仕强",
     date: "2025-01-28",
   },
+  {
+    content: "如果有更长的时间，我就能把这封信写得更短。",
+    source: "帕斯卡",
+    date: "2025-02-01",
+  },
+  {
+    content: "不是我们的认知能力要如实反映认知对象，而是认知对象要符合我们的认知能力。",
+    source: "伊曼努比 · 康德",
+    date: "2025-02-01",
+  },
+  {
+    content: "产品设计优化方法：小黄鸭法、马拉松法、One more req。",
+    source: "大师小黄",
+    profession: "BiliBili UP 主",
+    date: "2025-02-01",
+  },
+  {
+    content: "产品设计技巧：交叉火力原则，避免用技术实现反推产品设计。",
+    source: "大师小黄",
+    profession: "BiliBili UP 主",
+    date: "2025-02-01",
+  },
 ];
