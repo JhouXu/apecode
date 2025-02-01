@@ -399,6 +399,13 @@ export const OnlineTools: navigationItem[] = [
     type: "在线工具",
   },
   {
+    text: "StrApi",
+    desc: "Build modern websites with the most customizable Headless CMS - 无头 CMS",
+    link: "https://strapi.io/",
+    icon: "https://strapi.io/assets/favicon-32x32.png",
+    type: "在线工具",
+  },
+  {
     text: "SM.MS",
     desc: "免费、无限流量、无需注册的图床服务",
     link: "https://sm.ms/",
