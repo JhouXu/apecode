@@ -122,6 +122,7 @@ export const BlogData = [
       { text: "常用的 git 命令总结", link: "/blog/other/git.md", time: "2021-11-23" },
       { text: "关于将前端项目部署到 Linux", link: "/blog/other/nginx.md", time: "2023-09-26" },
       { text: "开源许可的全面指南", link: "/blog/other/licenses.md", time: "2025-01-16" },
+      { text: "客户端中的几种存储机制", link: "/blog/other/client-storage.md", time: "2025-02-07" },
     ],
   },
 ];
