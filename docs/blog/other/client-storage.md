@@ -2,6 +2,8 @@
 
 在前端开发中，浏览器提供了多种存储机制，用于在客户端保存数据。
 
+![示例](../../public/images/blog/client-storage/1.jpg)
+
 ## Cookies
 
 Cookies 是`最早`的客户端存储机制，由 Netscape 公司在 1994 年提出，用于在客户端存储少量数据，如会话 ID 或用户偏好。
