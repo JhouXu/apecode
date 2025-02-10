@@ -16,6 +16,10 @@
   .VPHero.has-image .image-bg {
     animation: rotateBgImg 4s infinite linear;
   }
+
+  .VPHome .VPTeamPageTitle {
+    border-top: none;
+  }
 }
 
 /* 图片点击放大优先级调整 */
