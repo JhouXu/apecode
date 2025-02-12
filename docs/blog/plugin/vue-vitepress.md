@@ -59,8 +59,6 @@ export default {
 样式定制后效果：
 ![样式定制后效果](../../public/images/blog/vitepress/vue-vitepress_2023-03-29_11-55-04.jpg)
 
-## tailwindcss UI
-
 ## Last updated
 
 直译：最后一次更新。
@@ -167,9 +165,23 @@ export default {
 };
 ```
 
-## 搜索功能
+## 搜索
 
-algolia
+基于 `minisearch` 实现。
+
+```javascript
+import { defineConfig } from "vitepress";
+
+export default defineConfig({
+  themeConfig: {
+    search: {
+      provider: "local",
+    },
+  },
+});
+```
+
+[VitePress - 搜索 - 本地搜索 👉](https://vitepress.dev/zh/reference/default-theme-search#local-search)
 
 ## 部署
 
