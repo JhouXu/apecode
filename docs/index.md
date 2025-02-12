@@ -66,5 +66,3 @@ const coreMembers = [...members]
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
 </VPTeamPage>
-
-<DataPanel />

@@ -1,15 +1,13 @@
 import { onMounted, watch, nextTick, h } from "vue";
-import { useData, useRoute, inBrowser } from "vitepress";
+import { useData, useRoute } from "vitepress";
 
 import giscusTalk from "vitepress-plugin-comment-with-giscus";
 import mediumZoom from "medium-zoom";
-import busuanzi from "busuanzi.pure.js";
 
 import NavigationCard from "../components/NavigationCard.vue";
 import ClassifyCard from "../components/ClassifyCard.vue";
 import RecentlyCard from "../components/RecentlyCard.vue";
 import BrowserCard from "../components/BrowserCard.vue";
-import DataPanel from "../components/DataPanel.vue";
 
 import theme from "vitepress/theme";
 import Documate from "@documate/vue";
@@ -41,25 +39,16 @@ export default {
   // }),
 
   enhanceApp(ctx) {
-    const { app, router } = ctx;
-
     theme.enhanceApp(ctx);
     ctx.app.component("NavigationCard", NavigationCard);
     ctx.app.component("ClassifyCard", ClassifyCard);
     ctx.app.component("RecentlyCard", RecentlyCard);
     ctx.app.component("BrowserCard", BrowserCard);
-    ctx.app.component("DataPanel", DataPanel);
 
     vitepressNprogress(ctx);
     googleAnalytics({
       id: "G-2H3H0SDMVL", // Replace with your GoogleAnalytics ID
     });
-
-    if (inBrowser) {
-      router.onAfterRouteChanged = () => {
-        busuanzi.fetch();
-      };
-    }
   },
 
   setup() {
