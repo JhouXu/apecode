@@ -16,6 +16,10 @@
   .VPHero.has-image .image-bg {
     animation: rotateBgImg 4s infinite linear;
   }
+
+  .VPSocialLinks.VPNavBarSocialLinks.social-links {
+    margin-right: 0;
+  }
 }
 
 /* 图片点击放大优先级调整 */

@@ -3,6 +3,7 @@
   "devDependencies": {
     "@documate/documate": "^0.2.0",
     "@giscus/vue": "^2.2.8",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.13.6",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
