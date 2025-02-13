@@ -315,9 +315,35 @@ export default {
 
 配置如下：
 
+1. 安装依赖包
+
 ```shell
 npm install @nolebase/vitepress-plugin-enhanced-readabilities -D
 ```
+
+2.  配置 SSR，在 build 的过程中用到
+
+```javascript
+/* /.vitepress/config.mts */
+export default defineConfig({
+  vite: {
+    optimizeDeps: {
+      exclude: ["@nolebase/vitepress-plugin-enhanced-readabilities/client", "vitepress", "@nolebase/ui"], // [!code ++]
+    },
+    ssr: {
+      noExternal: [
+        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
+        "@nolebase/vitepress-plugin-enhanced-readabilities", // [!code ++]
+        "@nolebase/ui", // [!code ++]
+      ],
+    },
+  },
+
+  // 其他配置 …
+});
+```
+
+3. 导入`阅读增强`按钮
 
 ```javascript
 /* /.vitepress/theme/index.js */
