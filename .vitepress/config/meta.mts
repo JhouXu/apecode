@@ -29,7 +29,7 @@ export const lastUpdatedText: string = "最后更新于";
 // footer
 export const footerMessage: string = "Released under the MIT License.";
 const nowYear = new Date().getFullYear();
-export const footerCopyright: string = `Copyright © 2023 - ${nowYear} 💓 Xiao Zan`;
+export const footerCopyright: string = `Copyright © 2023 - ${nowYear} 💓 ApeCode`;
 
 // icon
 export const juejinIcon: string =
