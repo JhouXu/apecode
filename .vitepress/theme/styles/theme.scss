@@ -85,39 +85,4 @@
   .vp-doc :not(pre) > code {
     color: var(--vp-c-purple);
   }
-
-  /* 宽度调整 文章页 */
-  --vp-layout-max-width: 1650px;
-  .VPDoc.has-aside .content-container {
-    max-width: 100%;
-  }
-
-  /* 宽度调整 导航单页 */
-  .VPDoc:not(.has-sidebar) .container {
-    max-width: 1580px;
-  }
-  .VPDoc:not(.has-sidebar) .content {
-    max-width: 100%;
-  }
 }
-
-// :root {
-//   --vp-layout-max-width: 1650px;
-
-//   .VPDoc.has-aside .content-container {
-//     max-width: inherit;
-//   }
-// }
-
-// :root {
-//   --vp-layout-max-width: 100%;
-//   --vp-sidebar-width: 15rem;
-//   --vp-nav-height-desktop: 50px;
-
-//   .content-container {
-//     max-width: 100% !important;
-//   }
-//   .container {
-//     max-width: var(--vp-layout-max-width) !important;
-//   }
-// }
