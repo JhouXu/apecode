@@ -306,3 +306,55 @@ export default {
   z-index: 999 !important;
 }
 ```
+
+## 阅读增强
+
+![示例](../../public/images/blog/vitepress/2025-02-13_22-48-23.jpg)
+
+使用了 `nolebase` 方案，[nolebase - 阅读增强 👉](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/vitepress-plugin-enhanced-readabilities/)
+
+配置如下：
+
+```shell
+npm install @nolebase/vitepress-plugin-enhanced-readabilities -D
+```
+
+```javascript
+/* /.vitepress/theme/index.js */
+import DefaultTheme from "vitepress/theme"; // [!code ++]
+
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
+} from "@nolebase/vitepress-plugin-enhanced-readabilities/client"; // [!code ++]
+import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css"; // [!code ++]
+
+export default {
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      // 为较宽的屏幕的导航栏添加阅读增强菜单
+      "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu), // [!code ++]
+      // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
+      "nav-screen-content-after": () => h(NolebaseEnhancedReadabilitiesScreenMenu), // [!code ++]
+    });
+  },
+
+  // 其他配置 …
+};
+```
+
+:::warning VitePress 导航栏样式异常？
+【问题】在配置了社交链接的情况下发现在集成了导航栏组件之后导航栏的样式有些许的不对齐。
+
+```scss
+/* /.vitepress/theme/styles/style.scss */
+:root {
+  .VPSocialLinks.VPNavBarSocialLinks.social-links {
+    margin-right: 0;
+  }
+
+  // 其他样式 …
+}
+```
+
+:::
