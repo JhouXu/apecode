@@ -384,3 +384,40 @@ export default {
 ```
 
 :::
+
+## LastUpdated 异常
+
+在使用 GitHub Actions 部署的时候，发现博客中文章`均显示同一时间`（仓库最后更新时间），`理应显示当前文章的最后更新时间`。
+
+在 GitHub Actions 中，actions/checkout 是一个常用的步骤，用于检出仓库的代码。默认情况下，为了加快速度，它`可能会执行浅克隆`（即只拉取最近的一次提交）。因此需要禁用浅克隆，设置 fetch-depth 参数为 0，这样会获取完整的提交历史。
+
+```yml
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with: # [!code ++]
+          fetch-depth: 0 # 禁用浅克隆 [!code ++]
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm i pnpm@6 -g
+      - run: pnpm install --no-frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .vitepress/dist
+```
