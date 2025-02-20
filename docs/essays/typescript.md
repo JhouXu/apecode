@@ -181,3 +181,39 @@ TypeScript 提供了多种配置选项来控制编译行为和兼容性。
 ## 工具和生态系统
 
 TypeScript 拥有丰富的工具和生态系统支持，包括编辑器插件（如 VSCode）、构建工具（如 Webpack）、框架（如 Angular）等。
+
+## interface 与 type 的异同
+
+> 整理自 "阮老师 TypeScript 教程" [TypeScript 的 interface 接口 👉](https://wangdoc.com/typescript/interface#interface-%E4%B8%8E-type-%E7%9A%84%E5%BC%82%E5%90%8C)
+
+`interface` 命令与 `type` 命令作用类似，都可以表示对象类型。
+
+很多对象类型既可以用 interface 表示，也可以用 type 表示。而且，两者往往可以换用，几乎所有的 interface 命令都可以改写为 type 命令。
+
+它们的相似之处，首先表现在都能为对象类型起名。
+
+```typescript
+type Country = {
+  name: string;
+  capital: string;
+};
+
+interface Country {
+  name: string;
+  capital: string;
+}
+```
+
+上面示例是 `type` 命令和 `interface` 命令，分别定义同一个类型。
+
+`class` 命令也有类似作用，通过定义一个类，同时定义一个对象类型。但是，它会创造一个值，编译后依然存在。如果只是单纯想要一个类型，应该使用 `type` 或 `interface`。
+
+interface 与 type 的区别有下面几点。
+
+1. `type` 能够表示非对象类型，而 `interface` 只能表示对象类型（包括数组、函数等）。
+2. `interface` 可以继承其他类型，type 不支持继承。
+3. 同名 `interface` 会自动合并，同名 `type` 则会报错。也就是说，TypeScript 不允许使用 `type` 多次定义同一个类型。
+4. `interface` 不能包含属性映射（mapping），type 可以，详见《映射》一章。
+5. this 关键字只能用于 interface。
+6. `type` 可以扩展原始数据类型，interface 不行。
+7. `interface` 无法表达某些复杂类型（比如交叉类型和联合类型），但是 `type` 可以。
