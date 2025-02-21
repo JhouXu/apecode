@@ -282,4 +282,9 @@ export const quotationData: Item[] = [
     profession: "BiliBili UP 主",
     date: "2025-02-01",
   },
+  {
+    content: "以谦逊和好奇的态度对待工作时，你会学到更多，参与得更充分。初学者的心态是一种财富。保持真实的自我有助于你找到自己真正的使命。",
+    source: "【我在麻省理工学院的时光】",
+    date: "2025-02-21",
+  },
 ];
