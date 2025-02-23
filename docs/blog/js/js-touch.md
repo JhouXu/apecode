@@ -85,7 +85,7 @@ function directionMonitor() {
 
 实现关键，获取触控点位于触控元素上的位置。
 
-![page、offset、relative关系图](/images/blog/js/20210702162406823.png)
+![page、offset、relative关系图](../../public/images-blog/js/20210702162406823.png)
 
 ```html
 <style>
@@ -135,7 +135,7 @@ function directionMonitor() {
 </script>
 ```
 
-![在这里插入图片描述](/images/blog/js/20210702160729699.gif)
+![在这里插入图片描述](../../public/images-blog/js/20210702160729699.gif)
 
 ### 3. 实现元素旋转
 
@@ -146,7 +146,7 @@ function directionMonitor() {
 Math.atan2(终点y - 起点y, 终点x - 起点x);
 ```
 
-![方位角](/images/blog/js/20210702162754807.jpg)
+![方位角](../../public/images-blog/js/20210702162754807.jpg)
 
 ```js
 function rotateMonitor(dragDom) {
@@ -174,7 +174,7 @@ function rotateMonitor(dragDom) {
 dragMonitor(".touch-item");
 ```
 
-![在这里插入图片描述](/images/blog/js/20210702160740546.gif)
+![在这里插入图片描述](../../public/images-blog/js/20210702160740546.gif)
 
 原文：http://blog.sina.com.cn/s/blog_468530a60102wzkw.html
 出处：https://www.cnblogs.com/mengff/p/6005516.html
