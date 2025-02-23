@@ -4,7 +4,7 @@ import * as echarts from "echarts";
 import * as CalendarHeatmapModule from "vue3-calendar-heatmap";
 const { CalendarHeatmap } = CalendarHeatmapModule;
 import "vue3-calendar-heatmap/dist/style.css";
-import { BlogData } from "./../config/nsBlog.mts";
+import { BlogData } from "./../data/blog.mts";
 
 // types
 export interface PieData {
