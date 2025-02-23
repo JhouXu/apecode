@@ -221,7 +221,7 @@ layout: doc
 </canvas>
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/202103171041166.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/202103171041166.png)
 （左图：IE8，右图：谷歌 89.0.0）
 
 ### 二、渲染上下文
@@ -360,7 +360,7 @@ draw = () => {
 ```
 
 效果图如下：前者没有使用 moverTo 属性，后者则是使用了。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210317142407114.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210317142407114.png)
 
 #### 4. 线
 
@@ -440,7 +440,7 @@ draw = () => {
 | bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y) | 绘制三次贝塞尔曲线，cp1x,cp1y 为控制点一，cp2x,cp2y 为控制点二，x,y 为结束点。 |
 
 二次贝塞尔曲线及三次贝塞尔曲线的关系：二次贝塞尔曲线有一个开始点（蓝色）、一个结束点（蓝色）以及一个控制点（红色），而三次贝塞尔曲线有两个控制点。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210317151442832.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210317151442832.png)
 
 ```js
 // 聊天气泡 二次贝塞尔曲线
@@ -628,7 +628,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/2021031816201494.png?#pci_center)
+![在这里插入图片描述](../../public/images-blog/js-canvas/2021031816201494.png?#pci_center)
 
 ```js
 // 方式二 HEX 色值扩展
@@ -661,7 +661,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210322100744466.png?#pic_center)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210322100744466.png?#pic_center)
 
 ### 三、线形 Line styles
 
@@ -700,7 +700,7 @@ function draw() {
 #### 2. lineCap 属性
 
 属性 lineCap 的值决定了线段端点显示的样子。它可以为下面的三种的其中之一：butt，round 和 square。默认是 butt。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210323115438254.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210323115438254.png)
 
 ```js
 function draw() {
@@ -736,7 +736,7 @@ function draw() {
 
 lineJoin 的属性值决定了图形中两线段连接处所显示的样子。它可以是这三种之一：round, bevel 和 miter。默认是 miter。
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/202103231410459.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/202103231410459.png)
 
 ```js
 function draw() {
@@ -824,7 +824,7 @@ function draw() {
 
 ###### 2. 径向渐变
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210323180734174.png?#pic_center)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210323180734174.png?#pic_center)
 
 ```js
 function draw() {
@@ -902,7 +902,7 @@ function draw() {
 
 两个可能的值：
 "nonzero": non-zero winding rule, 默认值.
-"evenodd": even-odd winding rule, 交替填充![在这里插入图片描述](../../public/images/blog/js-canvas/20210324093025500.png?)
+"evenodd": even-odd winding rule, 交替填充![在这里插入图片描述](../../public/images-blog/js-canvas/20210324093025500.png?)
 
 ```js
 function draw() {
@@ -961,7 +961,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324093939953.png?)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324093939953.png?)
 
 ### 二、样式设置
 
@@ -974,7 +974,7 @@ function draw() {
 
 #### 1. textBaseline 属性
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324094248149.png?#pic_center)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324094248149.png?#pic_center)
 
 ```js
 function draw() {
@@ -996,7 +996,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324100412508.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324100412508.png)
 
 #### 2. direction 属性
 
@@ -1020,7 +1020,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/202103241008521.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/202103241008521.png)
 
 ### 三、预测量文本宽度
 
@@ -1038,7 +1038,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324101702934.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324101702934.png)
 
 ## 使用图像
 
@@ -1134,7 +1134,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324120006745.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324120006745.png)
 
 ### 三、缩放
 
@@ -1158,7 +1158,7 @@ function draw() {
 ```
 
 根据 drawImage() 的缩放参数实现缩放，然后再通过 for 循环进行行列的平铺，效果如下：
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324141753811.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324141753811.png)
 
 ### 四、切片 Slicing
 
@@ -1168,7 +1168,7 @@ function draw() {
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) | 第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。前 4 个是定义图像源的切片位置和大小，后 4 个则是定义切片的目标显示位置和大小。 |
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/3e273132b4fb462e64577a75a6ee549a.jpg)
+![在这里插入图片描述](../../public/images-blog/js-canvas/3e273132b4fb462e64577a75a6ee549a.jpg)
 
 ```js
 function draw() {
@@ -1290,7 +1290,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324161146532.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324161146532.png)
 
 ### 三、旋转 Rotating
 
@@ -1341,7 +1341,7 @@ function draw() {
 }
 ```
 
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210324164331300.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210324164331300.png)
 
 ### 五、变形 Transforms
 
@@ -1401,132 +1401,132 @@ type 参数：
 #### source-over
 
 这是默认设置，并在现有画布上下文之上绘制新图形。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114303722.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114303722.png)
 
 #### source-in
 
 新图形只在新图形和目标画布重叠的地方绘制。其他的都是透明的。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114339622.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114339622.png)
 
 #### source-out
 
 在不与现有画布内容重叠的地方绘制新图形。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114421174.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114421174.png)
 
 #### source-atop
 
 新图形只在与现有画布内容重叠的地方绘制。
-![在这里插入图片描述](../../public/images/blog/js-canvas/2021032511445255.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/2021032511445255.png)
 
 #### destination-over
 
 在现有的画布内容后面绘制新的图形。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114505249.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114505249.png)
 
 #### destination-in
 
 现有的画布内容保持在新图形和现有画布内容重叠的位置。其他的都是透明的。
-![在这里插入图片描述](../../public/images/blog/js-canvas/2021032511452156.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/2021032511452156.png)
 
 #### destination-out
 
 现有内容保持在新图形不重叠的地方。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114536931.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114536931.png)
 
 #### destination-atop
 
 现有的画布只保留与新图形重叠的部分，新的图形是在画布内容后面绘制的。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114549111.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114549111.png)
 
 #### lighter
 
 两个重叠图形的颜色是通过颜色值相加来确定的。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114613205.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114613205.png)
 
 #### copy
 
 只显示新图形。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114625991.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114625991.png)
 
 #### xor
 
 图像中，那些重叠和正常绘制之外的其他地方是透明的。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114640279.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114640279.png)
 
 #### multiply
 
 将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114713560.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114713560.png)
 
 #### screen
 
 像素被倒转，相乘，再倒转，结果是一幅更明亮的图片。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114732448.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114732448.png)
 
 #### overlay
 
 multiply 和 screen 的结合，原本暗的地方更暗，原本亮的地方更亮。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114754107.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114754107.png)
 
 #### darken
 
 保留两个图层中最暗的像素。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114807224.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114807224.png)
 
 #### lighten
 
 保留两个图层中最亮的像素。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114833991.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114833991.png)
 
 #### color-dodge
 
 将底层除以顶层的反置。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114848437.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114848437.png)
 
 #### color-burn
 
 将反置的底层除以顶层，然后将结果反过来。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114902979.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114902979.png)
 
 #### hard-light
 
 屏幕相乘（A combination of multiply and screen）类似于叠加，但上下图层互换了。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325114923815.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325114923815.png)
 
 #### soft-light
 
 用顶层减去底层或者相反来得到一个正值。
-![在这里插入图片描述](../../public/images/blog/js-canvas/2021032511493643.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/2021032511493643.png)
 
 #### difference
 
 一个柔和版本的强光（hard-light）。纯黑或纯白不会导致纯黑或纯白。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115001781.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115001781.png)
 
 #### exclusion
 
 和 difference 相似，但对比度较低。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115027375.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115027375.png)
 
 #### hue
 
 保留了底层的亮度（luma）和色度（chroma），同时采用了顶层的色调（hue）。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115210418.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115210418.png)
 
 #### saturation
 
 保留底层的亮度（luma）和色调（hue），同时采用顶层的色度（chroma）。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115150913.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115150913.png)
 
 #### color
 
 保留了底层的亮度（luma），同时采用了顶层的色调(hue)和色度(chroma)。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115128954.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115128954.png)
 
 #### luminosity
 
 保持底层的色调（hue）和色度（chroma），同时采用顶层的亮度（luma）。
-![在这里插入图片描述](../../public/images/blog/js-canvas/20210325115119794.png)
+![在这里插入图片描述](../../public/images-blog/js-canvas/20210325115119794.png)
 
 ### 二、裁切路径
 
