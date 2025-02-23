@@ -2,7 +2,7 @@ import { keywords, description } from "./seo.mts";
 
 export const head: Array<any> = [
   ["meta", { name: "referrer", content: "never" }],
-  ["link", { rel: "icon", href: "./logo.png" }],
+  ["link", { rel: "icon", href: "./images/logo.png" }],
   ["link", { rel: "keywords", content: keywords }],
   ["link", { rel: "description", content: description }],
   [
