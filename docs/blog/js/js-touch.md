@@ -52,7 +52,7 @@ layout: doc
   - 对于 touchmove 事件，列出和上一次事件相比较，发生了变化的触点。
   - 对于 touchend 事件，changedTouches 是已经从触摸面的离开的触点的集合（也就是说，手指已经离开了屏幕/触摸面）。
 
-![touch-eg](/images/blog/js/20210702160714304.png)
+![touch-eg](../../public/images-blog/js/20210702160714304.png)
 
 ## 三、 功能案例
 
