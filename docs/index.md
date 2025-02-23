@@ -6,7 +6,7 @@ hero:
   text: Passion never fails
   tagline: 程序猿的秘密花园
   image:
-    src: ./images/undraw_designer.svg
+    src: ./undraw_designer.svg
     alt: logo图标
   actions:
     - theme: brand
