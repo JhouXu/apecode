@@ -41,7 +41,7 @@ layout: doc
 </script>
 ```
 
-![touch-event](/images/blog/js/20210702160645344.png)
+![touch-event](../../public/images-blog/js/20210702160645344.png)
 
 重要参数：
 
