@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import { TechnicalCommunity, DevTools, OnlineDocument, TechnologyStack, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/config/navigation.mts'
+  import { TechnicalCommunity, DevTools, OnlineDocument, TechnologyStack, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation.mts'
 </script>
 
 # 导航
