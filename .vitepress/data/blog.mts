@@ -111,7 +111,7 @@ export const BlogData = [
       { text: "前端工程化之 Webpack", link: "/blog/plugin/plugin-webpack.md", time: "2024-04-19" },
       { text: "前端工程化之 Vite", link: "/blog/plugin/plugin-vite.md", time: "2024-04-19" },
       { text: "Node 学习笔记", link: "/blog/plugin/plugin-node.md", time: "2024-04-26" },
-      { text: "环境变量的使用", link: "/blog/plugin/vue-env-variables.md", time: "2025-02-26" },
+      { text: "环境变量使用指南", link: "/blog/plugin/vue-env-variables.md", time: "2025-02-26" },
     ],
   },
   {
