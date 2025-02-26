@@ -97,7 +97,8 @@ VUE_APP_BASE_API = '/prod-api'
 
 使用环境变量，本次将在 main.js 中测试。
 
-```javascript [vite/src/main.js]
+```javascript
+// vite/src/main.js
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
