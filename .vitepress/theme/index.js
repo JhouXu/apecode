@@ -9,14 +9,8 @@ import ClassifyCard from "../components/ClassifyCard.vue";
 import RecentlyCard from "../components/RecentlyCard.vue";
 import BrowserCard from "../components/BrowserCard.vue";
 
-import DefaultTheme from "vitepress/theme";
+import theme from "vitepress/theme";
 import Documate from "@documate/vue";
-
-import {
-  NolebaseEnhancedReadabilitiesMenu,
-  NolebaseEnhancedReadabilitiesScreenMenu,
-} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
-import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 
 import "./tailwind.postcss";
 import "./styles/theme.scss"; // 主题定制
@@ -35,26 +29,17 @@ import "vitepress-plugin-nprogress/lib/css/index.css";
 import googleAnalytics from "vitepress-plugin-google-analytics";
 
 export default {
-  ...DefaultTheme,
+  ...theme,
 
-  // Layout: h(DefaultTheme.Layout, null, {
+  // Layout: h(theme.Layout, null, {
   //   "nav-bar-content-before": () =>
   //     h(Documate, {
   //       endpoint: "https://g7zfhaz3dn.us.aircode.run/ask",
   //     }),
   // }),
 
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // 为较宽的屏幕的导航栏添加阅读增强菜单
-      "nav-bar-content-after": () => h(NolebaseEnhancedReadabilitiesMenu),
-      // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
-      "nav-screen-content-after": () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-    });
-  },
-
   enhanceApp(ctx) {
-    DefaultTheme.enhanceApp(ctx);
+    theme.enhanceApp(ctx);
     ctx.app.component("NavigationCard", NavigationCard);
     ctx.app.component("ClassifyCard", ClassifyCard);
     ctx.app.component("RecentlyCard", RecentlyCard);
