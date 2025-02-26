@@ -85,14 +85,15 @@
   .vp-doc :not(pre) > code {
     color: var(--vp-c-purple);
   }
+}
 
-  /* 宽度调整 文章页 */
-  --vp-layout-max-width: 1650px;
+/* 宽度调整 */
+:root {
+  /* 宽度调整 - 文章页 */
   .VPDoc.has-aside .content-container {
     max-width: 100%;
   }
-
-  /* 宽度调整 导航单页 */
+  /* 宽度调整 - 导航单页 */
   .VPDoc:not(.has-sidebar) .container {
     max-width: 1580px;
   }
