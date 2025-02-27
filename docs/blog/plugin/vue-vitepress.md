@@ -385,6 +385,29 @@ export default {
 
 :::
 
+## 阅读增强 2
+
+在使用 nolebase 的阅读增强方案时，`每当页面切换`都会触发元素的入场动画，会有疲劳。
+
+为此本节将只对 `css` 进行调整，不涉及框架。
+
+```scss
+/* /.vitepress/theme/styles/theme.scss */
+:root {
+  /* 宽度调整 - 文章页 */
+  .VPDoc.has-aside .content-container {
+    max-width: 100%;
+  }
+  /* 宽度调整 - 导航单页 */
+  .VPDoc:not(.has-sidebar) .container {
+    max-width: 1580px;
+  }
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 100%;
+  }
+}
+```
+
 ## LastUpdated 异常
 
 在使用 GitHub Actions 部署的时候，发现博客中文章`均显示同一时间`（仓库最后更新时间），`理应显示当前文章的最后更新时间`。
