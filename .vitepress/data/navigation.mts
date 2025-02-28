@@ -58,6 +58,13 @@ export const TechnicalCommunity: navigationItem[] = [
     type: "技术社区",
   },
   {
+    text: "hellogithub",
+    desc: "有趣的开源社区",
+    link: "https://hellogithub.com/",
+    icon: "https://img.hellogithub.com/logo/logo.png",
+    type: "技术社区",
+  },
+  {
     text: "HuggingFace",
     desc: "AI模型界的Github，開啟AI強大工具庫和預訓練模型",
     link: "https://huggingface.co/",
