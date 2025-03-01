@@ -61,7 +61,7 @@ export const TechnicalCommunity: navigationItem[] = [
     text: "hellogithub",
     desc: "有趣的开源社区",
     link: "https://hellogithub.com/",
-    icon: "https://img.hellogithub.com/logo/logo.png",
+    icon: "https://hellogithub.com/favicon/android-icon-192x192.png",
     type: "技术社区",
   },
   {
