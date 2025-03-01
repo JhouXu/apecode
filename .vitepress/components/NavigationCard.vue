@@ -45,6 +45,7 @@ function handleImageError(event: Event) {
             <span
               class="text-gray-600 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200 transition duration-150 ease-in-out">
               {{ navigationItem.text }}
+              <Badge type="info" :text="navigationItem.type" />
             </span>
 
             <span
