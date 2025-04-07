@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script setup>
-  import { TechnicalCommunity, DevTools, OnlineDocument, TechnologyStack, OnlineTools, SoftwareClient, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation.mts'
+  import { TechnicalCommunity, DevTools, OnlineDocument, TechnologyStack, OnlineTools, SoftwareClient, SEO, FileHandling, DesignRelated, MaterialResources } from '../.vitepress/data/navigation.mts'
 </script>
 
 # 导航
@@ -31,6 +31,10 @@ layout: doc
 ## 软件客户端
 
 <NavigationCard :navigationData=SoftwareClient />
+
+## SEO
+
+<NavigationCard :navigationData=SEO />
 
 ## 文件处理
 

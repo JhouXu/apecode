@@ -8,12 +8,16 @@ export interface navigationItem {
 }
 
 enum NavigationType {
-  TechnicalCommunity = "技术社区",
-  DevTools = "开发工具",
   OnlineDocument = "在线文档",
+  DevTools = "开发工具",
+  TechnicalCommunity = "技术社区",
   TechnologyStack = "技术栈",
   OnlineTools = "在线工具",
   SoftwareClient = "软件客户端",
+  SEO = "SEO",
+  FileType = "文件处理",
+  DesignType = "设计相关",
+  SourceType = "素材资源",
 }
 
 enum FileType {
@@ -598,6 +602,51 @@ export const SoftwareClient: navigationItem[] = [
     link: "https://www.blender.org/",
     icon: "https://www.blender.org/wp-content/themes/bthree/assets/icons/apple-touch-icon.png",
     type: NavigationType.SoftwareClient,
+  },
+];
+
+export const SEO: navigationItem[] = [
+  {
+    text: "网站收录 - Google",
+    desc: "链接提交",
+    link: "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl?utm_source=wmx&utm_medium=deprecation-pane&utm_content=submit-url&hl=zh-cn",
+    icon: "https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png",
+    type: NavigationType.SEO,
+  },
+  {
+    text: "网站收录 - Bing",
+    desc: "链接提交",
+    link: "https://blogs.bing.com/webmaster/september-2018/Anonymous-URL-Submission-Tool-Being-Retired",
+    icon: "https://blogs.bing.com/content/images/favicon.ico",
+    type: NavigationType.SEO,
+  },
+  {
+    text: "网站收录 - 百度",
+    desc: "链接提交",
+    link: "https://ziyuan.baidu.com/linksubmit/url",
+    icon: "https://www.baidu.com/img/baidu.svg",
+    type: NavigationType.SEO,
+  },
+  {
+    text: "网站收录 - 360搜索",
+    desc: "链接提交",
+    link: "https://info.so.360.cn/site_submit.html",
+    icon: "https://s4.qhimg.com/static/121a1737750aa53d.ico",
+    type: NavigationType.SEO,
+  },
+  {
+    text: "网站收录 - 搜狗搜索",
+    desc: "链接提交",
+    link: "https://zhanzhang.sogou.com/index.php/sitelink/index",
+    icon: "https://dlweb.sogoucdn.com/translate/favicon.ico?v=20180424",
+    type: NavigationType.SEO,
+  },
+  {
+    text: "SEO综合查询 - 站长工具",
+    desc: "SEO综合查询",
+    link: "https://seo.chinaz.com/",
+    icon: "https://csstools.chinaz.com/favicon.ico",
+    type: NavigationType.SEO,
   },
 ];
 
