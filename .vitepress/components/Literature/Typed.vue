@@ -10,7 +10,7 @@ const props = defineProps<{
 onMounted(() => {
   let strings: string[] = [];
   strings = getSpecifiedFields(props.data, ["content", "source"]);
-  strings = strings.sort(() => Math.random() - 0.5);
+  strings = strings.reverse();
 
   const options = {
     strings: strings,
