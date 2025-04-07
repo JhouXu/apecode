@@ -155,6 +155,20 @@ export const DevTools: navigationItem[] = [
     type: NavigationType.DevTools,
   },
   {
+    text: "Cursor",
+    desc: "AI 代码编辑器",
+    link: "https://www.cursor.com/",
+    icon: "https://www.cursor.com/favicon.svg",
+    type: NavigationType.DevTools,
+  },
+  {
+    text: "Trae",
+    desc: "AI 代码编辑器",
+    link: "https://www.trae.ai/",
+    icon: "https://lf-cdn.trae.ai/obj/trae-ai-sg/trae_website_prod/favicon.png",
+    type: NavigationType.DevTools,
+  },
+  {
     text: "HBuilderX",
     desc: "国产代码编辑器，uni-app的好帮手。",
     link: "https://www.dcloud.io/hbuilderx.html",
