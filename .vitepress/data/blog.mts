@@ -124,6 +124,7 @@ export const BlogData = [
       { text: "客户端中的几种存储机制", link: "/blog/other/client-storage.md", time: "2025-02-07" },
       { text: "TypeScript 学习记录", link: "/blog/other/typescript.md", time: "2025-02-20" },
       { text: "DeepSeek 本地部署", link: "/blog/other/deep-seek-local-deploy.md", time: "2025-03-14" },
+      { text: "设计模式", link: "/blog/other/design-patterns.md", time: "2025-04-07" },
     ],
   },
 ];
