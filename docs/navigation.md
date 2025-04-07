@@ -8,13 +8,17 @@ layout: doc
 
 # 导航
 
-## 技术社区
-
-<NavigationCard :navigationData=TechnicalCommunity />
-
 ## 在线文档
 
 <NavigationCard :navigationData=OnlineDocument />
+
+## 开发工具
+
+<NavigationCard :navigationData=DevTools />
+
+## 技术社区
+
+<NavigationCard :navigationData=TechnicalCommunity />
 
 ## 技术栈
 
@@ -23,10 +27,6 @@ layout: doc
 ## 在线工具
 
 <NavigationCard :navigationData=OnlineTools />
-
-## 开发工具
-
-<NavigationCard :navigationData=DevTools />
 
 ## 软件客户端
 
