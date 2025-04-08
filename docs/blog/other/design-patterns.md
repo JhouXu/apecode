@@ -1137,7 +1137,7 @@ console.log(interpret("10+20+30")); // 输出 60
 - 表单逻辑引擎（如 if age > 18 then show section）
 - 表达式条件引擎（例如可配置的自动化任务）
 
-## 其他
+## 🧩 其他设计模式
 
 不属于 “GoF 23 种设计模式”。
 
@@ -1198,6 +1198,6 @@ pool.release(node1);
 - WebGL 粒子系统：子弹/粒子对象通过对象池循环使用
 - 前端性能监控工具：复用日志对象收集性能数据，减少频繁 new 对象
 
-## 参考
+## 🔗 参考
 
 [👉 GoF 设计模式 - gof](https://github.com/qiualiang/gof)
