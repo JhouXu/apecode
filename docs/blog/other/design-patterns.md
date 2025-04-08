@@ -1197,3 +1197,7 @@ pool.release(node1);
 - 虚拟滚动组件（Virtual Scroll）：复用固定数量的 DOM 元素，只更新内容和位置，提升大列表渲染性能
 - WebGL 粒子系统：子弹/粒子对象通过对象池循环使用
 - 前端性能监控工具：复用日志对象收集性能数据，减少频繁 new 对象
+
+## 参考
+
+[👉 GoF 设计模式 - gof](https://github.com/qiualiang/gof)
