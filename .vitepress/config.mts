@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 
 import {
   titleEn,
@@ -34,6 +35,7 @@ export default defineConfig({
         "@nolebase/ui",
       ],
     },
+    plugins: [groupIconVitePlugin()],
   },
 
   title: titleEn,
@@ -85,6 +87,9 @@ export default defineConfig({
       dash: "html",
       shall: "html",
       ejs: "html",
+    },
+    config(md) {
+      md.use(groupIconMdPlugin);
     },
   },
 });

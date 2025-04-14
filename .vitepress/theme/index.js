@@ -23,6 +23,8 @@ import "./styles/search.scss";
 import "./styles/aside.scss";
 import "@documate/vue/dist/style.css";
 
+import "virtual:group-icons.css";
+
 import vitepressNprogress from "vitepress-plugin-nprogress";
 import "vitepress-plugin-nprogress/lib/css/index.css";
 

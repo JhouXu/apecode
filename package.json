@@ -24,6 +24,7 @@
     "@documate/vue": "^0.3.1",
     "echarts": "^5.5.0",
     "medium-zoom": "^1.1.0",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "vitepress-plugin-group-icons": "^1.5.1"
   }
 }
