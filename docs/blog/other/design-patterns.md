@@ -25,7 +25,7 @@
 
 ⚙️ 前端示例（配置管理器）
 
-```typescript
+```typescript [main.ts]
 class ConfigManager {
   private static instance: ConfigManager;
   private config: Record<string, any> = {};
@@ -58,7 +58,7 @@ console.log(config1 === config2); // true
 
 场景：比如你在 Vue 项目中需要一个全局的 event bus 来处理组件通信。
 
-```typescript
+```typescript [main.ts]
 // EventBus.ts
 class EventBus {
   private static instance: EventBus;
@@ -105,7 +105,7 @@ class EventBus {
 
 ⚙️ 前端示例（创建不同样式的按钮）
 
-```typescript
+```typescript [main.ts]
 interface Button {
   render(): void;
 }
@@ -139,7 +139,7 @@ btn.render();
 
 场景：前端项目需要根据类型渲染不同图标组件。
 
-```typescript
+```typescript [main.ts]
 function createIcon(type: "success" | "error" | "info") {
   switch (type) {
     case "success":
@@ -173,7 +173,7 @@ function createIcon(type: "success" | "error" | "info") {
 
 ⚙️ 前端示例（主题系统）
 
-```typescript
+```typescript [main.ts]
 interface Button {
   render(): void;
 }
@@ -215,7 +215,7 @@ factory.createInput().render();
 
 创建一整套组件（按钮、输入框等）风格，适用于深色/浅色主题切换。
 
-```typescript
+```typescript [main.ts]
 class ThemeFactory {
   createButton(): string {
     return `<button class="btn-${this.getTheme()}">点击</button>`;
@@ -248,7 +248,7 @@ class ThemeFactory {
 
 ⚙️ 前端示例（构建表单配置）
 
-```typescript
+```typescript [main.ts]
 class FormBuilder {
   private form: any = {
     fields: [],
@@ -279,7 +279,7 @@ console.log(formConfig);
 
 场景：可视化平台中，根据用户输入动态构建图表配置或表单 JSON。
 
-```typescript
+```typescript [main.ts]
 const option = new EChartsBuilder()
   .setTitle("销量分析")
   .setXAxis(["一月", "二月"])
@@ -308,7 +308,7 @@ const option = new EChartsBuilder()
 
 ⚙️ 前端示例（组件配置复制）
 
-```typescript
+```typescript [main.ts]
 const cardTemplate = {
   width: 300,
   height: 200,
@@ -327,7 +327,7 @@ console.log(cardTemplate.width); // 300
 
 场景：搭建平台中，用户点击“复制模块”时，复制一个复杂组件结构。
 
-```typescript
+```typescript [main.ts]
 const copiedComponent = structuredClone(selectedComponent);
 copiedComponent.id = generateUniqueId();
 ```
@@ -357,7 +357,7 @@ copiedComponent.id = generateUniqueId();
 
 ⚙️ 前端示例
 
-```typescript
+```typescript [main.ts]
 // 后端返回的数据
 const legacyUser = {
   user_name: "Alice",
@@ -407,7 +407,7 @@ const user: User = adaptUser(legacyUser);
 
 ⚙️ 前端示例
 
-```typescript
+```typescript [main.ts]
 function withLoading(fn: Function) {
   return async (...args: any[]) => {
     console.log("Loading...");
@@ -452,7 +452,7 @@ fetchWithLoading();
 
 ⚙️ 前端示例（图片懒加载）
 
-```typescript
+```typescript [main.ts]
 function createImageProxy(url: string) {
   const image = new Image();
   image.src = "loading.png";
@@ -491,7 +491,7 @@ function createImageProxy(url: string) {
 
 ⚙️ 前端示例（上传封装）
 
-```typescript
+```typescript [main.ts]
 class FileUploader {
   validate(file: File) {
     /* 校验逻辑 */
@@ -540,7 +540,7 @@ class UploadFacade {
 
 ⚙️ 前端示例（图表渲染器）
 
-```typescript
+```typescript [main.ts]
 interface RenderEngine {
   draw(): void;
 }
@@ -585,7 +585,7 @@ chart.render();
 
 ⚙️ 前端示例（递归菜单）
 
-```typescript
+```typescript [main.ts]
 interface MenuItem {
   title: string;
   children?: MenuItem[];
@@ -627,7 +627,7 @@ function renderMenu(menu: MenuItem[]) {
 
 ⚙️ 前端示例（缓存图标组件）
 
-```typescript
+```typescript [main.ts]
 const iconCache = new Map();
 
 function getIcon(name: string) {
@@ -669,7 +669,7 @@ function getIcon(name: string) {
 
 ⚙️ 前端示例（简单事件总线）
 
-```typescript
+```typescript [main.ts]
 class EventBus {
   private listeners = new Map<string, Function[]>();
 
@@ -711,7 +711,7 @@ class EventBus {
 
 ⚙️ 前端示例（表单验证器）
 
-```typescript
+```typescript [main.ts]
 type Strategy = (value: string) => string | null;
 
 const strategies: Record<string, Strategy> = {
@@ -754,7 +754,7 @@ function validate(val: string, rules: string[]) {
 
 ⚙️ 前端示例（按钮状态机）
 
-```typescript
+```typescript [main.ts]
 class Button {
   state: "idle" | "loading" | "success" = "idle";
 
@@ -804,7 +804,7 @@ class Button {
 
 ⚙️ 前端示例（撤销命令）
 
-```typescript
+```typescript [main.ts]
 type Command = () => void;
 
 const history: Command[] = [];
@@ -845,7 +845,7 @@ function undo() {
 
 ⚙️ 前端示例（简单中间件实现）
 
-```typescript
+```typescript [main.ts]
 type Context = { msg: string };
 type Middleware = (ctx: Context, next: () => void) => void;
 
@@ -888,7 +888,7 @@ function compose(middlewares: Middleware[]) {
 
 ⚙️ 前端示例（中介者调度模块）
 
-```typescript
+```typescript [main.ts]
 class Mediator {
   components: Record<string, any> = {};
 
@@ -931,7 +931,7 @@ class Mediator {
 
 ⚙️ 前端示例（节点渲染）
 
-```typescript
+```typescript [main.ts]
 type Node = { type: "text" | "image"; content: string };
 
 function render(nodes: Node[]) {
@@ -974,7 +974,7 @@ function render(nodes: Node[]) {
 
 ⚙️ 前端示例（页面渲染模板）
 
-```typescript
+```typescript [main.ts]
 abstract class Page {
   render() {
     this.init();
@@ -1012,7 +1012,7 @@ abstract class Page {
 
 ⚙️ 前端示例
 
-```typescript
+```typescript [main.ts]
 const iterator = {
   index: 0,
   data: [1, 2, 3],
@@ -1053,7 +1053,7 @@ const iterator = {
 
 ⚙️ 前端示例：表单撤销功能（简化版）
 
-```typescript
+```typescript [main.ts]
 class FormState {
   constructor(public name: string, public age: number) {}
 }
@@ -1108,7 +1108,7 @@ class Form {
 
 ⚙️ 前端示例：简单表达式求值器（仅支持 + 和数字）
 
-```typescript
+```typescript [main.ts]
 function interpret(expr: string): number {
   return expr
     .split("+")
@@ -1155,7 +1155,7 @@ console.log(interpret("10+20+30")); // 输出 60
 
 ⚙️ 前端示例（TS 实现 DOM 节点复用池）
 
-```typescript
+```typescript [main.ts]
 class DivPool {
   private pool: HTMLDivElement[] = [];
 
