@@ -39,7 +39,7 @@ export const BlogData = [
       { text: "CSS Float 浮动布局", link: "/blog/css/css-float.md", time: "2021-07-13" },
       { text: "CSS Position 定位布局", link: "/blog/css/css-position.md", time: "2021-07-13" },
       { text: "CSS Flex 弹性布局", link: "/blog/css/css-flex.md", time: "2021-07-13" },
-      { text: "CSS Grid 网格布局【待】", link: "/blog/css/css-grid.md", time: "2021-07-13" },
+      { text: "CSS Grid 网格布局", link: "/blog/css/css-grid.md", time: "2021-07-13" },
       { text: "CSS3 转换过渡动画", link: "/blog/css/css-animation.md", time: "2021-08-03" },
     ],
   },
