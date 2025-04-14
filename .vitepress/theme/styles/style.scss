@@ -7,8 +7,8 @@
     font-family: "AlimamaShuHeiTi";
     color: var(--vp-home-hero-text-color);
     background-image: var(--vp-home-hero-text-background);
-    background-size: 200% 200%;
-    animation: gradientBg 1.4s ease infinite;
+    background-size: 300% 100%;
+    animation: gradientBg 2s ease-in-out infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; /* 仅在Webkit浏览器中生效 */
   }
