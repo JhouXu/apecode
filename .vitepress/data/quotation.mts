@@ -310,4 +310,14 @@ export const quotationData: Item[] = [
     source: "佚名",
     date: "2025-04-07",
   },
+  {
+    content: "真正的智慧需要对过去的反思实现当下的觉醒。",
+    source: "罗翔老师",
+    date: "2025-04-21",
+  },
+  {
+    content: "无知并非生存的最大障碍，傲慢才是。敬畏让人谦卑，谦卑让人自知。",
+    source: "罗翔老师",
+    date: "2025-04-21",
+  },
 ];
