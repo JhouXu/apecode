@@ -94,6 +94,7 @@ export const BlogData = [
       },
       { text: "如何在 vite 动态设置打包目录", link: "/blog/example/vite-build-dynamic.md", time: "2024-11-12" },
       { text: "表格开发常见的渲染方式", link: "/blog/example/example-table-render.md", time: "2025-01-23" },
+      { text: "Github Connection Refused", link: "/blog/example/github-connection-refused.md", time: "2025-04-21" },
     ],
   },
   {
