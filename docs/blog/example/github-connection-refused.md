@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 # Github Connection Refused
 
 今天准备 push 代码时，出现 `vscode git ssh connect to host ssh.github.com port 443: Connection refused` 错误。
