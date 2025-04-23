@@ -145,14 +145,14 @@ function debounce(func: Function, delay: number): Function {
 
 <template>
   <div class="docs-blog-summary">
-    <div class="pie">
-      <p>分类占比</p>
-      <div id="chart-pie" class="w-100 h-[400px] rounded-md overflow-hidden bg-[#f1f1f1] dark:bg-[#100c2a]"></div>
-    </div>
-
     <div class="heatmap">
       <p>发布时间</p>
       <CalendarHeatmap :values="dataHeatmap" :end-date="endDate" :round="2" :dark-mode="theme === 'dark'" />
+    </div>
+
+    <div class="pie">
+      <p>分类占比</p>
+      <div id="chart-pie" class="w-100 h-[400px] rounded-md overflow-hidden bg-[#f1f1f1] dark:bg-[#100c2a]"></div>
     </div>
   </div>
 </template>

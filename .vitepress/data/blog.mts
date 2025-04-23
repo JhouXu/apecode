@@ -1,7 +1,7 @@
 export const BlogData = [
   { text: "概述", link: "/blog/blog.md", items: [] },
   {
-    text: "Javascript",
+    text: "🟨 Javascript",
     items: [
       { text: "原生 AJAX 的异步请求", link: "/blog/js/js-ajax.md", time: "2020-07-24" },
       { text: "浏览器对象模型 BOM", link: "/blog/js/js-bom.md", time: "2021-01-29" },
@@ -12,7 +12,7 @@ export const BlogData = [
     ],
   },
   {
-    text: "ECMAScript",
+    text: "🟥 ECMAScript",
     items: [
       { text: "ES5", link: "/blog/es/es-2009.md", time: "2025-01-28" },
       { text: "ES 2015", link: "/blog/es/es-2015.md", time: "2025-01-28" },
@@ -28,7 +28,7 @@ export const BlogData = [
     ],
   },
   {
-    text: "Css",
+    text: "🟦 Css",
     items: [
       { text: "元素水平垂直居中的六种方式", link: "/blog/css/css-center.md", time: "2020-08-28" },
       { text: "CSS 中实现隐藏", link: "/blog/css/css-hidden.md", time: "2020-08-28" },
@@ -44,7 +44,7 @@ export const BlogData = [
     ],
   },
   {
-    text: "微信小程序",
+    text: "🟩 微信小程序",
     items: [
       {
         text: "自定义小程序 navigationBar 的高度，以及避免设备系统不同产生不兼容",
@@ -58,13 +58,13 @@ export const BlogData = [
     ],
   },
   {
-    text: "前端算法",
+    text: "🧠 前端算法",
     items: [
       { text: "加密算法的认识及常用加密算法", link: "/blog/algorithm/algorithm-encryption.md", time: "2021-05-20" },
     ],
   },
   {
-    text: "实际开发",
+    text: "🚧 实际开发",
     items: [
       {
         text: "html2canvas 实现截图附上模糊处理方案",
@@ -94,38 +94,43 @@ export const BlogData = [
       },
       { text: "如何在 vite 动态设置打包目录", link: "/blog/example/vite-build-dynamic.md", time: "2024-11-12" },
       { text: "表格开发常见的渲染方式", link: "/blog/example/example-table-render.md", time: "2025-01-23" },
+      { text: "环境变量使用指南", link: "/blog/plugin/vue-env-variables.md", time: "2025-02-26" },
       { text: "Github Connection Refused", link: "/blog/example/github-connection-refused.md", time: "2025-04-21" },
     ],
   },
   {
-    text: "插件扩展",
+    text: "🔌 插件扩展",
     items: [
       { text: "PreloadJS 预加载及实现进度加载效果", link: "/blog/plugin/js-preload.md", time: "2021-02-23" },
       { text: "Swiper 实现指定的 slide 显示位置", link: "/blog/plugin/js-swiper-to.md", time: "2021-03-22" },
-      { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/plugin/js-nuxt.md", time: "2022-02-13" },
       { text: "Vue-export2excel 导出表格", link: "/blog/plugin/js-vue-export2excel.md", time: "2022-04-21" },
-      { text: "ESLint 语法检验工具的使用", link: "/blog/plugin/plugin-eslint.md", time: "2021-07-17" },
-      { text: "Prettier 一个固执的代码格式化程序", link: "/blog/plugin/plugin-prettier.md", time: "2021-07-17" },
       { text: "PannellumJS 快速搭建属于你的全景查看器", link: "/blog/plugin/js-pannellum.md", time: "2022-08-07" },
       { text: "SwiperJS 入门及实现常见的轮播效果", link: "/blog/plugin/js-swiper.md", time: "2022-12-18" },
+    ],
+  },
+  {
+    text: "🕸️ 大前端",
+    items: [
+      { text: "Nuxt 填坑集合（面向实际开发解决方案）", link: "/blog/plugin/js-nuxt.md", time: "2022-02-13" },
+      { text: "ESLint 语法检验工具的使用", link: "/blog/plugin/plugin-eslint.md", time: "2021-07-17" },
+      { text: "Prettier 一个固执的代码格式化程序", link: "/blog/plugin/plugin-prettier.md", time: "2021-07-17" },
       { text: "Vitepress 实战应用", link: "/blog/plugin/vue-vitepress.md", time: "2023-01-01" },
       { text: "前端工程化之 Webpack", link: "/blog/plugin/plugin-webpack.md", time: "2024-04-19" },
       { text: "前端工程化之 Vite", link: "/blog/plugin/plugin-vite.md", time: "2024-04-19" },
       { text: "Node 学习笔记", link: "/blog/plugin/plugin-node.md", time: "2024-04-26" },
-      { text: "环境变量使用指南", link: "/blog/plugin/vue-env-variables.md", time: "2025-02-26" },
+      { text: "TypeScript 学习记录", link: "/blog/other/typescript.md", time: "2025-02-20" },
+      { text: "设计模式", link: "/blog/other/design-patterns.md", time: "2025-04-07" },
     ],
   },
   {
-    text: "其它",
+    text: "📂 其它",
     items: [
       { text: "腾讯云服务器购买以及部署", link: "/blog/other/tencent-cloud-server.md", time: "2021-03-14" },
       { text: "常用的 git 命令总结", link: "/blog/other/git.md", time: "2021-11-23" },
       { text: "关于将前端项目部署到 Linux", link: "/blog/other/nginx.md", time: "2023-09-26" },
       { text: "开源许可的全面指南", link: "/blog/other/licenses.md", time: "2025-01-16" },
       { text: "客户端中的几种存储机制", link: "/blog/other/client-storage.md", time: "2025-02-07" },
-      { text: "TypeScript 学习记录", link: "/blog/other/typescript.md", time: "2025-02-20" },
       { text: "DeepSeek 本地部署", link: "/blog/other/deep-seek-local-deploy.md", time: "2025-03-14" },
-      { text: "设计模式", link: "/blog/other/design-patterns.md", time: "2025-04-07" },
     ],
   },
 ];
