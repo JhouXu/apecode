@@ -92,7 +92,7 @@ function initEchartPie(data: PieData[], theme: string) {
 }
 
 function getDataPie(): PieData[] {
-  return BlogData.filter((item) => item.text !== "概述").map((item) => ({
+  return BlogData.filter((item) => item.text.indexOf("概述") === -1).map((item) => ({
     value: item.items.length.toString(),
     name: `${item.text} ${item.items.length}篇`,
   }));

@@ -1,5 +1,5 @@
 export const BlogData = [
-  { text: "概述", link: "/blog/blog.md", items: [] },
+  { text: "📖 概述", link: "/blog/blog.md", items: [] },
   {
     text: "🟨 Javascript",
     items: [
