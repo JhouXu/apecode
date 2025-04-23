@@ -12,7 +12,7 @@ export const BlogData = [
     ],
   },
   {
-    text: "🟥 ECMAScript",
+    text: "🔴 ECMAScript",
     items: [
       { text: "ES5", link: "/blog/es/es-2009.md", time: "2025-01-28" },
       { text: "ES 2015", link: "/blog/es/es-2015.md", time: "2025-01-28" },
