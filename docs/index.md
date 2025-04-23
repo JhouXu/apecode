@@ -16,6 +16,11 @@ hero:
       text: 参与建设
       link: https://github.com/JhouXu/apecode
 features:
+  - icon: 🔗
+    title: 导航工具
+    details: 有趣实用的网站，提高效率。
+    link: /navigation.md
+    linkText: 了解更多
   - icon: 🗃️
     title: 随笔记
     details: 简单而简约，始终如一。
@@ -25,11 +30,6 @@ features:
     title: 八股文
     details: 归纳、概括、整理、最新。
     link: /essays/essays.md
-    linkText: 了解更多
-  - icon: 🔗
-    title: 导航工具
-    details: 有趣实用的网站，提高效率。
-    link: /navigation.md
     linkText: 了解更多
   - icon: 🌞
     title: 文摘
