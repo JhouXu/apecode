@@ -1,3 +1,8 @@
+---
+layout: doc
+date: "2024-03-28"
+---
+
 # JavaScript
 
 ## 八种数据类型及区别

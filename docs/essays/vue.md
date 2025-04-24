@@ -1,3 +1,8 @@
+---
+layout: doc
+date: "2024-05-16"
+---
+
 # Vue
 
 ## 简述 MVVM

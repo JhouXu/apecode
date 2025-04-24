@@ -1,3 +1,8 @@
+---
+layout: doc
+date: "2025-02-20"
+---
+
 # TypeScript
 
 TypeScript 是 Microsoft 开发的开源编程语言，是 JavaScript 的超集，主要提供静态类型检查和编译时错误报告，增强了代码的可维护性和可读性。

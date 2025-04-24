@@ -1,3 +1,8 @@
+---
+layout: doc
+date: "2024-03-28"
+---
+
 # React
 
 ## hooks 用过吗？聊聊 react 中 class 组件和函数组件的区别
