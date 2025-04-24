@@ -15,7 +15,7 @@ export const members = [
   {
     avatar: "https://avatars.githubusercontent.com/u/58757929?v=4",
     name: "Mr.C",
-    title: "Developer",
+    title: "Coreon",
     links: [
       { icon: "github", link: "https://github.com/55sssda" },
       { icon: { svg: csdnIcon }, link: "https://blog.csdn.net/qq_44849271" },
