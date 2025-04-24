@@ -444,3 +444,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
 ```
+
+## 文档页面信息
+
+![示例](../../public/images-blog/vitepress/vue-vitepress_2025-04-24_11-52-58.jpg)
+
+具体实现代码，可以查看 [git commit](https://github.com/JhouXu/apecode/commit/27de04ec0eb11bf2c24fa833a7350a3755839411)。
+
+参考：[chodocs 👉](https://chodocs.cn/program/vitepress-plugin/#%E6%96%87%E6%A1%A3%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%A1%B6%E9%83%A8%E4%BF%A1%E6%81%AF%E7%BB%84%E4%BB%B6)
