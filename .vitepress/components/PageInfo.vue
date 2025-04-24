@@ -46,12 +46,8 @@ const publishDate = computed(() => {
   return frontmatter.value?.date || props.publicTime || "未设置";
 });
 
-const lastUpdated = computed(() => {
-  return getFormatDate(page.value.lastUpdated || Date.now());
-});
-
 const lastUpdatedFromNow = computed(() => {
-  return getFromNow(lastUpdated.value);
+  return getFromNow(page.value.lastUpdated || Date.now());
 });
 </script>
 
