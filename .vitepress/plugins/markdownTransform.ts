@@ -13,8 +13,6 @@ export function MarkdownTransform(): Plugin {
       if (
         (_router === "docs" && fileName === "index.md") ||
         (_router === "docs" && fileName === "navigation.md") ||
-        (_router === "blog" && fileName === "blog.md") ||
-        (_router === "essays" && fileName === "essays.md") ||
         _router === "literature"
       ) {
         return code;
