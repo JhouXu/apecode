@@ -29,7 +29,8 @@ import { computed } from "vue";
 import { useData } from "vitepress";
 import { getFormatDate, getFromNow } from "../utils";
 
-defineProps<{
+const props = defineProps<{
+  publicTime: string;
   readingTime: string;
   wordCount: string;
 }>();
@@ -42,7 +43,7 @@ const author = computed(() => {
 });
 
 const publishDate = computed(() => {
-  return frontmatter.value?.date || "未设置";
+  return frontmatter.value?.date || props.publicTime || "未设置";
 });
 
 const lastUpdated = computed(() => {

@@ -1,5 +1,8 @@
 import type { Plugin } from "vite";
-import { getReadingTime } from "../utils";
+import type { Item as BlogItem } from "../types/blog.mts";
+
+import { getReadingTime, getPublicTime } from "../utils";
+import { BlogData } from "../data/blog.mts";
 
 export function MarkdownTransform(): Plugin {
   return {
@@ -19,8 +22,16 @@ export function MarkdownTransform(): Plugin {
       }
 
       // Add PageInfo
+      const BD = BlogData.reduce<BlogItem[]>((acc, item) => {
+        if (item.items) acc.push(...item.items);
+        return acc;
+      }, []);
       const { readTime, words } = getReadingTime(code);
-      code = code.replace(/^#\s.+$/gm, `$&\n\n<PageInfo readingTime="${readTime}" wordCount="${words}"/>\n`);
+      const publicTime = getPublicTime(BD, `${_router}/${fileName}`);
+      code = code.replace(
+        /^#\s.+$/gm,
+        `$&\n\n<PageInfo readingTime="${readTime}" wordCount="${words}" publicTime="${publicTime}"/>\n`
+      );
 
       return code;
     },
