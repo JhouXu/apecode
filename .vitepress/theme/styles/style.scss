@@ -13,6 +13,13 @@
     -webkit-text-fill-color: transparent; /* 仅在Webkit浏览器中生效 */
   }
 
+  .VPHome {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
   .VPHero.has-image .image-bg {
     animation: rotateBgImg 4s infinite linear;
   }
