@@ -8,6 +8,7 @@ import NavigationCard from "../components/NavigationCard.vue";
 import ClassifyCard from "../components/ClassifyCard.vue";
 import RecentlyCard from "../components/RecentlyCard.vue";
 import BrowserCard from "../components/BrowserCard.vue";
+import PageInfo from "../components/PageInfo.vue";
 
 import theme from "vitepress/theme";
 import Documate from "@documate/vue";
@@ -46,6 +47,7 @@ export default {
     ctx.app.component("ClassifyCard", ClassifyCard);
     ctx.app.component("RecentlyCard", RecentlyCard);
     ctx.app.component("BrowserCard", BrowserCard);
+    ctx.app.component("PageInfo", PageInfo);
 
     vitepressNprogress(ctx);
     googleAnalytics({

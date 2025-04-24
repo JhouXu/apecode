@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
+import { MarkdownTransform } from "./plugins/markdownTransform";
 
 import {
   titleEn,
@@ -35,7 +36,7 @@ export default defineConfig({
         "@nolebase/ui",
       ],
     },
-    plugins: [groupIconVitePlugin()],
+    plugins: [groupIconVitePlugin(), MarkdownTransform()],
   },
 
   title: titleEn,
