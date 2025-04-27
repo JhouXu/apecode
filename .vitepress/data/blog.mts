@@ -120,6 +120,7 @@ export const BlogData = [
       { text: "Node 学习笔记", link: "/blog/plugin/plugin-node.md", time: "2024-04-26" },
       { text: "TypeScript 学习记录", link: "/blog/other/typescript.md", time: "2025-02-20" },
       { text: "设计模式", link: "/blog/other/design-patterns.md", time: "2025-04-07" },
+      { text: "Docker 学习笔记", link: "/blog/other/docker.md", time: "2025-04-24" },
     ],
   },
   {
