@@ -3,6 +3,7 @@ import { keywords, description } from "./seo.mts";
 export const head: Array<any> = [
   ["meta", { name: "referrer", content: "never" }],
   ["link", { rel: "icon", href: "./images/logo.png" }],
+  ["link", { rel: "apple-touch-icon", href: "./images/logo.jpg" }],
   ["link", { rel: "keywords", content: keywords }],
   ["link", { rel: "description", content: description }],
   [
