@@ -19,7 +19,7 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: DEPLOY_TARGET=GITHUB_PAGES pnpm build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

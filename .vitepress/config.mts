@@ -24,6 +24,8 @@ import { socialLinks } from "./config/social.mts";
 import { nav } from "./config/nav.mts";
 import { sidebar } from "./config/sidebar.mts";
 
+const isGithubPages = process.env.DEPLOY_TARGET === "GITHUB_PAGES";
+
 export default defineConfig({
   vite: {
     optimizeDeps: {
@@ -41,7 +43,7 @@ export default defineConfig({
 
   title: titleEn,
   description: description,
-  base: base,
+  base: isGithubPages ? base : "/",
   srcDir: "docs",
   lastUpdated: true,
   locales: {
@@ -84,11 +86,11 @@ export default defineConfig({
   /* 语言配置 */
   markdown: {
     container: {
-      tipLabel: '提示',
-      warningLabel: '警告',
-      dangerLabel: '危险',
-      infoLabel: '信息',
-      detailsLabel: '详细信息'
+      tipLabel: "提示",
+      warningLabel: "警告",
+      dangerLabel: "危险",
+      infoLabel: "信息",
+      detailsLabel: "详细信息",
     },
 
     languageAlias: {
