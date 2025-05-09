@@ -132,6 +132,7 @@ export const BlogData = [
       { text: "开源许可的全面指南", link: "/blog/other/licenses.md", time: "2025-01-16" },
       { text: "客户端中的几种存储机制", link: "/blog/other/client-storage.md", time: "2025-02-07" },
       { text: "DeepSeek 本地部署", link: "/blog/other/deep-seek-local-deploy.md", time: "2025-03-14" },
+      { text: "Review 2025", link: "/blog/other/review-2025.md", time: "2025-05-09" },
     ],
   },
 ];
