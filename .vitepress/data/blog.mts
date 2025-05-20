@@ -117,7 +117,7 @@ export const BlogData = [
       { text: "前端工程化之 Webpack", link: "/blog/plugin/plugin-webpack.md", time: "2024-04-19" },
       { text: "前端工程化之 Vite", link: "/blog/plugin/plugin-vite.md", time: "2024-04-19" },
       { text: "Node 学习笔记", link: "/blog/plugin/plugin-node.md", time: "2024-04-26" },
-      { text: "表格开发常见的渲染方式", link: "/blog/example/example-table-render.md", time: "2025-01-23" },
+      { text: "表格开发常见的渲染方式", link: "/blog/big-front/table-render.md", time: "2025-01-23" },
       { text: "TypeScript 学习记录", link: "/blog/other/typescript.md", time: "2025-02-20" },
       { text: "设计模式", link: "/blog/other/design-patterns.md", time: "2025-04-07" },
       { text: "Docker 学习笔记", link: "/blog/other/docker.md", time: "2025-04-24" },
