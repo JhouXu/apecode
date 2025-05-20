@@ -1,4 +1,4 @@
-# TypeScript 学习记录
+# TypeScript 学习笔记
 
 最近，学习了阮老师开源了 TypeScript 教程，阅读后倍感受用。
 
