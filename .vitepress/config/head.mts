@@ -17,4 +17,12 @@ export const head: Array<any> = [
       })(window, document, "clarity", "script", "jporfk7f2x");
     `,
   ],
+  [
+    "script",
+    {
+      async: "async",
+      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3201638445045055",
+      crossorigin: "anonymous",
+    },
+  ],
 ];
