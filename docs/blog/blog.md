@@ -55,7 +55,7 @@ layout: doc
 
 <div class="recent">
   <p v-for="(item, key) in getRenderDateSlice(renderDate, 8)" :key="key">
-    <a :href="`${base.slice(0, base.length - 1)}${item.href}`">
+    <a :href="`${item.href}`">
       {{item.type}} - {{item.text}} : {{item.time}}
     </a>
   </p>
