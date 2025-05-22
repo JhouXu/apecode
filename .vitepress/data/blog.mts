@@ -122,7 +122,7 @@ export const BlogData = [
       { text: "设计模式", link: "/blog/big-front/design-patterns.md", time: "2025-04-07" },
       { text: "Docker 学习笔记", link: "/blog/big-front/docker.md", time: "2025-04-24" },
       { text: "前端性能优化之飞书文档", link: "/blog/big-front/performance-doc-feishu.md", time: "2025-05-20" },
-      { text: "包管理器比较", link: "package-manager-compare.md", time: "2025-05-22" },
+      { text: "包管理器比较", link: "/blog/big-front/package-manager-compare.md", time: "2025-05-22" },
     ],
   },
   {
