@@ -75,7 +75,7 @@ position: static | relative | absolute | fixed | sticky;
 </body>
 ```
 
-![position-relative](../../public/images-blog/css/20210623115800209.png)
+![position-relative](../public/images-blog/css/20210623115800209.png)
 
 ### 绝对定位
 
@@ -110,7 +110,7 @@ position: static | relative | absolute | fixed | sticky;
 </body>
 ```
 
-![position-absolute](../../public/images-blog/css/20210623115815803.png)
+![position-absolute](../public/images-blog/css/20210623115815803.png)
 
 - 在实际的开发当中，我们不可能只是圈套一层 div 盒子，如：在子盒子外层再定义一个 father 盒子，并且让这个 father 盒子水平居中起来，这个时候不难发现原本定义的 child2 盒子的绝对定位并不是基于 father 盒子偏移的，这是`因为绝对定位元素相对于最近的非 static 祖先元素定位`。这个时候我们可以采用`父相子绝`的方式，为 father 的选择器添加相对定位即可。
 
@@ -148,7 +148,7 @@ position: static | relative | absolute | fixed | sticky;
 </div>
 ```
 
-![position-父相子绝](../../public/images-blog/css/20210623115823552.png)
+![position-父相子绝](../public/images-blog/css/20210623115823552.png)
 
 ### 固定定位
 

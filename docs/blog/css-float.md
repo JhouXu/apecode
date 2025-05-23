@@ -28,7 +28,7 @@ layout: doc
 |  inline-end  | 关键字，表明元素必须浮动在其所在块容器的结束一侧，在 ltr 脚本中是右侧，在 rtl 脚本中是左侧。 |
 
 浏览器兼容情况：
-![canIUse-float](../../public/images-blog/css/20210621222502672.png)
+![canIUse-float](../public/images-blog/css/20210621222502672.png)
 
 ## 三、代码实现
 
@@ -68,10 +68,10 @@ layout: doc
 </body>
 ```
 
-![效果图](../../public/images-blog/css/20210621224632621.png)
+![效果图](../public/images-blog/css/20210621224632621.png)
 
 当给 child 选择器设置 float:left 属性的时候，child 盒子脱离文档流，实现左侧浮动。
-![左浮动效果图](../../public/images-blog/css/20210621225106338.png)
+![左浮动效果图](../public/images-blog/css/20210621225106338.png)
 
 ### clear 清除浮动
 
@@ -94,7 +94,7 @@ layout: doc
 </div>
 ```
 
-![清除浮动前效果图](../../public/images-blog/css/20210621225941925.png)
+![清除浮动前效果图](../public/images-blog/css/20210621225941925.png)
 
 不难看出，即便 p 标签没有设置浮动属性，但是依然受前面 child 盒子的影响，这个时候我们可以为 p 标签添加 clear 清除浮动属性，即可不跟着换行。
 
@@ -106,7 +106,7 @@ layout: doc
 </style>
 ```
 
-![清除浮动效果图](../../public/images-blog/css/20210621230310911.png)
+![清除浮动效果图](../public/images-blog/css/20210621230310911.png)
 
 ### clear 属性值
 

@@ -85,7 +85,7 @@ $ npm install -s file-saver
 ```
 
 formatJson 方法处理后的数据格式，大致是这样的。
-![](../../public/images-blog/plugin/b8c35e50d444f203a17f0713074f5145.png)
+![](../public/images-blog/plugin/b8c35e50d444f203a17f0713074f5145.png)
 
 ## 错误
 

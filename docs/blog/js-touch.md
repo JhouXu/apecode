@@ -41,7 +41,7 @@ layout: doc
 </script>
 ```
 
-![touch-event](../../public/images-blog/js/20210702160645344.png)
+![touch-event](../public/images-blog/js/20210702160645344.png)
 
 重要参数：
 
@@ -52,7 +52,7 @@ layout: doc
   - 对于 touchmove 事件，列出和上一次事件相比较，发生了变化的触点。
   - 对于 touchend 事件，changedTouches 是已经从触摸面的离开的触点的集合（也就是说，手指已经离开了屏幕/触摸面）。
 
-![touch-eg](../../public/images-blog/js/20210702160714304.png)
+![touch-eg](../public/images-blog/js/20210702160714304.png)
 
 ## 三、 功能案例
 
@@ -85,7 +85,7 @@ function directionMonitor() {
 
 实现关键，获取触控点位于触控元素上的位置。
 
-![page、offset、relative关系图](../../public/images-blog/js/20210702162406823.png)
+![page、offset、relative关系图](../public/images-blog/js/20210702162406823.png)
 
 ```html
 <style>
@@ -135,7 +135,7 @@ function directionMonitor() {
 </script>
 ```
 
-![在这里插入图片描述](../../public/images-blog/js/20210702160729699.gif)
+![在这里插入图片描述](../public/images-blog/js/20210702160729699.gif)
 
 ### 3. 实现元素旋转
 
@@ -146,7 +146,7 @@ function directionMonitor() {
 Math.atan2(终点y - 起点y, 终点x - 起点x);
 ```
 
-![方位角](../../public/images-blog/js/20210702162754807.jpg)
+![方位角](../public/images-blog/js/20210702162754807.jpg)
 
 ```js
 function rotateMonitor(dragDom) {
@@ -174,7 +174,7 @@ function rotateMonitor(dragDom) {
 dragMonitor(".touch-item");
 ```
 
-![在这里插入图片描述](../../public/images-blog/js/20210702160740546.gif)
+![在这里插入图片描述](../public/images-blog/js/20210702160740546.gif)
 
 原文：http://blog.sina.com.cn/s/blog_468530a60102wzkw.html
 出处：https://www.cnblogs.com/mengff/p/6005516.html

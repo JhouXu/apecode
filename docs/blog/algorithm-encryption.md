@@ -27,11 +27,11 @@ layout: doc
 
 - **对称密钥加密**：对称密钥加密又叫专用密钥加密或共享密钥加密，即发送和接收数据的双方必使用**相同的密钥**对明文进行加密和解密运算。对称密钥加密算法主要包括：`DES、3DES、IDEA、RC5、RC6`等。
 
-![1.png](../../public/images-blog/algorithm/22a2823a9cf4f328329727ee32b3ce2b.png)
+![1.png](../public/images-blog/algorithm/22a2823a9cf4f328329727ee32b3ce2b.png)
 
 - **非对称密钥加密**：非对称加密算法**需要两个密钥**：公开密钥（`publickey`）和私有密钥（privatekey:简称私钥）。公钥与私钥是一对，如果用公钥对数据进行加密，只有用对应的私钥才能解密。非对称密钥加密算法主要包括：`RSA「最广泛」、Elgamal、背包算法、Rabin、D-H、ECC（椭圆曲线加密算法）`等。
 
-![2.png](../../public/images-blog/algorithm/bdb826c4d70ab6e0d9fa5a44fa449417.png)
+![2.png](../public/images-blog/algorithm/bdb826c4d70ab6e0d9fa5a44fa449417.png)
 
 「 公钥-密钥：互相作用 」
 
