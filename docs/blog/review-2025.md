@@ -703,7 +703,7 @@ counter(); // 输出 2
 |  **页面级**  | `onLoad`、`onShow`、`onReady`、`onHide`、`onUnload`、`onPullDownRefresh`、`onReachBottom` |                  同名（完全一致）                   |                       基本一致                       |
 |  **组件级**  |       `created`、`attached`、`ready`、`moved`、`detached`、`destroyed`（Vue 语义）        | `created`、`attached`、`ready`、`moved`、`detached` | 命名基本一致，但 UniApp 多了 `destroyed`（Vue 风格） |
 
-[阶段二 - uni-app 的生命周期？](uni-app-的生命周期)
+[阶段二 - uni-app 的生命周期？](#uni-app-的生命周期)
 
 ### 微信小程序首屏加载优化？
 
