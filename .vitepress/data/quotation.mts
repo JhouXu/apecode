@@ -326,4 +326,9 @@ export const quotationData: Item[] = [
     source: "鲁迅",
     date: "2025-06-02",
   },
+  {
+    content: "在人性中有这么一个特点，我们老是希望在不确定中找确定。",
+    source: "大冰",
+    date: "2025-06-15",
+  },
 ];
