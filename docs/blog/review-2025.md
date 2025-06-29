@@ -1289,3 +1289,48 @@ Content-Security-Policy: default-src 'self'; script-src 'self';
 | `SameSite` | 控制 Cookie 跨站请求是否发送，防止 CSRF |
 
 :::
+
+### GZip 没有生效，如何排查？
+
+> GZip 压缩是前端性能优化的重要手段
+
+1. 客户端请求头检查
+
+```html
+Accept-Encoding: gzip, deflate, br
+```
+
+2. 服务器端配置排查
+
+`服务器使用 nginx 演示`
+
+2.1 检查 nginx 配置
+
+```nginx
+gzip on;                          # 是否开启GZip
+gzip_types text/html text/css ...; # 是否包含text/html类型
+gzip_vary on;                     # 是否允许代理服务器根据请求头选择压缩
+```
+
+2.2 确保服务器支持 GZip 静态文件
+
+```nginx
+gzip_static on; # 启用静态压缩文件
+```
+
+确认服务器能访问到.html.gz 文件（如路径是否正确）。
+
+3. Webpack 构建产物检查
+
+查看 Webpack 输出目录（如 dist），确认是否存在 index.html.gz 文件。
+
+4. 缓存检查
+
+4.1 浏览器缓存检查
+4.2 服务器缓存检查 CDN
+
+## 阶段八
+
+### URL 到页面加载的过程
+
+[👉 从输入-url-到页面加载的全过程](/essays/browser.html#从输入-url-到页面加载的全过程)
