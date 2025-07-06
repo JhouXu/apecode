@@ -1355,7 +1355,265 @@ gzip_static on; # 启用静态压缩文件
 
 ### ref 和 reactive 的区别？如何实现的？
 
+:::warning
+
+`ref` 和 `reactive` 都是 Vue 3 中用于创建响应式数据的 API。区别在于：
+
+- `ref` 主要用于基本类型或 DOM 引用，返回一个带 .value 属性的对象；
+- `reactive` 用于对象和数组，基于 Proxy 实现深度响应式。
+
+在实现上，`ref` 是通过 getter/setter 对 `.value` 做响应追踪，而 `reactive` 是通过 Proxy 拦截所有属性读写。两者都会自动进行依赖收集与触发更新。
+
+在模板中 Vue 会自动解包 `ref`，所以使用上也很直观。
+
+---
+
+Vue 的响应式系统采用了「依赖收集（track） + 派发更新（trigger）」的机制。无论是 ref 还是 reactive，都是基于 effect 函数与依赖 Map 实现的精细化更新。
+
+:::
+
+#### 区别
+
+| 对比项         | `ref()`                             | `reactive()`                 |
+| -------------- | ----------------------------------- | ---------------------------- |
+| **用法**       | 用于基本类型 & DOM 引用             | 用于对象类型（数组、对象等） |
+| **返回值类型** | 对象：`{ value: xxx }`              | 代理后的响应式对象（Proxy）  |
+| **解包行为**   | 模板中自动 `.value` 解包            | 模板中自动访问属性，无需解包 |
+| **适用场景**   | 数字、字符串、布尔、DOM、异步等     | 复杂对象、状态管理           |
+| **底层实现**   | 依赖 `RefImpl` 对象 + getter/setter | 依赖 Proxy 拦截属性访问      |
+
+ref
+
+```ts
+import { ref } from "vue";
+
+const count = ref(0);
+
+console.log(count.value); // 访问需要 .value
+count.value++;
+```
+
+reactive
+
+```ts
+import { reactive } from "vue";
+
+const user = reactive({ name: "Zan", age: 25 });
+
+console.log(user.name); // 直接访问属性
+user.age++;
+```
+
+#### 原理
+
+- ref() 的实现（基于对象包装）
+
+```ts
+function ref(value) {
+  return {
+    __v_isRef: true,
+    get value() {
+      track(this, "value"); // 依赖收集
+      return value;
+    },
+    set value(newVal) {
+      value = newVal;
+      trigger(this, "value"); // 派发更新
+    },
+  };
+}
+```
+
+> ref 本质是把基本类型值包裹在一个带有 .value getter/setter 的对象中。
+
+- reactive() 的实现（基于 Proxy）
+
+```ts
+function reactive(target) {
+  return new Proxy(target, {
+    get(target, key) {
+      track(target, key); // 依赖收集
+      return Reflect.get(target, key);
+    },
+    set(target, key, value) {
+      const result = Reflect.set(target, key, value);
+      trigger(target, key); // 派发更新
+      return result;
+    },
+  });
+}
+```
+
+> 核心逻辑是对对象属性的读取和修改进行拦截，从而实现依赖收集和更新触发。
+
+:::details 假设我给 ref 传入一个对象，vue 是怎么进行处理的？
+
+`当你给 ref() 传入一个对象时，Vue 会自动调用 reactive() 将它变成响应式对象，然后包裹在 .value 里返回。`
+
+Vue 的源码（简化）中是这么处理的：
+
+```ts
+function ref(rawValue) {
+  // 如果是对象，先转成 reactive
+  const value = isObject(rawValue) ? reactive(rawValue) : rawValue;
+
+  const r = {
+    __v_isRef: true,
+    get value() {
+      track(r, "value");
+      return value;
+    },
+    set value(newVal) {
+      value = isObject(newVal) ? reactive(newVal) : newVal;
+      trigger(r, "value");
+    },
+  };
+
+  return r;
+}
+```
+
+```ts
+const obj = ref({ name: "Zan" });
+
+console.log(obj.value.name); // ✅ 是响应式的
+obj.value.name = "ZanXiao"; // ✅ 会触发更新
+```
+
+这时候你用的是 `.value.name`，而不是直接 `obj.name`，因为它还是包裹在 `ref` 对象里面。
+
+:::
+
+### computed 和 watch 的区别？
+
+:::warning
+
+它们都是用来**响应数据变化、执行副作用**的工具，但在使用方式、依赖收集机制、触发时机等方面有明显区别。
+
+`computed` 和 `watch` 都是 Vue 中的响应式工具，但适用场景不同：
+
+- `computed` 适合用来计算派生状态，有缓存特性，依赖没变就不会重新计算；
+- `watch` 更适合监听数据变化后执行副作用，如发送请求、手动处理逻辑；
+
+比如在项目中，我用 `computed` 生成视图所需的展示数据，而用 `watch` 来监听用户输入进行接口请求防抖处理。
+
+---
+
+- computed：
+  - 基于 effect() 包装
+  - 有依赖追踪（track）与缓存机制
+  - 实现了懒执行 + 自动更新
+- watch：
+  - 本质是手动注册一个副作用函数
+  - 没有缓存
+  - 可配置 deep、immediate 等选项
+
+:::
+
+| 对比点           | `computed`                           | `watch`                                      |
+| ---------------- | ------------------------------------ | -------------------------------------------- |
+| **用法目的**     | 计算属性（值）                       | 监听响应式数据的变化，执行副作用（回调）     |
+| **返回值**       | 返回一个响应式“值”                   | 返回 `undefined`，执行副作用函数             |
+| **是否缓存**     | ✅ 缓存（依赖未变则不重新计算）      | ❌ 不缓存，触发一次执行一次                  |
+| **适合场景**     | 基于多个状态派生出一个“新状态”       | 执行异步请求 / watch 路由变化 / 手动监听数据 |
+| **默认行为**     | 初始化时不执行，只有依赖变才重新计算 | 默认不立即执行（可配置），依赖变化触发函数   |
+| **是否手动控制** | ❌ 完全依赖 Vue 依赖收集             | ✅ 可自定义监听项和选项（deep、immediate）   |
+
+示例：
+
+`computed` 计算一个派生状态
+
+```ts
+const firstName = ref("Zan");
+const lastName = ref("Xiao");
+
+const fullName = computed(() => {
+  return `${firstName.value} ${lastName.value}`;
+});
+```
+
+- 优点：firstName 或 lastName 改变时自动更新 fullName
+- ✅ 具有缓存功能
+
+`watch` 监听数据变化做副作用操作
+
+```ts
+// 监听一个值
+watch(fullName, (newVal, oldVal) => {
+  console.log("Full name changed:", newVal);
+});
+
+// 监听多个值
+watch([firstName, lastName], ([newFirst, newLast]) => {
+  console.log(`New name: ${newFirst} ${newLast}`);
+});
+```
+
 ### watch 和 watchEffect 的区别？
+
+:::warning
+
+watch 和 watchEffect 都用于监听响应式数据变化，但有核心差异：
+
+- watch 是**显式监听**，适合监听特定变量、需要旧值的场景（如监听某个字段变动时调接口）；
+- watchEffect 是**自动依赖收集**，更适合快速声明响应式副作用，比如在组件初始化时处理逻辑；
+
+项目中我一般用 watchEffect 处理 UI 初始化逻辑，用 watch 处理精确控制的接口请求场景。
+
+使用场景：
+
+| 场景                               | 推荐方式                |
+| ---------------------------------- | ----------------------- |
+| 监听单个变量变化并获取旧值         | ✅ `watch`              |
+| 需要监听多个响应式数据             | ✅ `watch`              |
+| 快速响应所有相关数据变化执行副作用 | ✅ `watchEffect`        |
+| 模拟生命周期，如请求初始数据       | ✅ `watchEffect`        |
+| 深度监听嵌套对象属性               | ✅ `watch + deep: true` |
+
+:::
+
+| 对比项           | `watch`                                     | `watchEffect`                                      |
+| ---------------- | ------------------------------------------- | -------------------------------------------------- |
+| **依赖指定方式** | 显式传入：如 `ref`、`reactive`、getter 函数 | 自动收集依赖（只要你在 effect 中访问它）           |
+| **是否立即执行** | 默认不执行，需 `immediate: true` 配置       | 会立即执行一次（组件挂载前）                       |
+| **副作用函数**   | 明确参数 `(newVal, oldVal)`                 | 无需参数，自动运行                                 |
+| **适合场景**     | 精确控制监听哪个变量，适合监听单个/多个数据 | 简洁声明式副作用，依赖会自动跟踪，适合逻辑初始化等 |
+| **支持 deep**    | ✅ 可以配置 `{ deep: true }`                | ❌ 不支持 deep 配置（但会跟踪所有访问的属性）      |
+| **调试/可控性**  | ✅ 更可控                                   | ❌ 更自动，灵活但可能更“隐式”                      |
+
+示例：
+
+`watch` 监听指定数据
+
+```ts
+const count = ref(0);
+
+watch(
+  count,
+  (newVal, oldVal) => {
+    console.log("count changed:", newVal, oldVal);
+  },
+  { immediate: true, deep: false }
+);
+```
+
+- 明确指定要监听哪个值
+- 有 newVal、oldVal 参数
+- 可配置 deep / immediate
+
+`watchEffect` 自动依赖收集
+
+```ts
+const count = ref(0);
+
+watchEffect(() => {
+  console.log("count is:", count.value);
+});
+```
+
+- 自动追踪 `count.value`
+- 没有 newVal / oldVal
+- 一进页面就执行一次
 
 ### 低代码可视化实现思路？
 
