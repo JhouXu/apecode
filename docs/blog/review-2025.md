@@ -1349,6 +1349,10 @@ gzip_static on; # 启用静态压缩文件
 
 [👉 八股文 - JavaScript - this 的五种情况](/essays/javascript.html#this-的五种情况)
 
+### BFC ?
+
+[👉 BFC 块级格式上下文](/essays/css.html#bfc-块级格式上下文)
+
 ### vue 的双向数据绑定？
 
 [👉 vue 的数据绑定连接方式](/blog/review-2025.html#vue-的数据绑定连接方式)
@@ -1699,3 +1703,35 @@ watchEffect(() => {
 | 5. PostCSS + px2rem    | 开发写 px，构建时自动转成 rem               | 结合方案 2，一起使用      |
 | 6. Vant + lib-flexible | Vant UI 默认 rem 方案，需要配合 flexible.js | 使用 Vant UI 时的默认推荐 |
 | 7. Tailwind CSS        | 原子化样式 + media query 内置               | Vue3 / React 项目强推荐   |
+
+## 阶段十一
+
+### webpack 和 vite 的区别？
+
+:::warning 
+
+Webpack 是传统的打包构建工具，采用的是“打包构建再运行”的机制，而 Vite 是新一代构建工具，开发时利用浏览器原生 ESModule 实现“按需加载即编译”，极大提升了启动速度和热更新性能。在我开发 Vue3 或 React 项目时，通常会选择 Vite，它配置更简单、性能更好。Webpack 依然适用于一些需要复杂构建逻辑的项目或已有代码迁移场景。
+
+:::
+
+| 对比维度              | Webpack                           | Vite                                        |
+| --------------------- | --------------------------------- | ------------------------------------------- |
+| **开发模式**          | 先构建所有模块，启动慢            | 按需加载模块，启动极快                      |
+| **构建原理**          | 基于 JavaScript 打包（Bundle）    | 开发时基于原生 ES 模块 + 构建时 Rollup 打包 |
+| **热更新速度（HMR）** | 慢：全部重新编译模块              | 快：按模块热更新（模块级 HMR）              |
+| **打包速度**          | 构建慢，尤其是大型项目            | 构建快，基于 Rollup，且有现代优化策略       |
+| **插件生态**          | 成熟，插件数量多                  | 插件数量逐步完善，大多兼容 Rollup 插件      |
+| **配置复杂度**        | 配置复杂（webpack.config.js）     | 配置简单（vite.config.ts），约定优于配置    |
+| **默认支持语法**      | 需配置 loader                     | 原生支持 TS、JSX、CSS 模块等现代语法        |
+| **构建产物**          | 一整包输出                        | Rollup 优化构建产物，按需拆包优化           |
+| **静态资源支持**      | 需配置 file-loader/url-loader     | 默认支持，自动处理                          |
+| **适合场景**          | 大型复杂项目，或已有 Webpack 项目 | 中小型新项目、Vue3/React 项目，开发效率优先 |
+
+本质区别：
+
+- Webpack
+  - 构建前：把所有依赖打包成一个或多个 bundle 文件，然后启动 dev server
+  - 即使修改一个文件，也要重新打包大部分模块
+- Vite
+  - 开发时：使用浏览器原生的 ES Module 机制，只在访问模块时再编译，修改哪个编译哪个
+  - 构建时：基于 Rollup 进行优化打包，产物更轻
