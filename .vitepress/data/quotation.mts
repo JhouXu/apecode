@@ -331,4 +331,9 @@ export const quotationData: Item[] = [
     source: "大冰",
     date: "2025-06-15",
   },
+  {
+    content: "就算注定失败，我也想看看，自己会倒在离终点前多远的地方。",
+    source: "【电影：长安的荔枝】",
+    date: "2025-07-22",
+  },
 ];
