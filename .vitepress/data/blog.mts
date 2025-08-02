@@ -121,6 +121,7 @@ export const BlogData = [
       { text: "Docker 学习笔记", link: "/blog/docker.md", time: "2025-04-24" },
       { text: "前端性能优化之飞书文档", link: "/blog/performance-doc-feishu.md", time: "2025-05-20" },
       { text: "包管理器比较", link: "/blog/package-manager-compare.md", time: "2025-05-22" },
+      { text: "NVS 包管理器", link: "/blog/nvs.md", time: "2025-08-02" },
     ],
   },
   {
