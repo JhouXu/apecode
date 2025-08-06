@@ -10,6 +10,6 @@ export const nav = [
   { text: "🗃️ 随笔记", items: [...navBlog] },
   { text: "📝 八股文", items: [...navEssays] },
   { text: "🔤 翻译", link: navTranslation[navTranslation.length - 1]["link"] },
-  { text: "🌞 文摘", items: [...navLiterature] },
+  { text: "🌞 文摘", link: navLiterature[0]["link"] },
   { text: "🧠 实验室", items: [...navLaboratory] },
 ];
