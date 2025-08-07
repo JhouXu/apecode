@@ -1,7 +1,7 @@
 ---
 layout: doc
 date: 2025-08-06
-author: "俊小赞"
+author: 俊小赞
 ---
 
 # 什么是提取、加载、转换（ELT）？
