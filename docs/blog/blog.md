@@ -6,7 +6,7 @@ date: "2024-03-28"
 <script setup>
   import { ref, onMounted, computed } from "vue";
   import { base } from '../../.vitepress/config/meta.mts'
-  import { BlogData } from "../../.vitepress/data/blog.mts";
+  import { BlogData } from "../../.vitepress/config/nsBlog.mts";
   import DocsBlogCharts from "../../.vitepress/components/DocsBlogCharts.vue";
 
   const renderDate = ref([]);

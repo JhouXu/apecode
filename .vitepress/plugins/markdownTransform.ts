@@ -2,7 +2,7 @@ import type { Plugin } from "vite";
 import type { Item as BlogItem } from "../types/blog.mts";
 
 import { getReadingTime, getPublicTime } from "../utils";
-import { BlogData } from "../data/blog.mts";
+import { BlogData } from "../config/nsBlog.mts";
 
 export function MarkdownTransform(): Plugin {
   return {
