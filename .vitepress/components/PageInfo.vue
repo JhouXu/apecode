@@ -43,7 +43,7 @@ const author = computed(() => {
 });
 
 const publishDate = computed(() => {
-  return frontmatter.value?.date || props.publicTime || "未设置";
+  return (frontmatter.value?.date && getFormatDate(frontmatter.value.date)) || props.publicTime || "未设置";
 });
 
 const lastUpdatedFromNow = computed(() => {
