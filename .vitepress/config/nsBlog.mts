@@ -122,6 +122,7 @@ export const BlogData = [
       { text: "前端性能优化之飞书文档", link: "/blog/performance-doc-feishu.md", time: "2025-05-20" },
       { text: "包管理器比较", link: "/blog/package-manager-compare.md", time: "2025-05-22" },
       { text: "NVS 包管理器", link: "/blog/nvs.md", time: "2025-08-02" },
+      { text: "从前端视角看 IIS、Nginx、Tomcat 与 Redis：部署与架构中的角色解读", link: "/blog/iis-nginx-tomcat-redis.md", time: "2025-08-08" }
     ],
   },
   {
