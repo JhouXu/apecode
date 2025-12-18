@@ -49,11 +49,11 @@ const { frontmatter, page } = useData();
 
 const author = computed(() => {
   const { frontmatter } = page.value;
-  return frontmatter.author || "俊小赞";
+  return frontmatter.author || "暂无";
 });
 
 const publishDate = computed(() => {
-  return (frontmatter.value?.date && getFormatDate(frontmatter.value.date)) || props.publicTime || "未设置";
+  return (frontmatter.value?.date && getFormatDate(frontmatter.value.date)) || props.publicTime || "暂无";
 });
 
 const lastUpdatedFromNow = computed(() => {
