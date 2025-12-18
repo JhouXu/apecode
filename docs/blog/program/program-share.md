@@ -14,7 +14,7 @@ author: "俊小赞"
 
 ## 配置
 
-![默认禁用效果图](../public/images-blog/program/program-share_2023-04-27_09-44-24.jpg)
+![默认禁用效果图](../../public/images-blog/program/program-share_2023-04-27_09-44-24.jpg)
 
 默认情况下，小程序是禁用分享这一操作的，需要手动配置开启。
 

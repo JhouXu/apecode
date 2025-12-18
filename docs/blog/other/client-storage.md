@@ -8,7 +8,7 @@ author: "俊小赞"
 
 在前端开发中，浏览器提供了多种存储机制，用于在客户端保存数据。
 
-![示例](../public/images-blog/client-storage/1.jpg)
+![示例](../../public/images-blog/client-storage/1.jpg)
 
 ## Cookies
 

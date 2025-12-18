@@ -34,11 +34,11 @@ author: "俊小赞"
 
 下载：[ollama](https://ollama.com/)
 
-![deepseek](../public/images-blog/2025-03-14_22-46-28_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-14_22-46-28_deepseek.png)
 
 安装：
 
-![deepseek](../public/images-blog/2025-03-15_13-18-38_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-18-38_deepseek.png)
 
 安装完成后，可通过终端检验 ollama 是否安装成功。如输出 `ollama version is 0.6.0` 等字样，说明已经安装成功。
 
@@ -46,13 +46,13 @@ author: "俊小赞"
 ollama -v
 ```
 
-![deepseek](../public/images-blog/2025-03-15_13-23-58_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-23-58_deepseek.png)
 
 ## 安装并运行 DeepSeek
 
 在上一步中，我们已经完成了 ollama 的安装，且在终端执行验证了 ollama 的指令。随后开始对 deepseek 的安装。
 
-![deepseek](../public/images-blog/2025-03-15_13-31-20_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-31-20_deepseek.png)
 
 ```shell
 # 运行 deepseek-r1 1.5b 模型
@@ -61,7 +61,7 @@ ollama -v
 ollama run deepseek-r1:1.5b
 ```
 
-![deepseek](../public/images-blog/2025-03-15_13-35-14_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-35-14_deepseek.png)
 
 :::warning 可能遇到的问题
 
@@ -74,9 +74,9 @@ Error: pull model manifest: Get "https://registry.ollama.ai/v2/library/deepseek-
 
 运行成功后，会出现 `Send a message` 字样，说明已经成功在本地运行 deepseek。
 
-![deepseek](../public/images-blog/2025-03-15_13-39-27_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-39-27_deepseek.png)
 
-![deepseek](../public/images-blog/2025-03-15_13-43-20_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-43-20_deepseek.png)
 
 截至，已经完成了 deepseek 本地部署操作，但不难发现直接再终端上交互，体验感并不好。
 
@@ -90,13 +90,13 @@ Error: pull model manifest: Get "https://registry.ollama.ai/v2/library/deepseek-
 
 [Page Assit 安装 👉](https://chromewebstore.google.com/detail/page-assist-%E6%9C%AC%E5%9C%B0-ai-%E6%A8%A1%E5%9E%8B%E7%9A%84-web/jfgfiigpkhlkbnfnbobbkinehhfdhndo?hl=zh-cn)
 
-![deepseek](../public/images-blog/2025-03-15_13-49-26_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-49-26_deepseek.png)
 
 安装成功后，点击浏览器插件的 Page Assit 图标，将自动打开一个界面。
 
-![deepseek](../public/images-blog/2025-03-15_13-53-35_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-53-35_deepseek.png)
 
-![deepseek](../public/images-blog/2025-03-15_13-54-00_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_13-54-00_deepseek.png)
 
 输入内容，提交即可。
 
@@ -110,13 +110,13 @@ Error: pull model manifest: Get "https://registry.ollama.ai/v2/library/deepseek-
 
 选择“使用自己的 API Key 或本地模型”，选择 ollama API，选择 deepseek-r1:1.5b 模型保存，即可使用。
 
-![deepseek](../public/images-blog/2025-03-15_15-15-58_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_15-15-58_deepseek.png)
 
-![deepseek](../public/images-blog/2025-03-15_15-16-45_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_15-16-45_deepseek.png)
 
-![deepseek](../public/images-blog/2025-03-15_15-17-11_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_15-17-11_deepseek.png)
 
-![deepseek](../public/images-blog/2025-03-15_15-17-53_deepseek.png)
+![deepseek](../../public/images-blog/2025-03-15_15-17-53_deepseek.png)
 
 ## 参考资料
 
