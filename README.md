@@ -19,3 +19,14 @@ $ npm run build
 # 运行生产环境
 $ npm run preview
 ```
+
+## 博客
+
+```markdown
+---
+layout: doc
+date: 2025-08-08
+author: 俊小赞
+tags: [服务器, 前后端部署, Nginx, Redis, Tomcat, IIS]
+---
+```
