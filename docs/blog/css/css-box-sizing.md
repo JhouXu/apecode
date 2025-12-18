@@ -16,14 +16,14 @@ author: "俊小赞"
 标准盒模型又称 W3C 标准盒模型，其中标准盒模型的 width 等于 content 的宽度，标准盒模型的 height 等于 content 的高度。
 `标准盒大小计算公式：width(content) + padding + border + margin`
 
-![在这里插入图片描述](../../public/images-blog/css/20201224112703410.png)
+![在这里插入图片描述](../public/images-blog/css/20201224112703410.png)
 
 ## 二、怪异盒模型
 
 怪异盒模型又称 IE 盒子模型，其中怪异盒子模型的 width 等于 content + padding + border 的宽度，怪异盒子模型的 height 等于 content + padding + border 的高度。
 `怪异盒大小的计算公式：width(content + padding + border) + margin`
 
-![在这里插入图片描述](../../public/images-blog/css/20201224113002950.png)
+![在这里插入图片描述](../public/images-blog/css/20201224113002950.png)
 
 ## 三、css 样式
 

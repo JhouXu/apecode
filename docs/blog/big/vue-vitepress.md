@@ -10,7 +10,7 @@ author: "俊小赞"
 
 vitepress 是基于原生 css+css 变量开发的，为此想要修改主题颜色，可以通过修改全局变量的方式。默认主题颜色是：`#10b981 （vue 绿）`
 
-![vitepress官网首页效果图](../../public/images-blog/vitepress/vue-vitepress_2023-03-29_11-42-09.jpg)
+![vitepress官网首页效果图](../public/images-blog/vitepress/vue-vitepress_2023-03-29_11-42-09.jpg)
 
 ### 定制
 
@@ -59,7 +59,7 @@ export default {
 ```
 
 样式定制后效果：
-![样式定制后效果](../../public/images-blog/vitepress/vue-vitepress_2023-03-29_11-55-04.jpg)
+![样式定制后效果](../public/images-blog/vitepress/vue-vitepress_2023-03-29_11-55-04.jpg)
 
 ## Last updated
 
@@ -91,7 +91,7 @@ module.exports = {
 
 验证方式： `官方文档 - 配置 - 仓库 - 仓库`
 
-![验证通过效果图](../../public/images-blog/vitepress/vue-vitepress_2023-03-28_18-40-16.jpg)
+![验证通过效果图](../public/images-blog/vitepress/vue-vitepress_2023-03-28_18-40-16.jpg)
 
 ### 关键字段
 
@@ -233,27 +233,27 @@ jobs:
 
 在 `Build and deployment` `Branch` 选择 `gh-pages` 分支即可
 
-![pages设置](../../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-39-14.jpg)
+![pages设置](../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-39-14.jpg)
 
 ### 工作流运行 error
 
 首次运行工作流的时候，可能会出现以下错误：`Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"`
 
-![工作流运行错误](../../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-46-46.jpg)
+![工作流运行错误](../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-46-46.jpg)
 
 解决方法：前往 `Settings 面板` -> `Actions 选项` -> `General 选项`
 
-![配置操作](../../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-26-53.jpg)
+![配置操作](../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-26-53.jpg)
 
 滚动到底部，`Workflow permissions` 选择 `Read and write permissions` 选项保存，重新运行工作流
 
-![配置操作](../../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-27-29.jpg)
+![配置操作](../public/images-blog/vitepress/vue-vitepress_2023-04-20_09-27-29.jpg)
 
 ## 图像查看
 
 默认 vitepress 设置了文章图像之后，是无法点击放大查看的，这样就会出现尺寸大的图像看不请求的问题。为此，可以使用 `medium-zoom` 来实现。
 
-![查看演示](../../public/images-blog/vitepress/vue-vitepress_2023-07-11_18-35-01.gif)
+![查看演示](../public/images-blog/vitepress/vue-vitepress_2023-07-11_18-35-01.gif)
 
 ### 安装
 
@@ -311,7 +311,7 @@ export default {
 
 ## 阅读增强
 
-![示例](../../public/images-blog/vitepress/2025-02-13_22-48-23.jpg)
+![示例](../public/images-blog/vitepress/2025-02-13_22-48-23.jpg)
 
 使用了 `nolebase` 方案，[nolebase - 阅读增强 👉](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/vitepress-plugin-enhanced-readabilities/)
 
@@ -449,7 +449,7 @@ jobs:
 
 ## 文档页面信息
 
-![示例](../../public/images-blog/vitepress/vue-vitepress_2025-04-24_11-52-58.jpg)
+![示例](../public/images-blog/vitepress/vue-vitepress_2025-04-24_11-52-58.jpg)
 
 具体实现代码，可以查看 [git commit](https://github.com/JhouXu/apecode/commit/27de04ec0eb11bf2c24fa833a7350a3755839411)。
 

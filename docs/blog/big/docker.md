@@ -46,7 +46,7 @@ docker -v
 
 ### 架构
 
-![docker 架构](../../public/images-blog/2025-04-25_23-18-24_docker.jpg)
+![docker 架构](../public/images-blog/2025-04-25_23-18-24_docker.jpg)
 
 - 镜像（Image）： Docker 镜像，相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的 一套 Ubuntu16.04 最小系统的 root 文件系统。
 - 容器（Container）：镜像和容器的关系，就像是面向对象程序设计中的类和对象一样，镜像是静态的定义，容器时镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
@@ -256,7 +256,7 @@ Docker 容器和外部机器可以直接交换文件吗？
 - 外部机器和容器间接通讯。
 - 容器之间数据交换。
 
-![数据卷示意图](../../public/images-blog/2025-04-27_16-09-57_docker.jpg)
+![数据卷示意图](../public/images-blog/2025-04-27_16-09-57_docker.jpg)
 
 ### 配置数据卷
 
@@ -298,7 +298,7 @@ docker run -it --name:c4 centos:7 -v /root/data:/root/data -v /root/data:/root/d
 1. 多个容器挂载同一个数据卷
 2. `数据卷容器`
 
-![数据卷容器卷示意图](../../public/images-blog/2025-04-27_17-03-39_docker.jpg)
+![数据卷容器卷示意图](../public/images-blog/2025-04-27_17-03-39_docker.jpg)
 
 ```shell
 # 1. 创建启动 c3 数据卷容器，使用 -v 参数，设置数据卷
@@ -342,7 +342,7 @@ docker run -it --name:c2 centos:7 --volumes-from c3
 
 :::tip
 
-![应用部署 MySQl 容器示意图](../../public/images-blog/2025-04-27_18-23-32_docker.jpg)
+![应用部署 MySQl 容器示意图](../public/images-blog/2025-04-27_18-23-32_docker.jpg)
 
 - 容器内的网络服务和外部机器不能直接通讯。
 - 外部机器和宿主机可以直接通讯。
@@ -400,7 +400,7 @@ Linux 文件系统由 bootfs 和 rootfs 两部分组成：
 - rootfs：root 文件系统，包含的就是典型 Linux 系统中的/dev，/proc，/bin，/etc 等标准目录和文件。
 - 不同的 linux 发行版，bootfs 基本一样，而 rootfs 不同，如 ubuntu、centos 等。
 
-![文件系统示意图](../../public/images-blog/2025-04-27_20-59-35_docker.jpg)
+![文件系统示意图](../public/images-blog/2025-04-27_20-59-35_docker.jpg)
 
 ### Docker 镜像
 
@@ -412,7 +412,7 @@ Linux 文件系统由 bootfs 和 rootfs 两部分组成：
 - 一个镜像可以放在另一个镜像的上面，位于下面的镜像称为父镜像，最底部的镜像称为基础镜像。
 - 当从一个镜像启动容器时，Docker 会在最顶层加载一个读写文件系统作为容器。
 
-![文件系统示意图](../../public/images-blog/2025-04-27_21-06-06_docker.jpg)
+![文件系统示意图](../public/images-blog/2025-04-27_21-06-06_docker.jpg)
 
 :::tip 思考答案
 
@@ -445,7 +445,7 @@ docker save -o [压缩文件名称] [镜像名称]:[版本号]
 docker load -i [压缩文件名称]
 ```
 
-![容器转镜像示意图](../../public/images-blog/2025-04-27_23-14-17_docker.jpg)
+![容器转镜像示意图](../public/images-blog/2025-04-27_23-14-17_docker.jpg)
 
 **2. Dockerfile**
 
@@ -709,7 +709,7 @@ docker pull [私有仓库服务器ip]:5000/[镜像名称]
 - 容器化软件在任何环境中都能够始终如一地运行。
 - 容器赋予了软件独立性，使其免受外在环境差异的影响，从而有助于减少团队间在相同基础设施上运行不同软件时的冲突。
 
-![容器架构示意图](../../public/images-blog/2025-04-28_16-22-52_docker.jpg)
+![容器架构示意图](../public/images-blog/2025-04-28_16-22-52_docker.jpg)
 
 ### `docker 容器虚拟化`与 `传统虚拟机` 比较
 
@@ -729,7 +729,7 @@ docker pull [私有仓库服务器ip]:5000/[镜像名称]
 |    性能    |      接近原生      |    弱于    |
 | 系统支持量 | 单机支持上千个容器 | 一般几十个 |
 
-![容器架构和虚拟机架构示意图](../../public/images-blog/2025-04-28_16-25-04_docker.jpg)
+![容器架构和虚拟机架构示意图](../public/images-blog/2025-04-28_16-25-04_docker.jpg)
 
 ## 参考
 
