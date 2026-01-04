@@ -14,9 +14,15 @@ author: 俊小赞
 
 在这本书里，作者借由蛤蟆和心理咨询师苍鹭的互动，探索了蛤蟆自卑、软弱、爱炫耀的个性与抑郁的情绪究竟来源于何处，`让读者看到童年经历对人格的深刻影响，以及如何才能在心理上真正长大成人，独立、自信、充满希望地生活`。
 
-豆瓣评分：8.3 ⭐⭐⭐⭐
+## 目录
 
-在线阅读：[微信读书](https://weread.qq.com/web/reader/66832530721e777066806c9)
+<Toc :data=[...TocData] />
+
+## 摘抄
+
+<Items :data=[...ExcerptToadData] :reverse="false" />
+
+## 结束
 
 <script lang="ts" setup>
   import type { Item } from "../../.vitepress/config/config.mjs";
@@ -484,11 +490,3 @@ author: 俊小赞
     },
   ];
 </script>
-
-## 目录
-
-<Toc :data=[...TocData] />
-
-## 摘抄
-
-<Items :data=[...ExcerptToadData] :reverse="true" />
