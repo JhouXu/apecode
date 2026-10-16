@@ -1,6 +1,7 @@
 ---
 layout: doc
 date: "2025-02-20"
+author: "俊小赞"
 ---
 
 # TypeScript

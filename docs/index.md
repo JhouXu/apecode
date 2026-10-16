@@ -33,7 +33,7 @@ features:
     linkText: 了解更多
   - icon: 🌱
     title: 成长
-    details: 一些有趣的句子。
+    details: 语录、思考与文摘，记录成长。
     link: /growth/quotation.md
     linkText: 了解更多
   - icon: 🧪
