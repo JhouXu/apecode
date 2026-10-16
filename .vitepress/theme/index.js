@@ -11,7 +11,6 @@ import BrowserCard from "../components/BrowserCard.vue";
 import PageInfo from "../components/PageInfo.vue";
 
 import theme from "vitepress/theme";
-import Documate from "@documate/vue";
 
 import "./tailwind.postcss";
 import "./styles/theme.scss"; // 主题定制
@@ -22,7 +21,6 @@ import "./styles/home.scss";
 import "./styles/nav.scss";
 import "./styles/search.scss";
 import "./styles/aside.scss";
-import "@documate/vue/dist/style.css";
 
 import "virtual:group-icons.css";
 
