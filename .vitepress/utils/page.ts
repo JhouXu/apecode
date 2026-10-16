@@ -1,5 +1,3 @@
-import type { Item as BlogItem } from "../types/blog.mts";
-
 export interface PageInfo {
   readTime: number | string;
   words: number | string;
@@ -46,7 +44,7 @@ export function getReadingTime(content: string, cnWordPerMinute = 350, enwordPer
   };
 }
 
-export function getPublicTime(data: BlogItem[], path: string) {
-  const current = data.find((item) => item.link.indexOf(path) !== -1);
+export function getPublicTime(data: Array<{ link?: string; time?: string }>, path: string) {
+  const current = data.find((item) => item.link && item.link.indexOf(path) !== -1);
   return current?.time || "";
 }

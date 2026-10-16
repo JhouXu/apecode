@@ -1,6 +1,7 @@
+import type { DefaultTheme } from "vitepress";
 import { juejin, csdn, github, juejinIcon, csdnIcon } from "./meta.mts";
 
-export const socialLinks: Array<any> = [
+export const socialLinks: DefaultTheme.SocialLink[] = [
   // {
   //   icon: {
   //     svg: juejinIcon,

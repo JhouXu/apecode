@@ -47,9 +47,9 @@ export function getTimestamp() {
  * @param {String} rule 时间格式
  * @returns {String}
  */
-export function timestampToFormatTime(timestamp, rule = "yyyy-MM-dd HH:mm:ss") {
+export function timestampToFormatTime(timestamp: string | number | Date, rule = "yyyy-MM-dd HH:mm:ss") {
   const D = new Date(timestamp);
-  const timeObj = {};
+  const timeObj: Record<string, number> = {};
   const rules = rule.match(/\w+/g);
   let ft = rule;
 
@@ -63,7 +63,7 @@ export function timestampToFormatTime(timestamp, rule = "yyyy-MM-dd HH:mm:ss") {
 
   rules?.map((f) => {
     let ff = f.length === 1 ? `${f}${f}` : f;
-    ft = ft.replace(new RegExp(f, "g"), fillingZero(f, timeObj[ff]));
+    ft = ft.replace(new RegExp(f, "g"), String(fillingZero(f, timeObj[ff] ?? 0)));
   });
 
   return ft;
@@ -72,10 +72,10 @@ export function timestampToFormatTime(timestamp, rule = "yyyy-MM-dd HH:mm:ss") {
 /**
  * 根据时间字段名，自动判断是否需要填充零
  * @param {String} field 时间字段名
- * @param {String} value 预处理值
+ * @param {Number} value 预处理值
  * @returns {String|Number}
  */
-export function fillingZero(field, value) {
+export function fillingZero(field: string, value: number) {
   switch (field) {
     case "MM":
     case "dd":
