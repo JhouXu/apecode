@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, watch } from "vue";
-import * as echarts from "echarts";
-import * as CalendarHeatmapModule from "vue3-calendar-heatmap";
-const { CalendarHeatmap } = CalendarHeatmapModule;
+import { ref, onMounted, onBeforeUnmount, watch, defineAsyncComponent } from "vue";
+import type { ECharts } from "echarts/core";
+// 重依赖异步加载：echarts（按需引入） / vue3-calendar-heatmap 拆分为独立 chunk，不进入主包
+const CalendarHeatmap = defineAsyncComponent(() => import("vue3-calendar-heatmap"));
 import "vue3-calendar-heatmap/dist/style.css";
 import { BlogData } from "./../config/nsBlog.mts";
 
@@ -20,9 +20,10 @@ const theme = ref<string>(""); // '' | dark
 const dataPie = ref<PieData[]>([]); // 饼图数据
 const dataHeatmap = ref<HeatmapData[]>([]); // 热力图数据
 const endDate = ref(getTodayFormattedDate());
-let chartPie: echarts.ECharts; // 饼图实例
+let chartPie: ECharts | null = null; // 饼图实例
+let echartsModule: typeof import("echarts/core") | null = null;
 
-onMounted(() => {
+onMounted(async () => {
   theme.value = getPageTheme(); // 初始化页面主题
 
   // 监听页面主题
@@ -31,20 +32,31 @@ onMounted(() => {
   });
 
   dataPie.value = getDataPie();
+  // 按需引入 echarts：仅打包 Pie 图表 + Tooltip/Aria 组件 + Canvas 渲染器 + 标签布局特性
+  const [{ PieChart }, { TooltipComponent, AriaComponent }, { CanvasRenderer }, { LabelLayout }] =
+    await Promise.all([
+      import("echarts/charts"),
+      import("echarts/components"),
+      import("echarts/renderers"),
+      import("echarts/features"),
+    ]);
+  echartsModule = await import("echarts/core");
+  echartsModule.use([PieChart, TooltipComponent, AriaComponent, CanvasRenderer, LabelLayout]);
   chartPie = initEchartPie(dataPie.value, theme.value);
   dataHeatmap.value = getHeatmapData(BlogData);
 
   window.addEventListener("resize", () => {
-    chartPie.resize();
+    chartPie?.resize();
   });
 });
 
 onBeforeUnmount(() => {
-  chartPie.dispose();
+  chartPie?.dispose();
 });
 
 watch(theme, (newTheme: string) => {
   debounce(() => {
+    if (!echartsModule || !chartPie) return;
     chartPie.dispose();
     chartPie = initEchartPie(dataPie.value, theme.value);
   }, 400);
@@ -65,7 +77,7 @@ function observerPageTheme(updateTheme: Function = () => {}) {
 
 function initEchartPie(data: PieData[], theme: string) {
   const chartDom = document.getElementById("chart-pie");
-  const example = echarts.init(chartDom, theme);
+  const example = echartsModule!.init(chartDom, theme);
 
   const option = {
     aria: { show: true },
