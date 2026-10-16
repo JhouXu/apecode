@@ -1,3 +1,5 @@
+import type { DefaultTheme } from "vitepress";
+
 // 导航下拉：仅展示二级分类（平铺链接，不展开三级菜单）
 const GrowthNavData = [
   { text: "📖 语录", link: "/growth/quotation.md" },
@@ -21,5 +23,5 @@ const GrowthSidebarData = [
   },
 ];
 
-export const navGrowth = [...GrowthNavData];
-export const sidebarGrowth = [...GrowthSidebarData];
+export const navGrowth: DefaultTheme.NavItemWithLink[] = [...GrowthNavData];
+export const sidebarGrowth: DefaultTheme.SidebarItem[] = [...GrowthSidebarData];

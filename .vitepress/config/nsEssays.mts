@@ -1,3 +1,5 @@
+import type { DefaultTheme } from "vitepress";
+
 const EssaysData = [
   { text: "概述", link: "/blog/essays/essays.md" },
   { text: "网络", link: "/blog/essays/network.md" },
@@ -13,5 +15,5 @@ const EssaysData = [
   { text: "其它", link: "/blog/essays/other.md" },
 ];
 
-export const navEssays = [...EssaysData];
-export const sidebarEssays = [...EssaysData];
+export const navEssays: DefaultTheme.NavItemWithLink[] = [...EssaysData];
+export const sidebarEssays: DefaultTheme.SidebarItem[] = [...EssaysData];

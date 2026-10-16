@@ -1,4 +1,6 @@
-export const BlogData = [
+import type { DefaultTheme } from "vitepress";
+
+export const BlogData: DefaultTheme.SidebarItem[] = [
   { text: "📖 概述", link: "/blog/blog.md", items: [] },
   {
     text: "🟨 Javascript",
@@ -138,28 +140,25 @@ export const BlogData = [
   },
 ];
 
-function getNavData() {
-  const D = JSON.parse(JSON.stringify(BlogData));
-  const data: Array<Object> = [];
+function getNavData(): DefaultTheme.NavItemWithLink[] {
+  const D = structuredClone(BlogData);
+  const data: DefaultTheme.NavItemWithLink[] = [];
 
-  D.forEach((item: any) => {
-    let items = item["items"];
-    data.push({ text: item["text"], link: item["link"] || items[items.length - 1]["link"] });
+  D.forEach((item) => {
+    const items = item.items ?? [];
+    data.push({
+      text: item.text ?? "",
+      link: item.link ?? items[items.length - 1]?.link ?? "",
+    });
   });
   return data;
 }
-function getSidebarBlog() {
+function getSidebarBlog(): DefaultTheme.SidebarItem[] {
   const sidebarCollapsed: boolean = true;
 
   // 数据作用域隔断处理
-  const D = JSON.parse(JSON.stringify(BlogData));
-  const data: Array<Object> = [];
-
-  D.forEach((item: any) => {
-    data.push({ ...item, collapsed: sidebarCollapsed });
-  });
-  return data;
+  return structuredClone(BlogData).map((item) => ({ ...item, collapsed: sidebarCollapsed }));
 }
 
-export const navBlog = [...getNavData()];
-export const sidebarBlog = [...getSidebarBlog()];
+export const navBlog: DefaultTheme.NavItemWithLink[] = [...getNavData()];
+export const sidebarBlog: DefaultTheme.SidebarItem[] = [...getSidebarBlog()];
