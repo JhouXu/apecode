@@ -9,20 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 禁用浅克隆
-      - uses: actions/setup-node@v3
+          fetch-depth: 0 # 保留完整历史，供 lastUpdated 使用
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18 # 将 Node.js 版本更新为 18
-      - run: npm i pnpm@6 -g # 使用适合 Node.js 18 的 pnpm 版本
-      - run: pnpm install --no-frozen-lockfile
+          node-version: 20
+          cache: npm
+      - run: npm ci # 与本地 package-lock.json 保持一致，保证可复现构建
 
       - name: Build
-        run: DEPLOY_TARGET=GITHUB_PAGES pnpm build
+        run: DEPLOY_TARGET=GITHUB_PAGES npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
