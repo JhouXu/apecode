@@ -1,11 +1,12 @@
+import type { HeadConfig } from "vitepress";
 import { keywords, description } from "./seo.mts";
 
-export const head: Array<any> = [
+export const head: HeadConfig[] = [
   ["meta", { name: "referrer", content: "never" }],
   ["link", { rel: "icon", href: "./images/logo.png" }],
   ["link", { rel: "apple-touch-icon", href: "./images/logo.jpg" }],
-  ["link", { rel: "keywords", content: keywords }],
-  ["link", { rel: "description", content: description }],
+  ["meta", { name: "keywords", content: keywords }],
+  ["meta", { name: "description", content: description }],
   [
     "script",
     {},

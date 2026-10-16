@@ -4,7 +4,6 @@ import { MarkdownTransform } from "./plugins/markdownTransform";
 
 import {
   titleEn,
-  description,
   base,
   logo,
   outlineTitle,
@@ -19,6 +18,7 @@ import {
   footerMessage,
   footerCopyright,
 } from "./config/meta.mts";
+import { description } from "./config/seo.mts";
 import { head } from "./config/head.mts";
 import { socialLinks } from "./config/social.mts";
 import { nav } from "./config/nav.mts";
