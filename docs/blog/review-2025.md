@@ -10,7 +10,7 @@ author: "俊小赞"
 
 ### 事件循环？
 
-[👉 渡一大师课 - 原理事件循环](/essays/javascript_duyi.html#一、原理-事件循环)
+[👉 渡一大师课 - 原理事件循环](/blog/essays/javascript_duyi.html#一、原理-事件循环)
 
 ```javascript
 console.log(1);
@@ -1339,7 +1339,7 @@ gzip_static on; # 启用静态压缩文件
 
 ### URL 到页面加载的过程
 
-[👉 从输入-url-到页面加载的全过程](/essays/browser.html#从输入-url-到页面加载的全过程)
+[👉 从输入-url-到页面加载的全过程](/blog/essays/browser.html#从输入-url-到页面加载的全过程)
 
 ## 阶段十
 
@@ -1353,11 +1353,11 @@ gzip_static on; # 启用静态压缩文件
 
 ### this 指向？
 
-[👉 八股文 - JavaScript - this 的五种情况](/essays/javascript.html#this-的五种情况)
+[👉 八股文 - JavaScript - this 的五种情况](/blog/essays/javascript.html#this-的五种情况)
 
 ### BFC ?
 
-[👉 BFC 块级格式上下文](/essays/css.html#bfc-块级格式上下文)
+[👉 BFC 块级格式上下文](/blog/essays/css.html#bfc-块级格式上下文)
 
 ### vue 的双向数据绑定？
 
