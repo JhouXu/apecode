@@ -1,7 +1,7 @@
 // 导航下拉：仅展示二级分类（平铺链接，不展开三级菜单）
 const GrowthNavData = [
   { text: "📖 语录", link: "/growth/quotation.md" },
-  { text: "🧠 思考", link: "/growth/thinking.md" },
+  { text: "🧠 思考", link: "/growth/how-to-build-wealth-as-a-career-person.md" },
   { text: "📚 文摘", link: "/growth/excerpt-weakness.md" },
 ];
 
@@ -10,7 +10,7 @@ const GrowthSidebarData = [
   { text: "📖 语录", link: "/growth/quotation.md" },
   {
     text: "🧠 思考",
-    items: [{ text: "思考", link: "/growth/thinking.md" }],
+    items: [{ text: "职场人如何积累财富", link: "/growth/how-to-build-wealth-as-a-career-person.md" }],
   },
   {
     text: "📚 文摘",
