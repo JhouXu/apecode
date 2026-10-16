@@ -26,8 +26,8 @@ author: 俊小赞
 
 <script lang="ts" setup>
   import type { Item } from "../../.vitepress/config/config.mjs";
-  import Toc from '../../.vitepress/components/Literature/Toc.vue';
-  import Items from '../../.vitepress/components/Literature/Items.vue';
+  import Toc from '../../.vitepress/components/Growth/Toc.vue';
+  import Items from '../../.vitepress/components/Growth/Items.vue';
 
   const TocData: string[] = [
     "前言",

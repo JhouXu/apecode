@@ -16,8 +16,8 @@ author: 俊小赞
 
 <script lang="ts" setup>
   import type { Item } from "../../.vitepress/config/config.mjs";
-  import Items from '../../.vitepress/components/Literature/Items.vue'; 
-  import Typed from '../../.vitepress/components/Literature/Typed.vue';
+  import Items from '../../.vitepress/components/Growth/Items.vue'; 
+  import Typed from '../../.vitepress/components/Growth/Typed.vue';
 
   const quotationData: Item[] = [
     {

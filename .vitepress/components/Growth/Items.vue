@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import type { Item } from "../../types/literature.mjs";
+import type { Item } from "../../types/growth.mts";
 
 const props = defineProps<{
   data: Item[];

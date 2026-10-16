@@ -21,7 +21,7 @@ author: 俊小赞
 
 <script lang="ts" setup>
   import type { Item } from "../../.vitepress/config/config.mjs";
-  import Items from '../../.vitepress/components/Literature/Items.vue';
+  import Items from '../../.vitepress/components/Growth/Items.vue';
 
   const ExcerptToadData: Item[] = [
     {
