@@ -36,7 +36,7 @@ features:
     details: 一些有趣的句子。
     link: /growth/quotation.md
     linkText: 了解更多
-  - icon: 🧠
+  - icon: 🧪
     title: 实验室
     details: 更多创意+脑洞项目。
     linkText: 了解更多

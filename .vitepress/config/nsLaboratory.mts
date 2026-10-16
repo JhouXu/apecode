@@ -5,7 +5,4 @@ export const navLaboratory = [
       { text: "🧰 SmallToolbox", link: "https://www.small-toolbox.com/" },
     ],
   },
-  {
-    items: [{ text: "📰 NewsNow", link: "https://newsnow.small-toolbox.com/" }],
-  },
 ];

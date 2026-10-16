@@ -20,5 +20,5 @@ export const nav = [
     ],
   },
   { text: "🌱 成长", items: [...navGrowth] },
-  { text: "🧠 实验室", items: [...navLaboratory] },
+  { text: "🧪 实验室", items: [...navLaboratory] },
 ];
