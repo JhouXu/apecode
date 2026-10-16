@@ -1,7 +1,7 @@
 import { sidebarBlog } from "./nsBlog.mts";
 import { sidebarEssays } from "./nsEssays.mts";
 import { sidebarTranslation } from "./nsTranslation.mts";
-import { sidebarLiterature } from "./nsLiterature.mts";
+import { sidebarGrowth } from "./nsGrowth.mts";
 
 export const sidebar = {
   // 八股文、翻译 详情页与随笔记共用聚合侧边栏
@@ -14,5 +14,5 @@ export const sidebar = {
     // 其它
     sidebarBlog[sidebarBlog.length - 1],
   ],
-  "/literature/": [...sidebarLiterature],
+  "/growth/": [...sidebarGrowth],
 };

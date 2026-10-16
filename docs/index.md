@@ -31,10 +31,10 @@ features:
     details: 归纳、概括、整理、最新。
     link: /blog/essays/essays.md
     linkText: 了解更多
-  - icon: 🌞
-    title: 文摘
+  - icon: 🌱
+    title: 成长
     details: 一些有趣的句子。
-    link: /literature/quotation.md
+    link: /growth/quotation.md
     linkText: 了解更多
   - icon: 🧠
     title: 实验室

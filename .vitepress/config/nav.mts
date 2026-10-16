@@ -1,7 +1,7 @@
 import { navBlog } from "./nsBlog.mts";
 import { navEssays } from "./nsEssays.mts";
 import { navTranslation } from "./nsTranslation.mts";
-import { navLiterature } from "./nsLiterature.mts";
+import { navGrowth } from "./nsGrowth.mts";
 import { navLaboratory } from "./nsLaboratory.mts";
 
 export const nav = [
@@ -19,6 +19,6 @@ export const nav = [
       navBlog[navBlog.length - 1],
     ],
   },
-  { text: "🌞 文摘", link: navLiterature[0]["link"] },
+  { text: "🌱 成长", items: [...navGrowth] },
   { text: "🧠 实验室", items: [...navLaboratory] },
 ];
