@@ -1,12 +1,6 @@
 module.exports = {
-  mode: "jit",
-  purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: ["./.vitepress/**/*.js", "./.vitepress/**/*.vue", "./.vitepress/**/*.ts"],
-    options: {
-      safelist: ["html", "body"],
-    },
-  },
+  content: ["./.vitepress/**/*.js", "./.vitepress/**/*.vue", "./.vitepress/**/*.ts"],
+  safelist: ["html", "body"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {},
